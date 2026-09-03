@@ -11,4 +11,4 @@ qdrant_storage/
 falkordb_data/
 data/*.csv
 !data/sample_legal_documents.csv
-
+.vscode

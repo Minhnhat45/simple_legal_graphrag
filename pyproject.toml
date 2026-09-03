@@ -10,17 +10,8 @@ readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "MIT" }
 authors = [{ name = "OpenAI Codex" }]
-dependencies = [
-  "falkordb>=1.1,<2",
-  "fastapi>=0.115,<1",
-  "qdrant-client>=1.13,<2",
-  "uvicorn[standard]>=0.30,<1",
-]
-
-[project.optional-dependencies]
-dev = [
-  "ruff>=0.9,<1",
-]
+# Dependencies are managed in requirements.txt for Miniconda environments.
+dependencies = []
 
 [project.scripts]
 legal-graphrag = "legal_graphrag.cli:main"
@@ -34,4 +25,3 @@ target-version = "py311"
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B", "SIM"]
-

@@ -1,7 +1,7 @@
 .PHONY: install infra ingest-sample serve test lint
 
 install:
-	python -m pip install -e .
+	python -m pip install -r requirements.txt
 
 infra:
 	docker compose up -d falkordb qdrant
@@ -17,4 +17,3 @@ test:
 
 lint:
 	ruff check src tests
-

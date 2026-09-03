@@ -78,17 +78,23 @@ dimension always matches the configured embedding model.
 
 ## Quick start
 
-Requirements: Python 3.11+, Docker with Compose, and Ollama.
+Requirements: Miniconda, Docker with Compose, and Ollama.
 
 ```bash
+conda create -n legal-graphrag python=3.11 pip -y
+conda activate legal-graphrag
+
 cp .env.example .env
 
 ollama pull embeddinggemma
 ollama pull gemma4:e4b
 
 docker compose up -d falkordb qdrant
-python -m pip install -e .
+python -m pip install -r requirements.txt
 ```
+
+`requirements.txt` installs the runtime dependencies, development tooling, and the project
+in editable mode so the `legal-graphrag` command is available in the active Conda environment.
 
 Ingest the bundled three-row sample:
 
@@ -164,8 +170,7 @@ legal-graphrag health
 # Unit tests (no running databases required)
 PYTHONPATH=src python -m unittest discover -s tests -v
 
-# Optional linting
-python -m pip install -e '.[dev]'
+# Linting
 ruff check src tests
 ```
 
