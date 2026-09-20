@@ -8,7 +8,7 @@ dist/
 build/
 *.egg-info/
 qdrant_storage/
-falkordb_data/
+neo4j_data/
 data/*.csv
 !data/sample_legal_documents.csv
 .vscode

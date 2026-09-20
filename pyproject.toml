@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "legal-graphrag"
 version = "0.1.0"
-description = "A sample Vietnamese legal GraphRAG service using FalkorDB and Qdrant"
+description = "A sample Vietnamese legal GraphRAG service using Neo4j and Qdrant"
 readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "MIT" }

@@ -163,14 +163,14 @@ class GraphRAGService:
 
     def stats(self) -> dict[str, Any]:
         return {
-            "falkordb": self.graph.stats(),
+            "neo4j": self.graph.stats(),
             "qdrant": {"points": self.vectors.count()},
         }
 
     def health(self) -> dict[str, bool]:
         status: dict[str, bool] = {}
         for name, check in (
-            ("falkordb", self.graph.health),
+            ("neo4j", self.graph.health),
             ("qdrant", self.vectors.health),
             ("ollama", self.ollama.health),
         ):

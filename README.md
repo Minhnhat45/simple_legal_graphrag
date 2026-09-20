@@ -1,9 +1,9 @@
-# Vietnamese Legal GraphRAG with FalkorDB + Qdrant
+# Vietnamese Legal GraphRAG with Neo4j + Qdrant
 
 A compact, runnable reference project for Vietnamese legal-document retrieval. It uses:
 
 - **Qdrant** for semantic search over article-aware text chunks.
-- **FalkorDB** for document metadata, legal identifiers, signers, issuers, and citation paths.
+- **Neo4j** for document metadata, legal identifiers, signers, issuers, and citation paths.
 - **Ollama** for local embeddings and answer generation.
 - **FastAPI** for a small query API.
 
@@ -19,7 +19,7 @@ document-to-identifier mention edges before embeddings are generated.
 flowchart TD
     Q["User question"] --> E["Ollama embedding"]
     E --> V["Qdrant semantic seeds"]
-    V --> G["FalkorDB graph expansion"]
+    V --> G["Neo4j graph expansion"]
     G --> C["Qdrant semantic confirmation"]
     V --> R["Score fusion and context limits"]
     C --> R
@@ -89,12 +89,22 @@ cp .env.example .env
 ollama pull embeddinggemma
 ollama pull gemma4:e4b
 
-docker compose up -d falkordb qdrant
+docker compose up -d neo4j qdrant
 python -m pip install -r requirements.txt
 ```
 
 `requirements.txt` installs the runtime dependencies, development tooling, and the project
 in editable mode so the `legal-graphrag` command is available in the active Conda environment.
+
+Neo4j connects through `NEO4J_URI`, `NEO4J_USERNAME`, `NEO4J_PASSWORD`, and
+`NEO4J_DATABASE` in `.env`. The bundled Community server uses database `neo4j` and
+username `neo4j`. Wait for `docker compose ps` to report Neo4j as healthy before ingesting.
+
+When switching an existing installation from FalkorDB, add these settings from
+`.env.example`, install the updated requirements, and start the new Neo4j service.
+Re-ingest the original CSV to populate Neo4j; existing graph data is not copied automatically.
+You can ingest without `--recreate` to retain the existing Qdrant collection. Health and
+stats responses now use the `neo4j` key.
 
 Ingest the bundled three-row sample:
 
@@ -174,10 +184,16 @@ PYTHONPATH=src python -m unittest discover -s tests -v
 ruff check src tests
 ```
 
-FalkorDB's browser is available at `http://localhost:3000`. Qdrant's dashboard is available
+To include the Neo4j integration test, set `NEO4J_TEST_URI` to a **disposable**
+Neo4j database and run the same test command. The test clears that database.
+Optional `NEO4J_TEST_USERNAME` and `NEO4J_TEST_PASSWORD` override the sample credentials.
+The test exercises ingestion, repeat ingestion, metadata/chunk replacement, and expansion;
+it uses fake embeddings and a fake vector store.
+
+Neo4j's browser is available at `http://localhost:7474`. Qdrant's dashboard is available
 at `http://localhost:6333/dashboard`.
 
-Example Cypher queries in the FalkorDB browser:
+Example Cypher queries in the Neo4j browser:
 
 ```cypher
 MATCH (d:Document)-[:ISSUED_BY]->(a:Agency)
@@ -194,15 +210,16 @@ LIMIT 50
 ## Consistency and operational notes
 
 - Each batch is idempotent. A document is marked `index_status = ready` only after its Qdrant
-  points and FalkorDB chunk nodes are written. Re-running ingestion repairs a partial batch.
-- FalkorDB and Qdrant do not share a transaction. For production, add a durable job ledger,
+  points and Neo4j chunk nodes are written. Re-running ingestion repairs a partial batch.
+- Neo4j and Qdrant do not share a transaction. For production, add a durable job ledger,
   retries, and reconciliation metrics.
 - Qdrant metadata filters are exact keyword matches. Add normalization or a filter-value
   dictionary if users enter free-form variants.
 - If you change to an embedding model with a different vector dimension, the loader raises a
   clear error. Re-run with `--recreate`.
-- The included Docker services have no authentication and are for local development. Do not
-  expose ports 6379 or 6333 publicly without configuring authentication and network controls.
+- The included Docker services are for local development. Neo4j uses the credentials in
+  `.env` (default `neo4j` / `legal-graphrag`); Qdrant has no authentication. Configure
+  credentials and network controls before exposing ports 7474, 7687, or 6333 publicly.
 - This system supports legal-document research; generated answers are not legal advice.
 
 ## Project layout
@@ -214,7 +231,7 @@ src/legal_graphrag/
   cli.py             ingest, ask, serve, health, stats
   csv_loader.py      streaming 14-field CSV parser
   extraction.py      legal-number and citation heuristics
-  graph_store.py     FalkorDB schema, writes, expansion
+  graph_store.py     Neo4j schema, writes, expansion
   llm.py             dependency-free Ollama HTTP client
   pipeline.py        idempotent two-store ingestion
   qdrant_store.py    vector collection, payloads, filters
@@ -224,8 +241,8 @@ src/legal_graphrag/
 
 ## Primary references
 
-- [FalkorDB getting started](https://docs.falkordb.com/getting-started/)
-- [FalkorDB parameterized queries](https://docs.falkordb.com/commands/graph.query.html)
+- [Neo4j Python driver queries](https://neo4j.com/docs/python-manual/current/query-simple/)
+- [Neo4j Docker setup](https://neo4j.com/docs/operations-manual/current/docker/introduction/)
 - [Qdrant local quickstart](https://qdrant.tech/documentation/quickstart/)
 - [Qdrant search and payload filtering](https://qdrant.tech/documentation/search/search/)
 - [Ollama embedding API](https://docs.ollama.com/api/embed)

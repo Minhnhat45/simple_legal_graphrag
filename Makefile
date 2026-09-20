@@ -4,7 +4,7 @@ install:
 	python -m pip install -r requirements.txt
 
 infra:
-	docker compose up -d falkordb qdrant
+	docker compose up -d neo4j qdrant
 
 ingest-sample:
 	legal-graphrag ingest data/sample_legal_documents.csv --recreate

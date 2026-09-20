@@ -36,11 +36,10 @@ def _integer(name: str, default: int) -> int:
 
 @dataclass(frozen=True, slots=True)
 class Settings:
-    falkordb_host: str = "localhost"
-    falkordb_port: int = 6379
-    falkordb_username: str = ""
-    falkordb_password: str = ""
-    falkordb_graph: str = "vn_legal"
+    neo4j_uri: str = "bolt://localhost:7687"
+    neo4j_username: str = "neo4j"
+    neo4j_password: str = "legal-graphrag"
+    neo4j_database: str = "neo4j"
 
     qdrant_url: str = "http://localhost:6333"
     qdrant_api_key: str = ""
@@ -64,11 +63,10 @@ class Settings:
     def from_env(cls) -> Settings:
         load_dotenv()
         settings = cls(
-            falkordb_host=_text("FALKORDB_HOST", "localhost"),
-            falkordb_port=_integer("FALKORDB_PORT", 6379),
-            falkordb_username=_text("FALKORDB_USERNAME", ""),
-            falkordb_password=_text("FALKORDB_PASSWORD", ""),
-            falkordb_graph=_text("FALKORDB_GRAPH", "vn_legal"),
+            neo4j_uri=_text("NEO4J_URI", "bolt://localhost:7687"),
+            neo4j_username=_text("NEO4J_USERNAME", "neo4j"),
+            neo4j_password=_text("NEO4J_PASSWORD", "legal-graphrag"),
+            neo4j_database=_text("NEO4J_DATABASE", "neo4j"),
             qdrant_url=_text("QDRANT_URL", "http://localhost:6333"),
             qdrant_api_key=_text("QDRANT_API_KEY", ""),
             qdrant_collection=_text("QDRANT_COLLECTION", "vn_legal_chunks"),
@@ -90,7 +88,6 @@ class Settings:
 
     def validate(self) -> None:
         positive = {
-            "FALKORDB_PORT": self.falkordb_port,
             "OLLAMA_TIMEOUT_SECONDS": self.ollama_timeout_seconds,
             "CHUNK_SIZE_CHARS": self.chunk_size_chars,
             "EMBED_BATCH_SIZE": self.embed_batch_size,

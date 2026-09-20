@@ -1,5 +1,5 @@
 # Runtime dependencies
-falkordb>=1.1,<2
+neo4j>=5.26,<7
 fastapi>=0.115,<1
 qdrant-client>=1.13,<2
 uvicorn[standard]>=0.30,<1

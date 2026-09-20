@@ -22,44 +22,53 @@ class GraphStore:
 
     def __init__(self, settings: Settings, *, client: Any | None = None) -> None:
         if client is None:
-            from falkordb import FalkorDB
+            from neo4j import GraphDatabase
 
-            kwargs: dict[str, Any] = {
-                "host": settings.falkordb_host,
-                "port": settings.falkordb_port,
-            }
-            if settings.falkordb_username:
-                kwargs["username"] = settings.falkordb_username
-            if settings.falkordb_password:
-                kwargs["password"] = settings.falkordb_password
-            client = FalkorDB(**kwargs)
+            auth = (
+                (settings.neo4j_username, settings.neo4j_password)
+                if settings.neo4j_username
+                else None
+            )
+            client = GraphDatabase.driver(settings.neo4j_uri, auth=auth)
         self.client = client
-        self.graph = client.select_graph(settings.falkordb_graph)
+        self.database = settings.neo4j_database
 
-    def _read(self, query: str, params: dict[str, Any] | None = None) -> Any:
-        method = getattr(self.graph, "ro_query", self.graph.query)
-        return method(query, params=params or {})
+    def close(self) -> None:
+        self.client.close()
+
+    def _query(
+        self,
+        query: str,
+        params: dict[str, Any] | None = None,
+        *,
+        routing: str = "w",
+    ) -> list[Any]:
+        records, _, _ = self.client.execute_query(
+            query,
+            parameters_=params or {},
+            database_=self.database,
+            routing_=routing,
+        )
+        return records
+
+    def _read(self, query: str, params: dict[str, Any] | None = None) -> list[Any]:
+        return self._query(query, params, routing="r")
 
     def reset(self) -> None:
-        self.graph.query("MATCH (n) DETACH DELETE n")
+        self._query("MATCH (n) DETACH DELETE n")
 
     def ensure_schema(self) -> None:
         indexes = (
-            "CREATE INDEX FOR (d:Document) ON (d.id)",
-            "CREATE INDEX FOR (c:Chunk) ON (c.id)",
-            "CREATE INDEX FOR (i:Instrument) ON (i.number_norm)",
-            "CREATE INDEX FOR (a:Agency) ON (a.key)",
-            "CREATE INDEX FOR (s:Sector) ON (s.key)",
-            "CREATE INDEX FOR (f:Field) ON (f.key)",
-            "CREATE INDEX FOR (p:Person) ON (p.key)",
+            "CREATE INDEX IF NOT EXISTS FOR (d:Document) ON (d.id)",
+            "CREATE INDEX IF NOT EXISTS FOR (c:Chunk) ON (c.id)",
+            "CREATE INDEX IF NOT EXISTS FOR (i:Instrument) ON (i.number_norm)",
+            "CREATE INDEX IF NOT EXISTS FOR (a:Agency) ON (a.key)",
+            "CREATE INDEX IF NOT EXISTS FOR (s:Sector) ON (s.key)",
+            "CREATE INDEX IF NOT EXISTS FOR (f:Field) ON (f.key)",
+            "CREATE INDEX IF NOT EXISTS FOR (p:Person) ON (p.key)",
         )
         for query in indexes:
-            try:
-                self.graph.query(query)
-            except Exception as exc:
-                message = str(exc).casefold()
-                if "already" not in message or "index" not in message:
-                    raise
+            self._query(query)
 
     def get_index_hashes(self, document_ids: Sequence[str]) -> dict[str, str]:
         if not document_ids:
@@ -72,12 +81,12 @@ class GraphStore:
             """,
             {"ids": list(document_ids)},
         )
-        return {str(row[0]): str(row[1] or "") for row in result.result_set}
+        return {str(row[0]): str(row[1] or "") for row in result}
 
     def _delete_previous_document_state(self, document_ids: Sequence[str]) -> None:
         params = {"ids": list(document_ids)}
         for relationship in self.METADATA_RELATIONSHIPS:
-            self.graph.query(
+            self._query(
                 f"""
                 UNWIND $ids AS document_id
                 MATCH (d:Document {{id: document_id}})-[r:{relationship}]->()
@@ -85,11 +94,11 @@ class GraphStore:
                 """,
                 params=params,
             )
-        self.graph.query(
+        self._query(
             """
             UNWIND $ids AS document_id
             MATCH (d:Document {id: document_id})-[:HAS_CHUNK]->(c:Chunk)
-            DELETE c
+            DETACH DELETE c
             """,
             params=params,
         )
@@ -124,7 +133,7 @@ class GraphStore:
             }
             for document in documents
         ]
-        self.graph.query(
+        self._query(
             """
             UNWIND $rows AS row
             MERGE (d:Document {id: row.id})
@@ -195,7 +204,7 @@ class GraphStore:
             if document.signer
         ]
         if signers:
-            self.graph.query(
+            self._query(
                 """
                 UNWIND $rows AS row
                 MATCH (d:Document {id: row.document_id})
@@ -218,7 +227,7 @@ class GraphStore:
             for mention in mentions
         ]
         if mention_rows:
-            self.graph.query(
+            self._query(
                 """
                 UNWIND $rows AS row
                 MATCH (d:Document {id: row.document_id})
@@ -238,7 +247,7 @@ class GraphStore:
     ) -> None:
         if not rows:
             return
-        self.graph.query(
+        self._query(
             f"""
             UNWIND $rows AS row
             MATCH (d:Document {{id: row.document_id}})
@@ -261,7 +270,7 @@ class GraphStore:
             }
             for chunk in chunks
         ]
-        self.graph.query(
+        self._query(
             """
             UNWIND $rows AS row
             MATCH (d:Document {id: row.document_id})
@@ -279,7 +288,7 @@ class GraphStore:
             return
         now = datetime.now(UTC).isoformat()
         values = [{**row, "indexed_at": now} for row in rows]
-        self.graph.query(
+        self._query(
             """
             UNWIND $rows AS row
             MATCH (d:Document {id: row.id})
@@ -321,6 +330,7 @@ class GraphStore:
                 WITH seed, i, collect(DISTINCT candidate) AS candidates
                 WHERE size(candidates) = 1
                 UNWIND candidates AS related
+                WITH seed, related
                 WHERE related.id <> seed.id
                 RETURN seed.id, related.id, related.title, related.number, 1
                 LIMIT $limit
@@ -355,7 +365,7 @@ class GraphStore:
         )
         for relation, base_score, query in queries:
             result = self._read(query, params)
-            for row in result.result_set:
+            for row in result:
                 seed_id, document_id, title, number, strength = row
                 document_id = str(document_id)
                 if document_id in seed_set:
@@ -394,9 +404,9 @@ class GraphStore:
         output: dict[str, int] = {}
         for key, label in labels.items():
             result = self._read(f"MATCH (n:{label}) RETURN count(n)")
-            output[key] = int(result.result_set[0][0])
+            output[key] = int(result[0][0])
         return output
 
     def health(self) -> bool:
         result = self._read("RETURN 1")
-        return bool(result.result_set and result.result_set[0][0] == 1)
+        return bool(result and result[0][0] == 1)

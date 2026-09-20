@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from collections.abc import AsyncIterator
+from contextlib import asynccontextmanager
 from functools import lru_cache
 
 from fastapi import FastAPI, HTTPException
@@ -28,10 +30,21 @@ def get_service() -> GraphRAGService:
     return GraphRAGService.from_settings()
 
 
+@asynccontextmanager
+async def lifespan(app: FastAPI) -> AsyncIterator[None]:
+    try:
+        yield
+    finally:
+        if get_service.cache_info().currsize:
+            get_service().graph.close()
+            get_service.cache_clear()
+
+
 app = FastAPI(
+    lifespan=lifespan,
     title="Vietnamese Legal GraphRAG",
     version="0.1.0",
-    description="Hybrid Qdrant + FalkorDB retrieval over Vietnamese legal documents.",
+    description="Hybrid Qdrant + Neo4j retrieval over Vietnamese legal documents.",
 )
 
 

@@ -13,7 +13,7 @@ from .service import GraphRAGService
 def _parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="legal-graphrag",
-        description="Vietnamese legal GraphRAG with FalkorDB, Qdrant, and Ollama",
+        description="Vietnamese legal GraphRAG with Neo4j, Qdrant, and Ollama",
     )
     subparsers = parser.add_subparsers(dest="command", required=True)
 
@@ -41,7 +41,7 @@ def _parser() -> argparse.ArgumentParser:
     serve.add_argument("--reload", action="store_true")
 
     subparsers.add_parser("stats", help="Show graph and vector-store counts")
-    subparsers.add_parser("health", help="Check FalkorDB, Qdrant, and Ollama")
+    subparsers.add_parser("health", help="Check Neo4j, Qdrant, and Ollama")
     return parser
 
 
@@ -61,31 +61,34 @@ def main(argv: Sequence[str] | None = None) -> int:
         return 0
 
     service = GraphRAGService.from_settings(settings)
-    if args.command == "ingest":
-        output = service.ingest_csv(
-            args.csv_path,
-            limit=args.limit,
-            recreate=args.recreate,
-            progress=lambda message: print(message, file=sys.stderr),
-        )
-    elif args.command == "ask":
-        filters = QueryFilters(
-            document_type=args.document_type,
-            sector=args.sector,
-            field=args.field,
-            status=args.status,
-            agency=args.agency,
-        )
-        output = service.answer(args.question, filters=filters, top_k=args.top_k).to_dict()
-    elif args.command == "stats":
-        output = service.stats()
-    elif args.command == "health":
-        output = service.health()
-    else:
-        raise AssertionError(f"Unhandled command: {args.command}")
+    try:
+        if args.command == "ingest":
+            output = service.ingest_csv(
+                args.csv_path,
+                limit=args.limit,
+                recreate=args.recreate,
+                progress=lambda message: print(message, file=sys.stderr),
+            )
+        elif args.command == "ask":
+            filters = QueryFilters(
+                document_type=args.document_type,
+                sector=args.sector,
+                field=args.field,
+                status=args.status,
+                agency=args.agency,
+            )
+            output = service.answer(args.question, filters=filters, top_k=args.top_k).to_dict()
+        elif args.command == "stats":
+            output = service.stats()
+        elif args.command == "health":
+            output = service.health()
+        else:
+            raise AssertionError(f"Unhandled command: {args.command}")
 
-    print(json.dumps(output, ensure_ascii=False, indent=2))
-    return 0
+        print(json.dumps(output, ensure_ascii=False, indent=2))
+        return 0
+    finally:
+        service.graph.close()
 
 
 if __name__ == "__main__":
