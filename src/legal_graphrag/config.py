@@ -47,7 +47,7 @@ class Settings:
 
     ollama_base_url: str = "http://localhost:11434"
     ollama_chat_model: str = "gemma4:e4b"
-    ollama_embed_model: str = "embeddinggemma"
+    ollama_embed_model: str = "bge-m3"
     ollama_timeout_seconds: int = 180
 
     chunk_size_chars: int = 1800
@@ -72,7 +72,7 @@ class Settings:
             qdrant_collection=_text("QDRANT_COLLECTION", "vn_legal_chunks"),
             ollama_base_url=_text("OLLAMA_BASE_URL", "http://localhost:11434"),
             ollama_chat_model=_text("OLLAMA_CHAT_MODEL", "gemma4:e4b"),
-            ollama_embed_model=_text("OLLAMA_EMBED_MODEL", "embeddinggemma"),
+            ollama_embed_model=_text("OLLAMA_EMBED_MODEL", "bge-m3"),
             ollama_timeout_seconds=_integer("OLLAMA_TIMEOUT_SECONDS", 180),
             chunk_size_chars=_integer("CHUNK_SIZE_CHARS", 1800),
             chunk_overlap_chars=_integer("CHUNK_OVERLAP_CHARS", 250),

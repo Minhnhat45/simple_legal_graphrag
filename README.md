@@ -86,7 +86,7 @@ conda activate legal-graphrag
 
 cp .env.example .env
 
-ollama pull embeddinggemma
+ollama pull bge-m3
 ollama pull gemma4:e4b
 
 docker compose up -d neo4j qdrant
@@ -127,6 +127,10 @@ legal-graphrag ingest /path/to/khoa_hoc_va_cong_nghe.csv --recreate
 `--recreate` explicitly clears the configured graph contents and Qdrant collection. Without
 it, the loader is incremental: unchanged documents are skipped using a hash of their text,
 metadata, chunk settings, embedding model, and schema version.
+
+When switching an existing installation to `bge-m3`, set `OLLAMA_EMBED_MODEL=bge-m3`
+in `.env`, run `ollama pull bge-m3`, and re-ingest your full corpus with `--recreate`
+before querying. This rebuilds the graph and Qdrant collection with the new embeddings.
 
 ## API
 
