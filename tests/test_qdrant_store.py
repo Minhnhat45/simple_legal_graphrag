@@ -53,6 +53,18 @@ class QdrantStoreTests(unittest.TestCase):
         self.assertEqual([hit.chunk_id for hit in hits], ["d1:0"])
         self.assertEqual(store.count(), 1)
 
+        self.assertEqual(store.read_document_chunks(["d1"]), [(chunk, [1.0, 0.0, 0.0])])
+        evidence = store.evidence_hits([chunk.id], [1.0, 0.0, 0.0], filters=QueryFilters())
+        self.assertEqual([hit.chunk_id for hit in evidence], [chunk.id])
+        self.assertEqual(
+            store.evidence_hits(
+                [chunk.id],
+                [1.0, 0.0, 0.0],
+                filters=QueryFilters(agency="Other agency"),
+            ),
+            [],
+        )
+
         store.delete_document_chunks(["d1"])
         self.assertEqual(store.count(), 0)
 

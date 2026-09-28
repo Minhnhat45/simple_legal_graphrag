@@ -2,12 +2,13 @@ from __future__ import annotations
 
 from collections import defaultdict
 from collections.abc import Sequence
+from dataclasses import asdict
 from datetime import UTC, datetime
 from typing import Any
 
 from .config import Settings
 from .extraction import normalize_document_number, normalize_entity_key
-from .models import DocumentChunk, GraphNeighbor, LegalDocument, Mention
+from .models import DocumentChunk, GraphNeighbor, LegalDocument, LegalRelation, Mention
 
 
 class GraphStore:
@@ -18,6 +19,7 @@ class GraphStore:
         "IN_FIELD",
         "SIGNED_BY",
         "MENTIONS",
+        "SHARES_CONCEPT",
     )
 
     def __init__(self, settings: Settings, *, client: Any | None = None) -> None:
@@ -66,6 +68,7 @@ class GraphStore:
             "CREATE INDEX IF NOT EXISTS FOR (s:Sector) ON (s.key)",
             "CREATE INDEX IF NOT EXISTS FOR (f:Field) ON (f.key)",
             "CREATE INDEX IF NOT EXISTS FOR (p:Person) ON (p.key)",
+            "CREATE INDEX IF NOT EXISTS FOR (c:LegalConcept) ON (c.key)",
         )
         for query in indexes:
             self._query(query)
@@ -85,6 +88,14 @@ class GraphStore:
 
     def _delete_previous_document_state(self, document_ids: Sequence[str]) -> None:
         params = {"ids": list(document_ids)}
+        self._query(
+            """
+            UNWIND $ids AS document_id
+            MATCH (:Document {id: document_id})-[r:LEGAL_RELATION]-()
+            DELETE r
+            """,
+            params,
+        )
         for relationship in self.METADATA_RELATIONSHIPS:
             self._query(
                 f"""
@@ -361,6 +372,7 @@ class GraphStore:
                 "score": 0.0,
                 "relations": set(),
                 "seeds": set(),
+                "evidence": [],
             }
         )
         for relation, base_score, query in queries:
@@ -378,6 +390,41 @@ class GraphStore:
                 item["relations"].add(relation)
                 item["seeds"].add(str(seed_id))
 
+        verified = self._read(
+            """
+            UNWIND $seed_ids AS seed_id
+            MATCH (seed:Document {id: seed_id})-[r:LEGAL_RELATION]-(related:Document)
+            WHERE seed.index_status = 'ready' AND related.index_status = 'ready'
+            WITH seed, related, r, endNode(r) AS target
+            MATCH (target)-[:HAS_IDENTIFIER]->(identifier:Instrument)
+            MATCH (identifier)<-[:HAS_IDENTIFIER]-(owner:Document)
+            WITH seed, related, r, count(DISTINCT owner) AS owners
+            WHERE owners = 1
+            RETURN seed.id, related.id, related.title, related.number,
+                   startNode(r).id, endNode(r).id, properties(r)
+            ORDER BY related.id, r.kind
+            """,
+            params,
+        )
+        for seed_id, document_id, title, number, source_id, target_id, props in verified:
+            item = combined[str(document_id)]
+            item["title"], item["number"] = str(title or ""), str(number or "")
+            item["score"] = 1.0
+            item["relations"].add(props["kind"])
+            item["seeds"].add(str(seed_id))
+            relation = LegalRelation(
+                source_id=source_id,
+                target_id=target_id,
+                kind=props["kind"],
+                source_chunk_id=props["source_chunk_id"],
+                evidence=props["evidence"],
+                method=props["method"],
+                target_chunk_id=props.get("target_chunk_id", ""),
+                provenance=props.get("provenance", ""),
+            )
+            if relation not in item["evidence"]:
+                item["evidence"].append(relation)
+
         neighbors = [
             GraphNeighbor(
                 document_id=document_id,
@@ -386,10 +433,13 @@ class GraphStore:
                 graph_score=float(item["score"]),
                 relations=tuple(sorted(item["relations"])),
                 seed_document_ids=tuple(sorted(item["seeds"])),
+                evidence=tuple(item["evidence"]),
             )
             for document_id, item in combined.items()
         ]
-        return sorted(neighbors, key=lambda item: item.graph_score, reverse=True)[:limit]
+        return sorted(
+            neighbors, key=lambda item: (bool(item.evidence), item.graph_score), reverse=True
+        )[:limit]
 
     def stats(self) -> dict[str, int]:
         labels = {
@@ -400,13 +450,112 @@ class GraphStore:
             "sectors": "Sector",
             "fields": "Field",
             "people": "Person",
+            "legal_concepts": "LegalConcept",
         }
         output: dict[str, int] = {}
         for key, label in labels.items():
             result = self._read(f"MATCH (n:{label}) RETURN count(n)")
             output[key] = int(result[0][0])
+        result = self._read("MATCH ()-[r:LEGAL_RELATION]->() RETURN count(r)")
+        output["legal_relations"] = int(result[0][0])
         return output
 
     def health(self) -> bool:
         result = self._read("RETURN 1")
         return bool(result and result[0][0] == 1)
+
+    def relation_catalog(self) -> dict[str, dict[str, Any]]:
+        rows = self._read("""
+            MATCH (d:Document)
+            RETURN d.id, d.index_status, d.index_hash, d.number, d.chunk_count
+        """)
+        return {
+            row[0]: dict(
+                zip(("status", "index_hash", "number", "chunk_count"), row[1:], strict=True)
+            )
+            for row in rows
+        }
+
+    def identifier_owners(self) -> dict[str, list[str]]:
+        return {
+            row[0]: list(row[1])
+            for row in self._read("""
+            MATCH (d:Document)-[:HAS_IDENTIFIER]->(i:Instrument)
+            RETURN i.number_norm, collect(DISTINCT d.id)
+        """)
+        }
+
+    def entity_candidates(self, source_id: str, *, limit: int) -> list[tuple[str, int]]:
+        return [
+            (row[0], int(row[1]))
+            for row in self._read(
+                """
+            MATCH (:Document {id: $id})-[:ISSUED_BY|IN_FIELD|IN_SECTOR|SHARES_CONCEPT]->(entity)
+            CALL (entity) {
+                MATCH (entity)<-[:ISSUED_BY|IN_FIELD|IN_SECTOR|SHARES_CONCEPT]-(target:Document)
+                WHERE target.id <> $id AND target.index_status = 'ready'
+                RETURN target ORDER BY target.id LIMIT $limit
+            }
+            RETURN target.id, count(DISTINCT entity) AS overlap
+            ORDER BY overlap DESC, target.id LIMIT $limit
+        """,
+                {"id": source_id, "limit": limit},
+            )
+        ]
+
+    def upsert_relations(self, relations: Sequence[LegalRelation]) -> None:
+        if not relations:
+            return
+        self._query(
+            """
+            UNWIND $rows AS row
+            MATCH (source:Document {id: row.source_id})
+                  -[:HAS_CHUNK]->(:Chunk {id: row.source_chunk_id})
+            MATCH (target:Document {id: row.target_id})
+            WHERE source.index_status = 'ready' AND target.index_status = 'ready'
+            MATCH (target)-[:HAS_IDENTIFIER]->(i:Instrument)
+            MATCH (i)<-[:HAS_IDENTIFIER]-(owner:Document)
+            WITH source, target, row, count(DISTINCT owner) AS owners
+            WHERE owners = 1
+            MERGE (source)-[r:LEGAL_RELATION {kind: row.kind}]->(target)
+            SET r.source_chunk_id = row.source_chunk_id,
+                r.target_chunk_id = row.target_chunk_id, r.evidence = row.evidence,
+                r.method = row.method, r.provenance = row.provenance
+        """,
+            {"rows": [asdict(relation) for relation in relations]},
+        )
+
+    def upsert_reviewed_concept(
+        self,
+        document_id: str,
+        chunk: DocumentChunk,
+        phrase: str,
+        *,
+        reviewed_by: str,
+    ) -> None:
+        """Explicit opt-in for reviewed phrases; never promote TF-IDF features."""
+        from .extraction import chunk_body
+
+        if (
+            chunk.document_id != document_id
+            or not phrase.strip()
+            or not reviewed_by.strip()
+            or phrase not in chunk_body(chunk.text)
+        ):
+            raise ValueError("A reviewed concept requires a matching source chunk and exact phrase")
+        self._query(
+            """
+            MATCH (d:Document {id: $id})-[:HAS_CHUNK]->(:Chunk {id: $chunk_id})
+            MERGE (concept:LegalConcept {key: $key})
+            SET concept.name = $phrase
+            MERGE (d)-[r:SHARES_CONCEPT {source_chunk_id: $chunk_id}]->(concept)
+            SET r.evidence = $phrase, r.reviewed_by = $reviewed_by
+        """,
+            {
+                "id": document_id,
+                "chunk_id": chunk.id,
+                "key": normalize_entity_key(phrase),
+                "phrase": phrase,
+                "reviewed_by": reviewed_by,
+            },
+        )

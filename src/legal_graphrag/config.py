@@ -59,10 +59,19 @@ class Settings:
     max_context_chars: int = 18_000
     max_chunks_per_document: int = 2
 
+    relation_neighbors: int = 20
+    relation_representative_chunks: int = 3
+    relation_pair_limit: int = 20
+    relation_max_features: int = 50_000
+
     @classmethod
     def from_env(cls) -> Settings:
         load_dotenv()
         settings = cls(
+            relation_neighbors=_integer("RELATION_NEIGHBORS", 20),
+            relation_representative_chunks=_integer("RELATION_REPRESENTATIVE_CHUNKS", 3),
+            relation_pair_limit=_integer("RELATION_PAIR_LIMIT", 20),
+            relation_max_features=_integer("RELATION_MAX_FEATURES", 50_000),
             neo4j_uri=_text("NEO4J_URI", "bolt://localhost:7687"),
             neo4j_username=_text("NEO4J_USERNAME", "neo4j"),
             neo4j_password=_text("NEO4J_PASSWORD", "legal-graphrag"),
@@ -88,6 +97,10 @@ class Settings:
 
     def validate(self) -> None:
         positive = {
+            "RELATION_NEIGHBORS": self.relation_neighbors,
+            "RELATION_REPRESENTATIVE_CHUNKS": self.relation_representative_chunks,
+            "RELATION_PAIR_LIMIT": self.relation_pair_limit,
+            "RELATION_MAX_FEATURES": self.relation_max_features,
             "OLLAMA_TIMEOUT_SECONDS": self.ollama_timeout_seconds,
             "CHUNK_SIZE_CHARS": self.chunk_size_chars,
             "EMBED_BATCH_SIZE": self.embed_batch_size,

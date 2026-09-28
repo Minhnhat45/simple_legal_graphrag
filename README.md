@@ -4,7 +4,7 @@ A compact, runnable reference project for Vietnamese legal-document retrieval. I
 
 - **Qdrant** for semantic search over article-aware text chunks.
 - **Neo4j** for document metadata, legal identifiers, signers, issuers, and citation paths.
-- **Ollama** for local embeddings and answer generation.
+- **Ollama** for local embeddings, relation verification, and answer generation.
 - **FastAPI** for a small query API.
 
 The loader was validated against `khoa_hoc_va_cong_nghe.csv`: 2,389 rows, 14 fields,
@@ -43,6 +43,8 @@ overwhelming the answer context.
 | `Document` | `IN_SECTOR` | `Sector` | `Ngành` metadata |
 | `Document` | `IN_FIELD` | `Field` | `Lĩnh vực` metadata |
 | `Document` | `SIGNED_BY` | `Person` | Signer, with position on the relationship |
+| `Document` | `LEGAL_RELATION` | `Document` | Directed, evidence-backed legal relation |
+| `Document` | `SHARES_CONCEPT` | `LegalConcept` | Explicitly reviewed phrase with a source chunk |
 
 `MENTIONS.kinds` is a deterministic heuristic (`cites`, `amends`, `replaces`, or `repeals`),
 not a final legal interpretation. The generic citation edge remains available even when the
@@ -109,7 +111,9 @@ stats responses now use the `neo4j` key.
 Ingest the bundled three-row sample:
 
 ```bash
+# Use --recreate only with disposable local data.
 legal-graphrag ingest data/sample_legal_documents.csv --recreate
+legal-graphrag build-relations data/sample_legal_documents.csv
 legal-graphrag stats
 legal-graphrag ask "Văn bản nào bãi bỏ Quyết định 01/2026/QĐ-UBND?"
 ```
@@ -131,6 +135,110 @@ metadata, chunk settings, embedding model, and schema version.
 When switching an existing installation to `bge-m3`, set `OLLAMA_EMBED_MODEL=bge-m3`
 in `.env`, run `ollama pull bge-m3`, and re-ingest your full corpus with `--recreate`
 before querying. This rebuilds the graph and Qdrant collection with the new embeddings.
+
+## Building legal relations
+
+Run `legal-graphrag build-relations <same-csv-path> [--limit N]` after ingesting the
+CSV. `--limit` caps **source documents**, while candidates still see every document in
+that CSV. Every CSV document must match its ready ingestion hash, and its stored Qdrant
+chunks must match the current chunk settings and text. Missing or outdated IDs stop the
+build before Ollama calls or relation writes. Identifier ambiguity is checked against all
+Neo4j owners, including documents outside the CSV; references outside the selected CSV
+corpus remain unresolved. Use the full ingestion CSV to include those targets.
+
+Candidate discovery combines:
+
+- Exact document-number spans in chunk bodies, resolved through `Instrument` ownership.
+  These produce `CITES` and are always retained for verification.
+- Existing Qdrant vectors from up to three representative article chunks per source,
+  with bounded searches and up to 20 neighboring documents after deduplication.
+- Sparse TF-IDF over bodies without the generated title/number/section header: whitespace
+  1–4-grams, sublinear TF, `min_df=2`, `max_df=0.8`, at most 50,000 features. Empty small
+  vocabularies fall back to `min_df=1`, `max_df=1.0`. Similarities are computed one sparse
+  row at a time, without a dense all-pairs matrix.
+- Shared normalized agency/field/sector nodes and reviewed concepts, capped per entity.
+
+Pairs retain scores and supporting chunk IDs. Dense and lexical ranks use reciprocal
+rank fusion (`1 / (60 + rank)`); entity overlap breaks ties. Each source sends at most
+20 non-reference pairs plus every resolved-reference pair to Ollama. The verifier sees
+at most three source and two target chunks, their identifiers, and titles. It must return
+JSON; invalid kinds, IDs, target chunks, invented quotes, header-only quotes, and quotes
+without the target number are rejected. A normative quote must also contain a relevant
+verb. These checks constrain the model; semantic correctness still needs human evaluation.
+`NONE` counts as a rejected pair, not an error. Request failures propagate without writing
+a partial build.
+
+Allowed kinds are `CITES`, `AMENDS`, `REPEALS`, `REPLACES`, `IMPLEMENTS`, and
+`GUIDES_IMPLEMENTATION_OF`. `MENTIONS.kinds` remains a discovery hint and is never copied
+into a verified relation. Each `LEGAL_RELATION` stores `kind`, `source_chunk_id`, optional
+`target_chunk_id`, exact `evidence`, `method`, and JSON `provenance` (reference offsets or
+candidate signals, model, and index hashes). Source + target + kind forms the upsert key.
+Repeated builds update these edges. Re-ingesting a changed document removes derived
+relations in both directions and its reviewed-concept links; rebuild relations afterward.
+Run ingestion and relation building sequentially. No relation build clears either store.
+
+Verified relations rank ahead of broad metadata during graph expansion. Qdrant confirms
+exact evidence chunks with the query vector and the same user filters. Those chunks receive
+selection priority within the existing context, result, and per-document limits. Relation
+labels without retained supporting text are excluded from the answer prompt. Direction and
+citations refer to the actual supporting source chunk.
+
+`GraphStore.upsert_reviewed_concept(...)` is an explicit Python entry point requiring an
+exact phrase, a supporting chunk, and a reviewer. No raw TF-IDF term becomes a legal concept
+automatically. `Article`/`Clause`, `DEFINES`/`REGULATES`, and automatic concept extraction are
+deferred until extraction quality has been measured; `Chunk.section` remains article evidence.
+
+Optional environment settings:
+
+| Setting | Default | Purpose |
+| --- | --- | --- |
+| `RELATION_NEIGHBORS` | 20 | Neighbors per candidate signal |
+| `RELATION_REPRESENTATIVE_CHUNKS` | 3 | Dense searches per source document |
+| `RELATION_PAIR_LIMIT` | 20 | Non-reference pairs verified per source |
+| `RELATION_MAX_FEATURES` | 50000 | TF-IDF vocabulary cap |
+
+The command reports candidates by signal, shortlisted pairs, Ollama calls, accepted edges,
+rejected pairs, unresolved references, and elapsed seconds. Accepted counts include rule-based
+citations, so accepted + rejected does not necessarily equal the Ollama call count.
+
+Inspect evidence directly:
+
+```cypher
+MATCH (source:Document)-[r:LEGAL_RELATION]->(target:Document)
+RETURN source.id, target.id, r.kind, r.source_chunk_id, r.evidence, r.method
+```
+
+### Observed sample validation
+
+Validated on 2026-09-29 using separate disposable Neo4j 5.26 and Qdrant containers,
+`bge-m3` embeddings, and `gemma4:e4b` verification/answers. The existing development
+containers were not reset. No generated evaluation files are stored in the repository.
+
+| Check | Observed result |
+| --- | --- |
+| Sample ingestion | 3 documents, 9 chunks |
+| Candidate pairs | 6 dense, 6 lexical, 6 entity, 1 explicit; union 6 |
+| Verification | 6 Ollama calls; 5 rejected pairs; 2 accepted edges including rule citation |
+| First / repeated build time | 119.446 s / 44.813 s on this machine |
+| Repeat edge count | 2 before and after |
+| Supported repeal | `sample-003 → sample-001`, `sample-003:1` (Điều 1) |
+| Absent law `29/2013/QH13` | Unresolved for both mentioning documents |
+| Sample answer | Correctly names `03/2026/QĐ-UBND`, cites the actual Điều 1 text |
+| Original retrieval baseline | Also answers correctly with the same cited chunks |
+| Automated checks | 26 tests pass with disposable Neo4j enabled; Ruff passes |
+
+The stored repeal quote was manually checked against the sample body:
+“Bãi bỏ toàn bộ Quyết định số 01/2026/QĐ-UBND kể từ ngày Quyết định này có hiệu lực.”
+The citation edge carries the exact number span. This tiny corpus checks grounding and
+idempotence; it does **not** establish an answer-quality improvement or useful candidate
+recall estimates (each source has only two possible targets).
+
+A larger manually reviewed corpus and relation labels are not included, so the planned
+larger-sample evaluation remains pending. Before tuning the ranking/cap, compare TF-IDF,
+dense, their union, +entities, and +references using candidate Recall@5/10/20, per-kind
+precision/recall/F1, manual quote support, Ollama calls, runtime, and answer quality against
+the original retrieval baseline. Keep review notes and generated scores outside the source
+tree unless deliberately publishing a research artifact.
 
 ## API
 
@@ -191,7 +299,8 @@ ruff check src tests
 To include the Neo4j integration test, set `NEO4J_TEST_URI` to a **disposable**
 Neo4j database and run the same test command. The test clears that database.
 Optional `NEO4J_TEST_USERNAME` and `NEO4J_TEST_PASSWORD` override the sample credentials.
-The test exercises ingestion, repeat ingestion, metadata/chunk replacement, and expansion;
+The test exercises ingestion, repeat ingestion, metadata/chunk replacement, relation upserts,
+relation invalidation, and expansion;
 it uses fake embeddings and a fake vector store.
 
 Neo4j's browser is available at `http://localhost:7474`. Qdrant's dashboard is available
@@ -232,13 +341,14 @@ LIMIT 50
 src/legal_graphrag/
   api.py             FastAPI routes
   chunking.py        Vietnamese Điều-aware chunking
-  cli.py             ingest, ask, serve, health, stats
+  cli.py             ingest, build-relations, ask, serve, health, stats
   csv_loader.py      streaming 14-field CSV parser
   extraction.py      legal-number and citation heuristics
   graph_store.py     Neo4j schema, writes, expansion
   llm.py             dependency-free Ollama HTTP client
   pipeline.py        idempotent two-store ingestion
   qdrant_store.py    vector collection, payloads, filters
+  relation_builder.py candidate discovery and evidence verification
   retrieval.py       semantic -> graph -> semantic fusion
   service.py         prompts, sources, citation validation
 ```

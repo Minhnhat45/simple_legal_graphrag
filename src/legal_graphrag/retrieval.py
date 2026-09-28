@@ -71,6 +71,21 @@ class HybridRetriever:
             else []
         )
 
+        evidence_ids = list(
+            dict.fromkeys(
+                relation.source_chunk_id for neighbor in neighbors for relation in neighbor.evidence
+            )
+        )
+        evidence_hits = (
+            self.vectors.evidence_hits(
+                evidence_ids,
+                question_vector,
+                filters=selected_filters,
+            )
+            if evidence_ids
+            else []
+        )
+        confirmed_evidence = {hit.chunk_id for hit in evidence_hits}
         candidates: dict[str, SearchHit] = {}
         for hit in seed_hits:
             ranked = replace(hit, final_score=max(0.0, hit.vector_score))
@@ -85,13 +100,20 @@ class HybridRetriever:
             if current is None or ranked.final_score > current.final_score:
                 candidates[hit.chunk_id] = ranked
 
+        for hit in evidence_hits:
+            candidates[hit.chunk_id] = replace(hit, final_score=max(0.0, hit.vector_score))
+
         selected: list[SearchHit] = []
         per_document: dict[str, int] = defaultdict(int)
         context_chars = 0
-        for hit in sorted(candidates.values(), key=lambda item: item.final_score, reverse=True):
+        for hit in sorted(
+            candidates.values(),
+            key=lambda item: (item.chunk_id in confirmed_evidence, item.final_score),
+            reverse=True,
+        ):
             if per_document[hit.document_id] >= self.settings.max_chunks_per_document:
                 continue
-            if selected and context_chars + len(hit.text) > self.settings.max_context_chars:
+            if context_chars + len(hit.text) > self.settings.max_context_chars:
                 continue
             selected.append(hit)
             per_document[hit.document_id] += 1
@@ -100,7 +122,26 @@ class HybridRetriever:
                 break
 
         selected_document_ids = {hit.document_id for hit in selected}
+        selected_chunk_ids = {hit.chunk_id for hit in selected}
         selected_neighbors = tuple(
-            neighbor for neighbor in neighbors if neighbor.document_id in selected_document_ids
+            replace(
+                neighbor,
+                evidence=tuple(
+                    relation
+                    for relation in neighbor.evidence
+                    if relation.source_chunk_id in selected_chunk_ids
+                ),
+                relations=tuple(
+                    label
+                    for label in neighbor.relations
+                    if label.islower()
+                    or any(
+                        relation.kind == label and relation.source_chunk_id in selected_chunk_ids
+                        for relation in neighbor.evidence
+                    )
+                ),
+            )
+            for neighbor in neighbors
+            if neighbor.document_id in selected_document_ids
         )
         return RetrievalBundle(hits=tuple(selected), graph_neighbors=selected_neighbors)

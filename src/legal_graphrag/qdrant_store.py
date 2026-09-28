@@ -198,3 +198,77 @@ class QdrantStore:
     def health(self) -> bool:
         self.client.get_collections()
         return True
+
+    def read_document_chunks(
+        self,
+        document_ids: Sequence[str],
+    ) -> list[tuple[DocumentChunk, list[float]]]:
+        """Read stored vectors without invoking the embedding model."""
+        if not document_ids or not self.collection_exists():
+            return []
+        output = []
+        offset = None
+        while True:
+            points, offset = self.client.scroll(
+                collection_name=self.collection,
+                scroll_filter=self._filter(QueryFilters(), document_ids),
+                limit=256,
+                offset=offset,
+                with_payload=True,
+                with_vectors=True,
+            )
+            for point in points:
+                payload = point.payload or {}
+                if not isinstance(point.vector, list) or not point.vector:
+                    raise ValueError(f"Missing unnamed vector for point {point.id}")
+                output.append(
+                    (
+                        DocumentChunk(
+                            id=payload["chunk_id"],
+                            document_id=payload["document_id"],
+                            index=payload["chunk_index"],
+                            section=payload["section"],
+                            text=payload["text"],
+                        ),
+                        point.vector,
+                    )
+                )
+            if offset is None:
+                return sorted(output, key=lambda item: (item[0].document_id, item[0].index))
+
+    def evidence_hits(
+        self,
+        chunk_ids: Sequence[str],
+        vector: Sequence[float],
+        *,
+        filters: QueryFilters,
+    ) -> list[SearchHit]:
+        """Confirm exact evidence in Qdrant using the query vector and user filters."""
+        if not chunk_ids or not self.collection_exists():
+            return []
+        query_filter = self._filter(filters, None) or self.models.Filter(must=[])
+        query_filter.must = list(query_filter.must or []) + [
+            self.models.HasIdCondition(
+                has_id=[str(uuid.uuid5(POINT_NAMESPACE, chunk_id)) for chunk_id in chunk_ids]
+            )
+        ]
+        response = self.client.query_points(
+            collection_name=self.collection,
+            query=list(vector),
+            query_filter=query_filter,
+            limit=len(chunk_ids),
+            with_payload=True,
+            with_vectors=False,
+        )
+        return [
+            SearchHit(
+                chunk_id=p.payload["chunk_id"],
+                document_id=p.payload["document_id"],
+                title=p.payload["title"],
+                number=p.payload["document_number"],
+                section=p.payload["section"],
+                text=p.payload["text"],
+                vector_score=float(p.score),
+            )
+            for p in response.points
+        ]

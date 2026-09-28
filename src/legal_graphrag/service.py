@@ -85,10 +85,6 @@ class GraphRAGService:
             )
             for index, hit in enumerate(bundle.hits, start=1)
         )
-        source_by_document: dict[str, str] = {}
-        for source in sources:
-            source_by_document.setdefault(source.document_id, source.citation)
-
         source_blocks = [
             (
                 f"[{source.citation}] Văn bản: {source.title}\n"
@@ -98,14 +94,18 @@ class GraphRAGService:
             for source in sources
         ]
         graph_blocks = []
+        seen_relations: set[tuple[str, str, str]] = set()
+        source_by_chunk = {source.chunk_id: source for source in sources}
         for neighbor in bundle.graph_neighbors:
-            citation = source_by_document.get(neighbor.document_id)
-            if citation:
-                relations = ", ".join(neighbor.relations)
-                seeds = ", ".join(neighbor.seed_document_ids)
-                graph_blocks.append(
-                    f"[{citation}] có quan hệ {relations} với văn bản nguồn ID: {seeds}."
-                )
+            for relation in neighbor.evidence:
+                source = source_by_chunk.get(relation.source_chunk_id)
+                key = (relation.source_id, relation.target_id, relation.kind)
+                if source and relation.evidence in source.text and key not in seen_relations:
+                    seen_relations.add(key)
+                    graph_blocks.append(
+                        f"[{source.citation}] {relation.source_id} --{relation.kind}--> "
+                        f"{relation.target_id}; bằng chứng: {relation.evidence}"
+                    )
 
         user_prompt = (
             f"CÂU HỎI\n{question.strip()}\n\n"

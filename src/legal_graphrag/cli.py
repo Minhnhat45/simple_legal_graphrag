@@ -26,6 +26,10 @@ def _parser() -> argparse.ArgumentParser:
         help="Delete the configured graph contents and Qdrant collection before ingesting",
     )
 
+    relations = subparsers.add_parser("build-relations", help="Build evidence-backed relations")
+    relations.add_argument("csv_path")
+    relations.add_argument("--limit", type=int, default=None)
+
     ask = subparsers.add_parser("ask", help="Ask a grounded GraphRAG question")
     ask.add_argument("question")
     ask.add_argument("--top-k", type=int, default=None)
@@ -67,6 +71,19 @@ def main(argv: Sequence[str] | None = None) -> int:
                 args.csv_path,
                 limit=args.limit,
                 recreate=args.recreate,
+                progress=lambda message: print(message, file=sys.stderr),
+            )
+        elif args.command == "build-relations":
+            from .relation_builder import RelationBuilder
+
+            output = RelationBuilder(
+                settings,
+                graph=service.graph,
+                vectors=service.vectors,
+                ollama=service.ollama,
+            ).build(
+                args.csv_path,
+                limit=args.limit,
                 progress=lambda message: print(message, file=sys.stderr),
             )
         elif args.command == "ask":

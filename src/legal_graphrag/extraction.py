@@ -4,7 +4,7 @@ import re
 import unicodedata
 from collections import defaultdict
 
-from .models import LegalDocument, Mention
+from .models import DocumentChunk, LegalDocument, Mention, ReferenceSpan
 
 DOCUMENT_NUMBER_RE = re.compile(
     r"(?<!\w)(\d{1,4}\s*/\s*(?:\d{4}\s*/\s*)?"
@@ -67,4 +67,28 @@ def extract_mentions(document: LegalDocument, *, max_unique: int = 500) -> list[
             count=int(item["count"]),
         )
         for number_norm, item in grouped.items()
+    ]
+
+
+def chunk_body(text: str) -> str:
+    """Remove only the generated header, including titles that contain newlines."""
+    match = re.search(r"\nSố hiệu: [^\n]*\nMục: [^\n]*\n", text)
+    return text[match.end() :] if match else text
+
+
+def extract_reference_spans(chunk: DocumentChunk, own_number: str) -> list[ReferenceSpan]:
+    body = chunk_body(chunk.text)
+    offset = len(chunk.text) - len(body)
+    own = normalize_document_number(own_number)
+    return [
+        ReferenceSpan(
+            source_chunk_id=chunk.id,
+            number_norm=normalize_document_number(match.group()),
+            start=offset + match.start(),
+            end=offset + match.end(),
+            text=match.group(),
+            hint=_mention_kind(body, match.start(), match.end()),
+        )
+        for match in DOCUMENT_NUMBER_RE.finditer(body)
+        if normalize_document_number(match.group()) != own
     ]

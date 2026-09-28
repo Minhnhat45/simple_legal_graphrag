@@ -86,9 +86,38 @@ class Neo4jIntegrationTests(unittest.TestCase):
             for relation in neighbor.relations
         }
         self.assertEqual(relations, {"cites", "cited_by", "shared_metadata"})
+        from legal_graphrag.models import LegalRelation
+
+        relation = LegalRelation(
+            "sample-003",
+            "sample-001",
+            "REPEALS",
+            "sample-003:1",
+            "Bãi bỏ toàn bộ Quyết định số 01/2026/QĐ-UBND",
+            "test_verified",
+        )
+        self.graph.upsert_relations([relation])
+        self.graph.upsert_relations([relation])
+        self.assertEqual(self.graph.stats()["legal_relations"], 1)
+        neighbors = self.graph.expand(["sample-001"], limit=10)
+        self.assertEqual(neighbors[0].document_id, "sample-003")
+        self.assertEqual(neighbors[0].evidence, (relation,))
+        self.assertEqual(self.graph.identifier_owners()["01/2026/QĐ-UBND"], ["sample-001"])
+        self.assertEqual(self.graph.relation_catalog()["sample-001"]["status"], "ready")
+        self.assertIn(
+            "sample-003",
+            {
+                d
+                for d, _ in self.graph.entity_candidates(
+                    "sample-001",
+                    limit=10,
+                )
+            },
+        )
         document = replace(documents[0], agency="Replacement agency")
         self.graph.prepare_documents([document], extract_mentions(document))
         self.assertEqual(self.graph.get_index_hashes([document.id]), {document.id: ""})
+        self.assertEqual(self.graph.stats()["legal_relations"], 0)
         self.assertFalse(
             self.graph._read(
                 "MATCH (:Document {id: $id})-[:HAS_CHUNK]->(c) RETURN c", {"id": document.id}

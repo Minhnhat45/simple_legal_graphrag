@@ -103,6 +103,7 @@ class GraphNeighbor:
     graph_score: float
     relations: tuple[str, ...]
     seed_document_ids: tuple[str, ...]
+    evidence: tuple[LegalRelation, ...] = ()
 
 
 @dataclass(frozen=True, slots=True)
@@ -151,3 +152,25 @@ class IngestReport:
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
+
+
+@dataclass(frozen=True, slots=True)
+class ReferenceSpan:
+    source_chunk_id: str
+    number_norm: str
+    start: int
+    end: int
+    text: str
+    hint: str
+
+
+@dataclass(frozen=True, slots=True)
+class LegalRelation:
+    source_id: str
+    target_id: str
+    kind: str
+    source_chunk_id: str
+    evidence: str
+    method: str
+    target_chunk_id: str = ""
+    provenance: str = ""

@@ -62,6 +62,43 @@ class ServiceTests(unittest.TestCase):
         result = service.answer("Phạm vi áp dụng là gì?")
         self.assertEqual(len(result.warnings), 1)
 
+    def test_graph_claim_uses_supporting_chunk_citation_and_preserves_direction(self) -> None:
+        from dataclasses import replace
+        from unittest.mock import Mock
+
+        from legal_graphrag.models import GraphNeighbor, LegalRelation
+
+        bundle = FakeRetriever().retrieve("question", filters=None, top_k=None)
+        relation = LegalRelation(
+            "d1",
+            "d2",
+            "REPEALS",
+            "d1:0",
+            "Điều 1 quy định phạm vi áp dụng.",
+            "test",
+        )
+        neighbor = GraphNeighbor("d2", "Target", "02", 1.0, ("REPEALS",), ("d1",), (relation,))
+        retriever = Mock()
+        retriever.retrieve.return_value = replace(bundle, graph_neighbors=(neighbor, neighbor))
+        ollama = FakeOllama()
+        service = GraphRAGService(
+            Settings(), graph=object(), vectors=object(), ollama=ollama, retriever=retriever
+        )
+        service.answer("question")
+        prompt = ollama.messages[1]["content"]
+        self.assertEqual(prompt.count("[S1] d1 --REPEALS--> d2"), 1)
+        retriever.retrieve.return_value = replace(
+            bundle,
+            graph_neighbors=(
+                replace(
+                    neighbor,
+                    evidence=(replace(relation, source_chunk_id="missing"),),
+                ),
+            ),
+        )
+        service.answer("question")
+        self.assertNotIn("REPEALS", ollama.messages[1]["content"])
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -77,5 +77,46 @@ class RetrievalTests(unittest.TestCase):
         self.assertEqual(bundle.graph_neighbors[0].document_id, "d3")
 
 
+class RelationRetrievalTests(unittest.TestCase):
+    def test_exact_evidence_is_prioritized_and_filters_are_forwarded(self) -> None:
+        from dataclasses import replace
+        from unittest.mock import Mock
+
+        from legal_graphrag.models import LegalRelation
+
+        relation = LegalRelation("d3", "d1", "REPEALS", "c5", "Bãi bỏ", "ollama_verified")
+        neighbor = replace(
+            FakeGraph().expand([], limit=1)[0], relations=("REPEALS",), evidence=(relation,)
+        )
+        graph = Mock()
+        graph.expand.return_value = [neighbor]
+        vectors = Mock(wraps=FakeVectors())
+        vectors.evidence_hits = Mock()
+        vectors.evidence_hits.return_value = [
+            SearchHit("c5", "d3", "title", "number", "Điều 1", "Bãi bỏ", 0.1)
+        ]
+        retriever = HybridRetriever(
+            Settings(max_chunks_per_document=1), graph=graph, vectors=vectors, ollama=FakeOllama()
+        )
+        filters = QueryFilters(agency="UBND")
+        bundle = retriever.retrieve("question", filters=filters, top_k=1)
+        self.assertEqual([hit.chunk_id for hit in bundle.hits], ["c5"])
+        self.assertEqual(bundle.graph_neighbors[0].evidence, (relation,))
+        self.assertEqual(vectors.evidence_hits.call_args.kwargs["filters"], filters)
+        vectors.evidence_hits.return_value = []
+        bundle = retriever.retrieve("question", top_k=4)
+        self.assertTrue(all(not neighbor.evidence for neighbor in bundle.graph_neighbors))
+        self.assertTrue(all("REPEALS" not in n.relations for n in bundle.graph_neighbors))
+
+    def test_context_limit_applies_to_first_chunk_too(self) -> None:
+        retriever = HybridRetriever(
+            Settings(max_context_chars=1),
+            graph=FakeGraph(),
+            vectors=FakeVectors(),
+            ollama=FakeOllama(),
+        )
+        self.assertEqual(retriever.retrieve("question").hits, ())
+
+
 if __name__ == "__main__":
     unittest.main()

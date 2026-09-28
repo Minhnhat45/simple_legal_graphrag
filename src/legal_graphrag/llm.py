@@ -46,7 +46,7 @@ class OllamaClient:
             raise OllamaError("Ollama returned an invalid embedding response")
         return [[float(value) for value in vector] for vector in embeddings]
 
-    def chat(self, messages: Sequence[dict[str, str]]) -> str:
+    def chat(self, messages: Sequence[dict[str, str]], *, json_mode: bool = False) -> str:
         response = self._request(
             "/api/chat",
             {
@@ -54,6 +54,7 @@ class OllamaClient:
                 "messages": list(messages),
                 "stream": False,
                 "options": {"temperature": 0.1},
+                **({"format": "json"} if json_mode else {}),
             },
         )
         message = response.get("message")
