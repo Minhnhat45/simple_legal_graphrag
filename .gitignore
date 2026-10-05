@@ -9,6 +9,6 @@ build/
 *.egg-info/
 qdrant_storage/
 neo4j_data/
-data/*.csv
+data/*
 !data/sample_legal_documents.csv
 .vscode

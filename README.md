@@ -136,6 +136,38 @@ When switching an existing installation to `bge-m3`, set `OLLAMA_EMBED_MODEL=bge
 in `.env`, run `ollama pull bge-m3`, and re-ingest your full corpus with `--recreate`
 before querying. This rebuilds the graph and Qdrant collection with the new embeddings.
 
+## Qdrant-only BM25 + embedding baseline
+
+`ingest.py` reuses the same CSV parser, chunker, and Ollama embedding model, and writes
+only to Qdrant. It does not connect to Neo4j or call a chat model.
+
+```bash
+python -m pip install -r requirements.txt
+docker compose up -d qdrant
+ollama pull bge-m3
+python ingest.py data/sample_legal_documents.csv
+# Rebuild the separate baseline with your full corpus:
+python ingest.py /path/to/khoa_hoc_va_cong_nghe.csv --recreate
+```
+
+The default collection is `${QDRANT_COLLECTION}_baseline` (`vn_legal_chunks_baseline`).
+Override it with `--collection NAME`; `--limit N` limits documents. Existing collections
+require `--recreate`, which deletes only the selected baseline collection. The script
+refuses to target `QDRANT_COLLECTION`. Failed runs can leave a partial baseline; rebuild
+with `--recreate` before evaluating it.
+
+Each point contains chunk text and document metadata, a named `dense` cosine vector from
+`OLLAMA_EMBED_MODEL`, and a named `bm25` sparse vector from FastEmbed `Qdrant/bm25`.
+BM25 uses Qdrant's IDF modifier, a fixed average length of 256 tokens, and disables
+stemming/stopword removal for Vietnamese. FastEmbed may download model assets on first use.
+See the [FastEmbed BM25 implementation](https://github.com/qdrant/fastembed/blob/main/fastembed/sparse/bm25.py).
+
+For later hybrid retrieval, encode questions with the same Ollama model and
+`SparseTextEmbedding(model_name="Qdrant/bm25", disable_stemmer=True, avg_len=256.0).query_embed(...)`,
+search `dense` and `bm25`, then fuse their ranks (e.g. Qdrant RRF). The existing GraphRAG
+query command uses an unnamed dense vector and cannot query this baseline collection directly.
+Keep the corpus, chunk settings, embedding model, and retrieval budget identical when comparing.
+
 ## Building legal relations
 
 Run `legal-graphrag build-relations <same-csv-path> [--limit N]` after ingesting the

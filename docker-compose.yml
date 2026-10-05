@@ -6,6 +6,7 @@ services:
       - "7687:7687"
     environment:
       NEO4J_AUTH: "neo4j/${NEO4J_PASSWORD:-legal-graphrag}"
+      QDRANT__SERVICE__API_KEY: ${QDRANT_API_KEY}
     volumes:
       - neo4j_data:/data
     healthcheck:
