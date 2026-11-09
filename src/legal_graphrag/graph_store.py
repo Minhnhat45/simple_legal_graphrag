@@ -61,6 +61,9 @@ class GraphStore:
 
     def ensure_schema(self) -> None:
         indexes = (
+            "CREATE INDEX IF NOT EXISTS FOR (p:Provision) ON (p.id)",
+            "CREATE INDEX IF NOT EXISTS FOR (a:Article) ON (a.id)",
+            "CREATE INDEX IF NOT EXISTS FOR (p:Provision) ON (p.document_id)",
             "CREATE INDEX IF NOT EXISTS FOR (d:Document) ON (d.id)",
             "CREATE INDEX IF NOT EXISTS FOR (c:Chunk) ON (c.id)",
             "CREATE INDEX IF NOT EXISTS FOR (i:Instrument) ON (i.number_norm)",
@@ -94,6 +97,12 @@ class GraphStore:
             MATCH (:Document {id: document_id})-[r:LEGAL_RELATION]-()
             DELETE r
             """,
+            params,
+        )
+        self._query(
+            """
+            MATCH (p:Provision) WHERE p.document_id IN $ids DETACH DELETE p
+        """,
             params,
         )
         for relationship in self.METADATA_RELATIONSHIPS:
@@ -558,4 +567,244 @@ class GraphStore:
                 "phrase": phrase,
                 "reviewed_by": reviewed_by,
             },
+        )
+
+    def upsert_structure(self, document: LegalDocument, chunks: Sequence[DocumentChunk]) -> None:
+        """Add hierarchy to ready documents without re-embedding or changing legacy IDs."""
+        from .structure import map_chunks, parse_structure, structure_hash
+
+        provisions = parse_structure(document)
+        signature = structure_hash(document)
+        # Invalidate this document's own derived hierarchy only when its text changes.
+        self._query(
+            """
+            MATCH (d:Document {id: $id})
+            WHERE d.structure_hash IS NOT NULL AND d.structure_hash <> $hash
+            MATCH (p:Provision {document_id: $id}) DETACH DELETE p
+        """,
+            {"id": document.id, "hash": signature},
+        )
+        for level in ("Chapter", "Article", "Clause", "Point"):
+            rows = [asdict(p) for p in provisions if p.level == level]
+            if not rows:
+                continue
+            self._query(
+                f"""
+                UNWIND $rows AS row
+                MATCH (d:Document {{id: row.document_id}})
+                MERGE (p:Provision:{level} {{id: row.id}})
+                SET p += row, p.structure_hash = $hash
+                MERGE (d)-[:HAS_PROVISION]->(p)
+            """,
+                {"rows": rows, "hash": signature},
+            )
+        self._query(
+            """
+            UNWIND $rows AS row
+            MATCH (child:Provision {id: row.id})
+            MATCH (parent) WHERE parent.id = row.parent_id
+                AND (parent:Document OR parent:Provision)
+            MERGE (parent)-[:CONTAINS]->(child)
+        """,
+            {"rows": [asdict(p) for p in provisions]},
+        )
+        mapping = map_chunks(document, list(chunks))
+        self._query(
+            """
+            UNWIND $rows AS row
+            MATCH (a:Article {id: row.article_id}), (c:Chunk {id: row.chunk_id})
+            MERGE (a)-[:HAS_CHUNK]->(c)
+            SET c.article_id = a.id
+        """,
+            {"rows": [{"chunk_id": cid, "article_id": aid} for cid, aid in mapping.items()]},
+        )
+        self._query(
+            "MATCH (d:Document {id: $id}) SET d.structure_hash = $hash",
+            {"id": document.id, "hash": signature},
+        )
+
+    def upsert_provision_relations(self, relations) -> None:
+        import hashlib
+
+        rows = []
+        for relation in relations:
+            row = asdict(relation)
+            row["key"] = hashlib.sha256(
+                "\x1f".join(
+                    (
+                        relation.source_id,
+                        relation.target_id,
+                        relation.kind,
+                        relation.source_chunk_id,
+                        relation.target_chunk_id,
+                    )
+                ).encode()
+            ).hexdigest()
+            rows.append(row)
+        self._query(
+            """
+            UNWIND $rows AS row
+            MATCH (s:Article {id: row.source_id})-[:HAS_CHUNK]->(:Chunk {id: row.source_chunk_id})
+            MATCH (t:Article {id: row.target_id})-[:HAS_CHUNK]->(:Chunk {id: row.target_chunk_id})
+            MATCH (sd:Document {id: s.document_id}), (td:Document {id: t.document_id})
+            WHERE sd.index_status = 'ready' AND td.index_status = 'ready'
+            MERGE (s)-[r:PROVISION_RELATION {key: row.key}]->(t)
+            SET r += row, r.source_hash = s.structure_hash, r.target_hash = t.structure_hash
+        """,
+            {"rows": rows},
+        )
+
+    def upsert_legal_facts(self, facts: list[dict]) -> None:
+        """Grounded concepts/entities and normative spans remain attached to their article."""
+        self._query(
+            """
+            UNWIND $rows AS row
+            MATCH (a:Article {id: row.article_id})-[:HAS_CHUNK]->(:Chunk {id: row.chunk_id})
+            MERGE (f:LegalFact {id: row.id}) SET f += row
+            MERGE (a)-[r:EXPRESSES {kind: row.kind}]->(f)
+            SET r.evidence = row.evidence, r.source_chunk_id = row.chunk_id
+            FOREACH (_ IN CASE WHEN row.kind IN ['DEFINES', 'REGULATES'] THEN [1] ELSE [] END |
+                MERGE (c:LegalConcept {key: row.concept_key}) SET c.name = row.name
+                MERGE (a)-[link:CONCEPT_RELATION {kind: row.kind, fact_id: row.id}]->(c)
+                SET link.evidence = row.evidence, link.source_chunk_id = row.chunk_id,
+                    link.provenance = row.provenance, link.source_id = a.id,
+                    link.target_id = c.key, link.source_hash = a.structure_hash,
+                    link.valid_from = '', link.valid_to = '', link.temporal_status = 'unknown')
+        """,
+            {"rows": facts},
+        )
+
+    def expand_articles(self, seed_article_ids, *, config, as_of: str = ""):
+        """Bounded BFS. Traverse either way, retaining the edge's actual legal direction."""
+        from .models import ArticleCandidate, ProvisionRelation
+
+        if config.mode == "M0" or not seed_article_ids:
+            return []
+        frontier = {aid: (1.0, ()) for aid in seed_article_ids[: config.seed_limit]}
+        visited = set(frontier)
+        output = {}
+        for depth in range(config.depth):
+            if not frontier or len(output) >= config.candidate_budget:
+                break
+            params = {
+                "ids": sorted(frontier),
+                "kinds": config.kinds,
+                "confidence": config.confidence,
+                "per_node": config.per_node_limit,
+                "as_of": as_of,
+                "weights": config.weights,
+            }
+            rows = (
+                self._read(
+                    """
+                UNWIND $ids AS seed_id
+                MATCH (seed:Article {id: seed_id})
+                CALL (seed) {
+                    MATCH (seed)-[r:PROVISION_RELATION]-(a:Article)
+                    WHERE r.kind IN $kinds AND r.confidence >= $confidence
+                        AND r.source_hash = startNode(r).structure_hash
+                        AND r.target_hash = endNode(r).structure_hash
+                        AND ($as_of = '' OR (r.temporal_status = 'known'
+                            AND (r.valid_from = '' OR r.valid_from <= $as_of)
+                            AND (r.valid_to = '' OR $as_of < r.valid_to)))
+                    MATCH (d:Document {id: a.document_id}) WHERE d.index_status = 'ready'
+                    RETURN a, r ORDER BY r.confidence * coalesce($weights[r.kind], 0) DESC,
+                        a.id, r.key LIMIT $per_node
+                }
+                MATCH (a)-[:HAS_CHUNK]->(c:Chunk)
+                RETURN seed.id, a.id, collect(DISTINCT c.id), properties(r)
+            """,
+                    params,
+                )
+                if config.kinds
+                else []
+            )
+            if config.mode in {"M1", "M4"}:
+                rows += self._read(
+                    """
+                    UNWIND $ids AS seed_id
+                    MATCH (seed:Article {id: seed_id})
+                    CALL (seed) {
+                        MATCH (parent)-[:CONTAINS]->(seed), (parent)-[:CONTAINS]->(a:Article)
+                        WHERE a.id <> seed.id AND EXISTS { MATCH (a)-[:HAS_CHUNK]->(:Chunk) }
+                        RETURN a ORDER BY abs(a.start - seed.start), a.id LIMIT $per_node
+                    }
+                    MATCH (a)-[:HAS_CHUNK]->(c:Chunk)
+                    RETURN seed.id, a.id, collect(DISTINCT c.id), null
+                """,
+                    params,
+                )
+            next_frontier = {}
+            proposals = []
+            for seed, aid, chunk_ids, props in rows:
+                if aid in visited:
+                    continue
+                previous_score, path = frontier[seed]
+                if props:
+                    relation = ProvisionRelation(
+                        **{
+                            k: props[k]
+                            for k in ProvisionRelation.__dataclass_fields__
+                            if k in props
+                        }
+                    )
+                    score = (
+                        previous_score * config.weights.get(relation.kind, 0) * relation.confidence
+                    )
+                    path = (*path, relation)
+                else:
+                    score = previous_score * config.weights.get("STRUCTURAL", 0)
+                if depth:
+                    score *= config.decay
+                proposals.append(
+                    ArticleCandidate(aid, tuple(sorted(chunk_ids)), score, path, props is None)
+                )
+            for item in sorted(proposals, key=lambda x: (-x.score, x.article_id)):
+                if item.article_id in next_frontier or item.score <= 0:
+                    continue
+                output[item.article_id] = item
+                next_frontier[item.article_id] = (item.score, item.path)
+                if len(output) >= config.candidate_budget:
+                    break
+            visited.update(next_frontier)
+            frontier = next_frontier
+        return list(output.values())
+
+    def chunk_article_mapping(self, document_ids=None):
+        rows = self._read(
+            """
+            MATCH (a:Article)-[:HAS_CHUNK]->(c:Chunk)
+            WHERE $ids IS NULL OR a.document_id IN $ids
+            RETURN c.id, collect(DISTINCT a.id)
+        """,
+            {"ids": document_ids},
+        )
+        return {cid: aids[0] for cid, aids in rows if len(aids) == 1}
+
+    def concept_candidates(self, article_ids, *, limit):
+        """Previously grounded concepts discover candidates, never prove a relation."""
+        return self._read(
+            """
+            UNWIND $ids AS aid
+            MATCH (s:Article {id: aid})-[sr:CONCEPT_RELATION]->(concept:LegalConcept)
+            CALL (s, concept, sr) {
+                MATCH (t:Article)-[tr:CONCEPT_RELATION]->(concept)
+                WHERE t.id <> s.id
+                RETURN t, tr ORDER BY t.id LIMIT $limit
+            }
+            RETURN s.id, t.id, sr.source_chunk_id, tr.source_chunk_id
+        """,
+            {"ids": list(article_ids), "limit": limit},
+        )
+
+    def link_article_chunks(self, mapping):
+        """Attach externally text-validated mappings, including repeated-heading occurrences."""
+        self._query(
+            """
+            UNWIND $rows AS row
+            MATCH (a:Article {id: row.article_id}), (c:Chunk {id: row.chunk_id})
+            WHERE a.document_id = c.document_id
+            MERGE (a)-[:HAS_CHUNK]->(c) SET c.article_id = a.id
+        """,
+            {"rows": [{"chunk_id": cid, "article_id": aid} for cid, aid in mapping.items()]},
         )

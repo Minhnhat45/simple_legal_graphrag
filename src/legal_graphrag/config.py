@@ -44,6 +44,7 @@ class Settings:
     qdrant_url: str = "http://localhost:6333"
     qdrant_api_key: str = ""
     qdrant_collection: str = "vn_legal_chunks"
+    qdrant_hybrid: bool = False
 
     ollama_base_url: str = "http://localhost:11434"
     ollama_chat_model: str = "gemma4:e4b"
@@ -79,6 +80,7 @@ class Settings:
             qdrant_url=_text("QDRANT_URL", "http://localhost:6333"),
             qdrant_api_key=_text("QDRANT_API_KEY", ""),
             qdrant_collection=_text("QDRANT_COLLECTION", "vn_legal_chunks"),
+            qdrant_hybrid=_text("QDRANT_HYBRID", "false").lower() == "true",
             ollama_base_url=_text("OLLAMA_BASE_URL", "http://localhost:11434"),
             ollama_chat_model=_text("OLLAMA_CHAT_MODEL", "gemma4:e4b"),
             ollama_embed_model=_text("OLLAMA_EMBED_MODEL", "bge-m3"),

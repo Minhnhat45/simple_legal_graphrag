@@ -13,6 +13,12 @@ class OllamaError(RuntimeError):
     pass
 
 
+class OllamaEmptyResponse(OllamaError):
+    """A completed request produced no usable content, unlike a connection failure."""
+
+    pass
+
+
 class OllamaClient:
     def __init__(self, settings: Settings) -> None:
         self.base_url = settings.ollama_base_url.rstrip("/")
@@ -46,21 +52,37 @@ class OllamaClient:
             raise OllamaError("Ollama returned an invalid embedding response")
         return [[float(value) for value in vector] for vector in embeddings]
 
-    def chat(self, messages: Sequence[dict[str, str]], *, json_mode: bool = False) -> str:
+    def chat(
+        self,
+        messages: Sequence[dict[str, str]],
+        *,
+        json_mode: bool = False,
+        json_schema: dict | None = None,
+        max_tokens: int | None = None,
+        think: bool | None = None,
+    ) -> str:
         response = self._request(
             "/api/chat",
             {
                 "model": self.chat_model,
                 "messages": list(messages),
                 "stream": False,
-                "options": {"temperature": 0.1},
-                **({"format": "json"} if json_mode else {}),
+                **({"think": think} if think is not None else {}),
+                "options": {
+                    "temperature": 0 if json_schema else 0.1,
+                    **({"num_predict": max_tokens} if max_tokens else {}),
+                },
+                **(
+                    {"format": json_schema}
+                    if json_schema
+                    else ({"format": "json"} if json_mode else {})
+                ),
             },
         )
         message = response.get("message")
         content = message.get("content") if isinstance(message, dict) else None
         if not isinstance(content, str) or not content.strip():
-            raise OllamaError("Ollama returned an empty chat response")
+            raise OllamaEmptyResponse("Ollama returned an empty chat response")
         return content.strip()
 
     def health(self) -> bool:

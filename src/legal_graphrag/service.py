@@ -59,8 +59,26 @@ class GraphRAGService:
         *,
         filters: QueryFilters | None = None,
         top_k: int | None = None,
+        graph_config=None,
+        as_of: str = "",
     ) -> AnswerResult:
-        bundle = self.retriever.retrieve(question, filters=filters, top_k=top_k)
+        if graph_config is None:
+            bundle = self.retriever.retrieve(question, filters=filters, top_k=top_k)
+        else:
+            self.vectors.article_mapping = self.graph.chunk_article_mapping()
+            bundle = self.retriever.retrieve_articles(
+                question, filters=filters, top_k=top_k, config=graph_config, as_of=as_of
+            )
+            # Answer context retains the established character budget; evaluation is
+            # independent of answer truncation and always scores the requested Top-K.
+            from dataclasses import replace
+
+            kept, used = [], 0
+            for hit in bundle.hits:
+                if used + len(hit.text) <= self.settings.max_context_chars:
+                    kept.append(hit)
+                    used += len(hit.text)
+            bundle = replace(bundle, hits=tuple(kept))
         if not bundle.hits:
             return AnswerResult(
                 answer=(

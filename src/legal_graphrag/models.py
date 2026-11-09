@@ -93,6 +93,8 @@ class SearchHit:
     text: str
     vector_score: float
     final_score: float = 0.0
+    article_id: str = ""
+    original_article_id: str = ""
 
 
 @dataclass(frozen=True, slots=True)
@@ -174,3 +176,29 @@ class LegalRelation:
     method: str
     target_chunk_id: str = ""
     provenance: str = ""
+
+
+@dataclass(frozen=True, slots=True)
+class ProvisionRelation:
+    source_id: str
+    target_id: str
+    kind: str
+    source_chunk_id: str
+    target_chunk_id: str
+    evidence: str
+    target_evidence: str
+    confidence: float
+    provenance: str
+    valid_from: str = ""
+    valid_to: str = ""
+    temporal_status: str = "unknown"
+    method: str = "ollama_verified"
+
+
+@dataclass(frozen=True, slots=True)
+class ArticleCandidate:
+    article_id: str
+    chunk_ids: tuple[str, ...]
+    score: float
+    path: tuple[ProvisionRelation, ...] = ()
+    structural: bool = False

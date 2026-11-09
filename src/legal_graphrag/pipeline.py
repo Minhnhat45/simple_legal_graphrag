@@ -7,7 +7,7 @@ from typing import TypeVar
 
 from .chunking import chunk_document
 from .config import Settings
-from .csv_loader import stream_documents
+from .csv_loader import stream_dataset
 from .extraction import extract_mentions
 from .graph_store import GraphStore
 from .llm import OllamaClient
@@ -86,7 +86,7 @@ class Ingestor:
         self.graph.ensure_schema()
 
         seen = indexed = skipped = chunk_count = mention_count = 0
-        documents = stream_documents(source, limit=limit)
+        documents = stream_dataset(source, limit=limit)
         for document_batch in batched(documents, self.settings.document_batch_size):
             seen += len(document_batch)
             desired_hashes = {
@@ -94,11 +94,24 @@ class Ingestor:
             }
             current_hashes = self.graph.get_index_hashes(list(desired_hashes))
             qdrant_available = self.vectors.collection_exists()
+            matching = [
+                d.id for d in document_batch if current_hashes.get(d.id) == desired_hashes[d.id]
+            ]
+            stored_counts = self.vectors.document_chunk_counts(matching) if qdrant_available else {}
+            document_chunks = {
+                d.id: chunk_document(
+                    d,
+                    max_chars=self.settings.chunk_size_chars,
+                    overlap=self.settings.chunk_overlap_chars,
+                )
+                for d in document_batch
+            }
             pending = [
                 document
                 for document in document_batch
                 if not qdrant_available
                 or current_hashes.get(document.id) != desired_hashes[document.id]
+                or stored_counts.get(document.id) != len(document_chunks[document.id])
             ]
             skipped += len(document_batch) - len(pending)
             if not pending:
@@ -106,22 +119,19 @@ class Ingestor:
                     progress(f"documents_seen={seen} indexed={indexed} skipped={skipped}")
                 continue
 
-            chunks = [
-                chunk
-                for document in pending
-                for chunk in chunk_document(
-                    document,
-                    max_chars=self.settings.chunk_size_chars,
-                    overlap=self.settings.chunk_overlap_chars,
-                )
-            ]
+            chunks = [chunk for document in pending for chunk in document_chunks[document.id]]
             embedded = self._embed_chunks(chunks, progress)
             if not embedded or not embedded[0]:
                 raise RuntimeError("The embedding model returned no vectors")
             self.vectors.ensure_collection(len(embedded[0]))
 
             mentions = [mention for document in pending for mention in extract_mentions(document)]
-            self.graph.prepare_documents(pending, mentions)
+            graph_pending = [d for d in pending if d.id not in matching]
+            graph_ids = {d.id for d in graph_pending}
+            if graph_pending:
+                self.graph.prepare_documents(
+                    graph_pending, [m for m in mentions if m.document_id in graph_ids]
+                )
             self.vectors.delete_document_chunks([document.id for document in pending])
 
             document_map = {document.id: document for document in pending}
@@ -146,6 +156,10 @@ class Ingestor:
                 ]
             )
 
+            for document in pending:
+                self.graph.upsert_structure(
+                    document, [c for c in chunks if c.document_id == document.id]
+                )
             indexed += len(pending)
             chunk_count += len(chunks)
             mention_count += len(mentions)

@@ -12,3 +12,5 @@ neo4j_data/
 data/*
 !data/sample_legal_documents.csv
 .vscode
+.cache/
+reports/runs/

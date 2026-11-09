@@ -1,11 +1,45 @@
 from __future__ import annotations
 
+import csv
+import tempfile
 import unittest
 from dataclasses import replace
 from pathlib import Path
 
 from legal_graphrag.config import Settings
 from legal_graphrag.pipeline import Ingestor
+
+_FIXTURE_DIR = tempfile.TemporaryDirectory()
+SAMPLE = Path(_FIXTURE_DIR.name) / "synthetic_legal.csv"
+
+
+def _write_fixture():
+    from legal_graphrag.csv_loader import REQUIRED_COLUMNS
+
+    with SAMPLE.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=REQUIRED_COLUMNS)
+        writer.writeheader()
+        for i in range(1, 4):
+            row = dict.fromkeys(REQUIRED_COLUMNS, "")
+            row.update(
+                {
+                    "ID": f"sample-{i:03d}",
+                    "Title": "Văn bản kiểm thử",
+                    "Số hiệu": f"0{i}/2026/QĐ-UBND",
+                    "Cơ quan ban hành": "Cơ quan mẫu",
+                    "Toàn văn": "Căn cứ Luật số 29/2013/QH13. Điều 1. "
+                    + (
+                        "Bãi bỏ toàn bộ Quyết định số 01/2026/QĐ-UBND. "
+                        if i == 3
+                        else "Quy định quản lý nhiệm vụ khoa học. "
+                    )
+                    + "Điều 2. Tổ chức thực hiện nhiệm vụ khoa học.",
+                }
+            )
+            writer.writerow(row)
+
+
+_write_fixture()
 
 
 class FakeGraph:
@@ -29,6 +63,9 @@ class FakeGraph:
     def upsert_chunks(self, chunks: list[object]) -> None:
         self.chunk_ids.extend(chunk.id for chunk in chunks)
 
+    def upsert_structure(self, document, chunks):
+        pass
+
     def mark_indexed(self, rows: list[dict[str, object]]) -> None:
         for row in rows:
             self.hashes[str(row["id"])] = str(row["index_hash"])
@@ -38,6 +75,7 @@ class FakeVectors:
     def __init__(self) -> None:
         self.exists = False
         self.points = 0
+        self.document_counts = {}
 
     def collection_exists(self) -> bool:
         return self.exists
@@ -45,13 +83,18 @@ class FakeVectors:
     def reset(self) -> None:
         self.exists = False
         self.points = 0
+        self.document_counts.clear()
+
+    def document_chunk_counts(self, document_ids):
+        return {did: self.document_counts.get(did, 0) for did in document_ids}
 
     def ensure_collection(self, vector_size: int) -> None:
         self.exists = True
         self.vector_size = vector_size
 
     def delete_document_chunks(self, document_ids: list[str]) -> None:
-        pass
+        for did in document_ids:
+            self.document_counts.pop(did, None)
 
     def upsert(
         self,
@@ -60,6 +103,10 @@ class FakeVectors:
         documents: dict[str, object],
     ) -> None:
         self.points += len(chunks)
+        for chunk in chunks:
+            self.document_counts[chunk.document_id] = (
+                self.document_counts.get(chunk.document_id, 0) + 1
+            )
 
 
 class FakeOllama:
@@ -69,8 +116,7 @@ class FakeOllama:
 
 class PipelineTests(unittest.TestCase):
     def test_second_identical_ingest_is_skipped(self) -> None:
-        root = Path(__file__).resolve().parents[1]
-        csv_path = root / "data" / "sample_legal_documents.csv"
+        csv_path = SAMPLE
         settings = Settings(
             chunk_size_chars=500,
             chunk_overlap_chars=50,
@@ -93,6 +139,17 @@ class PipelineTests(unittest.TestCase):
         self.assertEqual(second.documents_indexed, 0)
         self.assertEqual(second.documents_skipped, 3)
         self.assertEqual(len(graph.hashes), 3)
+        # A new/partially filled collection must not inherit another collection's
+        # skip markers, or delete unchanged graph relations when repairing vectors.
+        replacement = FakeVectors()
+        ingestor.vectors = replacement
+        copied = ingestor.ingest(csv_path)
+        self.assertEqual(copied.documents_indexed, 3)
+        self.assertEqual(graph.prepared, 3)
+        replacement.document_counts["sample-002"] -= 1
+        repaired = ingestor.ingest(csv_path)
+        self.assertEqual(repaired.documents_indexed, 1)
+        self.assertEqual(graph.prepared, 3)
 
 
 class RelationBuilderTests(unittest.TestCase):
@@ -106,7 +163,7 @@ class RelationBuilderTests(unittest.TestCase):
             "sample-001": {"status": "building", "index_hash": "old"},
         }
         builder = RelationBuilder(Settings(), graph=graph, vectors=vectors, ollama=ollama)
-        path = Path(__file__).resolve().parents[1] / "data/sample_legal_documents.csv"
+        path = SAMPLE
         with self.assertRaisesRegex(ValueError, "missing=.*sample-002.*outdated=.*sample-001"):
             builder.build(path)
         ollama.chat.assert_not_called()
@@ -117,7 +174,7 @@ class RelationBuilderTests(unittest.TestCase):
         from legal_graphrag.models import DocumentChunk
         from legal_graphrag.relation_builder import Candidate, RelationBuilder
 
-        path = Path(__file__).resolve().parents[1] / "data/sample_legal_documents.csv"
+        path = SAMPLE
         documents = list(stream_documents(path))[:2]
         chunks = [
             DocumentChunk(
@@ -156,7 +213,7 @@ class RelationBuilderTests(unittest.TestCase):
         from legal_graphrag.relation_builder import RelationBuilder
 
         settings = Settings(relation_pair_limit=1)
-        path = Path(__file__).resolve().parents[1] / "data/sample_legal_documents.csv"
+        path = SAMPLE
         docs = list(stream_documents(path))
         chunks = [
             c

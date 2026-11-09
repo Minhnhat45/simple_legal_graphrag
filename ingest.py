@@ -18,12 +18,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent / "src"))
 
 from legal_graphrag.chunking import chunk_document
 from legal_graphrag.config import Settings
-from legal_graphrag.csv_loader import stream_documents
+from legal_graphrag.csv_loader import stream_dataset
 from legal_graphrag.llm import OllamaClient
-from legal_graphrag.qdrant_store import POINT_NAMESPACE
-
-BM25_MODEL = "Qdrant/bm25"
-BM25_OPTIONS = {"disable_stemmer": True, "avg_len": 256.0}
+from legal_graphrag.qdrant_store import BM25_MODEL, BM25_OPTIONS, POINT_NAMESPACE
 
 
 def ingest(
@@ -42,7 +39,7 @@ def ingest(
     if not collection.strip() or collection == settings.qdrant_collection:
         raise ValueError("Choose a separate baseline collection from QDRANT_COLLECTION")
 
-    documents = stream_documents(csv_path, limit=limit)
+    documents = stream_dataset(csv_path, limit=limit)
     # Validate the input before any collection deletion.
     first = next(documents, None)
     if first is None:

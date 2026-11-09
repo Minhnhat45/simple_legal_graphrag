@@ -3,10 +3,9 @@ from __future__ import annotations
 import os
 import unittest
 from dataclasses import replace
-from pathlib import Path
 from unittest.mock import Mock, patch
 
-from test_pipeline import FakeOllama, FakeVectors
+from test_pipeline import SAMPLE, FakeOllama, FakeVectors
 
 from legal_graphrag.config import Settings
 from legal_graphrag.graph_store import GraphStore
@@ -68,7 +67,7 @@ class Neo4jIntegrationTests(unittest.TestCase):
         from legal_graphrag.csv_loader import stream_documents
         from legal_graphrag.extraction import extract_mentions
 
-        path = Path(__file__).resolve().parents[1] / "data/sample_legal_documents.csv"
+        path = SAMPLE
         ingestor = Ingestor(
             self.settings, graph=self.graph, vectors=FakeVectors(), ollama=FakeOllama()
         )
@@ -128,3 +127,98 @@ class Neo4jIntegrationTests(unittest.TestCase):
             {"id": document.id},
         )
         self.assertEqual([row[0] for row in agencies], ["Replacement agency"])
+
+
+@unittest.skipUnless(os.getenv("NEO4J_ADDITIVE_TEST_URI"), "requires opt-in additive Neo4j test")
+class ProvisionIntegrationTests(unittest.TestCase):
+    """Uses unique test IDs and cleans only those IDs; never resets a database."""
+
+    def test_provision_paths_idempotence_direction_time_and_invalidation(self):
+        import uuid
+
+        from test_extraction import make_document
+
+        from legal_graphrag.chunking import chunk_document
+        from legal_graphrag.models import ProvisionRelation
+        from legal_graphrag.ontology import ExpansionConfig
+
+        settings = replace(Settings.from_env(), neo4j_uri=os.environ["NEO4J_ADDITIVE_TEST_URI"])
+        graph = GraphStore(settings)
+        self.addCleanup(graph.close)
+        namespace = "integration:" + uuid.uuid4().hex + ":"
+        docs = [
+            replace(
+                make_document("Điều 1. Phải có giấy phép. Điều 2. Trách nhiệm."),
+                id=namespace + str(i),
+                number=namespace + str(i),
+                agency="",
+                sector="",
+                field="",
+                signer="",
+            )
+            for i in range(3)
+        ]
+
+        def cleanup():
+            graph._query(
+                "MATCH (n) WHERE (n:Document OR n:Provision OR n:Chunk) "
+                "AND n.id STARTS WITH $prefix DETACH DELETE n",
+                {"prefix": namespace},
+            )
+            graph._query(
+                "MATCH (i:Instrument) WHERE i.number STARTS WITH $prefix "
+                "AND NOT EXISTS { MATCH (i)--() } DELETE i",
+                {"prefix": namespace},
+            )
+
+        self.addCleanup(cleanup)
+        graph.ensure_schema()
+        graph.prepare_documents(docs, [])
+        chunks = {}
+        for doc in docs:
+            chunks[doc.id] = chunk_document(doc, max_chars=500, overlap=50)
+            graph.upsert_chunks(chunks[doc.id])
+            graph.mark_indexed(
+                [{"id": doc.id, "index_hash": doc.fingerprint, "chunk_count": len(chunks[doc.id])}]
+            )
+            graph.upsert_structure(doc, chunks[doc.id])
+        relations = [
+            ProvisionRelation(
+                docs[i].id + ":article:1",
+                docs[i + 1].id + ":article:1",
+                "SETS_CONDITION_FOR",
+                chunks[docs[i].id][0].id,
+                chunks[docs[i + 1].id][0].id,
+                "Phải có giấy phép.",
+                "Phải có giấy phép.",
+                0.95,
+                "{}",
+                "2026-01-01",
+                "2027-01-01",
+                "known",
+            )
+            for i in range(2)
+        ]
+        graph.upsert_provision_relations(relations)
+        graph.upsert_provision_relations(relations)
+        count = graph._read(
+            "MATCH (s:Article)-[r:PROVISION_RELATION]->() "
+            "WHERE s.id STARTS WITH $prefix RETURN count(r)",
+            {"prefix": namespace},
+        )
+        self.assertEqual(count[0][0], 2)
+        cfg = ExpansionConfig(mode="M3", depth=2)
+        result = graph.expand_articles([relations[0].source_id], config=cfg, as_of="2026-06-01")
+        distant = next(r for r in result if r.article_id == relations[1].target_id)
+        self.assertEqual(len(distant.path), 2)
+        reverse = graph.expand_articles([relations[1].target_id], config=cfg)
+        self.assertEqual(reverse[0].path[0].source_id, relations[1].source_id)
+        self.assertEqual(
+            graph.expand_articles([relations[0].source_id], config=cfg, as_of="2027-01-01"), []
+        )
+        self.assertEqual(
+            graph.expand_articles([relations[0].source_id], config=replace(cfg, confidence=0.99)),
+            [],
+        )
+        graph.prepare_documents([docs[1]], [])
+        self.assertEqual(graph.expand_articles([relations[0].source_id], config=cfg), [])

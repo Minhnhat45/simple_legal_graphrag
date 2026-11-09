@@ -120,3 +120,91 @@ class RelationRetrievalTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class ArticleRetrievalTests(unittest.TestCase):
+    def make_retriever(self, *, confirmed=True):
+        from unittest.mock import Mock
+
+        from legal_graphrag.models import ArticleCandidate, ProvisionRelation
+
+        hits = [
+            SearchHit("c1", "d1", "", "", "Điều 1", "nguồn", 0.9, article_id="a1"),
+            SearchHit("c2", "d1", "", "", "Điều 1", "nguồn khác", 0.85, article_id="a1"),
+            SearchHit("c3", "d2", "", "", "Điều 2", "quy định", 0.8, article_id="a2"),
+        ]
+        extra = SearchHit("c4", "d3", "", "", "Điều 3", "điều kiện", 0.95, article_id="a3")
+        relation = ProvisionRelation(
+            "a1", "a3", "SPECIFIES", "c1", "c4", "nguồn", "điều kiện", 0.95, "{}"
+        )
+        graph = Mock()
+        graph.expand_articles.side_effect = lambda ids, config, as_of: (
+            [] if config.mode == "M0" else [ArticleCandidate("a3", ("c4",), 1, (relation,))]
+        )
+        vectors = Mock()
+        vectors.hybrid_query.return_value = hits
+        all_hits = {h.chunk_id: h for h in hits + ([extra] if confirmed else [])}
+        vectors.evidence_hits.side_effect = lambda ids, v, filters: [
+            all_hits[cid] for cid in ids if cid in all_hits
+        ]
+        return HybridRetriever(Settings(), graph=graph, vectors=vectors, ollama=FakeOllama())
+
+    def test_deduplicates_chunks_and_retains_original_hybrid_order(self):
+        from legal_graphrag.ontology import ExpansionConfig
+
+        retriever = self.make_retriever()
+        result = retriever.retrieve_articles("câu hỏi", config=ExpansionConfig(mode="M0"), top_k=3)
+        self.assertEqual([h.article_id for h in result.hits], ["a1", "a2"])
+        self.assertEqual(retriever.last_trace["graph_articles"], {})
+
+    def test_graph_can_add_article_only_after_both_evidence_quotes_confirmed(self):
+        from legal_graphrag.ontology import ExpansionConfig
+
+        for confirmed in (True, False):
+            retriever = self.make_retriever(confirmed=confirmed)
+            filters = QueryFilters(agency="Cơ quan")
+            result = retriever.retrieve_articles(
+                "điều kiện", config=ExpansionConfig(mode="M3"), top_k=3, filters=filters
+            )
+            self.assertEqual("a3" in {h.article_id for h in result.hits}, confirmed)
+            for call in retriever.vectors.evidence_hits.call_args_list:
+                self.assertEqual(call.kwargs["filters"], filters)
+            self.assertLessEqual(len(retriever.last_trace["candidate_articles"]), 60)
+
+    def test_metrics_keep_gold_articles_and_count_each_article_once(self):
+        from legal_graphrag.evaluation import score_ranking
+
+        metrics = score_ranking(["1", "1", "2"], [1, 2], 2)
+        self.assertTrue(all(v == 1 for v in metrics.values()))
+        metrics = score_ranking(["1"], [1, 2], 2)
+        self.assertEqual(metrics["recall"], 0.5)
+        self.assertEqual(metrics["precision"], 0.5)
+        self.assertEqual(metrics["f1"], 0.5)
+        with self.assertRaises(ValueError):
+            score_ranking(["1"], [], 2)
+
+    def test_evaluation_freezes_hybrid_seeds_across_all_modes(self):
+        from legal_graphrag.evaluation import evaluate
+
+        retriever = self.make_retriever()
+        result = evaluate(
+            retriever, [{"qid": "q", "question": "điều kiện", "gold": ["a3"]}], top_k=3
+        )
+        retriever.vectors.hybrid_query.assert_called_once()
+        seeds = [r["trace"]["hybrid_articles"] for r in result["predictions"]]
+        self.assertTrue(all(s == seeds[0] for s in seeds))
+        self.assertEqual(result["overall"]["M0"]["recall"], 0)
+        self.assertEqual(result["overall"]["M3"]["recall"], 1)
+
+    def test_configuration_rejects_unbounded_expansion_and_invalid_weights(self):
+        from legal_graphrag.ontology import ExpansionConfig
+
+        for values in (
+            {"depth": 5},
+            {"confidence": float("nan")},
+            {"candidate_budget": 0},
+            {"weights": {"CITES": -1}},
+            {"mode": "unverified"},
+        ):
+            with self.assertRaises(ValueError):
+                ExpansionConfig(**values)

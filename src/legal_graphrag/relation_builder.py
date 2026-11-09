@@ -10,7 +10,7 @@ from pathlib import Path
 
 from .chunking import chunk_document
 from .config import Settings
-from .csv_loader import stream_documents
+from .csv_loader import stream_dataset
 from .extraction import (
     DOCUMENT_NUMBER_RE,
     chunk_body,
@@ -151,7 +151,7 @@ class RelationBuilder:
         started = time.monotonic()
         if limit is not None and limit <= 0:
             raise ValueError("limit must be positive")
-        documents = list(stream_documents(csv_path))
+        documents = list(stream_dataset(csv_path))
         document_map = {d.id: d for d in documents}
         sources = documents[:limit] if limit is not None else documents
         catalog = self.graph.relation_catalog()

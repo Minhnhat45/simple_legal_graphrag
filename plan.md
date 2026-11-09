@@ -1,5 +1,13 @@
 # Plan: evidence-backed legal relations
 
+Status, 2026-11-07: the original document-level implementation below is retained
+as historical research context. The current filtered `data/` directory supersedes
+the deleted sample CSV. The provision hierarchy, grounded semantic verification,
+opt-in M0–M4 hybrid retrieval, and Article-level evaluation now extend that code.
+Use the current commands in [README.md](README.md) and the measured findings in
+[the technical report](reports/semantic_graphrag_20261107.md). Historical sample
+ingestion/reset commands below are not part of the current-data workflow.
+
 ## Goal
 
 Extend this repository from metadata/citation expansion to a small legal relation graph for Vietnamese documents. Find **candidate pairs** with cheap signals, inspect only the relevant chunks with Ollama, and store relations that have traceable evidence. Keep the current Qdrant → Neo4j → Qdrant answer flow working.

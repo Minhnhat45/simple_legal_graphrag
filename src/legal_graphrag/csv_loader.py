@@ -98,3 +98,71 @@ def stream_documents(
                 signer_position=normalize_optional(row.get("Chức danh")),
                 signer=normalize_optional(row.get("Người ký")),
             )
+
+
+def stream_dataset(path: str | Path, *, limit: int | None = None) -> Iterator[LegalDocument]:
+    """Read the current filtered directory, retaining distinct source records.
+
+    Law numbers are not document keys: the supplied manifest includes 37 distinct
+    records numbered 40/2022/QĐ-UBND. No law-level re-filtering is performed.
+    """
+    import json
+
+    root = Path(path)
+    if root.is_file() or root.suffix.lower() == ".csv":
+        yield from stream_documents(root, limit=limit)
+        return
+    if not root.is_dir() or not (root / "departments").is_dir():
+        raise ValueError(f"Expected a document CSV or filtered dataset directory: {root}")
+    if limit is not None and limit <= 0:
+        raise ValueError("limit must be positive")
+    seen: dict[str, str] = {}
+    count = 0
+    for file in sorted((root / "departments").glob("*.csv")):
+        for document in stream_documents(file):
+            if document.id in seen:
+                raise ValueError(f"Repeated source document ID {document.id}; inspect {file}")
+            seen[document.id] = document.fingerprint
+            yield document
+            count += 1
+            if limit is not None and count >= limit:
+                return
+    # Only use locally available contexts and their recorded exact law-number matches.
+    matches: dict[str, list[dict]] = {}
+    for line in (root / "matches.jsonl").read_text(encoding="utf-8").splitlines():
+        row = json.loads(line)
+        if row.get("source") == "ViLegalExperts":
+            matches.setdefault(Path(row["output_file"]).name, []).append(row)
+    metadata = {}
+    meta_path = root / "ViLegalExperts/metadata_matches.jsonl"
+    if meta_path.exists():
+        for line in meta_path.read_text(encoding="utf-8").splitlines():
+            row = json.loads(line)
+            metadata[(row["context_file"], row["law_id"])] = row["example_metadata"]
+    for file in sorted((root / "ViLegalExperts/contexts").glob("*.json")):
+        rows = matches.get(file.name, [])
+        numbers = {r["law_id"] for r in rows}
+        if len(numbers) != 1:
+            raise ValueError(f"Missing/ambiguous exact law-number provenance: {file}")
+        number = next(iter(numbers))
+        data = json.loads(file.read_text(encoding="utf-8"))
+        meta = metadata.get((file.name, number), {})
+        yield LegalDocument(
+            id=f"vilegal:{file.stem}",
+            title=normalize_text(data.get("name")),
+            full_text=normalize_text(data["passage"]),
+            number=number,
+            document_type=normalize_optional(meta.get("Loại văn bản:")),
+            sector="",
+            issued_date=normalize_date(meta.get("Ngày ban hành:")),
+            field="",
+            effective_date=normalize_date(meta.get("Ngày hiệu lực:")),
+            status=normalize_optional(meta.get("Tình trạng:")),
+            expiry_date="",
+            agency=normalize_optional(meta.get("Nơi ban hành:")),
+            signer_position="",
+            signer=normalize_optional(meta.get("Người ký:")),
+        )
+        count += 1
+        if limit is not None and count >= limit:
+            return

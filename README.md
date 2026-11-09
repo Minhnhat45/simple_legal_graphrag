@@ -1,5 +1,126 @@
 # Vietnamese Legal GraphRAG with Neo4j + Qdrant
 
+## Current filtered dataset and provision graph (2026-11-07)
+
+The current `data/` directory is authoritative. Its manifest contains **2,157 unique
+law IDs**, with **1,869 IDs having local source documents** and **288 missing**.
+The saved documents are 1,969 department rows plus 82 context files. Source rows
+are not unique by law number: different authorities can reuse a number. The loader
+retains all source IDs, reports conflicting IDs, and never reruns the filter.
+`data/sample_legal_documents.csv` was removed when the dataset was replaced;
+synthetic regression fixtures now live in test code.
+
+The original dense/document retrieval and historical results below remain available.
+The new opt-in path uses the same chunker, Ollama client, Qdrant store, Neo4j store,
+TF-IDF candidate discovery, answer grounding, and citation validation:
+
+**Qdrant dense + BM25 RRF → Article mapping → bounded Neo4j expansion → exact
+Qdrant evidence confirmation → article deduplication and reranking → Top-K Articles.**
+
+```bash
+conda activate llm  # or the environment prepared below
+# Choose a NEW collection; neither command resets an existing database.
+legal-graphrag ingest data --collection legal_current_hybrid --hybrid
+legal-graphrag build-semantic data --collection legal_current_hybrid \
+  --source-limit 100 --pair-limit 40 --cache-dir .cache/legal_relations
+legal-graphrag retrieve-articles "Điều kiện cấp giấy phép là gì?" \
+  --collection legal_current_hybrid --mode M4 --top-k 10
+legal-graphrag ask "Điều kiện cấp giấy phép là gì?" \
+  --collection legal_current_hybrid --mode M4 --top-k 10
+```
+
+`ingest` adds hierarchy for newly indexed documents. `build-structure data
+--collection NAME` backfills ready, matching documents without re-embedding.
+`build-semantic` checks ingestion hashes and exact chunks before adding structure
+and relations. `--source-limit` bounds sampled semantic source articles; `--pair-limit`
+is a global classification budget. A second verifier runs only for grounded proposals.
+Cheap, unambiguous Article citations are retained independently of that LLM budget.
+Requests and responses are cached by prompt, input, schema, IDs and model digest.
+Ingestion also checks chunk counts in the selected Qdrant collection before
+honoring Neo4j skip markers; repairing missing vectors preserves unchanged graph relations.
+
+Hierarchy is `Document → Chapter → Article → Clause → Point` through `CONTAINS`.
+Unnumbered/ambiguous structure stays unresolved. Existing Document/Chunk IDs are
+unchanged; Article IDs use `<document_id>:article:<number>`, with occurrence suffixes
+for repeated headings. `HAS_CHUNK` connects retrievable evidence to Articles.
+The parser is conservative on flattened text; it does not infer missing headings.
+
+`PROVISION_RELATION` stores directed Article endpoints, source and target chunk IDs,
+exact quotes from both sides, confidence, model/request provenance, content hashes,
+and temporal scope. Explicit types are `CITES`, `AMENDS`, `ADDS_TO`, `REPEALS`,
+`REPLACES`, `DETAILS`; the legacy implementation/guidance kinds remain supported.
+Semantic types are `SPECIFIES`, `SETS_CONDITION_FOR`, `EXCEPTION_TO`, `PENALTY_FOR`.
+`DEFINES` and `REGULATES` link Articles to grounded `LegalConcept` nodes through
+`CONCEPT_RELATION.kind`, rather than falsely labeling document similarity.
+`LegalFact` captures entities, obligations, conditions, exceptions and penalties.
+Shared concepts are candidate signals, not automatic normative edges.
+
+The verifier uses `gemma4:e4b` with constrained JSON and exact request-local aliases.
+It rejects unknown IDs, invented quotes, inadequate bridges, mismatched referenced
+clauses, and unsupported directions. A second pass checks actor/action/scope.
+Model confidence is not treated as proof. Formal changes require explicit operative
+references. `NONE`/empty relations mean no edge. Temporal bounds are the overlap of
+known document metadata, not inferred legal effect; uncertain/formal-effect dates
+remain unknown. `retrieve-articles --as-of YYYY-MM-DD` excludes unknown-date legal
+edges from expansion; it is not a complete historical-law version resolver.
+
+Expansion options are a JSON `ExpansionConfig` passed with `--config FILE`:
+`mode`, `depth` (1–4), `confidence`, `seed_limit`, `candidate_budget`, `per_node_limit`,
+`decay`, `graph_weight`, and per-kind `weights` (all weights 0–1). Defaults are in
+`src/legal_graphrag/ontology.py`. M0 is hybrid only; M1 adds structural siblings;
+M2 explicit relations; M3 semantic relations; M4 combines them. Reverse traversal
+preserves the original legal edge direction. Cycles and candidate growth are bounded.
+All modes share the same hybrid candidate limit and final article budget. Evidence
+never receives unconditional ranking priority in this new path.
+
+The API accepts `mode: "M4"`, `expansion_depth`, `confidence`, `candidate_budget`,
+and `as_of` in `/v1/query`. Its default `legacy` preserves existing behavior.
+Set `QDRANT_COLLECTION` to a hybrid collection for M0–M4. `QDRANT_HYBRID=true` enables
+named dense/BM25 creation during ingestion; a dense-only collection is never silently
+recreated or converted. BM25 settings are shared with the existing `ingest.py` baseline.
+
+Evaluation retains `relevant_aids` from the existing VLSP query file as the original
+gold Article IDs. It does not expand gold labels into all chunks of a long article:
+
+```bash
+legal-graphrag evaluate /path/to/existing/eval.csv \
+  --collection legal_current_hybrid --mapping /path/to/article_to_original_id.json \
+  --top-k 10 --output reports/runs/new_run/evaluation.json
+```
+
+Reports contain Hit@K, Precision@K, Recall@K, MRR, nDCG, F1, candidate recall,
+latency, recovered/lost gold Articles, relation paths and evidence gained beyond
+M0's candidate set. Existing report paths are never overwritten. The mapping is
+only for translating retrieved identities; original gold labels remain unchanged.
+
+The reproducible pilot scripts reuse **only embeddings whose chunk text matches
+exactly one Article in the current filtered corpus**, after whitespace normalization,
+and whose stored model digest matches local `bge-m3:latest`. They read no stored
+training questions and create a new collection and graph namespace. If the stored
+embedding input is missing or extends beyond that current Article, the script
+re-embeds the validated chunk body instead of reusing its vector:
+
+```bash
+python scripts/prepare_experiment.py --dataset data \
+  --source-collection vlsp_legal_bge_m3 --collection NEW_EXPERIMENT_COLLECTION \
+  --output reports/runs/NEW_RUN/manifest.json --apply
+python scripts/run_experiment.py --manifest reports/runs/NEW_RUN/manifest.json \
+  --eval /path/to/existing/eval.csv --output-dir reports/runs/NEW_RUN/pilot \
+  --sources 100 --pairs 40
+```
+
+The 2026-11-07 benchmark retains its original 6,707-point collection and recorded
+Article mappings. Fresh preparation with the improved parser produces a different
+snapshot (6,788 points in the dry run), so compare modes within a single snapshot.
+Use `run_experiment.py --skip-build` with the saved manifest to re-evaluate the
+existing graph. `scripts/summarize_experiment.py` derives coverage subsets and
+recovered/lost evidence from frozen evaluation, manifest and relation reports.
+
+See [the technical report](reports/semantic_graphrag_20261107.md) for measured results,
+coverage limits, prior experiments, and next steps. Full local run artifacts are under
+`reports/runs/20261107/`; they are deliberately excluded from source control.
+
+
 A compact, runnable reference project for Vietnamese legal-document retrieval. It uses:
 
 - **Qdrant** for semantic search over article-aware text chunks.
@@ -7,7 +128,7 @@ A compact, runnable reference project for Vietnamese legal-document retrieval. I
 - **Ollama** for local embeddings, relation verification, and answer generation.
 - **FastAPI** for a small query API.
 
-The loader was validated against `khoa_hoc_va_cong_nghe.csv`: 2,389 rows, 14 fields,
+Historically, the loader was validated against `khoa_hoc_va_cong_nghe.csv`: 2,389 rows, 14 fields,
 approximately 52.5 MB, and individual `Toàn văn` values as large as 2,336,295 characters.
 It raises Python's CSV field limit and streams rows instead of loading the corpus at once.
 With the default chunk settings, that file produces 40,510 chunks and 13,722
@@ -108,33 +229,12 @@ Re-ingest the original CSV to populate Neo4j; existing graph data is not copied 
 You can ingest without `--recreate` to retain the existing Qdrant collection. Health and
 stats responses now use the `neo4j` key.
 
-Ingest the bundled three-row sample:
-
-```bash
-# Use --recreate only with disposable local data.
-legal-graphrag ingest data/sample_legal_documents.csv --recreate
-legal-graphrag build-relations data/sample_legal_documents.csv
-legal-graphrag stats
-legal-graphrag ask "Văn bản nào bãi bỏ Quyết định 01/2026/QĐ-UBND?"
-```
-
-Use your supplied corpus by pointing the CLI at its path:
-
-```bash
-# A quick end-to-end check first
-legal-graphrag ingest /path/to/khoa_hoc_va_cong_nghe.csv --limit 100 --recreate
-
-# Then rebuild with the complete file
-legal-graphrag ingest /path/to/khoa_hoc_va_cong_nghe.csv --recreate
-```
-
-`--recreate` explicitly clears the configured graph contents and Qdrant collection. Without
-it, the loader is incremental: unchanged documents are skipped using a hash of their text,
-metadata, chunk settings, embedding model, and schema version.
-
-When switching an existing installation to `bge-m3`, set `OLLAMA_EMBED_MODEL=bge-m3`
-in `.env`, run `ollama pull bge-m3`, and re-ingest your full corpus with `--recreate`
-before querying. This rebuilds the graph and Qdrant collection with the new embeddings.
+Ingest the current dataset using the non-destructive commands at the top of this
+README. For a CSV-only trial, use a current file such as
+`data/departments/khoa_hoc_va_cong_nghe.csv` and `--limit 10` in a new collection.
+Without `--recreate`, ingestion skips unchanged documents by content/settings hash.
+`--recreate` remains an explicitly destructive legacy option: it clears the configured
+graph and collection. It was not used for the current experiment.
 
 ## Qdrant-only BM25 + embedding baseline
 
@@ -145,7 +245,7 @@ only to Qdrant. It does not connect to Neo4j or call a chat model.
 python -m pip install -r requirements.txt
 docker compose up -d qdrant
 ollama pull bge-m3
-python ingest.py data/sample_legal_documents.csv
+python ingest.py data/departments/khoa_hoc_va_cong_nghe.csv
 # Rebuild the separate baseline with your full corpus:
 python ingest.py /path/to/khoa_hoc_va_cong_nghe.csv --recreate
 ```
@@ -164,11 +264,11 @@ See the [FastEmbed BM25 implementation](https://github.com/qdrant/fastembed/blob
 
 For later hybrid retrieval, encode questions with the same Ollama model and
 `SparseTextEmbedding(model_name="Qdrant/bm25", disable_stemmer=True, avg_len=256.0).query_embed(...)`,
-search `dense` and `bm25`, then fuse their ranks (e.g. Qdrant RRF). The existing GraphRAG
-query command uses an unnamed dense vector and cannot query this baseline collection directly.
+search `dense` and `bm25`, then fuse their ranks (e.g. Qdrant RRF). The legacy query path uses dense retrieval. The new M0–M4 path can query this named
+hybrid layout directly after matching graph structure is available.
 Keep the corpus, chunk settings, embedding model, and retrieval budget identical when comparing.
 
-## Building legal relations
+## Legacy document-level relations
 
 Run `legal-graphrag build-relations <same-csv-path> [--limit N]` after ingesting the
 CSV. `--limit` caps **source documents**, while candidates still see every document in
@@ -240,7 +340,7 @@ MATCH (source:Document)-[r:LEGAL_RELATION]->(target:Document)
 RETURN source.id, target.id, r.kind, r.source_chunk_id, r.evidence, r.method
 ```
 
-### Observed sample validation
+### Historical sample validation (preserved)
 
 Validated on 2026-09-29 using separate disposable Neo4j 5.26 and Qdrant containers,
 `bge-m3` embeddings, and `gemma4:e4b` verification/answers. The existing development

@@ -3,6 +3,7 @@ from __future__ import annotations
 from collections.abc import AsyncIterator
 from contextlib import asynccontextmanager
 from functools import lru_cache
+from typing import Literal
 
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
@@ -23,6 +24,11 @@ class QueryRequest(BaseModel):
     question: str = Field(min_length=1, max_length=4000)
     filters: FilterRequest | None = None
     top_k: int | None = Field(default=None, ge=1, le=50)
+    mode: Literal["legacy", "M0", "M1", "M2", "M3", "M4"] = "legacy"
+    expansion_depth: int = Field(default=2, ge=1, le=4)
+    confidence: float = Field(default=0.8, ge=0, le=1)
+    candidate_budget: int = Field(default=60, ge=50, le=500)
+    as_of: str = ""
 
 
 @lru_cache(maxsize=1)
@@ -65,6 +71,18 @@ def stats() -> dict[str, object]:
 @app.post("/v1/query")
 def query(request: QueryRequest) -> dict[str, object]:
     filters = QueryFilters(**request.filters.model_dump()) if request.filters else QueryFilters()
+    from .ontology import ExpansionConfig
+
+    config = (
+        None
+        if request.mode == "legacy"
+        else ExpansionConfig(
+            mode=request.mode,
+            depth=request.expansion_depth,
+            confidence=request.confidence,
+            candidate_budget=request.candidate_budget,
+        )
+    )
     try:
         return (
             get_service()
@@ -72,6 +90,8 @@ def query(request: QueryRequest) -> dict[str, object]:
                 request.question,
                 filters=filters,
                 top_k=request.top_k,
+                graph_config=config,
+                as_of=request.as_of,
             )
             .to_dict()
         )

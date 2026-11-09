@@ -3,17 +3,15 @@ from __future__ import annotations
 import unittest
 from contextlib import redirect_stdout
 from io import StringIO
-from pathlib import Path
 from types import SimpleNamespace
 from unittest.mock import Mock, patch
 
 import numpy as np
 from qdrant_client import QdrantClient, models
+from test_pipeline import SAMPLE
 
 from ingest import ingest, main
 from legal_graphrag.config import Settings
-
-SAMPLE = Path(__file__).resolve().parents[1] / "data/sample_legal_documents.csv"
 
 
 class BaselineIngestTests(unittest.TestCase):
@@ -24,14 +22,16 @@ class BaselineIngestTests(unittest.TestCase):
                 client = Mock(spec=["close"])
                 with (
                     patch("sys.argv", ["ingest.py", str(SAMPLE)]),
-                    patch.dict("sys.modules", {"fastembed": SimpleNamespace(
-                        SparseTextEmbedding=Mock()
-                    )}),
+                    patch.dict(
+                        "sys.modules", {"fastembed": SimpleNamespace(SparseTextEmbedding=Mock())}
+                    ),
                     patch("ingest.Settings.from_env", return_value=Settings()),
                     patch("ingest.QdrantClient", return_value=client),
-                    patch("ingest.ingest", side_effect=error, return_value={
-                        "documents": 3, "chunks": 9
-                    }) as run,
+                    patch(
+                        "ingest.ingest",
+                        side_effect=error,
+                        return_value={"documents": 3, "chunks": 9},
+                    ) as run,
                     redirect_stdout(StringIO()),
                 ):
                     if error is None:
@@ -55,8 +55,13 @@ class BaselineIngestTests(unittest.TestCase):
     def run_ingest(self, **kwargs):
         with redirect_stdout(StringIO()):
             return ingest(
-                SAMPLE, Settings(embed_batch_size=2), collection="baseline",
-                client=self.client, embedder=self.embedder, bm25=self.bm25, **kwargs,
+                SAMPLE,
+                Settings(embed_batch_size=2),
+                collection="baseline",
+                client=self.client,
+                embedder=self.embedder,
+                bm25=self.bm25,
+                **kwargs,
             )
 
     def test_dense_sparse_payload_and_rebuild(self) -> None:
@@ -89,7 +94,12 @@ class BaselineIngestTests(unittest.TestCase):
     def test_graph_collection_is_rejected(self) -> None:
         with self.assertRaisesRegex(ValueError, "separate"):
             ingest(
-                SAMPLE, Settings(), collection="vn_legal_chunks", recreate=True,
-                client=self.client, embedder=self.embedder, bm25=self.bm25,
+                SAMPLE,
+                Settings(),
+                collection="vn_legal_chunks",
+                recreate=True,
+                client=self.client,
+                embedder=self.embedder,
+                bm25=self.bm25,
             )
         self.assertFalse(self.client.collection_exists("vn_legal_chunks"))
