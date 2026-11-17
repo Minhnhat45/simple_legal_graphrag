@@ -75,6 +75,23 @@ if __name__ == "__main__":
 
 
 class HybridQdrantTests(unittest.TestCase):
+    def test_explicit_snapshot_mapping_survives_persistence(self):
+        from test_extraction import make_document
+
+        client = QdrantClient(":memory:")
+        self.addCleanup(client.close)
+        store = QdrantStore(Settings(qdrant_collection="snapshot"), client=client)
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore", UserWarning)
+            store.ensure_collection(2)
+        doc = make_document("Điều 1. Quy định thứ nhất. Điều 1. Quy định thứ hai.")
+        chunk = DocumentChunk("d1:second", "d1", 0, "Điều 1", "Quy định thứ hai.")
+        store.article_mapping = {chunk.id: "d1:article:1:occurrence:2"}
+        store.upsert([chunk], [[1.0, 0.0]], {"d1": doc})
+        store.article_mapping = {}
+        hits = store.query([1.0, 0.0], filters=QueryFilters(), limit=1)
+        self.assertEqual(hits[0].article_id, "d1:article:1:occurrence:2")
+
     def test_native_hybrid_and_named_vector_confirmation_share_filters(self):
         from types import SimpleNamespace
         from unittest.mock import Mock

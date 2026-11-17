@@ -1,0 +1,128 @@
+{
+  "status": "partial_execution; services_recovered; full_benchmark_deferred_for_identity_review",
+  "inputs": {
+    "corpus": {
+      "path": "/Users/minhnhat/PycharmProjects/master-phenikaa/data/corpus.csv",
+      "sha256": "79bf936ef8de4208beaf13e932075b12e6b9d67043311d602bf386b66ffe2edc"
+    },
+    "analysis": {
+      "path": "/Users/minhnhat/PycharmProjects/master-phenikaa/simple_legal_graphrag/reports/failure_analysis_20261107.json",
+      "sha256": "931fcc136ced2dc72958e8d1169e7ef10162458a76eba892fa6f3bdaa9197b81"
+    }
+  },
+  "chunk_size_chars": 1800,
+  "chunk_overlap_chars": 250,
+  "mapping_rule": "Full normalized corpus article body (>=30 chars) occurs in exactly one parsed source article of the identical law number; reject many-to-one matches. NFC, whitespace and quote typography normalization only; source evidence remains unchanged. No ordinal inference.",
+  "source_hashes": {
+    "/Users/minhnhat/PycharmProjects/master-phenikaa/simple_legal_graphrag/scripts/repair_coverage.py": "1bee7dd8235203f87d1f320cd3ee211af1050d1a6b7d7191ccd1c988ee82f62a",
+    "/Users/minhnhat/PycharmProjects/master-phenikaa/simple_legal_graphrag/src/legal_graphrag/__init__.py": "4cdaa35dd0c07575505b8a9e6ef0d1d5f2d471639eafd06ad3303c8313f0c87b",
+    "/Users/minhnhat/PycharmProjects/master-phenikaa/simple_legal_graphrag/src/legal_graphrag/api.py": "245512ba945ba4a040ba6543d0a6c0abe925b55683759a10c2f4d8844ec994d0",
+    "/Users/minhnhat/PycharmProjects/master-phenikaa/simple_legal_graphrag/src/legal_graphrag/chunking.py": "a6a88de4d536ec980a97496feeb4d2df4208f487f876ddc7e10a83c6611da091",
+    "/Users/minhnhat/PycharmProjects/master-phenikaa/simple_legal_graphrag/src/legal_graphrag/cli.py": "ef47f731ceee471f3706a44b69925c9d282bce6e49d7e4e97534a9284f410ac0",
+    "/Users/minhnhat/PycharmProjects/master-phenikaa/simple_legal_graphrag/src/legal_graphrag/config.py": "07fefa2a9c22b0625c091cc33bd3471fcfe341c9ba8ca565b84649b0d993c4d4",
+    "/Users/minhnhat/PycharmProjects/master-phenikaa/simple_legal_graphrag/src/legal_graphrag/csv_loader.py": "ae83a016add1756d07049bc3c1fb1399e2bb5f2bff4321e95daff292347209f1",
+    "/Users/minhnhat/PycharmProjects/master-phenikaa/simple_legal_graphrag/src/legal_graphrag/evaluation.py": "3fba4714607cfb0c4235e31d8992a078b1971f6b631b5de6bfa6f0eca33b05ac",
+    "/Users/minhnhat/PycharmProjects/master-phenikaa/simple_legal_graphrag/src/legal_graphrag/experiment.py": "9eeaac88de8aba0b14583ab8158f2d431bebc618e66b79918c8357f158bbc05d",
+    "/Users/minhnhat/PycharmProjects/master-phenikaa/simple_legal_graphrag/src/legal_graphrag/extraction.py": "4cd43ad78590ab141b8f096a60ee4478b40545e6a259befb865d8598c6174ff9",
+    "/Users/minhnhat/PycharmProjects/master-phenikaa/simple_legal_graphrag/src/legal_graphrag/graph_store.py": "2eb8940ccc36d74d0b42e8c979afd8d1769105426e475b474615cb64a54cced9",
+    "/Users/minhnhat/PycharmProjects/master-phenikaa/simple_legal_graphrag/src/legal_graphrag/llm.py": "dffe7c3c82915473ec9b1f94d75e11720b295434825f40c5dedc12db19e175db",
+    "/Users/minhnhat/PycharmProjects/master-phenikaa/simple_legal_graphrag/src/legal_graphrag/models.py": "c9f9f2bb271cf4a6e7f58b44632122e53e5a0b46b9b3fc9f5f2e2362359dba7f",
+    "/Users/minhnhat/PycharmProjects/master-phenikaa/simple_legal_graphrag/src/legal_graphrag/ontology.py": "cffef60d5c4e037921fcc912eb5eefa730b7651579355d6a4dc468d9d7d14702",
+    "/Users/minhnhat/PycharmProjects/master-phenikaa/simple_legal_graphrag/src/legal_graphrag/pipeline.py": "cc96462951f4d0b04e976939c410252e10b9d1a27bf7bcc006a3c9593f6d8bdd",
+    "/Users/minhnhat/PycharmProjects/master-phenikaa/simple_legal_graphrag/src/legal_graphrag/qdrant_store.py": "7b84c327958be2594e84cdb0749320e4ae5bc629f677333ca7b85b1c1b5f8fd8",
+    "/Users/minhnhat/PycharmProjects/master-phenikaa/simple_legal_graphrag/src/legal_graphrag/relation_builder.py": "86d397093b8fdd1a9d7b5eb528d43f57a8d8688271721cd6b39dabdfd67480c0",
+    "/Users/minhnhat/PycharmProjects/master-phenikaa/simple_legal_graphrag/src/legal_graphrag/retrieval.py": "c0d4b5090fa7c60f906a41ee242ab954870bb24dacaa516ce96fbbdc633cb877",
+    "/Users/minhnhat/PycharmProjects/master-phenikaa/simple_legal_graphrag/src/legal_graphrag/semantic.py": "0a59ba8c37e818cd518d1da617ea5d1aa73fa3ef5ea3c0d4a32b2ddc43847af5",
+    "/Users/minhnhat/PycharmProjects/master-phenikaa/simple_legal_graphrag/src/legal_graphrag/service.py": "b3e6e1be8701517cb8bc6fa986becb4c2a0f04fb115a0da2fa75079e7976d72c",
+    "/Users/minhnhat/PycharmProjects/master-phenikaa/simple_legal_graphrag/src/legal_graphrag/structure.py": "e38f48a6248d8be28f465b6d6c8cd16a2c7d6cd1fb4c71d0492b35ab09c322df"
+  },
+  "documents": 2051,
+  "articles": 55898,
+  "chunks": 91405,
+  "corpus_articles": 59636,
+  "mapped_original_articles": 31307,
+  "gap_counts": {
+    "no_exact_article_match": 25749,
+    "ambiguous": 1106,
+    "multiple_original_ids": 1474
+  },
+  "resolved_citations": 19674,
+  "graph_build_seconds": 31.426772207953036,
+  "queries": 100,
+  "old_fully_indexed_queries": 68,
+  "snapshot_fully_mapped_queries": 47,
+  "snapshot_mapped_gold_occurrences": 53,
+  "gold_occurrences": 113,
+  "build_seconds": 81.29664616682567,
+  "snapshot_sha256": "01bfa48936fd223120fbf9894d0983b64f367c81ef55417d585ff2b2dad6bb49",
+  "documents_without_parsed_articles": 46,
+  "initial_service_checks": {
+    "qdrant": "[Errno 61] Connection refused",
+    "ollama": "[Errno 61] Connection refused",
+    "neo4j": "[Errno 61] Connection refused"
+  },
+  "recovered_services": {
+    "qdrant_url": "http://localhost:6333",
+    "ollama_url": "http://localhost:11434",
+    "collections": [
+      {
+        "name": "legal_chunks_bge_m3_v1"
+      }
+    ],
+    "models": [
+      {
+        "name": "gemma4:e4b",
+        "digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+      },
+      {
+        "name": "bge-m3:latest",
+        "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab"
+      },
+      {
+        "name": "gemma4:12b-mlx",
+        "digest": "7c75d6f0f4b974c8761fe291ab4d808754b6a6b1420c60663c519363b49a26e1"
+      },
+      {
+        "name": "gemma4:e2b",
+        "digest": "7fbdbf8f5e45a75bb122155ed546e765b4d9c53a1285f62fd9f506baa1c5a47e"
+      }
+    ],
+    "embedding_probe": {
+      "batch": 64,
+      "seconds": 4.3746652090922,
+      "projected_80865_chunks_minutes": 92.12429743053144
+    },
+    "original_artifact_search_roots": [
+      "/Users/minhnhat/PycharmProjects",
+      "/Users/minhnhat/Downloads",
+      "/Users/minhnhat/Documents"
+    ],
+    "original_artifacts_found": false
+  },
+  "embedding_minutes_estimate": 104.1318420409043,
+  "tests": {
+    "run": 61,
+    "passed": 59,
+    "skipped": 2
+  },
+  "new_retrieval_metrics": null,
+  "answer_metrics": null,
+  "review_queue_items": 42,
+  "implementation_hashes": {
+    "scripts/repair_coverage.py": "1bee7dd8235203f87d1f320cd3ee211af1050d1a6b7d7191ccd1c988ee82f62a",
+    "scripts/run_repaired_experiment.py": "f7e4ad3958a3f1749a82edecd152831682f26a7f9460b51a2ca05e49514616c9",
+    "scripts/audit_mapping_gaps.py": "0cb066155fa1873b813ac21abc35dbdfaf442e27415c03548f0388f8a775e367",
+    "src/legal_graphrag/chunking.py": "a6a88de4d536ec980a97496feeb4d2df4208f487f876ddc7e10a83c6611da091",
+    "src/legal_graphrag/retrieval.py": "c0d4b5090fa7c60f906a41ee242ab954870bb24dacaa516ce96fbbdc633cb877",
+    "src/legal_graphrag/qdrant_store.py": "7b84c327958be2594e84cdb0749320e4ae5bc629f677333ca7b85b1c1b5f8fd8",
+    "src/legal_graphrag/experiment.py": "9eeaac88de8aba0b14583ab8158f2d431bebc618e66b79918c8357f158bbc05d",
+    "src/legal_graphrag/ontology.py": "cffef60d5c4e037921fcc912eb5eefa730b7651579355d6a4dc468d9d7d14702"
+  },
+  "snapshot_integrity": {
+    "fts_query": "hôn nhân",
+    "fts_matches": 247,
+    "dangling_citation_endpoints": 0,
+    "every_article_has_chunks": true
+  },
+  "mapping_review_items": 60
+}

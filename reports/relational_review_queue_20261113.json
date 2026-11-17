@@ -1,0 +1,611 @@
+{
+  "status": "review_queue_only; not a validated relational benchmark",
+  "requirements": [
+    "Independent reviewer must verify gold provision identity, answer and linkage.",
+    "Add independently authored rule/exception, condition/procedure and cross-document cases.",
+    "Freeze document-family-separated dev/test sets before tuning."
+  ],
+  "items": [
+    {
+      "qid": "4852",
+      "question": "Sử dụng bao bì đựng chất thải nguy hại không đáp ứng yêu cầu kỹ thuật có bị xử phạt không?",
+      "source": "existing_natural_diagnostic_question; not independently authored for new benchmark",
+      "gold": [
+        "18207",
+        "18230"
+      ],
+      "review_status": "pending",
+      "relational_category": null,
+      "requires_linked_provisions": null,
+      "reviewed_answer": null,
+      "reviewer": null,
+      "eligible_for_held_out_test": false
+    },
+    {
+      "qid": "13794",
+      "question": "Trách nhiệm của người đến thăm gặp và người bị tạm giữ, tạm giam gồm những gì?",
+      "source": "existing_natural_diagnostic_question; not independently authored for new benchmark",
+      "gold": [
+        "39300"
+      ],
+      "review_status": "pending",
+      "relational_category": null,
+      "requires_linked_provisions": null,
+      "reviewed_answer": null,
+      "reviewer": null,
+      "eligible_for_held_out_test": false
+    },
+    {
+      "qid": "7105",
+      "question": "Danh sách hội đồng thẩm định báo cáo đánh giá tác động môi trường có cần phải công khai không?",
+      "source": "existing_natural_diagnostic_question; not independently authored for new benchmark",
+      "gold": [
+        "31792"
+      ],
+      "review_status": "pending",
+      "relational_category": null,
+      "requires_linked_provisions": null,
+      "reviewed_answer": null,
+      "reviewer": null,
+      "eligible_for_held_out_test": false
+    },
+    {
+      "qid": "6090",
+      "question": "Tự ý nửa chừng chấm dứt việc phạm tội được quy định như thế nào trong Bộ Luật Hình sự 2015?",
+      "source": "existing_natural_diagnostic_question; not independently authored for new benchmark",
+      "gold": [
+        "56460"
+      ],
+      "review_status": "pending",
+      "relational_category": null,
+      "requires_linked_provisions": null,
+      "reviewed_answer": null,
+      "reviewer": null,
+      "eligible_for_held_out_test": false
+    },
+    {
+      "qid": "4190",
+      "question": "Mã số các ngạch công chức ngành nông nghiệp và phát triển nông thôn được quy định thế nào?",
+      "source": "existing_natural_diagnostic_question; not independently authored for new benchmark",
+      "gold": [
+        "28492"
+      ],
+      "review_status": "pending",
+      "relational_category": null,
+      "requires_linked_provisions": null,
+      "reviewed_answer": null,
+      "reviewer": null,
+      "eligible_for_held_out_test": false
+    },
+    {
+      "qid": "13056",
+      "question": "Những nguyên tắc cần phải tuân thủ khi tổ chức đám cưới là gì?",
+      "source": "existing_natural_diagnostic_question; not independently authored for new benchmark",
+      "gold": [
+        "57799"
+      ],
+      "review_status": "pending",
+      "relational_category": null,
+      "requires_linked_provisions": null,
+      "reviewed_answer": null,
+      "reviewer": null,
+      "eligible_for_held_out_test": false
+    },
+    {
+      "qid": "10419",
+      "question": "Các trường hợp nào phải có giấy phép nhập khẩu trang thiết bị y tế?",
+      "source": "existing_natural_diagnostic_question; not independently authored for new benchmark",
+      "gold": [
+        "15562",
+        "57385",
+        "58781"
+      ],
+      "review_status": "pending",
+      "relational_category": null,
+      "requires_linked_provisions": null,
+      "reviewed_answer": null,
+      "reviewer": null,
+      "eligible_for_held_out_test": false
+    },
+    {
+      "qid": "2519",
+      "question": "Giấy chứng nhận kiểm định xe cơ giới hết hiệu lực trong trường hợp nào?",
+      "source": "existing_natural_diagnostic_question; not independently authored for new benchmark",
+      "gold": [
+        "13032"
+      ],
+      "review_status": "pending",
+      "relational_category": null,
+      "requires_linked_provisions": null,
+      "reviewed_answer": null,
+      "reviewer": null,
+      "eligible_for_held_out_test": false
+    },
+    {
+      "qid": "15874",
+      "question": "Nhiệm vụ và quyền hạn của Báo Văn hóa được quy định như thế nào?",
+      "source": "existing_natural_diagnostic_question; not independently authored for new benchmark",
+      "gold": [
+        "46700"
+      ],
+      "review_status": "pending",
+      "relational_category": null,
+      "requires_linked_provisions": null,
+      "reviewed_answer": null,
+      "reviewer": null,
+      "eligible_for_held_out_test": false
+    },
+    {
+      "qid": "15872",
+      "question": "Vị trí và chức năng của Cục Hợp tác quốc tế thuộc Bộ Văn hóa - Thể thao và Du lịch là gì?",
+      "source": "existing_natural_diagnostic_question; not independently authored for new benchmark",
+      "gold": [
+        "46694"
+      ],
+      "review_status": "pending",
+      "relational_category": null,
+      "requires_linked_provisions": null,
+      "reviewed_answer": null,
+      "reviewer": null,
+      "eligible_for_held_out_test": false
+    },
+    {
+      "qid": "12024",
+      "question": "Chính sách trợ cấp tham quan, học tập, bồi dưỡng chuyên môn, nghiệp vụ đối với nhà giáo, cán bộ quản lý giáo dục công tác ở trường chuyên biệt được quy định như thế nào?",
+      "source": "existing_natural_diagnostic_question; not independently authored for new benchmark",
+      "gold": [
+        "28239"
+      ],
+      "review_status": "pending",
+      "relational_category": null,
+      "requires_linked_provisions": null,
+      "reviewed_answer": null,
+      "reviewer": null,
+      "eligible_for_held_out_test": false
+    },
+    {
+      "qid": "11307",
+      "question": "Ban tư vấn cho tôi hỏi mức phí đánh giá lần đầu để cấp giấy chứng nhận quốc tế về an ninh tàu biển là bao nhiêu?",
+      "source": "existing_natural_diagnostic_question; not independently authored for new benchmark",
+      "gold": [
+        "22856"
+      ],
+      "review_status": "pending",
+      "relational_category": null,
+      "requires_linked_provisions": null,
+      "reviewed_answer": null,
+      "reviewer": null,
+      "eligible_for_held_out_test": false
+    },
+    {
+      "qid": "6735",
+      "question": "Ai là người có trách nhiệm phải nộp thuế tiêu thụ đặc biệt?",
+      "source": "existing_natural_diagnostic_question; not independently authored for new benchmark",
+      "gold": [
+        "40406"
+      ],
+      "review_status": "pending",
+      "relational_category": null,
+      "requires_linked_provisions": null,
+      "reviewed_answer": null,
+      "reviewer": null,
+      "eligible_for_held_out_test": false
+    },
+    {
+      "qid": "7335",
+      "question": "Những giấy tờ, tài liệu nào thuộc phạm vi thực hiện số hóa?",
+      "source": "existing_natural_diagnostic_question; not independently authored for new benchmark",
+      "gold": [
+        "43743"
+      ],
+      "review_status": "pending",
+      "relational_category": null,
+      "requires_linked_provisions": null,
+      "reviewed_answer": null,
+      "reviewer": null,
+      "eligible_for_held_out_test": false
+    },
+    {
+      "qid": "567",
+      "question": "Hiến đất làm đường có được bồi thường không khi bên thi công gây lún nhà?",
+      "source": "existing_natural_diagnostic_question; not independently authored for new benchmark",
+      "gold": [
+        "53375"
+      ],
+      "review_status": "pending",
+      "relational_category": null,
+      "requires_linked_provisions": null,
+      "reviewed_answer": null,
+      "reviewer": null,
+      "eligible_for_held_out_test": false
+    },
+    {
+      "qid": "5950",
+      "question": "Cục Xúc tiến thương mại là cơ quan trực thuộc Bộ nào?",
+      "source": "existing_natural_diagnostic_question; not independently authored for new benchmark",
+      "gold": [
+        "37339"
+      ],
+      "review_status": "pending",
+      "relational_category": null,
+      "requires_linked_provisions": null,
+      "reviewed_answer": null,
+      "reviewer": null,
+      "eligible_for_held_out_test": false
+    },
+    {
+      "qid": "9102",
+      "question": "2. Thời hạn cấp lại thẻ Căn cước công dân sau khi xăm lông mày là bao lâu?",
+      "source": "existing_natural_diagnostic_question; not independently authored for new benchmark",
+      "gold": [
+        "3601"
+      ],
+      "review_status": "pending",
+      "relational_category": null,
+      "requires_linked_provisions": null,
+      "reviewed_answer": null,
+      "reviewer": null,
+      "eligible_for_held_out_test": false
+    },
+    {
+      "qid": "451",
+      "question": "Người lao động nhận con nuôi có được hưởng trợ cấp một lần?",
+      "source": "existing_natural_diagnostic_question; not independently authored for new benchmark",
+      "gold": [
+        "57535"
+      ],
+      "review_status": "pending",
+      "relational_category": null,
+      "requires_linked_provisions": null,
+      "reviewed_answer": null,
+      "reviewer": null,
+      "eligible_for_held_out_test": false
+    },
+    {
+      "qid": "14253",
+      "question": "Công dân muốn đổi sang căn cước công dân gắn chip thì đến cơ quan nào?",
+      "source": "existing_natural_diagnostic_question; not independently authored for new benchmark",
+      "gold": [
+        "3602"
+      ],
+      "review_status": "pending",
+      "relational_category": null,
+      "requires_linked_provisions": null,
+      "reviewed_answer": null,
+      "reviewer": null,
+      "eligible_for_held_out_test": false
+    },
+    {
+      "qid": "16203",
+      "question": "Vị trí và chức năng của Cục Công nghiệp công nghệ thông tin và Truyền thông được quy định như thế nào?",
+      "source": "existing_natural_diagnostic_question; not independently authored for new benchmark",
+      "gold": [
+        "48179"
+      ],
+      "review_status": "pending",
+      "relational_category": null,
+      "requires_linked_provisions": null,
+      "reviewed_answer": null,
+      "reviewer": null,
+      "eligible_for_held_out_test": false
+    },
+    {
+      "qid": "10036",
+      "question": "Tiếp nhận, quản lý, sử dụng kinh phí đối với lễ hội không phải do cơ quan nhà nước tổ chức ra sao?",
+      "source": "existing_natural_diagnostic_question; not independently authored for new benchmark",
+      "gold": [
+        "13235"
+      ],
+      "review_status": "pending",
+      "relational_category": null,
+      "requires_linked_provisions": null,
+      "reviewed_answer": null,
+      "reviewer": null,
+      "eligible_for_held_out_test": false
+    },
+    {
+      "qid": "5966",
+      "question": "Hợp đồng dịch vụ quảng cáo thương mại được quy định như thế nào?",
+      "source": "existing_natural_diagnostic_question; not independently authored for new benchmark",
+      "gold": [
+        "7247",
+        "7255"
+      ],
+      "review_status": "pending",
+      "relational_category": null,
+      "requires_linked_provisions": null,
+      "reviewed_answer": null,
+      "reviewer": null,
+      "eligible_for_held_out_test": false
+    },
+    {
+      "qid": "9882",
+      "question": "Việc cho thuê đất của Nhà nước đuợc quy định như thế nào?",
+      "source": "existing_natural_diagnostic_question; not independently authored for new benchmark",
+      "gold": [
+        "56006",
+        "56079"
+      ],
+      "review_status": "pending",
+      "relational_category": null,
+      "requires_linked_provisions": null,
+      "reviewed_answer": null,
+      "reviewer": null,
+      "eligible_for_held_out_test": false
+    },
+    {
+      "qid": "8289",
+      "question": "1. Viên chức nghiện ma túy có bị buộc thôi việc hay không?",
+      "source": "existing_natural_diagnostic_question; not independently authored for new benchmark",
+      "gold": [
+        "6611",
+        "6612",
+        "6613",
+        "6614"
+      ],
+      "review_status": "pending",
+      "relational_category": null,
+      "requires_linked_provisions": null,
+      "reviewed_answer": null,
+      "reviewer": null,
+      "eligible_for_held_out_test": false
+    },
+    {
+      "qid": "16576",
+      "question": "Tôi có biết Bộ Tư pháp vẫn thường có các buổi gặp mặt cũng như lắng nghe ý kiến từ người dân, nhưng không rõ trách nhiệm tiếp công dân của Bộ Tư pháp được quy định như thế nào?",
+      "source": "existing_natural_diagnostic_question; not independently authored for new benchmark",
+      "gold": [
+        "49428"
+      ],
+      "review_status": "pending",
+      "relational_category": null,
+      "requires_linked_provisions": null,
+      "reviewed_answer": null,
+      "reviewer": null,
+      "eligible_for_held_out_test": false
+    },
+    {
+      "qid": "6920",
+      "question": "Có bắt buộc phải về quê xin Giấy xác nhận tình trạng hôn nhân sau khi nhập hộ khẩu ở địa chỉ mới không?",
+      "source": "existing_natural_diagnostic_question; not independently authored for new benchmark",
+      "gold": [
+        "5469"
+      ],
+      "review_status": "pending",
+      "relational_category": null,
+      "requires_linked_provisions": null,
+      "reviewed_answer": null,
+      "reviewer": null,
+      "eligible_for_held_out_test": false
+    },
+    {
+      "qid": "1164",
+      "question": "Nguyên tắc áp dụng định mức kinh tế - kỹ thuật cho lập và điều chỉnh quy hoạch quảng cáo ngoài trời được quy định như thế nào?",
+      "source": "existing_natural_diagnostic_question; not independently authored for new benchmark",
+      "gold": [
+        "8863"
+      ],
+      "review_status": "pending",
+      "relational_category": null,
+      "requires_linked_provisions": null,
+      "reviewed_answer": null,
+      "reviewer": null,
+      "eligible_for_held_out_test": false
+    },
+    {
+      "qid": "8798",
+      "question": "Phạt vi phạm và bồi thường thiệt hại trong hoạt động cho vay của tổ chức tín dụng quy định thế nào?",
+      "source": "existing_natural_diagnostic_question; not independently authored for new benchmark",
+      "gold": [
+        "51195",
+        "51207"
+      ],
+      "review_status": "pending",
+      "relational_category": null,
+      "requires_linked_provisions": null,
+      "reviewed_answer": null,
+      "reviewer": null,
+      "eligible_for_held_out_test": false
+    },
+    {
+      "qid": "14907",
+      "question": "Thời hạn lấy ý kiến phê duyệt kết quả thẩm định báo cáo đánh giá tác động môi trường đối với dự án đầu tư có hoạt động xả nước thải vào công trình thủy lợi?",
+      "source": "existing_natural_diagnostic_question; not independently authored for new benchmark",
+      "gold": [
+        "31794"
+      ],
+      "review_status": "pending",
+      "relational_category": null,
+      "requires_linked_provisions": null,
+      "reviewed_answer": null,
+      "reviewer": null,
+      "eligible_for_held_out_test": false
+    },
+    {
+      "qid": "1571",
+      "question": "Mạo danh ảnh hưởng đến uy tín của tổ chức bồi thường như thế nào?",
+      "source": "existing_natural_diagnostic_question; not independently authored for new benchmark",
+      "gold": [
+        "52802",
+        "53362"
+      ],
+      "review_status": "pending",
+      "relational_category": null,
+      "requires_linked_provisions": null,
+      "reviewed_answer": null,
+      "reviewer": null,
+      "eligible_for_held_out_test": false
+    },
+    {
+      "qid": "5124",
+      "question": "Cơ quan, đơn vị tiếp nhận động vật rừng do tổ chức, cá nhân tự nguyện giao nộp Nhà nước được quy định như thế nào?",
+      "source": "existing_natural_diagnostic_question; not independently authored for new benchmark",
+      "gold": [
+        "59320"
+      ],
+      "review_status": "pending",
+      "relational_category": null,
+      "requires_linked_provisions": null,
+      "reviewed_answer": null,
+      "reviewer": null,
+      "eligible_for_held_out_test": false
+    },
+    {
+      "qid": "16281",
+      "question": "Nhờ Ban tư vấn giải đáp giúp em vấn đề sau trong thời gian sớm nhất. Thắc mắc của em cụ thể như sau: Tiêu chuẩn đơn vị hành chính cấp xã được quy định như thế nào?",
+      "source": "existing_natural_diagnostic_question; not independently authored for new benchmark",
+      "gold": [
+        "46664"
+      ],
+      "review_status": "pending",
+      "relational_category": null,
+      "requires_linked_provisions": null,
+      "reviewed_answer": null,
+      "reviewer": null,
+      "eligible_for_held_out_test": false
+    },
+    {
+      "qid": "3849",
+      "question": "Hệ thống tổ chức công đoàn bao gồm những đơn vị nào?",
+      "source": "existing_natural_diagnostic_question; not independently authored for new benchmark",
+      "gold": [
+        "27815"
+      ],
+      "review_status": "pending",
+      "relational_category": null,
+      "requires_linked_provisions": null,
+      "reviewed_answer": null,
+      "reviewer": null,
+      "eligible_for_held_out_test": false
+    },
+    {
+      "qid": "2086",
+      "question": "Cơ cấu viên chức theo chức danh nghề nghiệp tại cơ sở giám định y khoa là bao nhiêu?",
+      "source": "existing_natural_diagnostic_question; not independently authored for new benchmark",
+      "gold": [
+        "15526"
+      ],
+      "review_status": "pending",
+      "relational_category": null,
+      "requires_linked_provisions": null,
+      "reviewed_answer": null,
+      "reviewer": null,
+      "eligible_for_held_out_test": false
+    },
+    {
+      "qid": "249",
+      "question": "Chủ thể dữ liệu cá nhân có những và nghĩa vụ gì trong hoạt động bảo vệ dữ liệu cá nhân?",
+      "source": "existing_natural_diagnostic_question; not independently authored for new benchmark",
+      "gold": [
+        "4277"
+      ],
+      "review_status": "pending",
+      "relational_category": null,
+      "requires_linked_provisions": null,
+      "reviewed_answer": null,
+      "reviewer": null,
+      "eligible_for_held_out_test": false
+    },
+    {
+      "qid": "11605",
+      "question": "2. Báo cáo tài chính năm doanh nghiệp cần trình bày những thông tin nào?",
+      "source": "existing_natural_diagnostic_question; not independently authored for new benchmark",
+      "gold": [
+        "24738"
+      ],
+      "review_status": "pending",
+      "relational_category": null,
+      "requires_linked_provisions": null,
+      "reviewed_answer": null,
+      "reviewer": null,
+      "eligible_for_held_out_test": false
+    },
+    {
+      "qid": "7642",
+      "question": "Cơ cấu tổ chức của Vụ Truyền thông và Thi đua khen thưởng Bộ Y tế?",
+      "source": "existing_natural_diagnostic_question; not independently authored for new benchmark",
+      "gold": [
+        "46089"
+      ],
+      "review_status": "pending",
+      "relational_category": null,
+      "requires_linked_provisions": null,
+      "reviewed_answer": null,
+      "reviewer": null,
+      "eligible_for_held_out_test": false
+    },
+    {
+      "qid": "4270",
+      "question": "Sinh con thứ 3, công chức có bị kéo dài thời hạn nâng lương?",
+      "source": "existing_natural_diagnostic_question; not independently authored for new benchmark",
+      "gold": [
+        "28220"
+      ],
+      "review_status": "pending",
+      "relational_category": null,
+      "requires_linked_provisions": null,
+      "reviewed_answer": null,
+      "reviewer": null,
+      "eligible_for_held_out_test": false
+    },
+    {
+      "qid": "3965",
+      "question": "Quân nhân chuyên nghiệp trong trường hợp nào không được hưởng trợ cấp một lần khi nghỉ hưu trước hạn tuổi?",
+      "source": "existing_natural_diagnostic_question; not independently authored for new benchmark",
+      "gold": [
+        "28227"
+      ],
+      "review_status": "pending",
+      "relational_category": null,
+      "requires_linked_provisions": null,
+      "reviewed_answer": null,
+      "reviewer": null,
+      "eligible_for_held_out_test": false
+    },
+    {
+      "qid": "15959",
+      "question": "Trách nhiệm của Bộ Xây dựng đối với chế độ báo cáo định kỳ thuộc phạm vi quản lý Nhà nước của Bộ Xây dựng là gì?",
+      "source": "existing_natural_diagnostic_question; not independently authored for new benchmark",
+      "gold": [
+        "28431",
+        "54193"
+      ],
+      "review_status": "pending",
+      "relational_category": null,
+      "requires_linked_provisions": null,
+      "reviewed_answer": null,
+      "reviewer": null,
+      "eligible_for_held_out_test": false
+    },
+    {
+      "qid": "7932",
+      "question": "Điều kiện đăng ký dự tuyển viên chức được quy định như thế nào?",
+      "source": "existing_natural_diagnostic_question; not independently authored for new benchmark",
+      "gold": [
+        "26490",
+        "58633"
+      ],
+      "review_status": "pending",
+      "relational_category": null,
+      "requires_linked_provisions": null,
+      "reviewed_answer": null,
+      "reviewer": null,
+      "eligible_for_held_out_test": false
+    },
+    {
+      "qid": "2217",
+      "question": "Mắc các bệnh nào được hưởng chế độ bảo hiểm xã hội một lần theo quy định hiện nay?",
+      "source": "existing_natural_diagnostic_question; not independently authored for new benchmark",
+      "gold": [
+        "16978",
+        "17419"
+      ],
+      "review_status": "pending",
+      "relational_category": null,
+      "requires_linked_provisions": null,
+      "reviewed_answer": null,
+      "reviewer": null,
+      "eligible_for_held_out_test": false
+    }
+  ]
+}

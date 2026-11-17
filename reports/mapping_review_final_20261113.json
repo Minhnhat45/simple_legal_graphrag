@@ -1,0 +1,1355 @@
+{
+  "warning": "Diagnostic similarity suggestions only; not validated identities and never used for retrieval or coverage metrics.",
+  "snapshot_sha256": "01bfa48936fd223120fbf9894d0983b64f367c81ef55417d585ff2b2dad6bb49",
+  "corpus_sha256": "79bf936ef8de4208beaf13e932075b12e6b9d67043311d602bf386b66ffe2edc",
+  "items": [
+    {
+      "original_id": "13032",
+      "law": "16/2021/TT-BGTVT",
+      "candidate_count": 18,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": [
+        {
+          "article_id": "149719:article:9",
+          "character_tfidf_similarity": 0.9993307316037632,
+          "corpus_excerpt": "1. Xe cơ giới kiểm định đạt yêu cầu được cấp Giấy chứng nhận kiểm định và Tem kiểm định theo mẫu quy định tại Phụ lục X ban hành kèm theo Thông tư này. a) Giấy chứng nhận kiểm định, Tem kiểm định cấp cho xe cơ giới phải có cùng một số seri, được in từ chương trình quản lý kiểm định trên phôi do Cục Đăng kiểm Việt Nam thống nhất phát hành, có nội du",
+          "source_excerpt": "Điều 9. Giấy chứng nhận kiểm định, Tem kiểm định 1. Xe cơ giới kiểm định đạt yêu cầu được cấp Giấy chứng nhận kiểm định và Tem kiểm định theo mẫu quy định tại Phụ lục X ban hành kèm theo Thông tư này. a) Giấy chứng nhận kiểm định, Tem kiểm định cấp cho xe cơ giới phải có cùng một số seri, được in từ chương trình quản lý kiểm định trên phôi do Cục Đ"
+        },
+        {
+          "article_id": "149719:article:3",
+          "character_tfidf_similarity": 0.6536589787330697,
+          "corpus_excerpt": "1. Xe cơ giới kiểm định đạt yêu cầu được cấp Giấy chứng nhận kiểm định và Tem kiểm định theo mẫu quy định tại Phụ lục X ban hành kèm theo Thông tư này. a) Giấy chứng nhận kiểm định, Tem kiểm định cấp cho xe cơ giới phải có cùng một số seri, được in từ chương trình quản lý kiểm định trên phôi do Cục Đăng kiểm Việt Nam thống nhất phát hành, có nội du",
+          "source_excerpt": "Điều 3. Giải thích từ ngữ Trong Thông tư này, các từ ngữ dưới đây được hiểu như sau: 1. Kiểm định an toàn kỹ thuật và bảo vệ môi trường xe cơ giới (sau đây gọi tắt là kiểm định) là việc kiểm tra, đánh giá lần đầu và định kỳ tình trạng ATKT và BVMT của xe cơ giới theo các tiêu chuẩn, quy chuẩn, quy định. 2. Giấy Chứng nhận kiểm định an toàn kỹ thuật"
+        },
+        {
+          "article_id": "149719:article:8",
+          "character_tfidf_similarity": 0.6428197553892295,
+          "corpus_excerpt": "1. Xe cơ giới kiểm định đạt yêu cầu được cấp Giấy chứng nhận kiểm định và Tem kiểm định theo mẫu quy định tại Phụ lục X ban hành kèm theo Thông tư này. a) Giấy chứng nhận kiểm định, Tem kiểm định cấp cho xe cơ giới phải có cùng một số seri, được in từ chương trình quản lý kiểm định trên phôi do Cục Đăng kiểm Việt Nam thống nhất phát hành, có nội du",
+          "source_excerpt": "Điều 8. Trình tự, cách thức thực hiện 1. Lập Hồ sơ phương tiện a) Đơn vị đăng kiểm tiếp nhận hồ sơ, kiểm tra giấy tờ theo quy định tại khoản 1 Điều 6 của Thông tư này, nội dung kiểm tra hồ sơ theo Phụ lục III ban hành kèm theo Thông tư này; nếu không đầy đủ thì hướng dẫn chủ xe hoàn thiện lại. b) Đơn vị đăng kiểm in thông số kỹ thuật của xe từ cơ s"
+        }
+      ]
+    },
+    {
+      "original_id": "13235",
+      "law": "04/2023/TT-BTC",
+      "candidate_count": 0,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": []
+    },
+    {
+      "original_id": "14566",
+      "law": "93/2015/QH13",
+      "candidate_count": 364,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": [
+        {
+          "article_id": "96035:article:261",
+          "character_tfidf_similarity": 0.9784370632063276,
+          "corpus_excerpt": "1. Người có thẩm quyền kháng nghị bản án, quyết định đã có hiệu lực pháp luật của Tòa án có quyền hoãn thi hành bản án, quyết định để xem xét việc kháng nghị theo thủ tục giám đốc thẩm. Thời hạn hoãn không quá 03 tháng.Đối với quyết định về phần dân sự trong bản án, quyết định hành chính của Tòa án thì người có thẩm quyền kháng nghị có quyền yêu cầ",
+          "source_excerpt": "Điều 261. Hoãn, tạm đình chỉ thi hành bản án, quyết định đã có hiệu lực pháp luật 1. Người có thẩm quyền kháng nghị bản án, quyết định đã có hiệu lực pháp luật của Tòa án có quyền hoãn thi hành bản án, quyết định để xem xét việc kháng nghị theo thủ tục giám đốc thẩm. Thời hạn hoãn không quá 03 tháng. Đối với quyết định về phần dân sự trong bản án, "
+        },
+        {
+          "article_id": "96035:article:263",
+          "character_tfidf_similarity": 0.6200688571861085,
+          "corpus_excerpt": "1. Người có thẩm quyền kháng nghị bản án, quyết định đã có hiệu lực pháp luật của Tòa án có quyền hoãn thi hành bản án, quyết định để xem xét việc kháng nghị theo thủ tục giám đốc thẩm. Thời hạn hoãn không quá 03 tháng.Đối với quyết định về phần dân sự trong bản án, quyết định hành chính của Tòa án thì người có thẩm quyền kháng nghị có quyền yêu cầ",
+          "source_excerpt": "Điều 263. Thời hạn kháng nghị theo thủ tục giám đốc thẩm 1. Người có thẩm quyền kháng nghị theo thủ tục giám đốc thẩm được quyền kháng nghị trong thời hạn 03 năm kể từ ngày bản án, quyết định của Tòa án có hiệu lực pháp luật. 2. Thời hạn kháng nghị phần dân sự trong bản án, quyết định hành chính của Tòa án được thực hiện theo quy định của pháp luật"
+        },
+        {
+          "article_id": "96035:article:283",
+          "character_tfidf_similarity": 0.5722218872327298,
+          "corpus_excerpt": "1. Người có thẩm quyền kháng nghị bản án, quyết định đã có hiệu lực pháp luật của Tòa án có quyền hoãn thi hành bản án, quyết định để xem xét việc kháng nghị theo thủ tục giám đốc thẩm. Thời hạn hoãn không quá 03 tháng.Đối với quyết định về phần dân sự trong bản án, quyết định hành chính của Tòa án thì người có thẩm quyền kháng nghị có quyền yêu cầ",
+          "source_excerpt": "Điều 283. Người có thẩm quyền kháng nghị theo thủ tục tái thẩm Điều khoản được sửa đổi, bổ sung 1. Chánh án Tòa án nhân dân tối cao, Viện trưởng Viện kiểm sát nhân dân tối cao có thẩm quyền kháng nghị theo thủ tục tái thẩm bản án, quyết định đã có hiệu lực pháp luật của Tòa án nhân dân cấp cao; bản án, quyết định đã có hiệu lực pháp luật của Tòa án"
+        }
+      ]
+    },
+    {
+      "original_id": "15526",
+      "law": "03/2023/TT-BYT",
+      "candidate_count": 5,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": [
+        {
+          "article_id": "160130:article:6",
+          "character_tfidf_similarity": 0.8168720671475079,
+          "corpus_excerpt": "1. Vị trí việc làm của cơ sở giám định y khoa thực hiện theo quy định tại Phụ lục VII ban hành kèm theo Thông tư này2. Định mức số lượng người làm việc của cơ sở giám định y khoaBảng 11. Số lượng người làm việc của cơ sở giám định y khoa Chỉ số Dân số (triệu) < 1 > 1 đến 1,5 > 1,5 đến 2 > 2 đến 3 > 3 đến 4 > 4 đến 5 > 5 đến 6 Số lượng người làm việ",
+          "source_excerpt": "Điều 6. Vị trí việc làm, định mức số lượng người làm việc, cơ cấu viên chức theo chức danh nghề nghiệp của cơ sở kiểm nghiệm, kiểm định dược phẩm, mỹ phẩm, thực phẩm 1. Vị trí việc làm của cơ sở kiểm nghiệm, kiểm định dược phẩm, mỹ phẩm, thực phẩm thực hiện theo quy định tại Phụ lục V ban hành kèm theo Thông tư này. 2. Định mức số lượng người làm v"
+        },
+        {
+          "article_id": "160130:article:3",
+          "character_tfidf_similarity": 0.5953046865020194,
+          "corpus_excerpt": "1. Vị trí việc làm của cơ sở giám định y khoa thực hiện theo quy định tại Phụ lục VII ban hành kèm theo Thông tư này2. Định mức số lượng người làm việc của cơ sở giám định y khoaBảng 11. Số lượng người làm việc của cơ sở giám định y khoa Chỉ số Dân số (triệu) < 1 > 1 đến 1,5 > 1,5 đến 2 > 2 đến 3 > 3 đến 4 > 4 đến 5 > 5 đến 6 Số lượng người làm việ",
+          "source_excerpt": "Điều 3. Vị trí việc làm, định mức số lượng người làm việc, cơ cấu viên chức theo chức danh nghề nghiệp của cơ sở khám bệnh, chữa bệnh 1. Vị trí việc làm của cơ sở khám bệnh, chữa bệnh thực hiện theo quy định tại Phụ lục I ban hành kèm theo Thông tư này. 2. Định mức số lượng người làm việc của cơ sở khám bệnh, chữa bệnh. Bảng 1: Định mức số lượng ng"
+        },
+        {
+          "article_id": "160130:article:2",
+          "character_tfidf_similarity": 0.4667069579902194,
+          "corpus_excerpt": "1. Vị trí việc làm của cơ sở giám định y khoa thực hiện theo quy định tại Phụ lục VII ban hành kèm theo Thông tư này2. Định mức số lượng người làm việc của cơ sở giám định y khoaBảng 11. Số lượng người làm việc của cơ sở giám định y khoa Chỉ số Dân số (triệu) < 1 > 1 đến 1,5 > 1,5 đến 2 > 2 đến 3 > 3 đến 4 > 4 đến 5 > 5 đến 6 Số lượng người làm việ",
+          "source_excerpt": "Điều 2. Nguyên tắc và căn cứ xác định vị trí việc làm, định mức số lượng người làm việc, cơ cấu viên chức theo chức danh nghề nghiệp 1. Vị trí việc làm, định mức số lượng người làm việc, cơ cấu viên chức theo chức danh nghề nghiệp được xác định theo các nguyên tắc quy định tại Điều 3 và Điều 4 của Nghị định số 106/2020/NĐ-CP ngày 10 tháng 9 năm 202"
+        }
+      ]
+    },
+    {
+      "original_id": "15562",
+      "law": "07/2023/NĐ-CP",
+      "candidate_count": 3,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": [
+        {
+          "article_id": "160120:article:1",
+          "character_tfidf_similarity": 0.9993458531378826,
+          "corpus_excerpt": "1. Sửa đổi, bổ sung khoản 2 Điều 21 như sau:\"2. Chủ sở hữu số lưu hành là tổ chức công bố tiêu chuẩn áp dụng đối với trang thiết bị y tế hoặc tổ chức được cấp giấy chứng nhận đăng ký lưu hành đối với trang thiết bị y tế theo quy định của Nghị định này.\". 2. Sửa đổi, bổ sung Điều 22 như sau:\"Điều 22. Điều kiện lưu hành đối với trang thiết bị y tế1. ",
+          "source_excerpt": "Điều 1. Sửa đổi, bổ sung một số điều của Nghị định số 98/2021/NĐ-CP ngày 08 tháng 11 năm 2021 của Chính phủ về quản lý trang thiết bị y tế 1. Sửa đổi, bổ sung khoản 2 Điều 21 như sau:\"2. Chủ sở hữu số lưu hành là tổ chức công bố tiêu chuẩn áp dụng đối với trang thiết bị y tế hoặc tổ chức được cấp giấy chứng nhận đăng ký lưu hành đối với trang thiết"
+        },
+        {
+          "article_id": "160120:article:3",
+          "character_tfidf_similarity": 0.2989226378651674,
+          "corpus_excerpt": "1. Sửa đổi, bổ sung khoản 2 Điều 21 như sau:\"2. Chủ sở hữu số lưu hành là tổ chức công bố tiêu chuẩn áp dụng đối với trang thiết bị y tế hoặc tổ chức được cấp giấy chứng nhận đăng ký lưu hành đối với trang thiết bị y tế theo quy định của Nghị định này.\". 2. Sửa đổi, bổ sung Điều 22 như sau:\"Điều 22. Điều kiện lưu hành đối với trang thiết bị y tế1. ",
+          "source_excerpt": "Điều 3. Trách nhiệm tổ chức thực hiện 1. Bộ trưởng Bộ Y tế có trách nhiệm hướng dẫn, tổ chức và kiểm tra việc thi hành Nghị định này. 2. Các Bộ trưởng, Thủ trưởng cơ quan ngang bộ, Thủ trưởng cơ quan thuộc Chính phủ, Chủ tịch Ủy ban nhân dân tỉnh, thành phố trực thuộc trung ương và các cơ quan, tổ chức, cá nhân liên quan chịu trách nhiệm thi hành N"
+        },
+        {
+          "article_id": "160120:article:2",
+          "character_tfidf_similarity": 0.22256246796681406,
+          "corpus_excerpt": "1. Sửa đổi, bổ sung khoản 2 Điều 21 như sau:\"2. Chủ sở hữu số lưu hành là tổ chức công bố tiêu chuẩn áp dụng đối với trang thiết bị y tế hoặc tổ chức được cấp giấy chứng nhận đăng ký lưu hành đối với trang thiết bị y tế theo quy định của Nghị định này.\". 2. Sửa đổi, bổ sung Điều 22 như sau:\"Điều 22. Điều kiện lưu hành đối với trang thiết bị y tế1. ",
+          "source_excerpt": "Điều 2. Điều khoản thi hành Nghị định này có hiệu lực thi hành kể từ ngày ký ban hành."
+        }
+      ]
+    },
+    {
+      "original_id": "16978",
+      "law": "56/2017/TT-BYT",
+      "candidate_count": 58,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": [
+        {
+          "article_id": "129005:article:4",
+          "character_tfidf_similarity": 0.9908199056022724,
+          "corpus_excerpt": "Các bệnh được hưởng chế độ bảo hiểm xã hội một lần gồm: 1. Ung thư, bại liệt, xơ gan cổ chướng, phong, lao nặng, nhiễm HIV đã chuyển sang giai đoạn AIDS đồng thời không tự kiểm soát hoặc không tự thực hiện được các hoạt động đi lại, mặc quần áo, vệ sinh cá nhân và những việc khác phục vụ nhu cầu sinh hoạt cá nhân hàng ngày mà cần có người theo dõi,",
+          "source_excerpt": "Điều 4. Bệnh được hưởng chế độ bảo hiểm xã hội một lần Các bệnh được hưởng chế độ bảo hiểm xã hội một lần gồm: 1. Ung thư, bại liệt, xơ gan cổ chướng, phong, lao nặng, nhiễm HIV đã chuyển sang giai đoạn AIDS đồng thời không tự kiểm soát hoặc không tự thực hiện được các hoạt động đi lại, mặc quần áo, vệ sinh cá nhân và những việc khác phục vụ nhu cầ"
+        },
+        {
+          "article_id": "142489:article:4",
+          "character_tfidf_similarity": 0.9908199056022724,
+          "corpus_excerpt": "Các bệnh được hưởng chế độ bảo hiểm xã hội một lần gồm: 1. Ung thư, bại liệt, xơ gan cổ chướng, phong, lao nặng, nhiễm HIV đã chuyển sang giai đoạn AIDS đồng thời không tự kiểm soát hoặc không tự thực hiện được các hoạt động đi lại, mặc quần áo, vệ sinh cá nhân và những việc khác phục vụ nhu cầu sinh hoạt cá nhân hàng ngày mà cần có người theo dõi,",
+          "source_excerpt": "Điều 4. Bệnh được hưởng chế độ bảo hiểm xã hội một lần Các bệnh được hưởng chế độ bảo hiểm xã hội một lần gồm: 1. Ung thư, bại liệt, xơ gan cổ chướng, phong, lao nặng, nhiễm HIV đã chuyển sang giai đoạn AIDS đồng thời không tự kiểm soát hoặc không tự thực hiện được các hoạt động đi lại, mặc quần áo, vệ sinh cá nhân và những việc khác phục vụ nhu cầ"
+        },
+        {
+          "article_id": "129005:article:5",
+          "character_tfidf_similarity": 0.18687086922880128,
+          "corpus_excerpt": "Các bệnh được hưởng chế độ bảo hiểm xã hội một lần gồm: 1. Ung thư, bại liệt, xơ gan cổ chướng, phong, lao nặng, nhiễm HIV đã chuyển sang giai đoạn AIDS đồng thời không tự kiểm soát hoặc không tự thực hiện được các hoạt động đi lại, mặc quần áo, vệ sinh cá nhân và những việc khác phục vụ nhu cầu sinh hoạt cá nhân hàng ngày mà cần có người theo dõi,",
+          "source_excerpt": "Điều 5. Hồ sơ khám giám định lần đầu 1. Hồ sơ khám giám định lần đầu do tai nạn lao động: a) Giấy giới thiệu của người sử dụng lao động theo mẫu quy định tại Phụ lục 1 kèm theo Thông tư này đối với trường hợp người bị tai nạn lao động thuộc quyền quản lý của người sử dụng lao động tại thời điểm đề nghị khám giám định hoặc Giấy đề nghị khám giám địn"
+        }
+      ]
+    },
+    {
+      "original_id": "17419",
+      "law": "18/2022/TT-BYT",
+      "candidate_count": 3,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": [
+        {
+          "article_id": "159366:article:1",
+          "character_tfidf_similarity": 0.996387662205043,
+          "corpus_excerpt": "1. Sửa đổi Điều 4 như sau:\"Điều 4. Trường hợp mắc bệnh được hưởng bảo hiểm xã hội một lần Ngoài trường hợp đang bị mắc một trong những bệnh nguy hiểm đến tính mạng như ung thư, bại liệt, xơ gan cổ chướng, phong, lao nặng, nhiễm HIV đã chuyển sang giai đoạn AIDS quy định tại điểm c khoản 1 Điều 60 Luật bảo hiểm xã hội, người mắc các bệnh, tật có mức",
+          "source_excerpt": "Điều 1. Sửa đổi, bổ sung một số điều của Thông tư số 56/2017/TT-BYT ngày 29 tháng 12 năm 2017 của Bộ trưởng Bộ Y tế quy định chi tiết thi hành Luật bảo hiểm xã hội và Luật an toàn, vệ sinh lao động thuộc lĩnh vực y tế (sau đây viết tắt là Thông tư số 56/2017/TT-BYT) 1. Sửa đổi Điều 4 như sau:\"Điều 4. Trường hợp mắc bệnh được hưởng bảo hiểm xã hội m"
+        },
+        {
+          "article_id": "159366:article:2",
+          "character_tfidf_similarity": 0.32040311037625313,
+          "corpus_excerpt": "1. Sửa đổi Điều 4 như sau:\"Điều 4. Trường hợp mắc bệnh được hưởng bảo hiểm xã hội một lần Ngoài trường hợp đang bị mắc một trong những bệnh nguy hiểm đến tính mạng như ung thư, bại liệt, xơ gan cổ chướng, phong, lao nặng, nhiễm HIV đã chuyển sang giai đoạn AIDS quy định tại điểm c khoản 1 Điều 60 Luật bảo hiểm xã hội, người mắc các bệnh, tật có mức",
+          "source_excerpt": "Điều 2. Hiệu lực thi hành 1. Thông tư này có hiệu lực thi hành kể từ ngày 15 tháng 02 năm 2023 2. Phụ lục 4 và Phụ lục 5 ban hành kèm Thông tư liên tịch số 20/2016/TTLT-BYT-BLĐTBXH ngày 30 tháng 06 năm 2016 của Bộ trưởng Bộ Y tế và Bộ trưởng Bộ Lao động - Thương binh và Xã hội hướng dẫn khám giám định bệnh, tật, dị dạng, dị tật có liên quan đến phơ"
+        },
+        {
+          "article_id": "159366:article:3",
+          "character_tfidf_similarity": 0.19624860320214443,
+          "corpus_excerpt": "1. Sửa đổi Điều 4 như sau:\"Điều 4. Trường hợp mắc bệnh được hưởng bảo hiểm xã hội một lần Ngoài trường hợp đang bị mắc một trong những bệnh nguy hiểm đến tính mạng như ung thư, bại liệt, xơ gan cổ chướng, phong, lao nặng, nhiễm HIV đã chuyển sang giai đoạn AIDS quy định tại điểm c khoản 1 Điều 60 Luật bảo hiểm xã hội, người mắc các bệnh, tật có mức",
+          "source_excerpt": "Điều 3. Trách nhiệm thi hành Cục Quản lý Khám, chữa bệnh, Vụ trưởng Vụ Pháp chế, Vụ trưởng Vụ Sức khỏe Bà mẹ - Trẻ em, Chánh Văn phòng Bộ, Chánh Thanh tra Bộ, Vụ trưởng, Cục trưởng, Tổng Cục trưởng các Vụ, Cục, Tổng cục thuộc Bộ Y tế, Thủ trưởng các đơn vị trực thuộc Bộ Y tế, các tổ chức, cá nhân có liên quan chịu trách nhiệm thi hành Thông tư này."
+        }
+      ]
+    },
+    {
+      "original_id": "18207",
+      "law": "45/2022/NĐ-CP",
+      "candidate_count": 89,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": [
+        {
+          "article_id": "159513:article:6",
+          "character_tfidf_similarity": 0.9907087174854184,
+          "corpus_excerpt": "1. Mức phạt tiền tối đa cho một hành vi vi phạm hành chính trong lĩnh vực bảo vệ môi trường theo quy định của pháp luật về xử lý vi phạm hành chính. 2. Mức phạt tiền đối với hành vi vi phạm hành chính quy định tại Chương II của Nghị định này là mức phạt tiền áp dụng đối với hành vi vi phạm hành chính do cá nhân thực hiện. Đối với tổ chức có cùng hà",
+          "source_excerpt": "Điều 6. Mức phạt tiền và thẩm quyền xử phạt 1. Mức phạt tiền tối đa cho một hành vi vi phạm hành chính trong lĩnh vực bảo vệ môi trường theo quy định của pháp luật về xử lý vi phạm hành chính. 2. Mức phạt tiền đối với hành vi vi phạm hành chính quy định tại Chương II của Nghị định này là mức phạt tiền áp dụng đối với hành vi vi phạm hành chính do c"
+        },
+        {
+          "article_id": "159513:article:68",
+          "character_tfidf_similarity": 0.49125138935640017,
+          "corpus_excerpt": "1. Mức phạt tiền tối đa cho một hành vi vi phạm hành chính trong lĩnh vực bảo vệ môi trường theo quy định của pháp luật về xử lý vi phạm hành chính. 2. Mức phạt tiền đối với hành vi vi phạm hành chính quy định tại Chương II của Nghị định này là mức phạt tiền áp dụng đối với hành vi vi phạm hành chính do cá nhân thực hiện. Đối với tổ chức có cùng hà",
+          "source_excerpt": "Điều 68. Phân định thẩm quyền xử phạt vi phạm hành chính trong lĩnh vực bảo vệ môi trường; chuyển hồ sơ vụ việc có dấu hiệu tội phạm môi trường để truy cứu trách nhiệm hình sự 1. Phân định thẩm quyền xử phạt vi phạm hành chính trong lĩnh vực bảo vệ môi trường của các lực lượng được quy định cụ thể như sau: a) Chủ tịch Ủy ban nhân dân các cấp có thẩ"
+        },
+        {
+          "article_id": "159513:article:7",
+          "character_tfidf_similarity": 0.4540976345476169,
+          "corpus_excerpt": "1. Mức phạt tiền tối đa cho một hành vi vi phạm hành chính trong lĩnh vực bảo vệ môi trường theo quy định của pháp luật về xử lý vi phạm hành chính. 2. Mức phạt tiền đối với hành vi vi phạm hành chính quy định tại Chương II của Nghị định này là mức phạt tiền áp dụng đối với hành vi vi phạm hành chính do cá nhân thực hiện. Đối với tổ chức có cùng hà",
+          "source_excerpt": "Điều 7. Áp dụng quy chuẩn kỹ thuật môi trường và sử dụng thông số môi trường để xác định hành vi vi phạm hành chính, mức độ vi phạm hành chính trong lĩnh vực bảo vệ môi trường; nguyên tắc xử phạt một số hành vi vi phạm hành chính về bảo vệ môi trường 1. Quy chuẩn kỹ thuật quốc gia được sử dụng để xác định hành vi vi phạm hành chính và mức độ vi phạ"
+        }
+      ]
+    },
+    {
+      "original_id": "22856",
+      "law": "246/2016/TT-BTC",
+      "candidate_count": 6,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": [
+        {
+          "article_id": "119187:article:1",
+          "character_tfidf_similarity": 0.4887409590712164,
+          "corpus_excerpt": "Biểu mức thu phí kiểm tra, đánh giá, cấp giấy chứng nhận quốc tế về an ninh tàu biển theo Bộ luật ISPS như sau:Đơn vị tính: Đồng/lần",
+          "source_excerpt": "Điều 1. Phạm vi điều chỉnh và đối tượng áp dụng 1. Thông tư này quy định mức thu, chế độ thu, nộp, quản lý và sử dụng phí kiểm tra, đánh giá, cấp giấy chứng nhận quốc tế về an ninh tàu biển theo Bộ luật Quốc tế về An ninh Tàu biển và Bến cảng (Bộ luật ISPS). 2. Thông tư này áp dụng đối với cơ quan, tổ chức, cá nhân liên quan đến kiểm tra, đánh giá,"
+        },
+        {
+          "article_id": "119187:article:4",
+          "character_tfidf_similarity": 0.41645014911673095,
+          "corpus_excerpt": "Biểu mức thu phí kiểm tra, đánh giá, cấp giấy chứng nhận quốc tế về an ninh tàu biển theo Bộ luật ISPS như sau:Đơn vị tính: Đồng/lần",
+          "source_excerpt": "Điều 4. Mức thu phí Biểu mức thu phí kiểm tra, đánh giá, cấp giấy chứng nhận quốc tế về an ninh tàu biển theo Bộ luật ISPS như sau: Đơn vị tính: Đồng/lần Số TT Loại hình đánh giá Mức phí Tàu nhóm I Tàu nhóm II 1 Phê duyệt kế hoạch an ninh tàu biển 5.000.000 5.000.000 2 Phê duyệt kế hoạch an ninh tàu biển khi có bổ sung, sửa đổi 2.000.000 2.000.000 "
+        },
+        {
+          "article_id": "119187:article:2",
+          "character_tfidf_similarity": 0.23600108121553576,
+          "corpus_excerpt": "Biểu mức thu phí kiểm tra, đánh giá, cấp giấy chứng nhận quốc tế về an ninh tàu biển theo Bộ luật ISPS như sau:Đơn vị tính: Đồng/lần",
+          "source_excerpt": "Điều 2. Tổ chức thu và người nộp phí 1. Người nộp phí gồm các tổ chức, cá nhân khi được Cục Đăng kiểm Việt Nam thực hiện các công việc kiểm tra, đánh giá, cấp giấy chứng nhận quốc tế về an ninh tàu biển và giàn di động. 2. Cục Đăng kiểm Việt Nam tổ chức thu, nộp, quản lý và sử dụng các khoản phí quy định tại Thông tư này."
+        }
+      ]
+    },
+    {
+      "original_id": "24738",
+      "law": "200/2014/TT-BTC",
+      "candidate_count": 126,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": [
+        {
+          "article_id": "66801:article:111",
+          "character_tfidf_similarity": 0.9433131536511379,
+          "corpus_excerpt": "Trong Báo cáo tài chính năm, doanh nghiệp phải trình bày các thông tin chung sau:- Tên và địa chỉ của doanh nghiệp báo cáo;- Nêu rõ Báo cáo tài chính này là Báo cáo tài chính riêng của doanh nghiệp, Báo cáo tài chính tổng hợp hay Báo cáo tài chính hợp nhất của công ty mẹ, tập đoàn;- Ngày kết thúc kỳ kế toán;- Ngày lập Báo cáo tài chính;- Đơn vị tiề",
+          "source_excerpt": "Điều 111. Những thông tin chung về doanh nghiệp Trong Báo cáo tài chính năm, doanh nghiệp phải trình bày các thông tin chung sau: - Tên và địa chỉ của doanh nghiệp báo cáo; - Nêu rõ Báo cáo tài chính này là Báo cáo tài chính riêng của doanh nghiệp, Báo cáo tài chính tổng hợp hay Báo cáo tài chính hợp nhất của công ty mẹ, tập đoàn; - Ngày kết thúc k"
+        },
+        {
+          "article_id": "66801:article:99",
+          "character_tfidf_similarity": 0.5902890416679066,
+          "corpus_excerpt": "Trong Báo cáo tài chính năm, doanh nghiệp phải trình bày các thông tin chung sau:- Tên và địa chỉ của doanh nghiệp báo cáo;- Nêu rõ Báo cáo tài chính này là Báo cáo tài chính riêng của doanh nghiệp, Báo cáo tài chính tổng hợp hay Báo cáo tài chính hợp nhất của công ty mẹ, tập đoàn;- Ngày kết thúc kỳ kế toán;- Ngày lập Báo cáo tài chính;- Đơn vị tiề",
+          "source_excerpt": "Điều 99. Đối tượng áp dụng, trách nhiệm lập và chữ ký trên Báo cáo tài chính 1. Đối tượng lập Báo cáo tài chính năm: Hệ thống Báo cáo tài chính năm được áp dụng cho tất cả các loại hình doanh nghiệp thuộc các ngành và các thành phần kinh tế. Báo cáo tài chính năm phải lập theo dạng đầy đủ. 2. Đối tượng lập Báo cáo tài chính giữa niên độ (Báo cáo tà"
+        },
+        {
+          "article_id": "66801:article:98",
+          "character_tfidf_similarity": 0.5703330365962893,
+          "corpus_excerpt": "Trong Báo cáo tài chính năm, doanh nghiệp phải trình bày các thông tin chung sau:- Tên và địa chỉ của doanh nghiệp báo cáo;- Nêu rõ Báo cáo tài chính này là Báo cáo tài chính riêng của doanh nghiệp, Báo cáo tài chính tổng hợp hay Báo cáo tài chính hợp nhất của công ty mẹ, tập đoàn;- Ngày kết thúc kỳ kế toán;- Ngày lập Báo cáo tài chính;- Đơn vị tiề",
+          "source_excerpt": "Điều 98. Kỳ lập Báo cáo tài chính 1. Kỳ lập Báo cáo tài chính năm: Các doanh nghiệp phải lập Báo cáo tài chính năm theo quy định của Luật kế toán. 2. Kỳ lập Báo cáo tài chính giữa niên độ: Báo cáo tài chính giữa niên độ gồm Báo cáo tài chính quý (bao gồm cả quý IV) và Báo cáo tài chính bán niên. 3. Kỳ lập Báo cáo tài chính khác a) Các doanh nghiệp "
+        }
+      ]
+    },
+    {
+      "original_id": "25299",
+      "law": "46/2017/NĐ-CP",
+      "candidate_count": 108,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": [
+        {
+          "article_id": "121488:article:31",
+          "character_tfidf_similarity": 0.9876410893411949,
+          "corpus_excerpt": "1. Trường trung học bị giải thể khi xảy ra một trong các trường hợp sau đây: a) Vi phạm nghiêm trọng các quy định về quản lý, tổ chức, hoạt động của nhà trường; b) Hết thời hạn đình chỉ ghi trong quyết định đình chỉ hoạt động giáo dục mà không khắc phục được nguyên nhân dẫn đến việc đình chỉ; c) Mục tiêu, nội dung hoạt động trong quyết định thành l",
+          "source_excerpt": "Điều 31. Giải thể trường trung học 1. Trường trung học bị giải thể khi xảy ra một trong các trường hợp sau đây: a) Vi phạm nghiêm trọng các quy định về quản lý, tổ chức, hoạt động của nhà trường; b) Hết thời hạn đình chỉ ghi trong quyết định đình chỉ hoạt động giáo dục mà không khắc phục được nguyên nhân dẫn đến việc đình chỉ; c) Mục tiêu, nội dung"
+        },
+        {
+          "article_id": "121488:article:21",
+          "character_tfidf_similarity": 0.7221556885687657,
+          "corpus_excerpt": "1. Trường trung học bị giải thể khi xảy ra một trong các trường hợp sau đây: a) Vi phạm nghiêm trọng các quy định về quản lý, tổ chức, hoạt động của nhà trường; b) Hết thời hạn đình chỉ ghi trong quyết định đình chỉ hoạt động giáo dục mà không khắc phục được nguyên nhân dẫn đến việc đình chỉ; c) Mục tiêu, nội dung hoạt động trong quyết định thành l",
+          "source_excerpt": "Điều 21. Giải thể trường tiểu học 1. Trường tiểu học bị giải thể khi xảy ra một trong các trường hợp sau đây: a) Vi phạm nghiêm trọng các quy định về tổ chức, hoạt động của trường tiểu học; b) Hết thời hạn đình chỉ hoạt động giáo dục ghi trong quyết định đình chỉ mà không khắc phục được nguyên nhân dẫn đến việc đình chỉ; c) Mục tiêu và nội dung hoạ"
+        },
+        {
+          "article_id": "121488:article:26",
+          "character_tfidf_similarity": 0.654799810939341,
+          "corpus_excerpt": "1. Trường trung học bị giải thể khi xảy ra một trong các trường hợp sau đây: a) Vi phạm nghiêm trọng các quy định về quản lý, tổ chức, hoạt động của nhà trường; b) Hết thời hạn đình chỉ ghi trong quyết định đình chỉ hoạt động giáo dục mà không khắc phục được nguyên nhân dẫn đến việc đình chỉ; c) Mục tiêu, nội dung hoạt động trong quyết định thành l",
+          "source_excerpt": "Điều 26. Thủ tục thành lập trường trung học công lập; cho phép thành lập trường trung học tư thục 1. Chủ tịch Ủy ban nhân dân cấp huyện quyết định thành lập hoặc cho phép thành lập đối với trường trung học cơ sở và trường phổ thông có nhiều cấp học có cấp học cao nhất là trung học cơ sở (sau đây gọi chung là trường trung học cơ sở); Chủ tịch Ủy ban"
+        }
+      ]
+    },
+    {
+      "original_id": "26114",
+      "law": "69/2022/TT-BTC",
+      "candidate_count": 8,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": [
+        {
+          "article_id": "158212:article:7",
+          "character_tfidf_similarity": 0.9093078385299532,
+          "corpus_excerpt": "Cơ sở đào tạo về bảo hiểm nước ngoài là cơ sở có chức năng đào tạo về bảo hiểm thuộc một trong các trường hợp sau: 1. Cơ sở đào tạo thuộc hoặc trực thuộc cơ quan quản lý, giám sát bảo hiểm; hoặc cơ sở đào tạo do cơ quan quản lý, giám sát bảo hiểm ủy quyền thực hiện đào tạo và cấp chứng chỉ trong lĩnh vực bảo hiểm; 2. Học viện nghiên cứu và đào tạo ",
+          "source_excerpt": "Điều 7. Cơ sở đào tạo về bảo hiểm trong nước Cơ sở đào tạo về bảo hiểm trong nước là cơ sở có chức năng đào tạo về bảo hiểm thuộc một trong các trường hợp sau: 1. Cơ sở đào tạo do cơ quan nhà nước thành lập: Viện, học viện, trường đại học. 2. Cơ sở đào tạo thuộc hoặc trực thuộc các đơn vị do cơ quan nhà nước thành lập. 3. Cơ sở đào tạo khác có tư c"
+        },
+        {
+          "article_id": "158212:article:9",
+          "character_tfidf_similarity": 0.40157797241275045,
+          "corpus_excerpt": "Cơ sở đào tạo về bảo hiểm nước ngoài là cơ sở có chức năng đào tạo về bảo hiểm thuộc một trong các trường hợp sau: 1. Cơ sở đào tạo thuộc hoặc trực thuộc cơ quan quản lý, giám sát bảo hiểm; hoặc cơ sở đào tạo do cơ quan quản lý, giám sát bảo hiểm ủy quyền thực hiện đào tạo và cấp chứng chỉ trong lĩnh vực bảo hiểm; 2. Học viện nghiên cứu và đào tạo ",
+          "source_excerpt": "Điều 9. Nội dung đào tạo chứng chỉ bảo hiểm Cơ sở đào tạo về bảo hiểm trong nước đào tạo chứng chỉ bảo hiểm theo các nội dung sau: 1. Nội dung đào tạo chứng chỉ bảo hiểm nhân thọ: a) Kiến thức chung về bảo hiểm, tái bảo hiểm; b) Kiến thức cơ bản về các nghiệp vụ bảo hiểm thuộc loại hình bảo hiểm nhân thọ, bảo hiểm sức khỏe; c) Pháp luật Việt Nam về"
+        },
+        {
+          "article_id": "158212:article:20",
+          "character_tfidf_similarity": 0.38919352563164766,
+          "corpus_excerpt": "Cơ sở đào tạo về bảo hiểm nước ngoài là cơ sở có chức năng đào tạo về bảo hiểm thuộc một trong các trường hợp sau: 1. Cơ sở đào tạo thuộc hoặc trực thuộc cơ quan quản lý, giám sát bảo hiểm; hoặc cơ sở đào tạo do cơ quan quản lý, giám sát bảo hiểm ủy quyền thực hiện đào tạo và cấp chứng chỉ trong lĩnh vực bảo hiểm; 2. Học viện nghiên cứu và đào tạo ",
+          "source_excerpt": "Điều 20. Nội dung đào tạo chứng chỉ đại lý bảo hiểm Nội dung đào tạo chính chỉ đại lý bảo hiểm bao gồm: Điều khoản được sửa đổi, bổ sung 1. Kiến thức chung về bảo hiểm; các nguyên lý về nghiệp vụ bảo hiểm phù hợp với từng loại chứng chỉ đại lý bảo hiểm: a) Đối với chứng chỉ đại lý bảo hiểm nhân thọ cơ bản: kiến thức chung về bảo hiểm, nguyên lý, ki"
+        }
+      ]
+    },
+    {
+      "original_id": "27272",
+      "law": "145/2020/NĐ-CP",
+      "candidate_count": 124,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": [
+        {
+          "article_id": "152668:article:18",
+          "character_tfidf_similarity": 0.9994831483959892,
+          "corpus_excerpt": "1. Chủ tịch Ủy ban nhân dân cấp tỉnh nơi doanh nghiệp cho thuê lại đặt trụ sở chính đồng ý để doanh nghiệp cho thuê lại rút tiền ký quỹ khi doanh nghiệp thuộc một trong các trường hợp sau: a) Doanh nghiệp cho thuê lại gặp khó khăn, không đủ nguồn tài chính để thanh toán đủ tiền lương, bảo hiểm xã hội, bảo hiểm y tế, bảo hiểm thất nghiệp, bảo hiểm t",
+          "source_excerpt": "Điều 18. Rút tiền ký quỹ 1. Chủ tịch Ủy ban nhân dân cấp tỉnh nơi doanh nghiệp cho thuê lại đặt trụ sở chính đồng ý để doanh nghiệp cho thuê lại rút tiền ký quỹ khi doanh nghiệp thuộc một trong các trường hợp sau: a) Doanh nghiệp cho thuê lại gặp khó khăn, không đủ nguồn tài chính để thanh toán đủ tiền lương, bảo hiểm xã hội, bảo hiểm y tế, bảo hiể"
+        },
+        {
+          "article_id": "152668:article:17",
+          "character_tfidf_similarity": 0.7217197634637074,
+          "corpus_excerpt": "1. Chủ tịch Ủy ban nhân dân cấp tỉnh nơi doanh nghiệp cho thuê lại đặt trụ sở chính đồng ý để doanh nghiệp cho thuê lại rút tiền ký quỹ khi doanh nghiệp thuộc một trong các trường hợp sau: a) Doanh nghiệp cho thuê lại gặp khó khăn, không đủ nguồn tài chính để thanh toán đủ tiền lương, bảo hiểm xã hội, bảo hiểm y tế, bảo hiểm thất nghiệp, bảo hiểm t",
+          "source_excerpt": "Điều 17. Quản lý tiền ký quỹ 1. Ngân hàng nhận ký quỹ có trách nhiệm phong tỏa toàn bộ số tiền ký quỹ của doanh nghiệp cho thuê lại, quản lý tiền ký quỹ theo quy định của pháp luật về ký quỹ. 2. Ngân hàng nhận ký quỹ thực hiện cho doanh nghiệp cho thuê lại rút tiền ký quỹ, trích tiền ký quỹ và yêu cầu doanh nghiệp cho thuê lại nộp bổ sung tiền ký q"
+        },
+        {
+          "article_id": "152668:article:19",
+          "character_tfidf_similarity": 0.7211175651839906,
+          "corpus_excerpt": "1. Chủ tịch Ủy ban nhân dân cấp tỉnh nơi doanh nghiệp cho thuê lại đặt trụ sở chính đồng ý để doanh nghiệp cho thuê lại rút tiền ký quỹ khi doanh nghiệp thuộc một trong các trường hợp sau: a) Doanh nghiệp cho thuê lại gặp khó khăn, không đủ nguồn tài chính để thanh toán đủ tiền lương, bảo hiểm xã hội, bảo hiểm y tế, bảo hiểm thất nghiệp, bảo hiểm t",
+          "source_excerpt": "Điều 19. Trích tiền ký quỹ khi doanh nghiệp cho thuê lại không thực hiện nghĩa vụ đối với người lao động thuê lại 1. Khi hết 60 ngày kể từ ngày đến hạn mà doanh nghiệp chưa thanh toán các chế độ, quyền lợi cho người lao động thuê lại tại khoản 2 Điều 15 Nghị định này thì Sở Lao động - Thương binh và Xã hội có văn bản yêu cầu doanh nghiệp cho thuê l"
+        }
+      ]
+    },
+    {
+      "original_id": "27815",
+      "law": "12/2012/QH13",
+      "candidate_count": 31,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": [
+        {
+          "article_id": "27625:article:7",
+          "character_tfidf_similarity": 0.975374207124353,
+          "corpus_excerpt": "Hệ thống tổ chức công đoàn gồm có Tổng Liên đoàn Lao động Việt Nam và công đoàn các cấp theo quy định của Điều lệ Công đoàn Việt Nam.Công đoàn cơ sở được tổ chức trong cơ quan nhà nước, tổ chức chính trị, tổ chức chính trị - xã hội, tổ chức chính trị xã hội - nghề nghiệp, tổ chức xã hội - nghề nghiệp, đơn vị, doanh nghiệp, tổ chức khác có sử dụng l",
+          "source_excerpt": "Điều 7. Hệ thống tổ chức công đoàn Hệ thống tổ chức công đoàn gồm có Tổng Liên đoàn Lao động Việt Nam và công đoàn các cấp theo quy định của Điều lệ Công đoàn Việt Nam. Công đoàn cơ sở được tổ chức trong cơ quan nhà nước, tổ chức chính trị, tổ chức chính trị - xã hội, tổ chức chính trị xã hội - nghề nghiệp, tổ chức xã hội - nghề nghiệp, đơn vị, doa"
+        },
+        {
+          "article_id": "27625:article:3",
+          "character_tfidf_similarity": 0.8168093936893169,
+          "corpus_excerpt": "Hệ thống tổ chức công đoàn gồm có Tổng Liên đoàn Lao động Việt Nam và công đoàn các cấp theo quy định của Điều lệ Công đoàn Việt Nam.Công đoàn cơ sở được tổ chức trong cơ quan nhà nước, tổ chức chính trị, tổ chức chính trị - xã hội, tổ chức chính trị xã hội - nghề nghiệp, tổ chức xã hội - nghề nghiệp, đơn vị, doanh nghiệp, tổ chức khác có sử dụng l",
+          "source_excerpt": "Điều 3. Đối tượng áp dụng Luật này áp dụng đối với công đoàn các cấp, cơ quan nhà nước, tổ chức chính trị, tổ chức chính trị - xã hội, tổ chức chính trị xã hội - nghề nghiệp, tổ chức xã hội - nghề nghiệp, đơn vị, doanh nghiệp, tổ chức khác có sử dụng lao động theo quy định của pháp luật về lao động, cơ quan, tổ chức nước ngoài, tổ chức quốc tế hoạt"
+        },
+        {
+          "article_id": "27625:article:1",
+          "character_tfidf_similarity": 0.44682641263403006,
+          "corpus_excerpt": "Hệ thống tổ chức công đoàn gồm có Tổng Liên đoàn Lao động Việt Nam và công đoàn các cấp theo quy định của Điều lệ Công đoàn Việt Nam.Công đoàn cơ sở được tổ chức trong cơ quan nhà nước, tổ chức chính trị, tổ chức chính trị - xã hội, tổ chức chính trị xã hội - nghề nghiệp, tổ chức xã hội - nghề nghiệp, đơn vị, doanh nghiệp, tổ chức khác có sử dụng l",
+          "source_excerpt": "Điều 1. Công đoàn Công đoàn là tổ chức chính trị - xã hội rộng lớn của giai cấp công nhân và của người lao động, được thành lập trên cơ sở tự nguyện, là thành viên trong hệ thống chính trị của xã hội Việt Nam, dưới sự lãnh đạo của Đảng Cộng sản Việt Nam; đại diện cho cán bộ, công chức, viên chức, công nhân và những người lao động khác (sau đây gọi "
+        }
+      ]
+    },
+    {
+      "original_id": "28028",
+      "law": "13/2019/TT-BNV",
+      "candidate_count": 15,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": [
+        {
+          "article_id": "139318:article:2",
+          "character_tfidf_similarity": 0.9969906060773142,
+          "corpus_excerpt": "1. Công chức Trưởng Công an xã a) Tham mưu, giúp Ủy ban nhân dân xã tổ chức thực hiện nhiệm vụ, quyền hạn của Ủy ban nhân dân xã trong các lĩnh vực: an ninh, trật tự, an toàn xã hội trên địa bàn theo quy định của pháp luật; b) Trực tiếp thực hiện các nhiệm vụ theo quy định của pháp luật về công an xã và các văn bản có liên quan của cơ quan có thẩm ",
+          "source_excerpt": "Điều 2. Nhiệm vụ của từng chức danh công chức cấp xã 1. Công chức Trưởng Công an xã a) Tham mưu, giúp Ủy ban nhân dân xã tổ chức thực hiện nhiệm vụ, quyền hạn của Ủy ban nhân dân xã trong các lĩnh vực: an ninh, trật tự, an toàn xã hội trên địa bàn theo quy định của pháp luật; b) Trực tiếp thực hiện các nhiệm vụ theo quy định của pháp luật về công a"
+        },
+        {
+          "article_id": "139318:article:1",
+          "character_tfidf_similarity": 0.41348116511166894,
+          "corpus_excerpt": "1. Công chức Trưởng Công an xã a) Tham mưu, giúp Ủy ban nhân dân xã tổ chức thực hiện nhiệm vụ, quyền hạn của Ủy ban nhân dân xã trong các lĩnh vực: an ninh, trật tự, an toàn xã hội trên địa bàn theo quy định của pháp luật; b) Trực tiếp thực hiện các nhiệm vụ theo quy định của pháp luật về công an xã và các văn bản có liên quan của cơ quan có thẩm ",
+          "source_excerpt": "Điều 1. Tiêu chuẩn cụ thể 1. Công chức cấp xã phải có đù các tiêu chuẩn chung quy định tại Điều 3 Nghị định số 112/2011/NĐ-CP ngày 05 tháng 12 năm 2011 cùa Chính phủ về công chức xã, phường, thị trấn (sau đây gọi tắt là Nghị định số 112/2011/NĐ- CP) và các tiêu chuẩn cụ thể như sau: a) Độ tuổi: Đủ 18 tuổi trở lên; b) Trình độ giáo dục phổ thông: Tố"
+        },
+        {
+          "article_id": "139318:article:14",
+          "character_tfidf_similarity": 0.3866905480565622,
+          "corpus_excerpt": "1. Công chức Trưởng Công an xã a) Tham mưu, giúp Ủy ban nhân dân xã tổ chức thực hiện nhiệm vụ, quyền hạn của Ủy ban nhân dân xã trong các lĩnh vực: an ninh, trật tự, an toàn xã hội trên địa bàn theo quy định của pháp luật; b) Trực tiếp thực hiện các nhiệm vụ theo quy định của pháp luật về công an xã và các văn bản có liên quan của cơ quan có thẩm ",
+          "source_excerpt": "Điều 14. Giải quyết một số tồn tại về chế độ, chính sách đối với cán bộ, công chức và người hoạt động không chuyên trách ở cấp xã Giải quyết chính sách đối với số cán bộ, công chức cấp xã dôi dư do đã bố trí vượt quá quy định tại khoản 1 Điều 4 Nghị định số 92/2009/NĐ-CP đã được sửa đổi, bổ sung tại khoản 1 Điều 2 Nghị định số 34/2019/NĐ-CP và số l"
+        }
+      ]
+    },
+    {
+      "original_id": "28220",
+      "law": "03/2021/TT-BNV",
+      "candidate_count": 2,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": [
+        {
+          "article_id": "148277:article:1",
+          "character_tfidf_similarity": 0.9803564766708646,
+          "corpus_excerpt": "1. Sửa đổi điểm c khoản 1 Điều 1 như sau:\"Những người làm việc theo chế độ hợp đồng lao động trong cơ quan hành chính và đơn vị sự nghiệp công lập có thỏa thuận trong hợp đồng lao động xếp lương theo Nghị định số 204/2004/NĐ-CP ngày 14 tháng 12 năm 2004 của Chính phủ về chế độ tiền lương đối với cán bộ, công chức, viên chức và lực lượng vũ trang.\"2",
+          "source_excerpt": "Điều 1. Sửa đổi, bổ sung một số điều về chế độ nâng bậc lương thường xuyên và nâng bậc lương trưóc thời hạn đối với cán bộ, công chức, viên chức và người lao động tại Thông tư số 08/2013/TT-BNV ngày 31 tháng 7 năm 2013 của Bộ trưỏng Bộ Nội vụ 1. Sửa đổi điểm c khoản 1 Điều 1 như sau:\"Những người làm việc theo chế độ hợp đồng lao động trong cơ quan "
+        },
+        {
+          "article_id": "148277:article:3",
+          "character_tfidf_similarity": 0.2689611625092827,
+          "corpus_excerpt": "1. Sửa đổi điểm c khoản 1 Điều 1 như sau:\"Những người làm việc theo chế độ hợp đồng lao động trong cơ quan hành chính và đơn vị sự nghiệp công lập có thỏa thuận trong hợp đồng lao động xếp lương theo Nghị định số 204/2004/NĐ-CP ngày 14 tháng 12 năm 2004 của Chính phủ về chế độ tiền lương đối với cán bộ, công chức, viên chức và lực lượng vũ trang.\"2",
+          "source_excerpt": "Điều 3. Hiệu lực và trách nhiệm thi hành 1. Thông tư này có hiệu lực thi hành kể từ ngày 15 tháng 8 năm 2021. 2. Bộ trưởng, Thủ trưởng cơ quan ngang Bộ, Thủ trưởng cơ quan thuộc Chính phủ, Chủ tịch ủy ban nhân dân tỉnh, thành phố trực thuộc Trung ương và các tổ chức, cá nhân có liên quan chịu trách nhiệm thi hành Thông tư này./. BỘ TRƯỞNG (Đã ký) P"
+        }
+      ]
+    },
+    {
+      "original_id": "28227",
+      "law": "162/2017/TT-BQP",
+      "candidate_count": 15,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": [
+        {
+          "article_id": "124711:article:5",
+          "character_tfidf_similarity": 0.6694403092213175,
+          "corpus_excerpt": "1. Đối tượng quy định tại khoản 1 Điều 2 Thông tư này, được hưởng chế độ trợ cấp một lần do nghỉ hưu trước hạn tuổi khi thuộc diện dôi dư biên chế ở các cơ quan, đơn vị, doanh nghiệp Quân đội có quyết định giải thể, sáp nhập, rút gọn, hạ cấp độ tổ chức, chuyển đổi mô hình hoạt động dẫn đến giảm số lượng mà Quân đội không còn nhu cầu bố trí sử dụng ",
+          "source_excerpt": "Điều 5. Điều kiện và chế độ trợ cấp một lần do nghỉ hưu trước hạn tuổi 1. Đối tượng quy định tại khoản 1 Điều 2 Thông tư này, được hưởng chế độ trợ cấp một lần do nghỉ hưu trước hạn tuổi khi thuộc diện dôi dư biên chế ở các cơ quan, đơn vị, doanh nghiệp Quân đội có quyết định giải thể, sáp nhập, rút gọn, hạ cấp độ tổ chức, chuyển đổi mô hình hoạt đ"
+        },
+        {
+          "article_id": "124711:article:12",
+          "character_tfidf_similarity": 0.47368906365967134,
+          "corpus_excerpt": "1. Đối tượng quy định tại khoản 1 Điều 2 Thông tư này, được hưởng chế độ trợ cấp một lần do nghỉ hưu trước hạn tuổi khi thuộc diện dôi dư biên chế ở các cơ quan, đơn vị, doanh nghiệp Quân đội có quyết định giải thể, sáp nhập, rút gọn, hạ cấp độ tổ chức, chuyển đổi mô hình hoạt động dẫn đến giảm số lượng mà Quân đội không còn nhu cầu bố trí sử dụng ",
+          "source_excerpt": "Điều 12. Hồ sơ và thẩm quyền giải quyết chế độ 1. Hồ sơ giải quyết chế độ đối với quân nhân chuyên nghiệp, công nhân và viên chức quốc phòng thôi phục vụ trong Quân đội; hy sinh, từ trần thực hiện theo quy định hiện hành của Bộ Quốc phòng. Trường hợp quân nhân chuyên nghiệp, công nhân và viên chức quốc phòng được hưởng chế độ trợ cấp một lần do ngh"
+        },
+        {
+          "article_id": "124711:article:4",
+          "character_tfidf_similarity": 0.4526731070511653,
+          "corpus_excerpt": "1. Đối tượng quy định tại khoản 1 Điều 2 Thông tư này, được hưởng chế độ trợ cấp một lần do nghỉ hưu trước hạn tuổi khi thuộc diện dôi dư biên chế ở các cơ quan, đơn vị, doanh nghiệp Quân đội có quyết định giải thể, sáp nhập, rút gọn, hạ cấp độ tổ chức, chuyển đổi mô hình hoạt động dẫn đến giảm số lượng mà Quân đội không còn nhu cầu bố trí sử dụng ",
+          "source_excerpt": "Điều 4. Điều kiện nghỉ hưu và chế độ, chính sách khi nghỉ hưu 1. Quân nhân chuyên nghiệp có quyết định thôi phục vụ tại ngũ, được nghỉ hưu khi thuộc một trong các trường hợp sau: a) Đủ điều kiện nghỉ hưu theo quy định tại Điều 8 Nghị định số 33/2016/NĐ-CP ngày 10 tháng 5 năm 2016 của Chính phủ quy định chi tiết và hướng dẫn thi hành một số điều của"
+        }
+      ]
+    },
+    {
+      "original_id": "28239",
+      "law": "61/2006/NĐ-CP",
+      "candidate_count": 9,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": [
+        {
+          "article_id": "15925:article:4",
+          "character_tfidf_similarity": 0.6326777972547278,
+          "corpus_excerpt": "CHÍNH SÁCH ĐỐI VỚI NHÀ GIÁO, CÁN BỘ QUẢN LÝ GIÁO DỤC CÔNG TÁC TẠI CÁC TRƯỜNG CHUYÊN BIỆTNhà giáo, cán bộ quản lý giáo dục đang công tác tại trường chuyên biệt khi được cử đi học bồi dưỡng về chuyên môn, nghiệp vụ, ngoại ngữ được hỗ trợ tiền mua tài liệu để học tập và hỗ trợ 100% tiền học phí và tiền phụ cấp đi lại, nhà ở. Mỗi năm ít nhất 1 lần, nhà",
+          "source_excerpt": "Điều 4. Trợ cấp tham quan, học tập, bồi dưỡng chuyên môn, nghiệp vụ Nhà giáo, cán bộ quản lý giáo dục đang công tác tại trường chuyên biệt khi được cử đi học bồi dưỡng về chuyên môn, nghiệp vụ, ngoại ngữ được hỗ trợ tiền mua tài liệu để học tập và hỗ trợ 100% tiền học phí và tiền phụ cấp đi lại, nhà ở. Mỗi năm ít nhất 1 lần, nhà giáo, cán bộ quản l"
+        },
+        {
+          "article_id": "15925:article:9",
+          "character_tfidf_similarity": 0.4889776613545633,
+          "corpus_excerpt": "CHÍNH SÁCH ĐỐI VỚI NHÀ GIÁO, CÁN BỘ QUẢN LÝ GIÁO DỤC CÔNG TÁC TẠI CÁC TRƯỜNG CHUYÊN BIỆTNhà giáo, cán bộ quản lý giáo dục đang công tác tại trường chuyên biệt khi được cử đi học bồi dưỡng về chuyên môn, nghiệp vụ, ngoại ngữ được hỗ trợ tiền mua tài liệu để học tập và hỗ trợ 100% tiền học phí và tiền phụ cấp đi lại, nhà ở. Mỗi năm ít nhất 1 lần, nhà",
+          "source_excerpt": "Điều 9. Thời hạn luân chuyển nhà giáo, cán bộ quản lý giáo dục và trợ cấp chuyển vùng 1. Thời hạn luân chuyển nhà giáo, cán bộ quản lý giáo dục đến công tác tại vùng có điều kiện kinh tế - xã hội đặc biệt khó khăn là 3 năm đối với nữ và 5 năm đối với nam. Hết thời hạn công tác nói trên, nhà giáo, cán bộ quản lý giáo dục được cơ quan quản lý giáo dụ"
+        },
+        {
+          "article_id": "15925:article:1",
+          "character_tfidf_similarity": 0.37961680226674943,
+          "corpus_excerpt": "CHÍNH SÁCH ĐỐI VỚI NHÀ GIÁO, CÁN BỘ QUẢN LÝ GIÁO DỤC CÔNG TÁC TẠI CÁC TRƯỜNG CHUYÊN BIỆTNhà giáo, cán bộ quản lý giáo dục đang công tác tại trường chuyên biệt khi được cử đi học bồi dưỡng về chuyên môn, nghiệp vụ, ngoại ngữ được hỗ trợ tiền mua tài liệu để học tập và hỗ trợ 100% tiền học phí và tiền phụ cấp đi lại, nhà ở. Mỗi năm ít nhất 1 lần, nhà",
+          "source_excerpt": "Điều 1. Đối tượng điều chỉnh Nghị định này quy định các chế độ phụ cấp, trợ cấp, ưu đãi khác đối với các đối tượng nhà giáo, cán bộ quản lý giáo dục đang công tác sau đây: 1. Nhà giáo, cán bộ quản lý giáo dục trong biên chế hoặc đang trong thời gian tập sự hay đang hợp đồng, hưởng lương theo ngạch, bậc quy định của nhà nước. 2. Nhà giáo, cán bộ quả"
+        }
+      ]
+    },
+    {
+      "original_id": "28492",
+      "law": "08/2022/TT-BNNPTNT",
+      "candidate_count": 26,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": [
+        {
+          "article_id": "155647:article:3",
+          "character_tfidf_similarity": 0.8952452570765297,
+          "corpus_excerpt": "1. Các ngạch công chức chuyên ngành kiểm dịch động vật a) Kiểm dịch viên chính động vật Mã số: 09.315 b) Kiểm dịch viên động vật Mã số: 09.316 c) Kỹ thuật viên kiểm dịch động vật Mã số: 09.317 2. Các ngạch công chức chuyên ngành kiểm dịch thực vật a) Kiểm dịch viên chính thực vật Mã số: 09.318 b) Kiểm dịch viên thực vật Mã số: 09.319 c) Kỹ thuật vi",
+          "source_excerpt": "Điều 3. Mã số các ngạch công chức ngành nông nghiệp và phát triển nông thôn 1. Các ngạch công chức chuyên ngành kiểm dịch động vật a) Kiểm dịch viên chính động vật Mã số: 09.315 b) Kiểm dịch viên động vật Mã số: 09.316 c) Kỹ thuật viên kiểm dịch động vật Mã số: 09.317 2. Các ngạch công chức chuyên ngành kiểm dịch thực vật a) Kiểm dịch viên chính th"
+        },
+        {
+          "article_id": "155647:article:8",
+          "character_tfidf_similarity": 0.269087748691027,
+          "corpus_excerpt": "1. Các ngạch công chức chuyên ngành kiểm dịch động vật a) Kiểm dịch viên chính động vật Mã số: 09.315 b) Kiểm dịch viên động vật Mã số: 09.316 c) Kỹ thuật viên kiểm dịch động vật Mã số: 09.317 2. Các ngạch công chức chuyên ngành kiểm dịch thực vật a) Kiểm dịch viên chính thực vật Mã số: 09.318 b) Kiểm dịch viên thực vật Mã số: 09.319 c) Kỹ thuật vi",
+          "source_excerpt": "Điều 8. Kiểm dịch viên chính thực vật 1. Chức trách Là công chức có trình độ chuyên môn, nghiệp vụ cao, giúp lãnh đạo tổ chức và thực hiện công tác kiểm dịch thực vật xuất khẩu, nhập khẩu, quá cảnh và nội địa tại các cơ quan, tổ chức nhà nước cấp tỉnh, vùng và Trung ương có nhiệm vụ kiểm dịch thực vật. 2. Nhiệm vụ a) Xây dựng kế hoạch, phương án và"
+        },
+        {
+          "article_id": "155647:article:9",
+          "character_tfidf_similarity": 0.26781518936682785,
+          "corpus_excerpt": "1. Các ngạch công chức chuyên ngành kiểm dịch động vật a) Kiểm dịch viên chính động vật Mã số: 09.315 b) Kiểm dịch viên động vật Mã số: 09.316 c) Kỹ thuật viên kiểm dịch động vật Mã số: 09.317 2. Các ngạch công chức chuyên ngành kiểm dịch thực vật a) Kiểm dịch viên chính thực vật Mã số: 09.318 b) Kiểm dịch viên thực vật Mã số: 09.319 c) Kỹ thuật vi",
+          "source_excerpt": "Điều 9. Kiểm dịch viên thực vật 1. Chức trách Là công chức chuyên môn, nghiệp vụ giúp lãnh đạo tổ chức thực hiện công tác kiểm dịch thực vật xuất khẩu, nhập khẩu, quá cảnh và nội địa tại các cơ quan, tổ chức nhà nước cấp tỉnh, vùng và Trung ương có nhiệm vụ kiểm dịch thực vật. 2. Nhiệm vụ a) Xây dựng kế hoạch, đề xuất phương án, thực hiện và tổ chứ"
+        }
+      ]
+    },
+    {
+      "original_id": "31570",
+      "law": "137/2020/NĐ-CP",
+      "candidate_count": 23,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": [
+        {
+          "article_id": "146476:article:5",
+          "character_tfidf_similarity": 0.9800167010670748,
+          "corpus_excerpt": "1. Nghiên cứu, chế tạo, sản xuất, mua bán, xuất khẩu, nhập khẩu, tàng trữ, vận chuyển, sử dụng hoặc chiếm đoạt pháo nổ; trừ trường hợp tổ chức, doanh nghiệp thuộc Bộ Quốc phòng được Thủ tướng Chính phủ giao nhiệm vụ nghiên cứu, sản xuất, nhập khẩu, xuất khẩu, cung cấp, vận chuyển, sử dụng pháo hoa nổ theo quy định tại Nghị định này. 2. Nghiên cứu, ",
+          "source_excerpt": "Điều 5. Các hành vi bị nghiêm cấm 1. Nghiên cứu, chế tạo, sản xuất, mua bán, xuất khẩu, nhập khẩu, tàng trữ, vận chuyển, sử dụng hoặc chiếm đoạt pháo nổ; trừ trường hợp tổ chức, doanh nghiệp thuộc Bộ Quốc phòng được 2. Nghiên cứu, chế tạo, sản xuất, mua bán, xuất khẩu, nhập khẩu, tàng trữ, vận chuyển, sử dụng trái phép pháo hoa, thuốc pháo. 3. Mang"
+        },
+        {
+          "article_id": "146476:article:10",
+          "character_tfidf_similarity": 0.43192893294545126,
+          "corpus_excerpt": "1. Nghiên cứu, chế tạo, sản xuất, mua bán, xuất khẩu, nhập khẩu, tàng trữ, vận chuyển, sử dụng hoặc chiếm đoạt pháo nổ; trừ trường hợp tổ chức, doanh nghiệp thuộc Bộ Quốc phòng được Thủ tướng Chính phủ giao nhiệm vụ nghiên cứu, sản xuất, nhập khẩu, xuất khẩu, cung cấp, vận chuyển, sử dụng pháo hoa nổ theo quy định tại Nghị định này. 2. Nghiên cứu, ",
+          "source_excerpt": "Điều 10. Nghiên cứu, sản xuất, xuất khẩu, nhập khẩu, cung cấp pháo hoa nổ, thuốc pháo nổ 1. Việc nghiên cứu, sản xuất, cung cấp pháo hoa nổ theo đơn đặt hàng của các cơ quan nhà nước phải bảo đảm quy định của pháp luật về an ninh, trật tự, phòng cháy, chữa cháy, bảo vệ môi trường; có nội quy, phương án bảo vệ; bảo đảm nguồn lực, trang thiết bị đáp "
+        },
+        {
+          "article_id": "146476:article:17",
+          "character_tfidf_similarity": 0.4204094172525922,
+          "corpus_excerpt": "1. Nghiên cứu, chế tạo, sản xuất, mua bán, xuất khẩu, nhập khẩu, tàng trữ, vận chuyển, sử dụng hoặc chiếm đoạt pháo nổ; trừ trường hợp tổ chức, doanh nghiệp thuộc Bộ Quốc phòng được Thủ tướng Chính phủ giao nhiệm vụ nghiên cứu, sản xuất, nhập khẩu, xuất khẩu, cung cấp, vận chuyển, sử dụng pháo hoa nổ theo quy định tại Nghị định này. 2. Nghiên cứu, ",
+          "source_excerpt": "Điều 17. Sử dụng pháo hoa 1. Cơ quan, tổ chức, cá nhân có năng lực hành vi dân sự đầy đủ được sử dụng pháo hoa trong các trường hợp sau: Lễ, tết, sinh nhật, cưới hỏi, hội nghị, khai trương, ngày kỷ niệm và trong hoạt động văn hóa, nghệ thuật. 2. Cơ quan, tổ chức, cá nhân khi sử dụng pháo hoa chỉ được mua pháo hoa tại các tổ chức, doanh nghiệp được "
+        }
+      ]
+    },
+    {
+      "original_id": "31792",
+      "law": "02/2022/TT-BTNMT",
+      "candidate_count": 0,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": []
+    },
+    {
+      "original_id": "31794",
+      "law": "02/2022/TT-BTNMT",
+      "candidate_count": 0,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": []
+    },
+    {
+      "original_id": "3224",
+      "law": "62/2021/NĐ-CP",
+      "candidate_count": 16,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": [
+        {
+          "article_id": "148321:article:5",
+          "character_tfidf_similarity": 0.9985194826977042,
+          "corpus_excerpt": "1. Công dân khi đăng ký cư trú cần chứng minh chỗ ở hợp pháp bằng một trong các loại giấy tờ, tài liệu sau: a) Giấy tờ, tài liệu chứng nhận về quyền sử dụng đất, quyền sở hữu nhà hoặc tài sản gắn liền với đất do cơ quan có thẩm quyền cấp (trong đó có thông tin về nhà ở); b) Giấy phép xây dựng theo quy định của pháp luật về xây dựng (đối với trường ",
+          "source_excerpt": "Điều 5. Giấy tờ, tài liệu chứng minh chỗ ở hợp pháp 1. Công dân khi đăng ký cư trú cần chứng minh chỗ ở hợp pháp bằng một trong các loại giấy tờ, tài liệu sau: a) Giấy tờ, tài liệu chứng nhận về quyền sử dụng đất, quyền sở hữu nhà hoặc tài sản gắn liền với đất do cơ quan có thẩm quyền cấp (trong đó có thông tin về nhà ở); b) Giấy phép xây dựng theo"
+        },
+        {
+          "article_id": "148321:article:6",
+          "character_tfidf_similarity": 0.47241686523999454,
+          "corpus_excerpt": "1. Công dân khi đăng ký cư trú cần chứng minh chỗ ở hợp pháp bằng một trong các loại giấy tờ, tài liệu sau: a) Giấy tờ, tài liệu chứng nhận về quyền sử dụng đất, quyền sở hữu nhà hoặc tài sản gắn liền với đất do cơ quan có thẩm quyền cấp (trong đó có thông tin về nhà ở); b) Giấy phép xây dựng theo quy định của pháp luật về xây dựng (đối với trường ",
+          "source_excerpt": "Điều 6. Giấy tờ, tài liệu chứng minh quan hệ nhân thân 1. Giấy tờ, tài liệu chứng minh quan hệ nhân thân thuộc trường hợp quy định tại điểm a khoản 2 Điều 20 Luật Cư trú, bao gồm: a) Giấy tờ, tài liệu để chứng minh quan hệ vợ, chồng: Giấy chứng nhận kết hôn; giấy xác nhận tình trạng hôn nhân; xác nhận của Ủy ban nhân dân cấp xã hoặc Ủy ban nhân dân"
+        },
+        {
+          "article_id": "148321:article:3",
+          "character_tfidf_similarity": 0.44806817313838576,
+          "corpus_excerpt": "1. Công dân khi đăng ký cư trú cần chứng minh chỗ ở hợp pháp bằng một trong các loại giấy tờ, tài liệu sau: a) Giấy tờ, tài liệu chứng nhận về quyền sử dụng đất, quyền sở hữu nhà hoặc tài sản gắn liền với đất do cơ quan có thẩm quyền cấp (trong đó có thông tin về nhà ở); b) Giấy phép xây dựng theo quy định của pháp luật về xây dựng (đối với trường ",
+          "source_excerpt": "Điều 3. Nơi cư trú của người sinh sống, người làm nghề lưu động trên tàu, thuyền hoặc phương tiện khác có khả năng di chuyển 1. Nơi cư trú của người sinh sống, người làm nghề lưu động trên tàu, thuyền hoặc phương tiện khác có khả năng di chuyển (sau đây gọi chung là phương tiện) là nơi đăng ký phương tiện hoặc nơi phương tiện thường xuyên đậu, đỗ ("
+        }
+      ]
+    },
+    {
+      "original_id": "35177",
+      "law": "106/2021/NĐ-CP",
+      "candidate_count": 22,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": [
+        {
+          "article_id": "152671:article:7",
+          "character_tfidf_similarity": 0.4740626649674549,
+          "corpus_excerpt": "1. Phối hợp với Bộ Quốc phòng tổng hợp kế hoạch đầu tư trung hạn, dài hạn và hàng năm của Bộ đội Biên phòng theo các quy định của pháp luật; xác định và đưa vào danh mục các dự án sử dụng vốn ngân sách nhà nước và các dự án ưu tiên xây dựng Bộ đội Biên phòng. 2. Theo dõi, kiểm tra, thanh tra kế hoạch, chương trình, dự án về thực thi nhiệm vụ biên p",
+          "source_excerpt": "Điều 7. Trách nhiệm của Bộ Quốc phòng 1. Chủ trì, phối hợp với Bộ Ngoại giao, Bộ Công an trao đổi với các bộ, cơ quan ngang bộ, chính quyền địa phương nơi có biên giới quốc gia về tình hình, thông tin liên quan đến quản lý, bảo vệ biên giới quốc gia, tội phạm, vi phạm pháp luật ở khu vực biên giới, cửa khẩu theo quy định của pháp luật; chia sẻ với "
+        },
+        {
+          "article_id": "152671:article:11",
+          "character_tfidf_similarity": 0.4390044016613267,
+          "corpus_excerpt": "1. Phối hợp với Bộ Quốc phòng tổng hợp kế hoạch đầu tư trung hạn, dài hạn và hàng năm của Bộ đội Biên phòng theo các quy định của pháp luật; xác định và đưa vào danh mục các dự án sử dụng vốn ngân sách nhà nước và các dự án ưu tiên xây dựng Bộ đội Biên phòng. 2. Theo dõi, kiểm tra, thanh tra kế hoạch, chương trình, dự án về thực thi nhiệm vụ biên p",
+          "source_excerpt": "Điều 11. Trách nhiệm của Bộ Công Thương 1. Chỉ đạo các cơ quan, đơn vị thuộc quyền trao đổi, cung cấp cho Bộ đội Biên phòng thông tin, tài liệu có liên quan tới hoạt động xuất, nhập khẩu, tạm nhập, tái xuất, tái nhập, chuyển khẩu, thương mại biên giới, quá cảnh hàng hóa, hoạt động ủy thác xuất nhập khẩu, xuất xứ hàng hóa vận chuyển ra, vào khu vực "
+        },
+        {
+          "article_id": "152671:article:21",
+          "character_tfidf_similarity": 0.40964807364937533,
+          "corpus_excerpt": "1. Phối hợp với Bộ Quốc phòng tổng hợp kế hoạch đầu tư trung hạn, dài hạn và hàng năm của Bộ đội Biên phòng theo các quy định của pháp luật; xác định và đưa vào danh mục các dự án sử dụng vốn ngân sách nhà nước và các dự án ưu tiên xây dựng Bộ đội Biên phòng. 2. Theo dõi, kiểm tra, thanh tra kế hoạch, chương trình, dự án về thực thi nhiệm vụ biên p",
+          "source_excerpt": "Điều 21. Trách nhiệm của Bộ Nội vụ 1. Phối hợp với Bộ Quốc phòng, các bộ, ngành liên quan, chính quyền địa phương cấp tỉnh nơi có biên giới quốc gia hướng dẫn thực hiện quy hoạch, kế hoạch, chương trình xây dựng đội ngũ cán bộ Bộ đội Biên phòng tham gia xây dựng hệ thống chính trị cơ sở ở khu vực biên giới. 2. Phối hợp với Bộ Tài chính, Bộ Quốc phò"
+        }
+      ]
+    },
+    {
+      "original_id": "3601",
+      "law": "59/2014/QH13",
+      "candidate_count": 37,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": [
+        {
+          "article_id": "46743:article:25",
+          "character_tfidf_similarity": 0.9788862380529274,
+          "corpus_excerpt": "Kể từ ngày nhận đủ hồ sơ theo quy định tại Luật này, cơ quan quản lý căn cước công dân phải cấp, đổi, cấp lại thẻ Căn cước công dân cho công dân trong thời hạn sau đây:1. Tại thành phố, thị xã không quá 07 ngày làm việc đối với trường hợp cấp mới và đổi; không quá 15 ngày làm việc đối với trường hợp cấp lại;2. Tại các huyện miền núi vùng cao, biên ",
+          "source_excerpt": "Điều 25. Thời hạn cấp, đổi, cấp lại thẻ Căn cước công dân Kể từ ngày nhận đủ hồ sơ theo quy định tại Luật này, cơ quan quản lý căn cước công dân phải cấp, đổi, cấp lại thẻ Căn cước công dân cho công dân trong thời hạn sau đây: 1. Tại thành phố, thị xã không quá 07 ngày làm việc đối với trường hợp cấp mới và đổi; không quá 15 ngày làm việc đối với t"
+        },
+        {
+          "article_id": "46743:article:26",
+          "character_tfidf_similarity": 0.2940453320486368,
+          "corpus_excerpt": "Kể từ ngày nhận đủ hồ sơ theo quy định tại Luật này, cơ quan quản lý căn cước công dân phải cấp, đổi, cấp lại thẻ Căn cước công dân cho công dân trong thời hạn sau đây:1. Tại thành phố, thị xã không quá 07 ngày làm việc đối với trường hợp cấp mới và đổi; không quá 15 ngày làm việc đối với trường hợp cấp lại;2. Tại các huyện miền núi vùng cao, biên ",
+          "source_excerpt": "Điều 26. Nơi làm thủ tục cấp, đổi, cấp lại thẻ Căn cước công dân Công dân có thể lựa chọn một trong các nơi sau đây để làm thủ tục cấp, đổi, cấp lại thẻ Căn cước công dân: 1. Tại cơ quan quản lý căn cước công dân của Bộ Công an; 2. Tại cơ quan quản lý căn cước công dân của Công an tỉnh, thành phố trực thuộc trung ương; 3. Tại cơ quan quản lý căn cư"
+        },
+        {
+          "article_id": "46743:article:23",
+          "character_tfidf_similarity": 0.2853001850089431,
+          "corpus_excerpt": "Kể từ ngày nhận đủ hồ sơ theo quy định tại Luật này, cơ quan quản lý căn cước công dân phải cấp, đổi, cấp lại thẻ Căn cước công dân cho công dân trong thời hạn sau đây:1. Tại thành phố, thị xã không quá 07 ngày làm việc đối với trường hợp cấp mới và đổi; không quá 15 ngày làm việc đối với trường hợp cấp lại;2. Tại các huyện miền núi vùng cao, biên ",
+          "source_excerpt": "Điều 23. Các trường hợp đổi, cấp lại thẻ Căn cước công dân 1. Thẻ Căn cước công dân được đổi trong các trường hợp sau đây: a) Các trường hợp quy định tại khoản 1 Điều 21 của Luật này; b) Thẻ bị hư hỏng không sử dụng được; c) Thay đổi thông tin về họ, chữ đệm, tên; đặc điểm nhân dạng; d) Xác định lại giới tính, quê quán; đ) Có sai sót về thông tin t"
+        }
+      ]
+    },
+    {
+      "original_id": "3602",
+      "law": "59/2014/QH13",
+      "candidate_count": 37,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": [
+        {
+          "article_id": "46743:article:26",
+          "character_tfidf_similarity": 0.967477206550013,
+          "corpus_excerpt": "Công dân có thể lựa chọn một trong các nơi sau đây để làm thủ tục cấp, đổi, cấp lại thẻ Căn cước công dân:1. Tại cơ quan quản lý căn cước công dân của Bộ Công an;2. Tại cơ quan quản lý căn cước công dân của Công an tỉnh, thành phố trực thuộc trung ương;3. Tại cơ quan quản lý căn cước công dân của Công an huyện, quận, thị xã, thành phố thuộc tỉnh và",
+          "source_excerpt": "Điều 26. Nơi làm thủ tục cấp, đổi, cấp lại thẻ Căn cước công dân Công dân có thể lựa chọn một trong các nơi sau đây để làm thủ tục cấp, đổi, cấp lại thẻ Căn cước công dân: 1. Tại cơ quan quản lý căn cước công dân của Bộ Công an; 2. Tại cơ quan quản lý căn cước công dân của Công an tỉnh, thành phố trực thuộc trung ương; 3. Tại cơ quan quản lý căn cư"
+        },
+        {
+          "article_id": "46743:article:14",
+          "character_tfidf_similarity": 0.4524030900002242,
+          "corpus_excerpt": "Công dân có thể lựa chọn một trong các nơi sau đây để làm thủ tục cấp, đổi, cấp lại thẻ Căn cước công dân:1. Tại cơ quan quản lý căn cước công dân của Bộ Công an;2. Tại cơ quan quản lý căn cước công dân của Công an tỉnh, thành phố trực thuộc trung ương;3. Tại cơ quan quản lý căn cước công dân của Công an huyện, quận, thị xã, thành phố thuộc tỉnh và",
+          "source_excerpt": "Điều 14. Yêu cầu xây dựng và quản lý Cơ sở dữ liệu căn cước công dân 1. Cơ sở dữ liệu căn cước công dân được xây dựng và quản lý tại cơ quan quản lý căn cước công dân Bộ Công an, Công an tỉnh, thành phố trực thuộc trung ương và Công an huyện, quận, thị xã, thành phố thuộc tỉnh và đơn vị hành chính tương đương. 2. Cơ sở dữ liệu căn cước công dân đượ"
+        },
+        {
+          "article_id": "46743:article:27",
+          "character_tfidf_similarity": 0.44696846378088656,
+          "corpus_excerpt": "Công dân có thể lựa chọn một trong các nơi sau đây để làm thủ tục cấp, đổi, cấp lại thẻ Căn cước công dân:1. Tại cơ quan quản lý căn cước công dân của Bộ Công an;2. Tại cơ quan quản lý căn cước công dân của Công an tỉnh, thành phố trực thuộc trung ương;3. Tại cơ quan quản lý căn cước công dân của Công an huyện, quận, thị xã, thành phố thuộc tỉnh và",
+          "source_excerpt": "Điều 27. Thẩm quyền cấp, đổi, cấp lại thẻ Căn cước công dân Thủ trưởng cơ quan quản lý căn cước công dân của Bộ Công an có thẩm quyền cấp, đổi, cấp lại thẻ Căn cước công dân."
+        }
+      ]
+    },
+    {
+      "original_id": "37339",
+      "law": "963/QĐ-BCT",
+      "candidate_count": 0,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": []
+    },
+    {
+      "original_id": "39300",
+      "law": "34/2017/TT-BCA",
+      "candidate_count": 24,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": [
+        {
+          "article_id": "151642:article:8",
+          "character_tfidf_similarity": 0.9528627970552521,
+          "corpus_excerpt": "Người đến thăm gặp và người bị tạm giữ, người bị tạm giam phải chấp hành đúng Nội quy cơ sở giam giữ, quy định về thăm gặp và thực hiện theo sự hướng dẫn của cán bộ làm nhiệm vụ tổ chức thăm gặp; có thái độ văn minh, lịch sự, trang phục gọn gàng, sạch sẽ. Trường hợp vi phạm sẽ bị nhắc nhở hoặc đình chỉ việc thăm gặp.",
+          "source_excerpt": "Điều 8. Trách nhiệm của người đến thăm gặp và người bị tạm giữ, người bị tạm giam Người đến thăm gặp và người bị tạm giữ, người bị tạm giam phải chấp hành đúng Nội quy cơ sở giam giữ, quy định về thăm gặp và thực hiện theo sự hướng dẫn của cán bộ làm nhiệm vụ tổ chức thăm gặp; có thái độ văn minh, lịch sự, trang phục gọn gàng, sạch sẽ. Trường hợp v"
+        },
+        {
+          "article_id": "vilegal:context_10759:article:8",
+          "character_tfidf_similarity": 0.9528627970552521,
+          "corpus_excerpt": "Người đến thăm gặp và người bị tạm giữ, người bị tạm giam phải chấp hành đúng Nội quy cơ sở giam giữ, quy định về thăm gặp và thực hiện theo sự hướng dẫn của cán bộ làm nhiệm vụ tổ chức thăm gặp; có thái độ văn minh, lịch sự, trang phục gọn gàng, sạch sẽ. Trường hợp vi phạm sẽ bị nhắc nhở hoặc đình chỉ việc thăm gặp.",
+          "source_excerpt": "Điều 8. Trách nhiệm của người đến thăm gặp và người bị tạm giữ, người bị tạm giam Người đến thăm gặp và người bị tạm giữ, người bị tạm giam phải chấp hành đúng Nội quy cơ sở giam giữ, quy định về thăm gặp và thực hiện theo sự hướng dẫn của cán bộ làm nhiệm vụ tổ chức thăm gặp; có thái độ văn minh, lịch sự, trang phục gọn gàng, sạch sẽ. Trường hợp v"
+        },
+        {
+          "article_id": "151642:article:7",
+          "character_tfidf_similarity": 0.4912535344082499,
+          "corpus_excerpt": "Người đến thăm gặp và người bị tạm giữ, người bị tạm giam phải chấp hành đúng Nội quy cơ sở giam giữ, quy định về thăm gặp và thực hiện theo sự hướng dẫn của cán bộ làm nhiệm vụ tổ chức thăm gặp; có thái độ văn minh, lịch sự, trang phục gọn gàng, sạch sẽ. Trường hợp vi phạm sẽ bị nhắc nhở hoặc đình chỉ việc thăm gặp.",
+          "source_excerpt": "Điều 7. Trách nhiệm của cơ sở giam giữ trong việc tổ chức cho người bị tạm giữ, người bị tạm giam gặp thân nhân 1. Thủ trưởng cơ sở giam giữ có trách nhiệm tổ chức cho người bị tạm giữ, người bị tạm giam gặp thân nhân theo đúng quy định của pháp luật. Bố trí cán bộ là sỹ quan có trình độ, năng lực, kinh nghiệm trong công tác quản lý, giam giữ để là"
+        }
+      ]
+    },
+    {
+      "original_id": "40105",
+      "law": "199/2011/TT-BTC",
+      "candidate_count": 14,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": [
+        {
+          "article_id": "27757:article:7",
+          "character_tfidf_similarity": 0.9910210286546539,
+          "corpus_excerpt": "1. Việc thi đánh giá kết quả học tập được thực hiện như sau:Kết thúc mỗi phần trong chương trình học phải tổ chức thi hết học phần trong thời gian tối thiểu là 180 phút. 2. Việc thi hết học phần được thực hiện dưới hình thức viết. Điểm thi hết học phần được chấm theo thang điểm 10 bậc. Bài thi dưới 5 điểm là không đạt yêu cầu. 3. Chỉ những học viên",
+          "source_excerpt": "Điều 7. Thi đánh giá kết quả học tập 1. Việc thi đánh giá kết quả học tập được thực hiện như sau: Kết thúc mỗi phần trong chương trình học phải tổ chức thi hết học phần trong thời gian tối thiểu là 180 phút. 2. Việc thi hết học phần được thực hiện dưới hình thức viết. Điểm thi hết học phần được chấm theo thang điểm 10 bậc. Bài thi dưới 5 điểm là kh"
+        },
+        {
+          "article_id": "27757:article:9",
+          "character_tfidf_similarity": 0.24315729341511075,
+          "corpus_excerpt": "1. Việc thi đánh giá kết quả học tập được thực hiện như sau:Kết thúc mỗi phần trong chương trình học phải tổ chức thi hết học phần trong thời gian tối thiểu là 180 phút. 2. Việc thi hết học phần được thực hiện dưới hình thức viết. Điểm thi hết học phần được chấm theo thang điểm 10 bậc. Bài thi dưới 5 điểm là không đạt yêu cầu. 3. Chỉ những học viên",
+          "source_excerpt": "Điều 9. Cấp\"Chứng chỉ bồi dưỡng kế toán trưởng\"1. Học viên có kết quả thi đạt loại trung bình trở lên (Học viên đạt yêu cầu) được Thủ trưởng cơ sở đào tạo, bồi dưỡng ra quyết định tổ chức khoá học cấp\"Chứng chỉ bồi dưỡng Kế toán trưởng\". 2. Kết thúc mỗi khoá học bồi dưỡng kế toán trưởng, đơn vị tổ chức khoá học bồi dưỡng kế toán trưởng gửi\"Quyết đị"
+        },
+        {
+          "article_id": "27757:article:6",
+          "character_tfidf_similarity": 0.24091783036260478,
+          "corpus_excerpt": "1. Việc thi đánh giá kết quả học tập được thực hiện như sau:Kết thúc mỗi phần trong chương trình học phải tổ chức thi hết học phần trong thời gian tối thiểu là 180 phút. 2. Việc thi hết học phần được thực hiện dưới hình thức viết. Điểm thi hết học phần được chấm theo thang điểm 10 bậc. Bài thi dưới 5 điểm là không đạt yêu cầu. 3. Chỉ những học viên",
+          "source_excerpt": "Điều 6. Thủ tục tổ chức khóa học bồi dưỡng kế toán trưởng 1. Các cơ sở đào tạo, bồi dưỡng trước khi mở khoá học bồi dưỡng kế toán trưởng (Từng khoá) phải gửi cho Bộ Tài chính bộ hồ sơ, gồm các tài liệu sau đây: a/ Quyết định mở khoá học bồi dưỡng kế toán trưởng của Thủ trưởng cơ sở đào tạo, bồi dưỡng; b/ Danh sách học viên khoá học (Phụ lục số 01);"
+        }
+      ]
+    },
+    {
+      "original_id": "40406",
+      "law": "27/2008/QH12",
+      "candidate_count": 11,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": [
+        {
+          "article_id": "12324:article:4",
+          "character_tfidf_similarity": 0.9867823537912784,
+          "corpus_excerpt": "Người nộp thuế tiêu thụ đặc biệt là tổ chức, cá nhân sản xuất, nhập khẩu hàng hóa và kinh doanh dịch vụ thuộc đối tượng chịu thuế tiêu thụ đặc biệt.Trường hợp tổ chức, cá nhân có hoạt động kinh doanh xuất khẩu mua hàng hoá thuộc diện chịu thuế tiêu thụ đặc biệt của cơ sở sản xuất để xuất khẩu nhưng không xuất khẩu mà tiêu thụ trong nước thì tổ chức",
+          "source_excerpt": "Điều 4. Người nộp thuế Người nộp thuế tiêu thụ đặc biệt là tổ chức, cá nhân sản xuất, nhập khẩu hàng hóa và kinh doanh dịch vụ thuộc đối tượng chịu thuế tiêu thụ đặc biệt. Trường hợp tổ chức, cá nhân có hoạt động kinh doanh xuất khẩu mua hàng hoá thuộc diện chịu thuế tiêu thụ đặc biệt của cơ sở sản xuất để xuất khẩu nhưng không xuất khẩu mà tiêu th"
+        },
+        {
+          "article_id": "12324:article:8",
+          "character_tfidf_similarity": 0.4293340147516901,
+          "corpus_excerpt": "Người nộp thuế tiêu thụ đặc biệt là tổ chức, cá nhân sản xuất, nhập khẩu hàng hóa và kinh doanh dịch vụ thuộc đối tượng chịu thuế tiêu thụ đặc biệt.Trường hợp tổ chức, cá nhân có hoạt động kinh doanh xuất khẩu mua hàng hoá thuộc diện chịu thuế tiêu thụ đặc biệt của cơ sở sản xuất để xuất khẩu nhưng không xuất khẩu mà tiêu thụ trong nước thì tổ chức",
+          "source_excerpt": "Điều 8. Hoàn thuế, khấu trừ thuế 1. Người nộp thuế tiêu thụ đặc biệt được hoàn thuế đã nộp trong các trường hợp sau: a) Hàng tạm nhập khẩu, tái xuất khẩu; b) Hàng hóa là nguyên liệu nhập khẩu để sản xuất, gia công hàng xuất khẩu; c) Quyết toán thuế khi sáp nhập, hợp nhất, chia, tách, giải thể, phá sản, chuyển đổi sở hữu, chuyển đổi doanh nghiệp, ch"
+        },
+        {
+          "article_id": "12324:article:3",
+          "character_tfidf_similarity": 0.42209837654701826,
+          "corpus_excerpt": "Người nộp thuế tiêu thụ đặc biệt là tổ chức, cá nhân sản xuất, nhập khẩu hàng hóa và kinh doanh dịch vụ thuộc đối tượng chịu thuế tiêu thụ đặc biệt.Trường hợp tổ chức, cá nhân có hoạt động kinh doanh xuất khẩu mua hàng hoá thuộc diện chịu thuế tiêu thụ đặc biệt của cơ sở sản xuất để xuất khẩu nhưng không xuất khẩu mà tiêu thụ trong nước thì tổ chức",
+          "source_excerpt": "Điều 3. Đối tượng không chịu thuế Hàng hóa quy định tại khoản 1 Điều 2 của Luật này không thuộc diện chịu thuế tiêu thụ đặc biệt trong các trường hợp sau: 1. Hàng hóa do cơ sở sản xuất, gia công trực tiếp xuất khẩu hoặc bán, ủy thác cho cơ sở kinh doanh khác để xuất khẩu; 2. Hàng hóa nhập khẩu bao gồm: a) Hàng viện trợ nhân đạo, viện trợ không hoàn"
+        }
+      ]
+    },
+    {
+      "original_id": "42292",
+      "law": "08/2022/NĐ-CP",
+      "candidate_count": 146,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": [
+        {
+          "article_id": "168754:article:97",
+          "character_tfidf_similarity": 0.9994869404019225,
+          "corpus_excerpt": "1. Mức lưu lượng xả nước thải được tính theo tổng công suất thiết kế của tất cả các công trình, thiết bị xả nước thải ra môi trường ghi trong giấy phép môi trường và được quy định như sau: a) Mức lưu lượng xả nước thải trung bình của dự án, cơ sở thuộc loại hình sản xuất, kinh doanh, dịch vụ có nguy cơ gây ô nhiễm môi trường từ 200 m3/ngày (24 giờ)",
+          "source_excerpt": "Điều 97. Quan trắc nước thải 1. Mức lưu lượng xả nước thải được tính theo tổng công suất thiết kế của tất cả các công trình, thiết bị xả nước thải ra môi trường ghi trong giấy phép môi trường và được quy định như sau: Điều khoản được sửa đổi, bổ sung a) Mức lưu lượng xả nước thải trung bình của dự án, cơ sở thuộc loại hình sản xuất, kinh doanh, dịc"
+        },
+        {
+          "article_id": "168754:article:98",
+          "character_tfidf_similarity": 0.6792693426406972,
+          "corpus_excerpt": "1. Mức lưu lượng xả nước thải được tính theo tổng công suất thiết kế của tất cả các công trình, thiết bị xả nước thải ra môi trường ghi trong giấy phép môi trường và được quy định như sau: a) Mức lưu lượng xả nước thải trung bình của dự án, cơ sở thuộc loại hình sản xuất, kinh doanh, dịch vụ có nguy cơ gây ô nhiễm môi trường từ 200 m3/ngày (24 giờ)",
+          "source_excerpt": "Điều 98. Quan trắc khí thải công nghiệp 1. Mức lưu lượng xả bụi, khí thải công nghiệp của dự án, cơ sở được tính theo lưu lượng hoặc công suất thiết kế của công trình, thiết bị xử lý bụi, khí thải công nghiệp ghi trong giấy phép môi trường và được quy định như sau: a) Mức lưu lượng xả bụi, khí thải công nghiệp lớn của dự án, cơ sở thuộc loại hình s"
+        },
+        {
+          "article_id": "168754:article:25",
+          "character_tfidf_similarity": 0.6056364357172651,
+          "corpus_excerpt": "1. Mức lưu lượng xả nước thải được tính theo tổng công suất thiết kế của tất cả các công trình, thiết bị xả nước thải ra môi trường ghi trong giấy phép môi trường và được quy định như sau: a) Mức lưu lượng xả nước thải trung bình của dự án, cơ sở thuộc loại hình sản xuất, kinh doanh, dịch vụ có nguy cơ gây ô nhiễm môi trường từ 200 m3/ngày (24 giờ)",
+          "source_excerpt": "Điều 25. Tiêu chí về môi trường và phân loại dự án đầu tư 1. Quy mô dự án đầu tư được quy định như sau: a) Quy mô của dự án đầu tư được phân loại theo tiêu chí quy định của pháp luật về đầu tư công, gồm dự án quan trọng quốc gia, nhóm A, nhóm B và nhóm C, trừ trường hợp quy định tại các điểm b, c và d khoản này; Điều khoản được sửa đổi, bổ sung b) "
+        }
+      ]
+    },
+    {
+      "original_id": "4277",
+      "law": "13/2023/NĐ-CP",
+      "candidate_count": 42,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": [
+        {
+          "article_id": "161106:article:11",
+          "character_tfidf_similarity": 0.5922556486044209,
+          "corpus_excerpt": "1. Quyền được biết Chủ thể dữ liệu được biết về hoạt động xử lý dữ liệu cá nhân của mình, trừ trường hợp luật có quy định khác. 2. Quyền đồng ý Chủ thể dữ liệu được đồng ý hoặc không đồng ý cho phép xử lý dữ liệu cá nhân của mình, trừ trường hợp quy định tại Điều 17 Nghị định này. 3. Quyền truy cập Chủ thể dữ liệu được truy cập để xem, chỉnh sửa ho",
+          "source_excerpt": "Điều 11. Sự đồng ý của chủ thể dữ liệu 1. Sự đồng ý của chủ thể dữ liệu được áp dụng đối với tất cả các hoạt động trong quy trình xử lý dữ liệu cá nhân, trừ trường hợp luật có quy định khác. 2. Sự đồng ý của chủ thể dữ liệu chỉ có hiệu lực khi chủ thể dữ liệu tự nguyện và biết rõ các nội dung sau: a) Loại dữ liệu cá nhân được xử lý; b) Mục đích xử "
+        },
+        {
+          "article_id": "161106:article:16",
+          "character_tfidf_similarity": 0.5838014641013319,
+          "corpus_excerpt": "1. Quyền được biết Chủ thể dữ liệu được biết về hoạt động xử lý dữ liệu cá nhân của mình, trừ trường hợp luật có quy định khác. 2. Quyền đồng ý Chủ thể dữ liệu được đồng ý hoặc không đồng ý cho phép xử lý dữ liệu cá nhân của mình, trừ trường hợp quy định tại Điều 17 Nghị định này. 3. Quyền truy cập Chủ thể dữ liệu được truy cập để xem, chỉnh sửa ho",
+          "source_excerpt": "Điều 16. Lưu trữ, xóa, hủy dữ liệu cá nhân 1. Chủ thể dữ liệu được yêu cầu Bên Kiểm soát dữ liệu cá nhân, Bên Kiểm soát và xử lý dữ liệu cá nhân xóa dữ liệu cá nhân của mình trong các trường hợp sau: a) Nhận thấy không còn cần thiết cho mục đích thu thập đã đồng ý và chấp nhận các thiệt hại có thể xảy ra khi yêu cầu xóa dữ liệu; b) Rút lại sự đồng "
+        },
+        {
+          "article_id": "161106:article:15",
+          "character_tfidf_similarity": 0.580832995488105,
+          "corpus_excerpt": "1. Quyền được biết Chủ thể dữ liệu được biết về hoạt động xử lý dữ liệu cá nhân của mình, trừ trường hợp luật có quy định khác. 2. Quyền đồng ý Chủ thể dữ liệu được đồng ý hoặc không đồng ý cho phép xử lý dữ liệu cá nhân của mình, trừ trường hợp quy định tại Điều 17 Nghị định này. 3. Quyền truy cập Chủ thể dữ liệu được truy cập để xem, chỉnh sửa ho",
+          "source_excerpt": "Điều 15. Chỉnh sửa dữ liệu cá nhân 1. Chủ thể dữ liệu: a) Được truy cập để xem, chỉnh sửa dữ liệu cá nhân của mình sau khi đã được Bên Kiểm soát dữ liệu cá nhân, Bên Kiểm soát và xử lý dữ liệu cá nhân thu thập theo sự đồng ý, trừ trường hợp luật có quy định khác; b) Trường hợp không thể chỉnh sửa trực tiếp vì lý do kỹ thuật hoặc vì lý do khác, chủ "
+        }
+      ]
+    },
+    {
+      "original_id": "43743",
+      "law": "01/2023/TT-VPCP",
+      "candidate_count": 31,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": [
+        {
+          "article_id": "163666:article:4",
+          "character_tfidf_similarity": 0.9901327490214585,
+          "corpus_excerpt": "1. Giấy tờ là thành phần hồ sơ mà tổ chức, cá nhân nộp để thực hiện thủ tục hành chính, bao gồm các loại sau: a) Thành phần hồ sơ là kết quả giải quyết của thủ tục hành chính trước đó; b) Thành phần hồ sơ phải số hóa theo quy định của pháp luật chuyên ngành; c) Thành phần hồ sơ cần số hóa theo yêu cầu quản lý được xác định tại Quyết định của Bộ trư",
+          "source_excerpt": "Điều 4. Các giấy tờ, tài liệu thuộc phạm vi thực hiện số hóa 1. Giấy tờ là thành phần hồ sơ mà tổ chức, cá nhân nộp để thực hiện thủ tục hành chính, bao gồm các loại sau: a) Thành phần hồ sơ là kết quả giải quyết của thủ tục hành chính trước đó; b) Thành phần hồ sơ phải số hóa theo quy định của pháp luật chuyên ngành; c) Thành phần hồ sơ cần số hóa"
+        },
+        {
+          "article_id": "163666:article:12",
+          "character_tfidf_similarity": 0.5608483976541421,
+          "corpus_excerpt": "1. Giấy tờ là thành phần hồ sơ mà tổ chức, cá nhân nộp để thực hiện thủ tục hành chính, bao gồm các loại sau: a) Thành phần hồ sơ là kết quả giải quyết của thủ tục hành chính trước đó; b) Thành phần hồ sơ phải số hóa theo quy định của pháp luật chuyên ngành; c) Thành phần hồ sơ cần số hóa theo yêu cầu quản lý được xác định tại Quyết định của Bộ trư",
+          "source_excerpt": "Điều 12. Kết quả giải quyết thủ tục hành chính bản điện tử 1. Kết quả giải quyết thủ tục hành chính bản điện tử phải bảo đảm thể thức theo quy định của pháp luật chuyên ngành hoặc được chuyển từ bản giấy sang bản điện tử theo quy định tại Điều 25, 26, 27 Nghị định số 30/2020/NĐ-CP ngày 05 tháng 3 năm 2020 của Chính phủ về công tác văn thư. 2. Kết q"
+        },
+        {
+          "article_id": "163666:article:11",
+          "character_tfidf_similarity": 0.5483095459258553,
+          "corpus_excerpt": "1. Giấy tờ là thành phần hồ sơ mà tổ chức, cá nhân nộp để thực hiện thủ tục hành chính, bao gồm các loại sau: a) Thành phần hồ sơ là kết quả giải quyết của thủ tục hành chính trước đó; b) Thành phần hồ sơ phải số hóa theo quy định của pháp luật chuyên ngành; c) Thành phần hồ sơ cần số hóa theo yêu cầu quản lý được xác định tại Quyết định của Bộ trư",
+          "source_excerpt": "Điều 11. Lưu kết quả số hóa 1. Kết quả số hóa hồ sơ, giấy tờ được người có trách nhiệm giải quyết thủ tục hành chính cập nhật, lưu trên Cơ sở dữ liệu quốc gia, cơ sở dữ liệu chuyên ngành theo quy định của pháp luật chuyên ngành. Trường hợp pháp luật chuyên ngành không quy định thì lưu tại Kho dữ liệu hồ sơ thủ tục hành chính, là một bộ phận thuộc c"
+        }
+      ]
+    },
+    {
+      "original_id": "46019",
+      "law": "57/2014/QH13",
+      "candidate_count": 94,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": [
+        {
+          "article_id": "44168:article:91",
+          "character_tfidf_similarity": 0.9943277342786163,
+          "corpus_excerpt": "1. Căn cứ vào nghị quyết của Quốc hội, đề nghị của Chủ tịch nước, Thủ tướng Chính phủ, Ủy ban trung ương Mặt trận Tổ quốc Việt Nam, Chánh án Tòa án nhân dân tối cao, Viện trưởng Viện kiểm sát nhân dân tối cao, Tổng Kiểm toán nhà nước, Hội đồng dân tộc, Ủy ban của Quốc hội và đại biểu Quốc hội, Ủy ban thường vụ Quốc hội dự kiến chương trình kỳ họp Q",
+          "source_excerpt": "Điều 91. Chương trình kỳ họp Quốc hội 1. Căn cứ vào nghị quyết của Quốc hội, đề nghị của Chủ tịch nước, Thủ tướng Chính phủ, Ủy ban trung ương Mặt trận Tổ quốc Việt Nam, Chánh án Tòa án nhân dân tối cao, Viện trưởng Viện kiểm sát nhân dân tối cao, Tổng Kiểm toán nhà nước, Hội đồng dân tộc, Ủy ban của Quốc hội và đại biểu Quốc hội, Ủy ban thường vụ "
+        },
+        {
+          "article_id": "44168:article:46",
+          "character_tfidf_similarity": 0.5618540608637099,
+          "corpus_excerpt": "1. Căn cứ vào nghị quyết của Quốc hội, đề nghị của Chủ tịch nước, Thủ tướng Chính phủ, Ủy ban trung ương Mặt trận Tổ quốc Việt Nam, Chánh án Tòa án nhân dân tối cao, Viện trưởng Viện kiểm sát nhân dân tối cao, Tổng Kiểm toán nhà nước, Hội đồng dân tộc, Ủy ban của Quốc hội và đại biểu Quốc hội, Ủy ban thường vụ Quốc hội dự kiến chương trình kỳ họp Q",
+          "source_excerpt": "Điều 46. Phối hợp công tác giữa Ủy ban thường vụ Quốc hội với các cơ quan, tổ chức, đơn vị, cá nhân 1. Khi thực hiện nhiệm vụ, quyền hạn của mình, Ủy ban thường vụ Quốc hội phối hợp công tác với Chủ tịch nước, Chính phủ, Thủ tướng Chính phủ, Tòa án nhân dân tối cao, Viện kiểm sát nhân dân tối cao, Tổng Kiểm toán nhà nước, Hội đồng bầu cử quốc gia, "
+        },
+        {
+          "article_id": "44168:article:62",
+          "character_tfidf_similarity": 0.5355578238522295,
+          "corpus_excerpt": "1. Căn cứ vào nghị quyết của Quốc hội, đề nghị của Chủ tịch nước, Thủ tướng Chính phủ, Ủy ban trung ương Mặt trận Tổ quốc Việt Nam, Chánh án Tòa án nhân dân tối cao, Viện trưởng Viện kiểm sát nhân dân tối cao, Tổng Kiểm toán nhà nước, Hội đồng dân tộc, Ủy ban của Quốc hội và đại biểu Quốc hội, Ủy ban thường vụ Quốc hội dự kiến chương trình kỳ họp Q",
+          "source_excerpt": "Điều 62. Dự kiến chương trình và quyết định triệu tập phiên họp Ủy ban thường vụ Quốc hội 1. Chủ tịch Quốc hội chỉ đạo việc chuẩn bị phiên họp Ủy ban thường vụ Quốc hội; dự kiến chương trình, quyết định thời gian họp và các biện pháp bảo đảm. Phó Chủ tịch Quốc hội, Ủy viên Ủy ban thường vụ Quốc hội chuẩn bị những nội dung được Chủ tịch Quốc hội phâ"
+        }
+      ]
+    },
+    {
+      "original_id": "46089",
+      "law": "468/QĐ-BYT",
+      "candidate_count": 0,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": []
+    },
+    {
+      "original_id": "46694",
+      "law": "763/QĐ-BVHTTDL",
+      "candidate_count": 0,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": []
+    },
+    {
+      "original_id": "46700",
+      "law": "759/QĐ-BVHTTDL",
+      "candidate_count": 0,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": []
+    },
+    {
+      "original_id": "46766",
+      "law": "141/2020/TT-BCA",
+      "candidate_count": 16,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": [
+        {
+          "article_id": "180272:article:5",
+          "character_tfidf_similarity": 0.9946448600236334,
+          "corpus_excerpt": "1. Cán bộ kiểm tra có nhiệm vụ sau: a) Tham mưu lãnh đạo trực tiếp tổ chức công tác nắm tình hình, điều tra cơ bản phục vụ quản lý về phòng cháy, chữa cháy và cứu nạn, cứu hộ tại địa bàn, cơ sở được phân công quản lý; b) Thực hiện công tác nghiệp vụ cơ bản và công tác hồ sơ, thống kê nghiệp vụ phục vụ quản lý về phòng cháy, chữa cháy và cứu nạn, cứ",
+          "source_excerpt": "Điều 5. Nhiệm vụ của cán bộ kiểm tra 1. Cán bộ kiểm tra có nhiệm vụ sau: a) Tham mưu lãnh đạo trực tiếp tổ chức công tác nắm tình hình, điều tra cơ bản phục vụ quản lý về phòng cháy, chữa cháy và cứu nạn, cứu hộ tại địa bàn, cơ sở được phân công quản lý; b) Thực hiện công tác nghiệp vụ cơ bản và công tác hồ sơ, thống kê nghiệp vụ phục vụ quản lý về"
+        },
+        {
+          "article_id": "180272:article:12",
+          "character_tfidf_similarity": 0.7390964126111312,
+          "corpus_excerpt": "1. Cán bộ kiểm tra có nhiệm vụ sau: a) Tham mưu lãnh đạo trực tiếp tổ chức công tác nắm tình hình, điều tra cơ bản phục vụ quản lý về phòng cháy, chữa cháy và cứu nạn, cứu hộ tại địa bàn, cơ sở được phân công quản lý; b) Thực hiện công tác nghiệp vụ cơ bản và công tác hồ sơ, thống kê nghiệp vụ phục vụ quản lý về phòng cháy, chữa cháy và cứu nạn, cứ",
+          "source_excerpt": "Điều 12. Tập huấn nghiệp vụ kiểm tra về phòng cháy, chữa cháy và cứu nạn, cứu hộ 1. Đối tượng tập huấn: a) Sĩ quan, hạ sĩ quan đang được phân công thực hiện nhiệm vụ kiểm tra về phòng cháy, chữa cháy và cứu nạn, cứu hộ; b) Sĩ quan, hạ sĩ quan dự kiến phân công thực hiện nhiệm vụ kiểm tra về phòng cháy, chữa cháy và cứu nạn, cứu hộ. 2. Nội dung tập "
+        },
+        {
+          "article_id": "180272:article:7",
+          "character_tfidf_similarity": 0.6622144563257872,
+          "corpus_excerpt": "1. Cán bộ kiểm tra có nhiệm vụ sau: a) Tham mưu lãnh đạo trực tiếp tổ chức công tác nắm tình hình, điều tra cơ bản phục vụ quản lý về phòng cháy, chữa cháy và cứu nạn, cứu hộ tại địa bàn, cơ sở được phân công quản lý; b) Thực hiện công tác nghiệp vụ cơ bản và công tác hồ sơ, thống kê nghiệp vụ phục vụ quản lý về phòng cháy, chữa cháy và cứu nạn, cứ",
+          "source_excerpt": "Điều 7. Nhiệm vụ của lãnh đạo, chỉ huy phụ trách công tác kiểm tra về phòng cháy, chữa cháy và cứu nạn, cứu hộ 1. Trưởng phòng Phòng Cảnh sát phòng cháy, chữa cháy và cứu nạn, cứu hộ Công an cấp tỉnh có nhiệm vụ: a) Tham mưu với Giám đốc Công an tỉnh, thành phố trực thuộc trung ương (sau đây viết gọn là Giám đốc Công an cấp tỉnh) tổ chức công tác n"
+        }
+      ]
+    },
+    {
+      "original_id": "48179",
+      "law": "1816/QĐ-BTTTT",
+      "candidate_count": 0,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": []
+    },
+    {
+      "original_id": "48819",
+      "law": "241/2017/TT-BQP",
+      "candidate_count": 31,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": [
+        {
+          "article_id": "179775:article:20",
+          "character_tfidf_similarity": 0.9934239118776556,
+          "corpus_excerpt": "1. Kiểm tra hồ sơ đăng ký tuyển dụng, văn bằng, chứng chỉ của từng người, đối chiếu với các điều kiện, tiêu chuẩn và yêu cầu vị trí chức danh của quân nhân chuyên nghiệp hoặc vị trí việc làm của công nhân quốc phòng hoặc chức danh nghề nghiệp của viên chức quốc phòng. 2. Xét kết quả học tập của người đăng ký tuyển dụng, thực hiện như sau: a) Điểm h",
+          "source_excerpt": "Điều 20. Nội dung xét tuyển 1. Kiểm tra hồ sơ đăng ký tuyển dụng, văn bằng, chứng chỉ của từng người, đối chiếu với các điều kiện, tiêu chuẩn và yêu cầu vị trí chức danh của quân nhân chuyên nghiệp hoặc vị trí việc làm của công nhân quốc phòng hoặc chức danh nghề nghiệp của viên chức quốc phòng. 2. Xét kết quả học tập của người đăng ký tuyển dụng, "
+        },
+        {
+          "article_id": "179775:article:22",
+          "character_tfidf_similarity": 0.4065864568118979,
+          "corpus_excerpt": "1. Kiểm tra hồ sơ đăng ký tuyển dụng, văn bằng, chứng chỉ của từng người, đối chiếu với các điều kiện, tiêu chuẩn và yêu cầu vị trí chức danh của quân nhân chuyên nghiệp hoặc vị trí việc làm của công nhân quốc phòng hoặc chức danh nghề nghiệp của viên chức quốc phòng. 2. Xét kết quả học tập của người đăng ký tuyển dụng, thực hiện như sau: a) Điểm h",
+          "source_excerpt": "Điều 22. Xác định người trúng tuyển 1. Người trúng tuyển trong kỳ xét tuyển: a) Người được Hội đồng tuyển dụng hoặc cơ quan quân lực đơn vị trực thuộc Bộ Quốc phòng trình cấp ủy, chỉ huy cùng cấp xét duyệt phải có đủ điều kiện, tiêu chuẩn quy định tại Điều 14, Khoản 1 Điều 15 Thông tư này và có điểm học tập, điểm tốt nghiệp mỗi loại đạt từ 50 điểm "
+        },
+        {
+          "article_id": "179775:article:10:occurrence:2",
+          "character_tfidf_similarity": 0.2983190823414398,
+          "corpus_excerpt": "1. Kiểm tra hồ sơ đăng ký tuyển dụng, văn bằng, chứng chỉ của từng người, đối chiếu với các điều kiện, tiêu chuẩn và yêu cầu vị trí chức danh của quân nhân chuyên nghiệp hoặc vị trí việc làm của công nhân quốc phòng hoặc chức danh nghề nghiệp của viên chức quốc phòng. 2. Xét kết quả học tập của người đăng ký tuyển dụng, thực hiện như sau: a) Điểm h",
+          "source_excerpt": "Điều 10. Hồ sơ tuyển chọn 1. Đơn tự nguyện phục vụ Quân đội theo chế độ quân nhân chuyên nghiệp hoặc công nhân quốc phòng hoặc viên chức quốc phòng theo Mẫu số 1 Phụ lục ban hành kèm theo Thông tư này. 2. Bản sao công chứng văn bằng, chứng chỉ chuyên môn kỹ thuật, nghiệp vụ và bảng điểm học tập toàn khóa. Trường hợp văn bằng, bảng điểm do cơ sở đào"
+        }
+      ]
+    },
+    {
+      "original_id": "49428",
+      "law": "266/QĐ-BTP",
+      "candidate_count": 0,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": []
+    },
+    {
+      "original_id": "4956",
+      "law": "48/2019/QH14",
+      "candidate_count": 48,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": [
+        {
+          "article_id": "139879:article:12",
+          "character_tfidf_similarity": 0.9738216687730631,
+          "corpus_excerpt": "1. Thôi thực hiện nghĩa vụ tham gia Dân quân tự vệ trước thời hạn trong trường hợp sau đây: a) Dân quân tự vệ nữ mang thai hoặc nuôi con dưới 36 tháng tuổi, Dân quân tự vệ nam một mình nuôi con dưới 36 tháng tuổi; b) Không đủ sức khỏe thực hiện nhiệm vụ của Dân quân tự vệ; c) Hoàn cảnh gia đình khó khăn đột xuất không có điều kiện tiếp tục thực hiệ",
+          "source_excerpt": "Điều 12. Thôi thực hiện nghĩa vụ tham gia Dân quân tự vệ trước thời hạn, đưa ra khỏi danh sách Dân quân tự vệ 1. Thôi thực hiện nghĩa vụ tham gia Dân quân tự vệ trước thời hạn trong trường hợp sau đây: a) Dân quân tự vệ nữ mang thai hoặc nuôi con dưới 36 tháng tuổi, Dân quân tự vệ nam một mình nuôi con dưới 36 tháng tuổi; b) Không đủ sức khỏe thực "
+        },
+        {
+          "article_id": "139879:article:11",
+          "character_tfidf_similarity": 0.5249340942360876,
+          "corpus_excerpt": "1. Thôi thực hiện nghĩa vụ tham gia Dân quân tự vệ trước thời hạn trong trường hợp sau đây: a) Dân quân tự vệ nữ mang thai hoặc nuôi con dưới 36 tháng tuổi, Dân quân tự vệ nam một mình nuôi con dưới 36 tháng tuổi; b) Không đủ sức khỏe thực hiện nhiệm vụ của Dân quân tự vệ; c) Hoàn cảnh gia đình khó khăn đột xuất không có điều kiện tiếp tục thực hiệ",
+          "source_excerpt": "Điều 11. Tạm hoãn, miễn thực hiện nghĩa vụ tham gia Dân quân tự vệ trong thời bình 1. Công dân được tạm hoãn thực hiện nghĩa vụ tham gia Dân quân tự vệ trong trường hợp sau đây: a) Phụ nữ mang thai hoặc nuôi con dưới 36 tháng tuổi; nam giới một mình nuôi con dưới 36 tháng tuổi; b) Không đủ sức khỏe thực hiện nhiệm vụ của Dân quân tự vệ; c) Có chồng"
+        },
+        {
+          "article_id": "139879:article:13",
+          "character_tfidf_similarity": 0.4759393734867419,
+          "corpus_excerpt": "1. Thôi thực hiện nghĩa vụ tham gia Dân quân tự vệ trước thời hạn trong trường hợp sau đây: a) Dân quân tự vệ nữ mang thai hoặc nuôi con dưới 36 tháng tuổi, Dân quân tự vệ nam một mình nuôi con dưới 36 tháng tuổi; b) Không đủ sức khỏe thực hiện nhiệm vụ của Dân quân tự vệ; c) Hoàn cảnh gia đình khó khăn đột xuất không có điều kiện tiếp tục thực hiệ",
+          "source_excerpt": "Điều 13. Hoàn thành nghĩa vụ tham gia Dân quân tự vệ 1. Dân quân tự vệ đã phục vụ đủ thời hạn theo quy định tại khoản 2 Điều 8 của Luật này được công nhận hoàn thành nghĩa vụ tham gia Dân quân tự vệ. Điều khoản được sửa đổi, bổ sung 2. Công dân đã hoàn thành nghĩa vụ tham gia Dân quân tự vệ nhưng còn trong độ tuổi quy định tại khoản 1 Điều 8 của Lu"
+        }
+      ]
+    },
+    {
+      "original_id": "51195",
+      "law": "39/2016/TT-NHNN",
+      "candidate_count": 29,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": [
+        {
+          "article_id": "118230:article:13",
+          "character_tfidf_similarity": 0.9972751866610436,
+          "corpus_excerpt": "1. Tổ chức tín dụng và khách hàng thỏa thuận về lãi suất cho vay theo cung cầu vốn thị trường, nhu cầu vay vốn và mức độ tín nhiệm của khách hàng, trừ trường hợp Ngân hàng Nhà nước Việt Nam có quy định về lãi suất cho vay tối đa tại khoản 2 Điều này. 2. Tổ chức tín dụng và khách hàng thỏa thuận về lãi suất cho vay ngắn hạn bằng đồng Việt Nam nhưng ",
+          "source_excerpt": "Điều 13. Lãi suất cho vay 1. Tổ chức tín dụng và khách hàng thỏa thuận về lãi suất cho vay theo cung cầu vốn thị trường, nhu cầu vay vốn và mức độ tín nhiệm của khách hàng, trừ trường hợp Ngân hàng Nhà nước Việt Nam có quy định về lãi suất cho vay tối đa tại khoản 2 Điều này. Điều khoản được sửa đổi, bổ sung 2. Tổ chức tín dụng và khách hàng thỏa t"
+        },
+        {
+          "article_id": "118230:article:23",
+          "character_tfidf_similarity": 0.5466811175793176,
+          "corpus_excerpt": "1. Tổ chức tín dụng và khách hàng thỏa thuận về lãi suất cho vay theo cung cầu vốn thị trường, nhu cầu vay vốn và mức độ tín nhiệm của khách hàng, trừ trường hợp Ngân hàng Nhà nước Việt Nam có quy định về lãi suất cho vay tối đa tại khoản 2 Điều này. 2. Tổ chức tín dụng và khách hàng thỏa thuận về lãi suất cho vay ngắn hạn bằng đồng Việt Nam nhưng ",
+          "source_excerpt": "Điều 23. Thỏa thuận cho vay 1. Thỏa thuận cho vay phải được lập thành văn bản, trong đó tối thiểu có các nội dung sau: a) Tên, địa chỉ, mã số doanh nghiệp của tổ chức tín dụng cho vay; tên, địa chỉ,số chứng minh nhân dân hoặc thẻ căn cước hoặc hộ chiếu hoặc mã số doanh nghiệpcủa khách hàng; b) Số tiền cho vay; hạn mức cho vay đối với trường hợp cho"
+        },
+        {
+          "article_id": "118230:article:16",
+          "character_tfidf_similarity": 0.5057745502566582,
+          "corpus_excerpt": "1. Tổ chức tín dụng và khách hàng thỏa thuận về lãi suất cho vay theo cung cầu vốn thị trường, nhu cầu vay vốn và mức độ tín nhiệm của khách hàng, trừ trường hợp Ngân hàng Nhà nước Việt Nam có quy định về lãi suất cho vay tối đa tại khoản 2 Điều này. 2. Tổ chức tín dụng và khách hàng thỏa thuận về lãi suất cho vay ngắn hạn bằng đồng Việt Nam nhưng ",
+          "source_excerpt": "Điều 16. Cung cấp thông tin 1. Tổ chức tín dụng có trách nhiệm cung cấp cho khách hàng đầy đủ các thông tin trước khi xác lập thỏa thuận cho vay: Lãi suất cho vay; nguyên tắc và các yếu tố xác định, thời điểm xác định lãi suất cho vay đối với trường hợp áp dụng lãi suất cho vay có điều chỉnh; lãi suất áp dụng đối với dư nợ gốc bị quá hạn; lãi suất "
+        }
+      ]
+    },
+    {
+      "original_id": "52802",
+      "law": "91/2015/QH13",
+      "candidate_count": 673,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": [
+        {
+          "article_id": "95942:article:32",
+          "character_tfidf_similarity": 0.9945098497888489,
+          "corpus_excerpt": "1. Cá nhân có quyền đối với hình ảnh của mình.Việc sử dụng hình ảnh của cá nhân phải được người đó đồng ý.Việc sử dụng hình ảnh của người khác vì mục đích thương mại thì phải trả thù lao cho người có hình ảnh, trừ trường hợp các bên có thỏa thuận khác. 2. Việc sử dụng hình ảnh trong trường hợp sau đây không cần có sự đồng ý của người có hình ảnh ho",
+          "source_excerpt": "Điều 32. Quyền của cá nhân đối với hình ảnh 1. Cá nhân có quyền đối với hình ảnh của mình. Việc sử dụng hình ảnh của cá nhân phải được người đó đồng ý. Việc sử dụng hình ảnh của người khác vì mục đích thương mại thì phải trả thù lao cho người có hình ảnh, trừ trường hợp các bên có thỏa thuận khác. 2. Việc sử dụng hình ảnh trong trường hợp sau đây k"
+        },
+        {
+          "article_id": "95942:article:190",
+          "character_tfidf_similarity": 0.2612755417569633,
+          "corpus_excerpt": "1. Cá nhân có quyền đối với hình ảnh của mình.Việc sử dụng hình ảnh của cá nhân phải được người đó đồng ý.Việc sử dụng hình ảnh của người khác vì mục đích thương mại thì phải trả thù lao cho người có hình ảnh, trừ trường hợp các bên có thỏa thuận khác. 2. Việc sử dụng hình ảnh trong trường hợp sau đây không cần có sự đồng ý của người có hình ảnh ho",
+          "source_excerpt": "Điều 190. Quyền sử dụng của chủ sở hữu Chủ sở hữu được sử dụng tài sản theo ý chí của mình nhưng không được gây thiệt hại hoặc làm ảnh hưởng đến lợi ích quốc gia, dân tộc, lợi ích công cộng, quyền và lợi ích hợp pháp của người khác."
+        },
+        {
+          "article_id": "95942:article:34",
+          "character_tfidf_similarity": 0.23076287459953598,
+          "corpus_excerpt": "1. Cá nhân có quyền đối với hình ảnh của mình.Việc sử dụng hình ảnh của cá nhân phải được người đó đồng ý.Việc sử dụng hình ảnh của người khác vì mục đích thương mại thì phải trả thù lao cho người có hình ảnh, trừ trường hợp các bên có thỏa thuận khác. 2. Việc sử dụng hình ảnh trong trường hợp sau đây không cần có sự đồng ý của người có hình ảnh ho",
+          "source_excerpt": "Điều 34. Quyền được bảo vệ danh dự, nhân phẩm, uy tín 1. Danh dự, nhân phẩm, uy tín của cá nhân là bất khả xâm phạm và được pháp luật bảo vệ. 2. Cá nhân có quyền yêu cầu Tòa án bác bỏ thông tin làm ảnh hưởng xấu đến danh dự, nhân phẩm, uy tín của mình. Việc bảo vệ danh dự, nhân phẩm, uy tín có thể được thực hiện sau khi cá nhân chết theo yêu cầu củ"
+        }
+      ]
+    },
+    {
+      "original_id": "53362",
+      "law": "91/2015/QH13",
+      "candidate_count": 673,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": [
+        {
+          "article_id": "95942:article:592",
+          "character_tfidf_similarity": 0.9776698246945992,
+          "corpus_excerpt": "1. Thiệt hại do danh dự, nhân phẩm, uy tín bị xâm phạm bao gồm: a) Chi phí hợp lý để hạn chế, khắc phục thiệt hại; b) Thu nhập thực tế bị mất hoặc bị giảm sút; c) Thiệt hại khác do luật quy định. 2. Người chịu trách nhiệm bồi thường trong trường hợp danh dự, nhân phẩm, uy tín của người khác bị xâm phạm phải bồi thường thiệt hại theo quy định tại kh",
+          "source_excerpt": "Điều 592. Thiệt hại do danh dự, nhân phẩm, uy tín bị xâm phạm 1. Thiệt hại do danh dự, nhân phẩm, uy tín bị xâm phạm bao gồm: a) Chi phí hợp lý để hạn chế, khắc phục thiệt hại; b) Thu nhập thực tế bị mất hoặc bị giảm sút; c) Thiệt hại khác do luật quy định. 2. Người chịu trách nhiệm bồi thường trong trường hợp danh dự, nhân phẩm, uy tín của người k"
+        },
+        {
+          "article_id": "95942:article:590",
+          "character_tfidf_similarity": 0.5994258430258292,
+          "corpus_excerpt": "1. Thiệt hại do danh dự, nhân phẩm, uy tín bị xâm phạm bao gồm: a) Chi phí hợp lý để hạn chế, khắc phục thiệt hại; b) Thu nhập thực tế bị mất hoặc bị giảm sút; c) Thiệt hại khác do luật quy định. 2. Người chịu trách nhiệm bồi thường trong trường hợp danh dự, nhân phẩm, uy tín của người khác bị xâm phạm phải bồi thường thiệt hại theo quy định tại kh",
+          "source_excerpt": "Điều 590. Thiệt hại do sức khoẻ bị xâm phạm 1. Thiệt hại do sức khoẻ bị xâm phạm bao gồm: a) Chi phí hợp lý cho việc cứu chữa, bồi dưỡng, phục hồi sức khoẻ và chức năng bị mất, bị giảm sút của người bị thiệt hại; b) Thu nhập thực tế bị mất hoặc bị giảm sút của người bị thiệt hại; nếu thu nhập thực tế của người bị thiệt hại không ổn định và không th"
+        },
+        {
+          "article_id": "95942:article:606",
+          "character_tfidf_similarity": 0.5849481645216323,
+          "corpus_excerpt": "1. Thiệt hại do danh dự, nhân phẩm, uy tín bị xâm phạm bao gồm: a) Chi phí hợp lý để hạn chế, khắc phục thiệt hại; b) Thu nhập thực tế bị mất hoặc bị giảm sút; c) Thiệt hại khác do luật quy định. 2. Người chịu trách nhiệm bồi thường trong trường hợp danh dự, nhân phẩm, uy tín của người khác bị xâm phạm phải bồi thường thiệt hại theo quy định tại kh",
+          "source_excerpt": "Điều 606. Bồi thường thiệt hại do xâm phạm thi thể 1. Cá nhân, pháp nhân xâm phạm thi thể phải bồi thường thiệt hại. 2. Thiệt hại do xâm phạm thi thể gồm chi phí hợp lý để hạn chế, khắc phục thiệt hại. 3. Người chịu trách nhiệm bồi thường khi thi thể bị xâm phạm phải bồi thường theo quy định tại khoản 2 Điều này và một khoản tiền khác để bù đắp tổn"
+        }
+      ]
+    },
+    {
+      "original_id": "53375",
+      "law": "91/2015/QH13",
+      "candidate_count": 673,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": [
+        {
+          "article_id": "95942:article:605",
+          "character_tfidf_similarity": 0.9827831164304514,
+          "corpus_excerpt": "Chủ sở hữu, người chiếm hữu, người được giao quản lý, sử dụng nhà cửa, công trình xây dựng khác phải bồi thường thiệt hại do nhà cửa, công trình xây dựng khác đó gây thiệt hại cho người khác.Khi người thi công có lỗi trong việc để nhà cửa, công trình xây dựng khác gây thiệt hại thì phải liên đới bồi thường.",
+          "source_excerpt": "Điều 605. Bồi thường thiệt hại do nhà cửa, công trình xây dựng khác gây ra Chủ sở hữu, người chiếm hữu, người được giao quản lý, sử dụng nhà cửa, công trình xây dựng khác phải bồi thường thiệt hại do nhà cửa, công trình xây dựng khác đó gây thiệt hại cho người khác. Khi người thi công có lỗi trong việc để nhà cửa, công trình xây dựng khác gây thiệt"
+        },
+        {
+          "article_id": "95942:article:177",
+          "character_tfidf_similarity": 0.3822896293339773,
+          "corpus_excerpt": "Chủ sở hữu, người chiếm hữu, người được giao quản lý, sử dụng nhà cửa, công trình xây dựng khác phải bồi thường thiệt hại do nhà cửa, công trình xây dựng khác đó gây thiệt hại cho người khác.Khi người thi công có lỗi trong việc để nhà cửa, công trình xây dựng khác gây thiệt hại thì phải liên đới bồi thường.",
+          "source_excerpt": "Điều 177. Bảo đảm an toàn trong trường hợp cây cối, công trình có nguy cơ gây thiệt hại 1. Trường hợp cây cối, công trình xây dựng có nguy cơ sập đổ xuống bất động sản liền kề và xung quanh thì chủ sở hữu tài sản thực hiện ngay các biện pháp khắc phục, chặt cây, sửa chữa hoặc dỡ bỏ công trình xây dựng đó theo yêu cầu của chủ sở hữu bất động sản liề"
+        },
+        {
+          "article_id": "95942:article:250",
+          "character_tfidf_similarity": 0.36099424481166714,
+          "corpus_excerpt": "Chủ sở hữu, người chiếm hữu, người được giao quản lý, sử dụng nhà cửa, công trình xây dựng khác phải bồi thường thiệt hại do nhà cửa, công trình xây dựng khác đó gây thiệt hại cho người khác.Khi người thi công có lỗi trong việc để nhà cửa, công trình xây dựng khác gây thiệt hại thì phải liên đới bồi thường.",
+          "source_excerpt": "Điều 250. Nghĩa vụ của chủ sở hữu trong việc thoát nước mưa Chủ sở hữu nhà, công trình xây dựng khác phải lắp đặt đường dẫn nước sao cho nước mưa từ mái nhà, công trình xây dựng của mình không được chảy xuống bất động sản của chủ sở hữu bất động sản liền kề."
+        }
+      ]
+    },
+    {
+      "original_id": "54193",
+      "law": "09/2019/NĐ-CP",
+      "candidate_count": 29,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": [
+        {
+          "article_id": "133862:article:30",
+          "character_tfidf_similarity": 0.9959129864049843,
+          "corpus_excerpt": "1. Các bộ, cơ quan ngang bộ chịu trách nhiệm ban hành Thông tư quy định hoặc hướng dẫn đầy đủ các thành phần của chế độ báo cáo định kỳ thuộc cơ quan, lĩnh vực quản lý. 2. Ủy ban nhân dân cấp tỉnh chịu trách nhiệm ban hành Quyết định quy định chế độ báo cáo định kỳ phục vụ mục tiêu quản lý theo địa bàn. 3. Bộ, cơ quan ngang bộ công bố danh mục báo ",
+          "source_excerpt": "Điều 30. Trách nhiệm của bộ, cơ quan, địa phương 1. Các bộ, cơ quan ngang bộ chịu trách nhiệm ban hành Thông tư quy định hoặc hướng dẫn đầy đủ các thành phần của chế độ báo cáo định kỳ thuộc cơ quan, lĩnh vực quản lý. 2. Ủy ban nhân dân cấp tỉnh chịu trách nhiệm ban hành Quyết định quy định chế độ báo cáo định kỳ phục vụ mục tiêu quản lý theo địa b"
+        },
+        {
+          "article_id": "133862:article:26",
+          "character_tfidf_similarity": 0.5081859249033777,
+          "corpus_excerpt": "1. Các bộ, cơ quan ngang bộ chịu trách nhiệm ban hành Thông tư quy định hoặc hướng dẫn đầy đủ các thành phần của chế độ báo cáo định kỳ thuộc cơ quan, lĩnh vực quản lý. 2. Ủy ban nhân dân cấp tỉnh chịu trách nhiệm ban hành Quyết định quy định chế độ báo cáo định kỳ phục vụ mục tiêu quản lý theo địa bàn. 3. Bộ, cơ quan ngang bộ công bố danh mục báo ",
+          "source_excerpt": "Điều 26. Trách nhiệm của Bộ Thông tin và Truyền thông 1. Ban hành tiêu chuẩn kỹ thuật, quy chuẩn kỹ thuật quốc gia về cấu trúc, định dạng dữ liệu phục vụ kết nối, tích hợp, chia sẻ dữ liệu giữa các Hệ thống thông tin báo cáo trong Hệ thống thông tin báo cáo quốc gia phục vụ quá trình thực hiện chế độ báo cáo của các cơ quan hành chính nhà nước. 2. "
+        },
+        {
+          "article_id": "133862:article:24",
+          "character_tfidf_similarity": 0.4720889180648566,
+          "corpus_excerpt": "1. Các bộ, cơ quan ngang bộ chịu trách nhiệm ban hành Thông tư quy định hoặc hướng dẫn đầy đủ các thành phần của chế độ báo cáo định kỳ thuộc cơ quan, lĩnh vực quản lý. 2. Ủy ban nhân dân cấp tỉnh chịu trách nhiệm ban hành Quyết định quy định chế độ báo cáo định kỳ phục vụ mục tiêu quản lý theo địa bàn. 3. Bộ, cơ quan ngang bộ công bố danh mục báo ",
+          "source_excerpt": "Điều 24. Trách nhiệm của Văn phòng Chính phủ 1. Hướng dẫn các bộ, cơ quan, địa phương rà soát chế độ báo cáo để sửa đổi, bổ sung cho phù hợp với yêu cầu quản lý nhà nước. 2. Theo dõi, kiểm tra, đôn đốc việc thực hiện chế độ báo cáo phục vụ sự chỉ đạo điều hành của Chính phủ, Thủ tướng Chính phủ. 3. Thường xuyên rà soát, đánh giá quy định và việc th"
+        }
+      ]
+    },
+    {
+      "original_id": "55047",
+      "law": "78/2015/QH13",
+      "candidate_count": 54,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": [
+        {
+          "article_id": "70817:article:13",
+          "character_tfidf_similarity": 0.9709475466290441,
+          "corpus_excerpt": "1. Công dân thuộc một trong các trường hợp sau đây không được đăng ký nghĩa vụ quân sự: a) Đang bị truy cứu trách nhiệm hình sự; đang chấp hành hình phạt tù, cải tạo không giam giữ, quản chế hoặc đã chấp hành xong hình phạt tù nhưng chưa được xóa án tích; b) Đang bị áp dụng biện pháp giáo dục tại xã, phường, thị trấn (sau đây gọi chung là cấp xã) h",
+          "source_excerpt": "Điều 13. Đối tượng không được đăng ký nghĩa vụ quân sự 1. Công dân thuộc một trong các trường hợp sau đây không được đăng ký nghĩa vụ quân sự: a) Đang bị truy cứu trách nhiệm hình sự; đang chấp hành hình phạt tù, cải tạo không giam giữ, quản chế hoặc đã chấp hành xong hình phạt tù nhưng chưa được xóa án tích; Điều khoản được sửa đổi, bổ sung b) Đan"
+        },
+        {
+          "article_id": "70817:article:20",
+          "character_tfidf_similarity": 0.2689563483826372,
+          "corpus_excerpt": "1. Công dân thuộc một trong các trường hợp sau đây không được đăng ký nghĩa vụ quân sự: a) Đang bị truy cứu trách nhiệm hình sự; đang chấp hành hình phạt tù, cải tạo không giam giữ, quản chế hoặc đã chấp hành xong hình phạt tù nhưng chưa được xóa án tích; b) Đang bị áp dụng biện pháp giáo dục tại xã, phường, thị trấn (sau đây gọi chung là cấp xã) h",
+          "source_excerpt": "Điều 20. Trách nhiệm, quyền hạn của cơ quan, tổ chức, cá nhân trong đăng ký nghĩa vụ quân sự và quản lý công dân trong độ tuổi thực hiện nghĩa vụ quân sự 1. Chính phủ quy định chi tiết trình tự, thủ tục đăng ký nghĩa vụ quân sự. 2. Bộ trưởng Bộ Quốc phòng có trách nhiệm tổ chức chỉ đạo, hướng dẫn việc đăng ký nghĩa vụ quân sự, quy định hệ thống mẫu"
+        },
+        {
+          "article_id": "70817:article:18",
+          "character_tfidf_similarity": 0.25466274151529206,
+          "corpus_excerpt": "1. Công dân thuộc một trong các trường hợp sau đây không được đăng ký nghĩa vụ quân sự: a) Đang bị truy cứu trách nhiệm hình sự; đang chấp hành hình phạt tù, cải tạo không giam giữ, quản chế hoặc đã chấp hành xong hình phạt tù nhưng chưa được xóa án tích; b) Đang bị áp dụng biện pháp giáo dục tại xã, phường, thị trấn (sau đây gọi chung là cấp xã) h",
+          "source_excerpt": "Điều 18. Đăng ký phục vụ trong ngạch dự bị 1. Công dân nam quy định tại điểm a khoản 1 Điều 7 của Luật này. 2. Công dân nữ quy định tại khoản 2 Điều 7 của Luật này. 3. Công dân trong độ tuổi thực hiện nghĩa vụ quân sự thuộc một trong các trường hợp sau đây: a) Hạ sĩ quan, binh sĩ xuất ngũ; Điều khoản được bãi bỏ b) Quân nhân chuyên nghiệp, công nhâ"
+        }
+      ]
+    },
+    {
+      "original_id": "56079",
+      "law": "45/2013/QH13",
+      "candidate_count": 211,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": [
+        {
+          "article_id": "32833:article:129",
+          "character_tfidf_similarity": 0.9981829540563312,
+          "corpus_excerpt": "1. Hạn mức giao đất trồng cây hàng năm, đất nuôi trồng thủy sản, đất làm muối cho mỗi hộ gia đình, cá nhân trực tiếp sản xuất nông nghiệp như sau: a) Không quá 03 héc ta cho mỗi loại đất đối với tỉnh, thành phố trực thuộc trung ương thuộc khu vực Đông Nam Bộ và khu vực đồng bằng sông Cửu Long; b) Không quá 02 héc ta cho mỗi loại đất đối với tỉnh, t",
+          "source_excerpt": "Điều 129. Hạn mức giao đất nông nghiệp 1. Hạn mức giao đất trồng cây hàng năm, đất nuôi trồng thủy sản, đất làm muối cho mỗi hộ gia đình, cá nhân trực tiếp sản xuất nông nghiệp như sau: a) Không quá 03 héc ta cho mỗi loại đất đối với tỉnh, thành phố trực thuộc trung ương thuộc khu vực Đông Nam Bộ và khu vực đồng bằng sông Cửu Long; b) Không quá 02 "
+        },
+        {
+          "article_id": "32833:article:130",
+          "character_tfidf_similarity": 0.5222920030302086,
+          "corpus_excerpt": "1. Hạn mức giao đất trồng cây hàng năm, đất nuôi trồng thủy sản, đất làm muối cho mỗi hộ gia đình, cá nhân trực tiếp sản xuất nông nghiệp như sau: a) Không quá 03 héc ta cho mỗi loại đất đối với tỉnh, thành phố trực thuộc trung ương thuộc khu vực Đông Nam Bộ và khu vực đồng bằng sông Cửu Long; b) Không quá 02 héc ta cho mỗi loại đất đối với tỉnh, t",
+          "source_excerpt": "Điều 130. Hạn mức nhận chuyển quyền sử dụng đất nông nghiệp của hộ gia đình, cá nhân 1. Hạn mức nhận chuyển quyền sử dụng đất nông nghiệp của hộ gia đình, cá nhân không quá 10 lần hạn mức giao đất nông nghiệp của hộ gia đình, cá nhân đối với mỗi loại đất quy định tại các khoản 1, 2 và 3 Điều 129 của Luật này. 2. Chính phủ quy định hạn mức nhận chuy"
+        },
+        {
+          "article_id": "32833:article:142",
+          "character_tfidf_similarity": 0.48834926045729804,
+          "corpus_excerpt": "1. Hạn mức giao đất trồng cây hàng năm, đất nuôi trồng thủy sản, đất làm muối cho mỗi hộ gia đình, cá nhân trực tiếp sản xuất nông nghiệp như sau: a) Không quá 03 héc ta cho mỗi loại đất đối với tỉnh, thành phố trực thuộc trung ương thuộc khu vực Đông Nam Bộ và khu vực đồng bằng sông Cửu Long; b) Không quá 02 héc ta cho mỗi loại đất đối với tỉnh, t",
+          "source_excerpt": "Điều 142. Đất sử dụng cho kinh tế trang trại 1. Nhà nước khuyến khích hình thức kinh tế trang trại của hộ gia đình, cá nhân nhằm khai thác có hiệu quả đất đai để phát triển sản xuất, mở rộng quy mô và nâng cao hiệu quả sử dụng đất trong sản xuất nông nghiệp, lâm nghiệp, nuôi trồng thủy sản, làm muối gắn với dịch vụ, chế biến và tiêu thụ sản phẩm nô"
+        }
+      ]
+    },
+    {
+      "original_id": "56460",
+      "law": "100/2015/QH13",
+      "candidate_count": 573,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": [
+        {
+          "article_id": "96122:article:16",
+          "character_tfidf_similarity": 0.9732728458829099,
+          "corpus_excerpt": "Tự ý nửa chừng chấm dứt việc phạm tội là tự mình không thực hiện tội phạm đến cùng, tuy không có gì ngăn cản.Người tự ý nửa chừng chấm dứt việc phạm tội được miễn trách nhiệm hình sự về tội định phạm; nếu hành vi thực tế đã thực hiện có đủ yếu tố cấu thành của một tội khác, thì người đó phải chịu trách nhiệm hình sự về tội này.",
+          "source_excerpt": "Điều 16. Tự ý nửa chừng chấm dứt việc phạm tội Tự ý nửa chừng chấm dứt việc phạm tội là tự mình không thực hiện tội phạm đến cùng, tuy không có gì ngăn cản. Người tự ý nửa chừng chấm dứt việc phạm tội được miễn trách nhiệm hình sự về tội định phạm; nếu hành vi thực tế đã thực hiện có đủ yếu tố cấu thành của một tội khác, thì người đó phải chịu trác"
+        },
+        {
+          "article_id": "96122:article:75",
+          "character_tfidf_similarity": 0.26965892618688586,
+          "corpus_excerpt": "Tự ý nửa chừng chấm dứt việc phạm tội là tự mình không thực hiện tội phạm đến cùng, tuy không có gì ngăn cản.Người tự ý nửa chừng chấm dứt việc phạm tội được miễn trách nhiệm hình sự về tội định phạm; nếu hành vi thực tế đã thực hiện có đủ yếu tố cấu thành của một tội khác, thì người đó phải chịu trách nhiệm hình sự về tội này.",
+          "source_excerpt": "Điều 75. Điều kiện chịu trách nhiệm hình sự của pháp nhân thương mại 1. Pháp nhân thương mại chỉ phải chịu trách nhiệm hình sự khi có đủ các điều kiện sau đây: a) Hành vi phạm tội được thực hiện nhân danh pháp nhân thương mại; b) Hành vi phạm tội được thực hiện vì lợi ích của pháp nhân thương mại; c) Hành vi phạm tội được thực hiện có sự chỉ đạo, đ"
+        },
+        {
+          "article_id": "96122:article:369",
+          "character_tfidf_similarity": 0.255136947137944,
+          "corpus_excerpt": "Tự ý nửa chừng chấm dứt việc phạm tội là tự mình không thực hiện tội phạm đến cùng, tuy không có gì ngăn cản.Người tự ý nửa chừng chấm dứt việc phạm tội được miễn trách nhiệm hình sự về tội định phạm; nếu hành vi thực tế đã thực hiện có đủ yếu tố cấu thành của một tội khác, thì người đó phải chịu trách nhiệm hình sự về tội này.",
+          "source_excerpt": "Điều 369. Tội không truy cứu trách nhiệm hình sự người có tội 1. Người nào có thẩm quyền mà không truy cứu trách nhiệm hình sự người mà mình biết rõ là có tội, thì bị phạt tù từ 06 tháng đến 03 năm. 2. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 02 năm đến 07 năm: a) Không truy cứu trách nhiệm hình sự người thực hiện tội phạm"
+        }
+      ]
+    },
+    {
+      "original_id": "56684",
+      "law": "100/2015/QH13",
+      "candidate_count": 573,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": [
+        {
+          "article_id": "96122:article:240",
+          "character_tfidf_similarity": 0.9838617496975758,
+          "corpus_excerpt": "1. Người nào thực hiện một trong các hành vi sau đây, làm lây lan dịch bệnh truyền nhiễm nguy hiểm cho người, thì bị phạt tiền từ 50.000.000 đồng đến 200.000.000 đồng hoặc bị phạt tù từ 01 năm đến 05 năm: a) Đưa ra hoặc cho phép đưa ra khỏi vùng có dịch bệnh động vật, thực vật, sản phẩm động vật, thực vật hoặc vật phẩm khác có khả năng lây truyền d",
+          "source_excerpt": "Điều 240. Tội làm lây lan dịch bệnh truyền nhiễm nguy hiểm cho người 1. Người nào thực hiện một trong các hành vi sau đây, làm lây lan dịch bệnh truyền nhiễm nguy hiểm cho người, thì bị phạt tiền từ 50.000.000 đồng đến 200.000.000 đồng hoặc bị phạt tù từ 01 năm đến 05 năm: a) Đưa ra hoặc cho phép đưa ra khỏi vùng có dịch bệnh động vật, thực vật, sả"
+        },
+        {
+          "article_id": "96122:article:241",
+          "character_tfidf_similarity": 0.8180050178605471,
+          "corpus_excerpt": "1. Người nào thực hiện một trong các hành vi sau đây, làm lây lan dịch bệnh truyền nhiễm nguy hiểm cho người, thì bị phạt tiền từ 50.000.000 đồng đến 200.000.000 đồng hoặc bị phạt tù từ 01 năm đến 05 năm: a) Đưa ra hoặc cho phép đưa ra khỏi vùng có dịch bệnh động vật, thực vật, sản phẩm động vật, thực vật hoặc vật phẩm khác có khả năng lây truyền d",
+          "source_excerpt": "Điều 241. Tội làm lây lan dịch bệnh nguy hiểm cho động vật, thực vật 1. Người nào thực hiện một trong các hành vi sau đây, làm lây lan dịch bệnh nguy hiểm cho động vật, thực vật gây thiệt hại về tài sản từ 100.000.000 đồng đến 500.000.000 đồng hoặc đã bị xử phạt vi phạm hành chính về một trong những hành vi này mà còn vi phạm, thì bị phạt tiền từ 5"
+        },
+        {
+          "article_id": "96122:article:234:occurrence:2",
+          "character_tfidf_similarity": 0.4052641724409021,
+          "corpus_excerpt": "1. Người nào thực hiện một trong các hành vi sau đây, làm lây lan dịch bệnh truyền nhiễm nguy hiểm cho người, thì bị phạt tiền từ 50.000.000 đồng đến 200.000.000 đồng hoặc bị phạt tù từ 01 năm đến 05 năm: a) Đưa ra hoặc cho phép đưa ra khỏi vùng có dịch bệnh động vật, thực vật, sản phẩm động vật, thực vật hoặc vật phẩm khác có khả năng lây truyền d",
+          "source_excerpt": "Điều 234. Tội vi phạm quy định về quản lý, bảo vệ động vật hoang dã 1. Người nào thực hiện một trong các hành vi sau đây, nếu không thuộc trường hợp quy định tại Điều 242 và Điều 244 của Bộ luật này, thì bị phạt tiền từ 50.000.000 đồng đến 300.000.000 đồng, phạt cải tạo không giam giữ đến 03 năm hoặc bị phạt tù từ 06 tháng đến 03 năm: a) Săn bắt, g"
+        }
+      ]
+    },
+    {
+      "original_id": "57385",
+      "law": "98/2021/NĐ-CP",
+      "candidate_count": 63,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": [
+        {
+          "article_id": "153631:article:48",
+          "character_tfidf_similarity": 0.9984840693387751,
+          "corpus_excerpt": "1. Các trường hợp phải có giấy phép nhập khẩu: a) Trang thiết bị y tế chưa có số lưu hành nhập khẩu chỉ để phục vụ nghiên cứu khoa học, kiểm định, kiểm nghiệm, khảo nghiệm, đánh giá chất lượng hoặc đào tạo hướng dẫn việc sử dụng, hướng dẫn sửa chữa trang thiết bị y tế; b) Trang thiết bị y tế chưa có số lưu hành nhập khẩu đáp ứng nhu cầu cấp bách ph",
+          "source_excerpt": "Điều 48. Giấy phép nhập khẩu 1. Các trường hợp phải có giấy phép nhập khẩu: a) Trang thiết bị y tế chưa có số lưu hành nhập khẩu chỉ để phục vụ nghiên cứu khoa học, kiểm định, kiểm nghiệm, khảo nghiệm, đánh giá chất lượng hoặc đào tạo hướng dẫn việc sử dụng, hướng dẫn sửa chữa trang thiết bị y tế; b) Trang thiết bị y tế chưa có số lưu hành nhập khẩ"
+        },
+        {
+          "article_id": "153631:article:24",
+          "character_tfidf_similarity": 0.4971802308913337,
+          "corpus_excerpt": "1. Các trường hợp phải có giấy phép nhập khẩu: a) Trang thiết bị y tế chưa có số lưu hành nhập khẩu chỉ để phục vụ nghiên cứu khoa học, kiểm định, kiểm nghiệm, khảo nghiệm, đánh giá chất lượng hoặc đào tạo hướng dẫn việc sử dụng, hướng dẫn sửa chữa trang thiết bị y tế; b) Trang thiết bị y tế chưa có số lưu hành nhập khẩu đáp ứng nhu cầu cấp bách ph",
+          "source_excerpt": "Điều 24. Các trường hợp được miễn công bố tiêu chuẩn áp dụng và miễn đăng ký lưu hành 1. Trang thiết bị y tế chỉ phục vụ cho mục đích nghiên cứu, thử nghiệm, kiểm định, kiểm nghiệm, khảo nghiệm, đánh giá chất lượng, đào tạo hướng dẫn sử dụng, sửa chữa trang thiết bị y tế. 2. Trang thiết bị y tế nhập khẩu vào Việt Nam với mục đích viện trợ hoặc khám"
+        },
+        {
+          "article_id": "153631:article:31",
+          "character_tfidf_similarity": 0.48315476960224474,
+          "corpus_excerpt": "1. Các trường hợp phải có giấy phép nhập khẩu: a) Trang thiết bị y tế chưa có số lưu hành nhập khẩu chỉ để phục vụ nghiên cứu khoa học, kiểm định, kiểm nghiệm, khảo nghiệm, đánh giá chất lượng hoặc đào tạo hướng dẫn việc sử dụng, hướng dẫn sửa chữa trang thiết bị y tế; b) Trang thiết bị y tế chưa có số lưu hành nhập khẩu đáp ứng nhu cầu cấp bách ph",
+          "source_excerpt": "Điều 31. Yêu cầu đối với hồ sơ đề nghị cấp mới số lưu hành 1. Yêu cầu đối với một số giấy tờ trong bộ hồ sơ đăng ký lưu hành: a) Đối với giấy chứng nhận đạt tiêu chuẩn quản lý chất lượng: Nộp bản gốc hoặc bản sao có chứng thực hoặc bản sao có xác nhận của cơ sở đề nghị cấp số lưu hành. Trường hợp giấy chứng nhận đạt tiêu chuẩn quản lý chất lượng kh"
+        }
+      ]
+    },
+    {
+      "original_id": "57535",
+      "law": "58/2014/QH13",
+      "candidate_count": 121,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": [
+        {
+          "article_id": "46744:article:38",
+          "character_tfidf_similarity": 0.9721872431704198,
+          "corpus_excerpt": "Lao động nữ sinh con hoặc người lao động nhận nuôi con nuôi dưới 06 tháng tuổi thì được trợ cấp một lần cho mỗi con bằng 02 lần mức lương cơ sở tại tháng lao động nữ sinh con hoặc tháng người lao động nhận nuôi con nuôi.Trường hợp sinh con nhưng chỉ có cha tham gia bảo hiểm xã hội thì cha được trợ cấp một lần bằng 02 lần mức lương cơ sở tại tháng s",
+          "source_excerpt": "Điều 38. Trợ cấp một lần khi sinh con hoặc nhận nuôi con nuôi Lao động nữ sinh con hoặc người lao động nhận nuôi con nuôi dưới 06 tháng tuổi thì được trợ cấp một lần cho mỗi con bằng 02 lần mức lương cơ sở tại tháng lao động nữ sinh con hoặc tháng người lao động nhận nuôi con nuôi. Trường hợp sinh con nhưng chỉ có cha tham gia bảo hiểm xã hội thì c"
+        },
+        {
+          "article_id": "46744:article:31",
+          "character_tfidf_similarity": 0.4552046679838352,
+          "corpus_excerpt": "Lao động nữ sinh con hoặc người lao động nhận nuôi con nuôi dưới 06 tháng tuổi thì được trợ cấp một lần cho mỗi con bằng 02 lần mức lương cơ sở tại tháng lao động nữ sinh con hoặc tháng người lao động nhận nuôi con nuôi.Trường hợp sinh con nhưng chỉ có cha tham gia bảo hiểm xã hội thì cha được trợ cấp một lần bằng 02 lần mức lương cơ sở tại tháng s",
+          "source_excerpt": "Điều 31. Điều kiện hưởng chế độ thai sản 1. Người lao động được hưởng chế độ thai sản khi thuộc một trong các trường hợp sau đây: a) Lao động nữ mang thai; b) Lao động nữ sinh con; c) Lao động nữ mang thai hộ và người mẹ nhờ mang thai hộ; d) Người lao động nhận nuôi con nuôi dưới 06 tháng tuổi; đ) Lao động nữ đặt vòng tránh thai, người lao động thự"
+        },
+        {
+          "article_id": "46744:article:36",
+          "character_tfidf_similarity": 0.44421254441458785,
+          "corpus_excerpt": "Lao động nữ sinh con hoặc người lao động nhận nuôi con nuôi dưới 06 tháng tuổi thì được trợ cấp một lần cho mỗi con bằng 02 lần mức lương cơ sở tại tháng lao động nữ sinh con hoặc tháng người lao động nhận nuôi con nuôi.Trường hợp sinh con nhưng chỉ có cha tham gia bảo hiểm xã hội thì cha được trợ cấp một lần bằng 02 lần mức lương cơ sở tại tháng s",
+          "source_excerpt": "Điều 36. Thời gian hưởng chế độ khi nhận nuôi con nuôi Người lao động nhận nuôi con nuôi dưới 06 tháng tuổi thì được nghỉ việc hưởng chế độ thai sản cho đến khi con đủ 06 tháng tuổi. Trường hợp cả cha và mẹ cùng tham gia bảo hiểm xã hội đủ điều kiện hưởng chế độ thai sản quy định tại khoản 2 Điều 31 của Luật này thì chỉ cha hoặc mẹ được nghỉ việc h"
+        }
+      ]
+    },
+    {
+      "original_id": "57799",
+      "law": "04/2011/TT-BVHTTDL",
+      "candidate_count": 11,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": [
+        {
+          "article_id": "26159:article:2",
+          "character_tfidf_similarity": 0.9785713337391806,
+          "corpus_excerpt": "Tổ chức, cá nhân khi tổ chức việc cưới, việc tang và lễ hội phải tuân thủ các nguyên tắc sau: 1. Không trái với thuần phong mỹ tục của dân tộc; không để xảy ra các hoạt động mê tín dị đoan.2. Không lợi dụng việc cưới, việc tang và lễ hội để hoạt động nhằm chia rẽ đoàn kết dân tộc, gây mất đoàn kết trong cộng đồng, dòng họ và gia đình. 3. Không làm ",
+          "source_excerpt": "Điều 2. Những nguyên tắc trong tổ chức việc cưới, việc tang và lễ hội Tổ chức, cá nhân khi tổ chức việc cưới, việc tang và lễ hội phải tuân thủ các nguyên tắc sau: 1. Không trái với thuần phong mỹ tục của dân tộc; không để xảy ra các hoạt động mê tín dị đoan. 2. Không lợi dụng việc cưới, việc tang và lễ hội để hoạt động nhằm chia rẽ đoàn kết dân tộ"
+        },
+        {
+          "article_id": "26159:article:6",
+          "character_tfidf_similarity": 0.3738837482859925,
+          "corpus_excerpt": "Tổ chức, cá nhân khi tổ chức việc cưới, việc tang và lễ hội phải tuân thủ các nguyên tắc sau: 1. Không trái với thuần phong mỹ tục của dân tộc; không để xảy ra các hoạt động mê tín dị đoan.2. Không lợi dụng việc cưới, việc tang và lễ hội để hoạt động nhằm chia rẽ đoàn kết dân tộc, gây mất đoàn kết trong cộng đồng, dòng họ và gia đình. 3. Không làm ",
+          "source_excerpt": "Điều 6. Tổ chức lễ cưới tại gia đình hoặc tại địa điểm cưới 1. Việc tổ chức lễ cưới tại gia đình hoặc tại địa điểm cưới phải thực hiện các quy định sau: a) Đảm bảo trang trọng, tiết kiệm, vui tươi, lành mạnh, phù hợp với phong tục, tập quán, truyền thống văn hoá của từng địa phương, dân tộc, tôn giáo và phù hợp với hoàn cảnh của hai gia đình; b) Cá"
+        },
+        {
+          "article_id": "26159:article:10",
+          "character_tfidf_similarity": 0.3601847120332473,
+          "corpus_excerpt": "Tổ chức, cá nhân khi tổ chức việc cưới, việc tang và lễ hội phải tuân thủ các nguyên tắc sau: 1. Không trái với thuần phong mỹ tục của dân tộc; không để xảy ra các hoạt động mê tín dị đoan.2. Không lợi dụng việc cưới, việc tang và lễ hội để hoạt động nhằm chia rẽ đoàn kết dân tộc, gây mất đoàn kết trong cộng đồng, dòng họ và gia đình. 3. Không làm ",
+          "source_excerpt": "Điều 10. Tổ chức lễ tang 1. Lễ tang được tổ chức tại nhà hoặc tại địa điểm công cộng phải thực hiện các quy định sau: a) Lễ tang phải được tổ chức chu đáo, trang nghiêm, tiết kiệm, phù hợp với tập quán, truyền thống văn hoá dân tộc và hoàn cảnh gia đình người qua đời; b) Uỷ ban nhân dân xã, phường, thị trấn có trách nhiệm tạo điều kiện thuận lợi ch"
+        }
+      ]
+    },
+    {
+      "original_id": "58633",
+      "law": "52/2019/QH14",
+      "candidate_count": 0,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": []
+    },
+    {
+      "original_id": "58781",
+      "law": "96/2023/NĐ-CP",
+      "candidate_count": 148,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": [
+        {
+          "article_id": "168128:article:147",
+          "character_tfidf_similarity": 0.9989642693597931,
+          "corpus_excerpt": "1. Nghị định này có hiệu lực thi hành từ ngày 01 tháng 01 năm 2024.2. Quy định cập nhật, đăng tải thông tin trên Hệ thống thông tin về quản lý hoạt động khám bệnh, chữa bệnh tại Nghị định này bắt đầu thực hiện từ ngày 01 tháng 01 năm 2027.3. Nghị định số 109/2016/NĐ-CP ngày 01 tháng 7 năm 2016 của Chính phủ quy định cấp chứng chỉ hành nghề đối với ",
+          "source_excerpt": "Điều 147. Hiệu lực thi hành 1. Nghị định này có hiệu lực thi hành từ ngày 01 tháng 01 năm 2024. 2. Quy định cập nhật, đăng tải thông tin trên Hệ thống thông tin về quản lý hoạt động khám bệnh, chữa bệnh tại Nghị định này bắt đầu thực hiện từ ngày 01 tháng 01 năm 2027. 3. Nghị định số 109/2016/NĐ-CP ngày 01 tháng 7 năm 2016 của Chính phủ quy định cấ"
+        },
+        {
+          "article_id": "168128:article:103",
+          "character_tfidf_similarity": 0.6870766442101582,
+          "corpus_excerpt": "1. Nghị định này có hiệu lực thi hành từ ngày 01 tháng 01 năm 2024.2. Quy định cập nhật, đăng tải thông tin trên Hệ thống thông tin về quản lý hoạt động khám bệnh, chữa bệnh tại Nghị định này bắt đầu thực hiện từ ngày 01 tháng 01 năm 2027.3. Nghị định số 109/2016/NĐ-CP ngày 01 tháng 7 năm 2016 của Chính phủ quy định cấp chứng chỉ hành nghề đối với ",
+          "source_excerpt": "Điều 103. Quy trình, thủ tục cho phép thử nghiệm lâm sàng kỹ thuật mới, phương pháp mới trong khám bệnh, chữa bệnh 1. Quy trình, thủ tục cho phép thử nghiệm lâm sàng kỹ thuật mới, phương pháp mới trong khám bệnh, chữa bệnh bao gồm: phê duyệt thử nghiệm lâm sàng; phê duyệt thay đổi thử nghiệm lâm sàng; phê duyệt kết quả thử nghiệm lâm sàng. 2. Quy t"
+        },
+        {
+          "article_id": "168128:article:102",
+          "character_tfidf_similarity": 0.5687269475913588,
+          "corpus_excerpt": "1. Nghị định này có hiệu lực thi hành từ ngày 01 tháng 01 năm 2024.2. Quy định cập nhật, đăng tải thông tin trên Hệ thống thông tin về quản lý hoạt động khám bệnh, chữa bệnh tại Nghị định này bắt đầu thực hiện từ ngày 01 tháng 01 năm 2027.3. Nghị định số 109/2016/NĐ-CP ngày 01 tháng 7 năm 2016 của Chính phủ quy định cấp chứng chỉ hành nghề đối với ",
+          "source_excerpt": "Điều 102. Hồ sơ thử nghiệm lâm sàng kỹ thuật mới, phương pháp mới trong khám bệnh, chữa bệnh 1. Hồ sơ thử nghiệm lâm sàng kỹ thuật mới, phương pháp mới bao gồm hồ sơ đề nghị phê duyệt nghiên cứu thử nghiệm lâm sàng; hồ sơ đề nghị phê duyệt thay đổi nghiên cứu thử nghiệm lâm sàng; hồ sơ đề nghị phê duyệt kết quả nghiên cứu thử nghiệm lâm sàng. 2. Hồ"
+        }
+      ]
+    },
+    {
+      "original_id": "6611",
+      "law": "112/2020/NĐ-CP",
+      "candidate_count": 0,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": []
+    },
+    {
+      "original_id": "6612",
+      "law": "112/2020/NĐ-CP",
+      "candidate_count": 0,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": []
+    },
+    {
+      "original_id": "6613",
+      "law": "112/2020/NĐ-CP",
+      "candidate_count": 0,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": []
+    },
+    {
+      "original_id": "6614",
+      "law": "112/2020/NĐ-CP",
+      "candidate_count": 0,
+      "accepted": false,
+      "review_status": "pending",
+      "suggestions": []
+    }
+  ]
+}

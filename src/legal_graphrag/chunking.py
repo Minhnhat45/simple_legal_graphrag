@@ -17,6 +17,16 @@ def _article_matches(text: str) -> list[re.Match[str]]:
             continue
         if re.search(r"(?i)Chương\s+[IVXLCDM\d]+$", prefix):
             matches.append(match)
+            continue
+        # Flattened source text retains uppercase chapter/section titles but
+        # loses their line breaks. The first article follows the title, not a
+        # sentence-ending punctuation mark. Do not accept ordinary inline refs.
+        heading = re.search(
+            r"(?i:Chương\s+[IVXLCDM\d]+|Mục\s+\d+)\s*[.:]?\s+([^.;:!?]{1,300})$",
+            text[max(0, match.start() - 350) : match.start()].rstrip(),
+        )
+        if heading and heading[1].isupper():
+            matches.append(match)
     return matches
 
 

@@ -151,10 +151,14 @@ class QdrantStore:
             return
         from .structure import map_chunks
 
+        unmapped = [c for c in chunks if c.id not in self.article_mapping]
         mappings = {
             cid: aid
             for doc in documents.values()
-            for cid, aid in map_chunks(doc, [c for c in chunks if c.document_id == doc.id]).items()
+            if any(c.document_id == doc.id for c in unmapped)
+            for cid, aid in map_chunks(
+                doc, [c for c in unmapped if c.document_id == doc.id]
+            ).items()
         }
         named = self._dense_name()
         has_sparse = "bm25" in (self._layout().sparse_vectors or {})
@@ -185,7 +189,9 @@ class QdrantStore:
                     ),
                     payload={
                         "chunk_id": chunk.id,
-                        "article_id": mappings.get(chunk.id, ""),
+                        "article_id": self.article_mapping.get(
+                            chunk.id, mappings.get(chunk.id, "")
+                        ),
                         "chunk_index": chunk.index,
                         "section": chunk.section,
                         "text": chunk.text,

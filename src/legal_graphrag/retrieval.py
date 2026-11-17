@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from collections import defaultdict
-from dataclasses import replace
+from dataclasses import asdict, replace
 
 from .config import Settings
 from .graph_store import GraphStore
@@ -191,8 +191,8 @@ class HybridRetriever:
                 question,
                 vector,
                 filters=filters,
-                limit=config.candidate_budget,
-                candidate_limit=config.candidate_budget,
+                limit=config.hybrid_pool or config.candidate_budget,
+                candidate_limit=config.hybrid_pool or config.candidate_budget,
             )
         )
 
@@ -256,23 +256,45 @@ class HybridRetriever:
         cosine = {h.chunk_id: h.vector_score for h in confirmed_all}
         seed_ranks = {identity(h): rank for rank, h in reversed(list(enumerate(seeds, 1)))}
         tokens = set(re.findall(r"\w+", question.casefold()))
-        ranked = []
+        ranked, components = [], {}
         for hit in candidates:
             if hit.chunk_id not in cosine or not math.isfinite(cosine[hit.chunk_id]):
                 continue
             # M0 keeps the existing hybrid order. Other modes only adjust articles
             # connected by a verified path; raw graph evidence never gets forced first.
             hybrid = 1 / (60 + seed_ranks[hit.article_id]) if hit.article_id in seed_ranks else 0
+            overlap = len(tokens & set(re.findall(r"\w+", hit.text.casefold()))) / max(
+                1, len(tokens)
+            )
+            shared = 0.7 * max(0, cosine[hit.chunk_id]) + 0.15 * overlap
+            bonus = config.graph_weight * graph_scores.get(hit.article_id, 0)
             score = 61 * hybrid
             if hit.article_id in graph_scores:
-                overlap = len(tokens & set(re.findall(r"\w+", hit.text.casefold()))) / max(
-                    1, len(tokens)
-                )
-                score = max(score, 0.7 * max(0, cosine[hit.chunk_id]) + 0.15 * overlap)
-                score += config.graph_weight * graph_scores.get(hit.article_id, 0)
+                score = max(score, shared) + bonus
+            if config.scoring != "legacy":
+                score = shared + (bonus if config.scoring == "shared_path" else 0)
+            components[hit.article_id] = {
+                "cosine": cosine[hit.chunk_id],
+                "lexical_overlap": overlap,
+                "hybrid_rank": seed_ranks.get(hit.article_id),
+                "shared_score": shared,
+                "graph_bonus": bonus,
+                "final_score": score,
+            }
             ranked.append(replace(hit, vector_score=cosine[hit.chunk_id], final_score=score))
         ranked.sort(key=lambda h: (-h.final_score, h.article_id))
-        hits = tuple(ranked[:k])
+        selected, context_chars = [], 0
+        for hit in ranked:
+            if (
+                config.context_chars is not None
+                and context_chars + len(hit.text) > config.context_chars
+            ):
+                continue
+            selected.append(hit)
+            context_chars += len(hit.text)
+            if len(selected) == k:
+                break
+        hits = tuple(selected)
         selected_chunks = {h.chunk_id for h in hits}
         neighbors = []
         for hit in hits:
@@ -306,9 +328,14 @@ class HybridRetriever:
             "seed_articles": seed_articles,
             "hybrid_articles": list(seed_ranks),
             "candidate_articles": selected_ids,
+            "confirmed_candidate_articles": [h.article_id for h in ranked],
+            "ranked_articles": [h.article_id for h in ranked],
+            "score_components": components,
+            "context_chars": context_chars,
             "graph_articles": graph_scores,
             "relation_kinds": kinds,
             "paths": {aid: [r.kind for r in path] for aid, path in paths.items()},
+            "path_evidence": {aid: [asdict(r) for r in path] for aid, path in paths.items()},
             "latency_ms": (time.monotonic() - started) * 1000 + hybrid_latency_ms,
         }
         return RetrievalBundle(hits=hits, graph_neighbors=tuple(neighbors))

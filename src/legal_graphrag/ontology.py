@@ -34,6 +34,9 @@ class ExpansionConfig:
     per_node_limit: int = 12
     decay: float = 0.65
     graph_weight: float = 0.15
+    scoring: str = "legacy"
+    hybrid_pool: int | None = None
+    context_chars: int | None = None
     weights: dict[str, float] = field(
         default_factory=lambda: {
             "STRUCTURAL": 0.15,
@@ -55,6 +58,12 @@ class ExpansionConfig:
     def __post_init__(self):
         if self.mode not in {"M0", "M1", "M2", "M3", "M4"}:
             raise ValueError("mode must be M0..M4")
+        if self.scoring not in {"legacy", "shared", "shared_path"}:
+            raise ValueError("scoring must be legacy, shared or shared_path")
+        if self.hybrid_pool is not None and self.hybrid_pool < self.candidate_budget:
+            raise ValueError("hybrid_pool must be at least candidate_budget")
+        if self.context_chars is not None and self.context_chars <= 0:
+            raise ValueError("context_chars must be positive")
         if not 1 <= self.depth <= 4:
             raise ValueError("depth must be between 1 and 4")
         if min(self.seed_limit, self.candidate_budget, self.per_node_limit) <= 0:
