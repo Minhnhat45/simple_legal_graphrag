@@ -170,6 +170,12 @@ class MappingNormalizationTests(unittest.TestCase):
             module.body_text("được áp dụng"), module.body_text("không được áp dụng")
         )
         self.assertNotEqual(module.body_text("Điều 4"), module.body_text("Điều 5"))
+        self.assertEqual(
+            module.body_text("quy định.Trường hợp khác;Điều kiện"),
+            module.body_text("quy định. Trường hợp khác; Điều kiện"),
+        )
+        self.assertNotEqual(module.body_text("1.5"), module.body_text("1. 5"))
+        self.assertNotEqual(module.body_text("khôngđược"), module.body_text("không được"))
 
 
 if __name__ == "__main__":

@@ -10,6 +10,26 @@ retains all source IDs, reports conflicting IDs, and never reruns the filter.
 `data/sample_legal_documents.csv` was removed when the dataset was replaced;
 synthetic regression fixtures now live in test code.
 
+## Experiment data
+
+The original VLSP inputs are under [`data/vlsp/`](data/README.md#vlsp-inputs).
+Use `data/vlsp/eval.csv` for the original evaluation questions and gold article IDs,
+`data/vlsp/corpus.csv` for original article text and ID mapping, and
+`data/vlsp/train.csv` to reproduce selection of the relational benchmark candidates.
+The filtered legal documents used for ingestion are in `data/departments/` and
+`data/ViLegalExperts/`.
+
+The [data inventory](data/README.md) records the input checksums and the locations
+of the frozen diagnostics and relational split. When transferring this project,
+copy the local `data/` contents and any required `reports/runs/` directories
+alongside the Git checkout. The datasets and run artifacts are Git-ignored.
+
+The November 21 experiments compare graph expansion with hybrid search on
+[400 held-out natural questions](reports/natural_graph_20261121.md) and
+[107 held-out cross-document citation tasks](reports/reference_follow_20261121.md).
+
+## Provision graph and retrieval
+
 The original dense/document retrieval and historical results below remain available.
 The new opt-in path uses the same chunker, Ollama client, Qdrant store, Neo4j store,
 TF-IDF candidate discovery, answer grounding, and citation validation:
@@ -83,7 +103,7 @@ Evaluation retains `relevant_aids` from the existing VLSP query file as the orig
 gold Article IDs. It does not expand gold labels into all chunks of a long article:
 
 ```bash
-legal-graphrag evaluate /path/to/existing/eval.csv \
+legal-graphrag evaluate data/vlsp/eval.csv \
   --collection legal_current_hybrid --mapping /path/to/article_to_original_id.json \
   --top-k 10 --output reports/runs/new_run/evaluation.json
 ```
@@ -105,7 +125,7 @@ python scripts/prepare_experiment.py --dataset data \
   --source-collection vlsp_legal_bge_m3 --collection NEW_EXPERIMENT_COLLECTION \
   --output reports/runs/NEW_RUN/manifest.json --apply
 python scripts/run_experiment.py --manifest reports/runs/NEW_RUN/manifest.json \
-  --eval /path/to/existing/eval.csv --output-dir reports/runs/NEW_RUN/pilot \
+  --eval data/vlsp/eval.csv --output-dir reports/runs/NEW_RUN/pilot \
   --sources 100 --pairs 40
 ```
 

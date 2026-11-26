@@ -47,8 +47,8 @@ def main():
         "--evaluation", default="reports/runs/20261107/frozen_seeds/evaluation.json"
     )
     parser.add_argument("--manifest", default="reports/runs/20261107/manifest.json")
-    parser.add_argument("--queries", default="../data_for_legal_rag/VLSP_legal_data/eval.csv")
-    parser.add_argument("--corpus", default="../data_for_legal_rag/VLSP_legal_data/corpus.csv")
+    parser.add_argument("--queries", default="data/vlsp/eval.csv")
+    parser.add_argument("--corpus", default="data/vlsp/corpus.csv")
     parser.add_argument("--coverage", default="data/coverage.csv")
     parser.add_argument("--output-prefix", default="reports/failure_analysis_20261107")
     args = parser.parse_args()

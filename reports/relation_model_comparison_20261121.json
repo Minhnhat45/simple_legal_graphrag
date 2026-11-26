@@ -1,0 +1,2709 @@
+{
+  "status": "completed, source-derived labels with no independent human review",
+  "run_directory": "reports/runs/relation_model_comparison_20261121_v2",
+  "benchmark_sha256": "ff52a2f138934034b75ba3347f4bd67814f02267df7a07861d1062cb91b9c1bf",
+  "test_source_reference_labels": {
+    "NONE": 110,
+    "REPEALS": 16,
+    "CITES": 26,
+    "AMENDS": 6,
+    "ADDS_TO": 4,
+    "DETAILS": 1,
+    "REPLACES": 2
+  },
+  "development": {
+    "split": "development",
+    "pairs": 24,
+    "labels": {
+      "REPEALS": 2,
+      "NONE": 16,
+      "CITES": 4,
+      "AMENDS": 2
+    },
+    "valid_output": {
+      "gemma": {
+        "schema_valid": 24,
+        "requested": 24,
+        "elapsed_batch_median_seconds": 5.834848851503921,
+        "sum_batch_seconds": 35.44810109001992
+      },
+      "luna": {
+        "schema_valid": 24,
+        "requested": 24,
+        "elapsed_batch_median_seconds": 3.960758678505954,
+        "sum_batch_seconds": 27.983583340013865
+      }
+    },
+    "classification": {
+      "gemma": {
+        "exact_quote_filtered": {
+          "macro_f1_non_cites": 0.5833333333333333,
+          "macro_f1_primary": 0.5833333333333333,
+          "micro_non_cites": {
+            "tp": 3,
+            "fp": 4,
+            "fn": 1,
+            "precision": 0.42857142857142855,
+            "recall": 0.75,
+            "f1": 0.5454545454545454
+          },
+          "per_kind": {
+            "ADDS_TO": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "AMENDS": {
+              "tp": 1,
+              "fp": 1,
+              "fn": 1,
+              "precision": 0.5,
+              "recall": 0.5,
+              "f1": 0.5
+            },
+            "DETAILS": {
+              "tp": 0,
+              "fp": 1,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "REPEALS": {
+              "tp": 2,
+              "fp": 2,
+              "fn": 0,
+              "precision": 0.5,
+              "recall": 1.0,
+              "f1": 0.6666666666666666
+            },
+            "REPLACES": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "CITES": {
+              "tp": 4,
+              "fp": 3,
+              "fn": 0,
+              "precision": 0.5714285714285714,
+              "recall": 1.0,
+              "f1": 0.7272727272727273
+            }
+          },
+          "negative_false_positive": 7,
+          "valid_none_on_negatives": 0,
+          "invalid": 10
+        },
+        "full_source_span": {
+          "macro_f1_non_cites": 0.5833333333333333,
+          "macro_f1_primary": 0.5833333333333333,
+          "micro_non_cites": {
+            "tp": 3,
+            "fp": 4,
+            "fn": 1,
+            "precision": 0.42857142857142855,
+            "recall": 0.75,
+            "f1": 0.5454545454545454
+          },
+          "per_kind": {
+            "ADDS_TO": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "AMENDS": {
+              "tp": 1,
+              "fp": 1,
+              "fn": 1,
+              "precision": 0.5,
+              "recall": 0.5,
+              "f1": 0.5
+            },
+            "DETAILS": {
+              "tp": 0,
+              "fp": 1,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "REPEALS": {
+              "tp": 2,
+              "fp": 2,
+              "fn": 0,
+              "precision": 0.5,
+              "recall": 1.0,
+              "f1": 0.6666666666666666
+            },
+            "REPLACES": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "CITES": {
+              "tp": 4,
+              "fp": 3,
+              "fn": 0,
+              "precision": 0.5714285714285714,
+              "recall": 1.0,
+              "f1": 0.7272727272727273
+            }
+          },
+          "negative_false_positive": 7,
+          "valid_none_on_negatives": 0,
+          "invalid": 10
+        }
+      },
+      "luna": {
+        "exact_quote_filtered": {
+          "macro_f1_non_cites": 1.0,
+          "macro_f1_primary": 1.0,
+          "micro_non_cites": {
+            "tp": 4,
+            "fp": 2,
+            "fn": 0,
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "f1": 0.8
+          },
+          "per_kind": {
+            "ADDS_TO": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "AMENDS": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "DETAILS": {
+              "tp": 0,
+              "fp": 2,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "REPEALS": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "REPLACES": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "CITES": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 2,
+              "precision": 1.0,
+              "recall": 0.5,
+              "f1": 0.6666666666666666
+            }
+          },
+          "negative_false_positive": 0,
+          "valid_none_on_negatives": 16,
+          "invalid": 0
+        },
+        "full_source_span": {
+          "macro_f1_non_cites": 1.0,
+          "macro_f1_primary": 1.0,
+          "micro_non_cites": {
+            "tp": 4,
+            "fp": 2,
+            "fn": 0,
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "f1": 0.8
+          },
+          "per_kind": {
+            "ADDS_TO": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "AMENDS": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "DETAILS": {
+              "tp": 0,
+              "fp": 2,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "REPEALS": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "REPLACES": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "CITES": {
+              "tp": 1,
+              "fp": 1,
+              "fn": 3,
+              "precision": 0.5,
+              "recall": 0.25,
+              "f1": 0.3333333333333333
+            }
+          },
+          "negative_false_positive": 0,
+          "valid_none_on_negatives": 16,
+          "invalid": 0
+        }
+      }
+    },
+    "factorial": {
+      "gemma_by_gemma": {
+        "exact_quote_filtered": {
+          "macro_f1_non_cites": 0.4,
+          "macro_f1_primary": 0.4,
+          "micro_non_cites": {
+            "tp": 2,
+            "fp": 2,
+            "fn": 2,
+            "precision": 0.5,
+            "recall": 0.5,
+            "f1": 0.5
+          },
+          "per_kind": {
+            "ADDS_TO": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "AMENDS": {
+              "tp": 0,
+              "fp": 1,
+              "fn": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "DETAILS": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "REPEALS": {
+              "tp": 2,
+              "fp": 1,
+              "fn": 0,
+              "precision": 0.6666666666666666,
+              "recall": 1.0,
+              "f1": 0.8
+            },
+            "REPLACES": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "CITES": {
+              "tp": 2,
+              "fp": 2,
+              "fn": 2,
+              "precision": 0.5,
+              "recall": 0.5,
+              "f1": 0.5
+            }
+          },
+          "negative_false_positive": 4,
+          "valid_none_on_negatives": 3,
+          "invalid": 10
+        },
+        "full_source_span": {
+          "macro_f1_non_cites": 0.4,
+          "macro_f1_primary": 0.4,
+          "micro_non_cites": {
+            "tp": 2,
+            "fp": 2,
+            "fn": 2,
+            "precision": 0.5,
+            "recall": 0.5,
+            "f1": 0.5
+          },
+          "per_kind": {
+            "ADDS_TO": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "AMENDS": {
+              "tp": 0,
+              "fp": 1,
+              "fn": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "DETAILS": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "REPEALS": {
+              "tp": 2,
+              "fp": 1,
+              "fn": 0,
+              "precision": 0.6666666666666666,
+              "recall": 1.0,
+              "f1": 0.8
+            },
+            "REPLACES": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "CITES": {
+              "tp": 2,
+              "fp": 2,
+              "fn": 2,
+              "precision": 0.5,
+              "recall": 0.5,
+              "f1": 0.5
+            }
+          },
+          "negative_false_positive": 4,
+          "valid_none_on_negatives": 3,
+          "invalid": 10
+        }
+      },
+      "luna_by_gemma": {
+        "exact_quote_filtered": {
+          "macro_f1_non_cites": 1.0,
+          "macro_f1_primary": 1.0,
+          "micro_non_cites": {
+            "tp": 4,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.8,
+            "recall": 1.0,
+            "f1": 0.8888888888888888
+          },
+          "per_kind": {
+            "ADDS_TO": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "AMENDS": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "DETAILS": {
+              "tp": 0,
+              "fp": 1,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "REPEALS": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "REPLACES": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "CITES": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 2,
+              "precision": 1.0,
+              "recall": 0.5,
+              "f1": 0.6666666666666666
+            }
+          },
+          "negative_false_positive": 0,
+          "valid_none_on_negatives": 16,
+          "invalid": 0
+        },
+        "full_source_span": {
+          "macro_f1_non_cites": 1.0,
+          "macro_f1_primary": 1.0,
+          "micro_non_cites": {
+            "tp": 4,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.8,
+            "recall": 1.0,
+            "f1": 0.8888888888888888
+          },
+          "per_kind": {
+            "ADDS_TO": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "AMENDS": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "DETAILS": {
+              "tp": 0,
+              "fp": 1,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "REPEALS": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "REPLACES": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "CITES": {
+              "tp": 1,
+              "fp": 1,
+              "fn": 3,
+              "precision": 0.5,
+              "recall": 0.25,
+              "f1": 0.3333333333333333
+            }
+          },
+          "negative_false_positive": 0,
+          "valid_none_on_negatives": 16,
+          "invalid": 0
+        }
+      },
+      "gemma_by_luna": {
+        "exact_quote_filtered": {
+          "macro_f1_non_cites": 0.8333333333333333,
+          "macro_f1_primary": 0.8333333333333333,
+          "micro_non_cites": {
+            "tp": 3,
+            "fp": 0,
+            "fn": 1,
+            "precision": 1.0,
+            "recall": 0.75,
+            "f1": 0.8571428571428571
+          },
+          "per_kind": {
+            "ADDS_TO": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "AMENDS": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 1,
+              "precision": 1.0,
+              "recall": 0.5,
+              "f1": 0.6666666666666666
+            },
+            "DETAILS": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "REPEALS": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "REPLACES": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "CITES": {
+              "tp": 3,
+              "fp": 0,
+              "fn": 1,
+              "precision": 1.0,
+              "recall": 0.75,
+              "f1": 0.8571428571428571
+            }
+          },
+          "negative_false_positive": 0,
+          "valid_none_on_negatives": 7,
+          "invalid": 10
+        },
+        "full_source_span": {
+          "macro_f1_non_cites": 0.8333333333333333,
+          "macro_f1_primary": 0.8333333333333333,
+          "micro_non_cites": {
+            "tp": 3,
+            "fp": 0,
+            "fn": 1,
+            "precision": 1.0,
+            "recall": 0.75,
+            "f1": 0.8571428571428571
+          },
+          "per_kind": {
+            "ADDS_TO": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "AMENDS": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 1,
+              "precision": 1.0,
+              "recall": 0.5,
+              "f1": 0.6666666666666666
+            },
+            "DETAILS": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "REPEALS": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "REPLACES": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "CITES": {
+              "tp": 3,
+              "fp": 0,
+              "fn": 1,
+              "precision": 1.0,
+              "recall": 0.75,
+              "f1": 0.8571428571428571
+            }
+          },
+          "negative_false_positive": 0,
+          "valid_none_on_negatives": 7,
+          "invalid": 10
+        }
+      },
+      "luna_by_luna": {
+        "exact_quote_filtered": {
+          "macro_f1_non_cites": 1.0,
+          "macro_f1_primary": 1.0,
+          "micro_non_cites": {
+            "tp": 4,
+            "fp": 2,
+            "fn": 0,
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "f1": 0.8
+          },
+          "per_kind": {
+            "ADDS_TO": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "AMENDS": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "DETAILS": {
+              "tp": 0,
+              "fp": 2,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "REPEALS": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "REPLACES": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "CITES": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 2,
+              "precision": 1.0,
+              "recall": 0.5,
+              "f1": 0.6666666666666666
+            }
+          },
+          "negative_false_positive": 0,
+          "valid_none_on_negatives": 16,
+          "invalid": 0
+        },
+        "full_source_span": {
+          "macro_f1_non_cites": 1.0,
+          "macro_f1_primary": 1.0,
+          "micro_non_cites": {
+            "tp": 4,
+            "fp": 2,
+            "fn": 0,
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "f1": 0.8
+          },
+          "per_kind": {
+            "ADDS_TO": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "AMENDS": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "DETAILS": {
+              "tp": 0,
+              "fp": 2,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "REPEALS": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "REPLACES": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "CITES": {
+              "tp": 1,
+              "fp": 1,
+              "fn": 3,
+              "precision": 0.5,
+              "recall": 0.25,
+              "f1": 0.3333333333333333
+            }
+          },
+          "negative_false_positive": 0,
+          "valid_none_on_negatives": 16,
+          "invalid": 0
+        }
+      }
+    },
+    "verifier": {
+      "gemma": {
+        "other_True": 6,
+        "true_False": 3,
+        "true_True": 9,
+        "other_False": 4
+      },
+      "luna": {
+        "other_False": 7,
+        "true_True": 11,
+        "other_True": 3,
+        "true_False": 1
+      }
+    },
+    "classification_paired": {
+      "difference": 0.41666666666666674,
+      "ci_95": [
+        0.33333333333333337,
+        0.6666666666666667
+      ],
+      "resamples": 5000,
+      "clusters": 8
+    },
+    "strict_paired": {
+      "difference": 0.41666666666666674,
+      "ci_95": [
+        0.33333333333333337,
+        0.6666666666666667
+      ],
+      "resamples": 5000,
+      "clusters": 8
+    },
+    "pipeline_paired": {
+      "difference": 0.6,
+      "ci_95": [
+        0.11111111111111116,
+        1.0
+      ],
+      "resamples": 5000,
+      "clusters": 8
+    },
+    "luna_usage_all_cached": {
+      "unique_requests": 54,
+      "prompt_tokens": 84795,
+      "completion_tokens": 21551,
+      "reported_cost_usd": 0.021327725,
+      "cost_reported_requests": 54,
+      "request_seconds": 224.28596724894305,
+      "response_models": [
+        "openai/gpt-6-luna"
+      ]
+    }
+  },
+  "test": {
+    "split": "test",
+    "pairs": 165,
+    "labels": {
+      "NONE": 110,
+      "REPEALS": 16,
+      "CITES": 26,
+      "AMENDS": 6,
+      "ADDS_TO": 4,
+      "DETAILS": 1,
+      "REPLACES": 2
+    },
+    "valid_output": {
+      "gemma": {
+        "schema_valid": 156,
+        "requested": 165,
+        "elapsed_batch_median_seconds": 5.0293191485106945,
+        "sum_batch_seconds": 214.25060027910513
+      },
+      "luna": {
+        "schema_valid": 165,
+        "requested": 165,
+        "elapsed_batch_median_seconds": 4.052998195504188,
+        "sum_batch_seconds": 175.17666733601072
+      }
+    },
+    "classification": {
+      "gemma": {
+        "exact_quote_filtered": {
+          "macro_f1_non_cites": 0.3031929046563193,
+          "macro_f1_primary": 0.3386548410938655,
+          "micro_non_cites": {
+            "tp": 16,
+            "fp": 26,
+            "fn": 13,
+            "precision": 0.38095238095238093,
+            "recall": 0.5517241379310345,
+            "f1": 0.4507042253521127
+          },
+          "per_kind": {
+            "ADDS_TO": {
+              "tp": 1,
+              "fp": 5,
+              "fn": 3,
+              "precision": 0.16666666666666666,
+              "recall": 0.25,
+              "f1": 0.2
+            },
+            "AMENDS": {
+              "tp": 1,
+              "fp": 4,
+              "fn": 5,
+              "precision": 0.2,
+              "recall": 0.16666666666666666,
+              "f1": 0.18181818181818182
+            },
+            "DETAILS": {
+              "tp": 1,
+              "fp": 2,
+              "fn": 0,
+              "precision": 0.3333333333333333,
+              "recall": 1.0,
+              "f1": 0.5
+            },
+            "REPEALS": {
+              "tp": 13,
+              "fp": 12,
+              "fn": 3,
+              "precision": 0.52,
+              "recall": 0.8125,
+              "f1": 0.6341463414634146
+            },
+            "REPLACES": {
+              "tp": 0,
+              "fp": 3,
+              "fn": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "CITES": {
+              "tp": 19,
+              "fp": 13,
+              "fn": 7,
+              "precision": 0.59375,
+              "recall": 0.7307692307692307,
+              "f1": 0.6551724137931034
+            }
+          },
+          "negative_false_positive": 34,
+          "valid_none_on_negatives": 13,
+          "invalid": 77
+        },
+        "full_source_span": {
+          "macro_f1_non_cites": 0.3031929046563193,
+          "macro_f1_primary": 0.3386548410938655,
+          "micro_non_cites": {
+            "tp": 16,
+            "fp": 26,
+            "fn": 13,
+            "precision": 0.38095238095238093,
+            "recall": 0.5517241379310345,
+            "f1": 0.4507042253521127
+          },
+          "per_kind": {
+            "ADDS_TO": {
+              "tp": 1,
+              "fp": 5,
+              "fn": 3,
+              "precision": 0.16666666666666666,
+              "recall": 0.25,
+              "f1": 0.2
+            },
+            "AMENDS": {
+              "tp": 1,
+              "fp": 4,
+              "fn": 5,
+              "precision": 0.2,
+              "recall": 0.16666666666666666,
+              "f1": 0.18181818181818182
+            },
+            "DETAILS": {
+              "tp": 1,
+              "fp": 2,
+              "fn": 0,
+              "precision": 0.3333333333333333,
+              "recall": 1.0,
+              "f1": 0.5
+            },
+            "REPEALS": {
+              "tp": 13,
+              "fp": 12,
+              "fn": 3,
+              "precision": 0.52,
+              "recall": 0.8125,
+              "f1": 0.6341463414634146
+            },
+            "REPLACES": {
+              "tp": 0,
+              "fp": 3,
+              "fn": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "CITES": {
+              "tp": 17,
+              "fp": 15,
+              "fn": 9,
+              "precision": 0.53125,
+              "recall": 0.6538461538461539,
+              "f1": 0.5862068965517241
+            }
+          },
+          "negative_false_positive": 34,
+          "valid_none_on_negatives": 13,
+          "invalid": 77
+        }
+      },
+      "luna": {
+        "exact_quote_filtered": {
+          "macro_f1_non_cites": 0.9333333333333333,
+          "macro_f1_primary": 1.0,
+          "micro_non_cites": {
+            "tp": 29,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.9666666666666667,
+            "recall": 1.0,
+            "f1": 0.9830508474576272
+          },
+          "per_kind": {
+            "ADDS_TO": {
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "AMENDS": {
+              "tp": 6,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "DETAILS": {
+              "tp": 1,
+              "fp": 1,
+              "fn": 0,
+              "precision": 0.5,
+              "recall": 1.0,
+              "f1": 0.6666666666666666
+            },
+            "REPEALS": {
+              "tp": 16,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "REPLACES": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "CITES": {
+              "tp": 25,
+              "fp": 1,
+              "fn": 1,
+              "precision": 0.9615384615384616,
+              "recall": 0.9615384615384616,
+              "f1": 0.9615384615384616
+            }
+          },
+          "negative_false_positive": 1,
+          "valid_none_on_negatives": 109,
+          "invalid": 0
+        },
+        "full_source_span": {
+          "macro_f1_non_cites": 0.9333333333333333,
+          "macro_f1_primary": 1.0,
+          "micro_non_cites": {
+            "tp": 29,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.9666666666666667,
+            "recall": 1.0,
+            "f1": 0.9830508474576272
+          },
+          "per_kind": {
+            "ADDS_TO": {
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "AMENDS": {
+              "tp": 6,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "DETAILS": {
+              "tp": 1,
+              "fp": 1,
+              "fn": 0,
+              "precision": 0.5,
+              "recall": 1.0,
+              "f1": 0.6666666666666666
+            },
+            "REPEALS": {
+              "tp": 16,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "REPLACES": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "CITES": {
+              "tp": 25,
+              "fp": 1,
+              "fn": 1,
+              "precision": 0.9615384615384616,
+              "recall": 0.9615384615384616,
+              "f1": 0.9615384615384616
+            }
+          },
+          "negative_false_positive": 1,
+          "valid_none_on_negatives": 109,
+          "invalid": 0
+        }
+      }
+    },
+    "factorial": {
+      "gemma_by_gemma": {
+        "exact_quote_filtered": {
+          "macro_f1_non_cites": 0.3611111111111111,
+          "macro_f1_primary": 0.3796296296296296,
+          "micro_non_cites": {
+            "tp": 16,
+            "fp": 18,
+            "fn": 13,
+            "precision": 0.47058823529411764,
+            "recall": 0.5517241379310345,
+            "f1": 0.5079365079365079
+          },
+          "per_kind": {
+            "ADDS_TO": {
+              "tp": 1,
+              "fp": 3,
+              "fn": 3,
+              "precision": 0.25,
+              "recall": 0.25,
+              "f1": 0.25
+            },
+            "AMENDS": {
+              "tp": 1,
+              "fp": 2,
+              "fn": 5,
+              "precision": 0.3333333333333333,
+              "recall": 0.16666666666666666,
+              "f1": 0.2222222222222222
+            },
+            "DETAILS": {
+              "tp": 1,
+              "fp": 1,
+              "fn": 0,
+              "precision": 0.5,
+              "recall": 1.0,
+              "f1": 0.6666666666666666
+            },
+            "REPEALS": {
+              "tp": 13,
+              "fp": 10,
+              "fn": 3,
+              "precision": 0.5652173913043478,
+              "recall": 0.8125,
+              "f1": 0.6666666666666666
+            },
+            "REPLACES": {
+              "tp": 0,
+              "fp": 2,
+              "fn": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "CITES": {
+              "tp": 11,
+              "fp": 6,
+              "fn": 15,
+              "precision": 0.6470588235294118,
+              "recall": 0.4230769230769231,
+              "f1": 0.5116279069767442
+            }
+          },
+          "negative_false_positive": 20,
+          "valid_none_on_negatives": 27,
+          "invalid": 77
+        },
+        "full_source_span": {
+          "macro_f1_non_cites": 0.3611111111111111,
+          "macro_f1_primary": 0.3796296296296296,
+          "micro_non_cites": {
+            "tp": 16,
+            "fp": 18,
+            "fn": 13,
+            "precision": 0.47058823529411764,
+            "recall": 0.5517241379310345,
+            "f1": 0.5079365079365079
+          },
+          "per_kind": {
+            "ADDS_TO": {
+              "tp": 1,
+              "fp": 3,
+              "fn": 3,
+              "precision": 0.25,
+              "recall": 0.25,
+              "f1": 0.25
+            },
+            "AMENDS": {
+              "tp": 1,
+              "fp": 2,
+              "fn": 5,
+              "precision": 0.3333333333333333,
+              "recall": 0.16666666666666666,
+              "f1": 0.2222222222222222
+            },
+            "DETAILS": {
+              "tp": 1,
+              "fp": 1,
+              "fn": 0,
+              "precision": 0.5,
+              "recall": 1.0,
+              "f1": 0.6666666666666666
+            },
+            "REPEALS": {
+              "tp": 13,
+              "fp": 10,
+              "fn": 3,
+              "precision": 0.5652173913043478,
+              "recall": 0.8125,
+              "f1": 0.6666666666666666
+            },
+            "REPLACES": {
+              "tp": 0,
+              "fp": 2,
+              "fn": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "CITES": {
+              "tp": 10,
+              "fp": 7,
+              "fn": 16,
+              "precision": 0.5882352941176471,
+              "recall": 0.38461538461538464,
+              "f1": 0.46511627906976744
+            }
+          },
+          "negative_false_positive": 20,
+          "valid_none_on_negatives": 27,
+          "invalid": 77
+        }
+      },
+      "luna_by_gemma": {
+        "exact_quote_filtered": {
+          "macro_f1_non_cites": 0.8277951933124347,
+          "macro_f1_primary": 0.93521421107628,
+          "micro_non_cites": {
+            "tp": 24,
+            "fp": 1,
+            "fn": 5,
+            "precision": 0.96,
+            "recall": 0.8275862068965517,
+            "f1": 0.8888888888888888
+          },
+          "per_kind": {
+            "ADDS_TO": {
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "AMENDS": {
+              "tp": 5,
+              "fp": 0,
+              "fn": 1,
+              "precision": 1.0,
+              "recall": 0.8333333333333334,
+              "f1": 0.9090909090909091
+            },
+            "DETAILS": {
+              "tp": 1,
+              "fp": 1,
+              "fn": 0,
+              "precision": 0.5,
+              "recall": 1.0,
+              "f1": 0.6666666666666666
+            },
+            "REPEALS": {
+              "tp": 13,
+              "fp": 0,
+              "fn": 3,
+              "precision": 1.0,
+              "recall": 0.8125,
+              "f1": 0.896551724137931
+            },
+            "REPLACES": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 1,
+              "precision": 1.0,
+              "recall": 0.5,
+              "f1": 0.6666666666666666
+            },
+            "CITES": {
+              "tp": 21,
+              "fp": 0,
+              "fn": 5,
+              "precision": 1.0,
+              "recall": 0.8076923076923077,
+              "f1": 0.8936170212765957
+            }
+          },
+          "negative_false_positive": 0,
+          "valid_none_on_negatives": 110,
+          "invalid": 0
+        },
+        "full_source_span": {
+          "macro_f1_non_cites": 0.8277951933124347,
+          "macro_f1_primary": 0.93521421107628,
+          "micro_non_cites": {
+            "tp": 24,
+            "fp": 1,
+            "fn": 5,
+            "precision": 0.96,
+            "recall": 0.8275862068965517,
+            "f1": 0.8888888888888888
+          },
+          "per_kind": {
+            "ADDS_TO": {
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "AMENDS": {
+              "tp": 5,
+              "fp": 0,
+              "fn": 1,
+              "precision": 1.0,
+              "recall": 0.8333333333333334,
+              "f1": 0.9090909090909091
+            },
+            "DETAILS": {
+              "tp": 1,
+              "fp": 1,
+              "fn": 0,
+              "precision": 0.5,
+              "recall": 1.0,
+              "f1": 0.6666666666666666
+            },
+            "REPEALS": {
+              "tp": 13,
+              "fp": 0,
+              "fn": 3,
+              "precision": 1.0,
+              "recall": 0.8125,
+              "f1": 0.896551724137931
+            },
+            "REPLACES": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 1,
+              "precision": 1.0,
+              "recall": 0.5,
+              "f1": 0.6666666666666666
+            },
+            "CITES": {
+              "tp": 21,
+              "fp": 0,
+              "fn": 5,
+              "precision": 1.0,
+              "recall": 0.8076923076923077,
+              "f1": 0.8936170212765957
+            }
+          },
+          "negative_false_positive": 0,
+          "valid_none_on_negatives": 110,
+          "invalid": 0
+        }
+      },
+      "gemma_by_luna": {
+        "exact_quote_filtered": {
+          "macro_f1_non_cites": 0.5014285714285714,
+          "macro_f1_primary": 0.5023809523809524,
+          "micro_non_cites": {
+            "tp": 15,
+            "fp": 1,
+            "fn": 14,
+            "precision": 0.9375,
+            "recall": 0.5172413793103449,
+            "f1": 0.6666666666666666
+          },
+          "per_kind": {
+            "ADDS_TO": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 3,
+              "precision": 1.0,
+              "recall": 0.25,
+              "f1": 0.4
+            },
+            "AMENDS": {
+              "tp": 1,
+              "fp": 1,
+              "fn": 5,
+              "precision": 0.5,
+              "recall": 0.16666666666666666,
+              "f1": 0.25
+            },
+            "DETAILS": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "REPEALS": {
+              "tp": 12,
+              "fp": 0,
+              "fn": 4,
+              "precision": 1.0,
+              "recall": 0.75,
+              "f1": 0.8571428571428571
+            },
+            "REPLACES": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "CITES": {
+              "tp": 16,
+              "fp": 0,
+              "fn": 10,
+              "precision": 1.0,
+              "recall": 0.6153846153846154,
+              "f1": 0.7619047619047619
+            }
+          },
+          "negative_false_positive": 0,
+          "valid_none_on_negatives": 47,
+          "invalid": 77
+        },
+        "full_source_span": {
+          "macro_f1_non_cites": 0.5014285714285714,
+          "macro_f1_primary": 0.5023809523809524,
+          "micro_non_cites": {
+            "tp": 15,
+            "fp": 1,
+            "fn": 14,
+            "precision": 0.9375,
+            "recall": 0.5172413793103449,
+            "f1": 0.6666666666666666
+          },
+          "per_kind": {
+            "ADDS_TO": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 3,
+              "precision": 1.0,
+              "recall": 0.25,
+              "f1": 0.4
+            },
+            "AMENDS": {
+              "tp": 1,
+              "fp": 1,
+              "fn": 5,
+              "precision": 0.5,
+              "recall": 0.16666666666666666,
+              "f1": 0.25
+            },
+            "DETAILS": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "REPEALS": {
+              "tp": 12,
+              "fp": 0,
+              "fn": 4,
+              "precision": 1.0,
+              "recall": 0.75,
+              "f1": 0.8571428571428571
+            },
+            "REPLACES": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "CITES": {
+              "tp": 14,
+              "fp": 2,
+              "fn": 12,
+              "precision": 0.875,
+              "recall": 0.5384615384615384,
+              "f1": 0.6666666666666666
+            }
+          },
+          "negative_false_positive": 0,
+          "valid_none_on_negatives": 47,
+          "invalid": 77
+        }
+      },
+      "luna_by_luna": {
+        "exact_quote_filtered": {
+          "macro_f1_non_cites": 0.9268817204301075,
+          "macro_f1_primary": 0.989247311827957,
+          "micro_non_cites": {
+            "tp": 28,
+            "fp": 1,
+            "fn": 1,
+            "precision": 0.9655172413793104,
+            "recall": 0.9655172413793104,
+            "f1": 0.9655172413793104
+          },
+          "per_kind": {
+            "ADDS_TO": {
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "AMENDS": {
+              "tp": 6,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "DETAILS": {
+              "tp": 1,
+              "fp": 1,
+              "fn": 0,
+              "precision": 0.5,
+              "recall": 1.0,
+              "f1": 0.6666666666666666
+            },
+            "REPEALS": {
+              "tp": 15,
+              "fp": 0,
+              "fn": 1,
+              "precision": 1.0,
+              "recall": 0.9375,
+              "f1": 0.967741935483871
+            },
+            "REPLACES": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "CITES": {
+              "tp": 24,
+              "fp": 1,
+              "fn": 2,
+              "precision": 0.96,
+              "recall": 0.9230769230769231,
+              "f1": 0.9411764705882353
+            }
+          },
+          "negative_false_positive": 1,
+          "valid_none_on_negatives": 109,
+          "invalid": 0
+        },
+        "full_source_span": {
+          "macro_f1_non_cites": 0.9268817204301075,
+          "macro_f1_primary": 0.989247311827957,
+          "micro_non_cites": {
+            "tp": 28,
+            "fp": 1,
+            "fn": 1,
+            "precision": 0.9655172413793104,
+            "recall": 0.9655172413793104,
+            "f1": 0.9655172413793104
+          },
+          "per_kind": {
+            "ADDS_TO": {
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "AMENDS": {
+              "tp": 6,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "DETAILS": {
+              "tp": 1,
+              "fp": 1,
+              "fn": 0,
+              "precision": 0.5,
+              "recall": 1.0,
+              "f1": 0.6666666666666666
+            },
+            "REPEALS": {
+              "tp": 15,
+              "fp": 0,
+              "fn": 1,
+              "precision": 1.0,
+              "recall": 0.9375,
+              "f1": 0.967741935483871
+            },
+            "REPLACES": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "CITES": {
+              "tp": 24,
+              "fp": 1,
+              "fn": 2,
+              "precision": 0.96,
+              "recall": 0.9230769230769231,
+              "f1": 0.9411764705882353
+            }
+          },
+          "negative_false_positive": 1,
+          "valid_none_on_negatives": 109,
+          "invalid": 0
+        }
+      }
+    },
+    "verifier": {
+      "gemma": {
+        "true_True": 68,
+        "other_True": 26,
+        "true_False": 16,
+        "other_False": 17
+      },
+      "luna": {
+        "true_True": 79,
+        "other_False": 38,
+        "true_False": 5,
+        "other_True": 5
+      }
+    },
+    "classification_paired": {
+      "difference": 0.6613451589061345,
+      "ci_95": [
+        0.5442424242424242,
+        0.8018018018018018
+      ],
+      "resamples": 5000,
+      "clusters": 46
+    },
+    "strict_paired": {
+      "difference": 0.6613451589061345,
+      "ci_95": [
+        0.5442424242424242,
+        0.8018018018018018
+      ],
+      "resamples": 5000,
+      "clusters": 46
+    },
+    "pipeline_paired": {
+      "difference": 0.6096176821983275,
+      "ci_95": [
+        0.46240601503759404,
+        0.7875776397515528
+      ],
+      "resamples": 5000,
+      "clusters": 46
+    },
+    "luna_usage_all_cached": {
+      "unique_requests": 86,
+      "prompt_tokens": 139074,
+      "completion_tokens": 32482,
+      "reported_cost_usd": 0.0335757,
+      "cost_reported_requests": 86,
+      "request_seconds": 354.64609021888464,
+      "response_models": [
+        "openai/gpt-6-luna"
+      ]
+    }
+  },
+  "retrieval": {
+    "questions": 29,
+    "prediction_sha256": "0a1e899ebdd565e48bb7a4e8ef417102e7ebee119698331f356b52044de8b25c",
+    "modes": {
+      "hybrid": {
+        "both": 18,
+        "target_at_3": 8,
+        "gold_from_path": 0
+      },
+      "rule": {
+        "both": 27,
+        "target_at_3": 25,
+        "gold_from_path": 19
+      },
+      "gemma": {
+        "both": 29,
+        "target_at_3": 27,
+        "gold_from_path": 24
+      },
+      "luna": {
+        "both": 29,
+        "target_at_3": 29,
+        "gold_from_path": 29
+      },
+      "exact_key": {
+        "both": 29,
+        "target_at_3": 29,
+        "gold_from_path": 29
+      }
+    },
+    "luna_minus_gemma": {
+      "difference": 0.0,
+      "ci_95": [
+        0.0,
+        0.0
+      ],
+      "clusters": 23
+    },
+    "luna_minus_rule": {
+      "difference": 0.06896551724137931,
+      "ci_95": [
+        0.0,
+        0.18518518518518517
+      ],
+      "clusters": 23
+    },
+    "gemma_minus_rule": {
+      "difference": 0.06896551724137931,
+      "ci_95": [
+        0.0,
+        0.18518518518518517
+      ],
+      "clusters": 23
+    }
+  },
+  "post_hoc": {
+    "paired_raw_classifier": {
+      "difference": 0.5408369408369409,
+      "ci_95": [
+        0.4595101371147311,
+        0.6652046783625731
+      ],
+      "resamples": 5000,
+      "clusters": 46
+    },
+    "change_proposer_holding_gemma_verifier": {
+      "difference": 0.5555845814466505,
+      "ci_95": [
+        0.3297682709447415,
+        0.7666666666666667
+      ],
+      "resamples": 5000,
+      "clusters": 46
+    },
+    "change_verifier_holding_gemma_proposer": {
+      "difference": 0.12275132275132278,
+      "ci_95": [
+        0.038717483363581356,
+        0.20321151716500557
+      ],
+      "resamples": 5000,
+      "clusters": 46
+    },
+    "change_verifier_holding_luna_proposer": {
+      "difference": 0.054033100751677,
+      "ci_95": [
+        -0.012260536398467359,
+        0.16993464052287588
+      ],
+      "resamples": 5000,
+      "clusters": 46
+    },
+    "typed_edges_matching_gold_final_pipeline": {
+      "gemma_by_gemma": 16,
+      "luna_by_luna": 28
+    },
+    "raw_classifier_macro_f1_primary": {
+      "gemma": 0.45916305916305916,
+      "luna": 1.0
+    },
+    "classification_label_disagreements": [
+      {
+        "id": "003e2f5ae9b2",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "039a09738aef",
+        "variant": "sibling",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "0851a1102d62",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "0d98cec96221",
+        "variant": "sibling",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "0e37acd966b4",
+        "variant": "sibling",
+        "gold": "NONE",
+        "gemma": "REPEALS",
+        "luna": "NONE"
+      },
+      {
+        "id": "1320c6d4f5a4",
+        "variant": "sibling",
+        "gold": "NONE",
+        "gemma": "REPEALS",
+        "luna": "NONE"
+      },
+      {
+        "id": "135bc7af0a29",
+        "variant": "sibling",
+        "gold": "NONE",
+        "gemma": "REPEALS",
+        "luna": "NONE"
+      },
+      {
+        "id": "1b38b2cd72f6",
+        "variant": "sibling",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "1ca69b0062f1",
+        "variant": "sibling",
+        "gold": "NONE",
+        "gemma": "REPEALS",
+        "luna": "NONE"
+      },
+      {
+        "id": "1ec21ddea546",
+        "variant": "actual",
+        "gold": "CITES",
+        "gemma": "INVALID",
+        "luna": "DETAILS"
+      },
+      {
+        "id": "1f023dec14dc",
+        "variant": "sibling",
+        "gold": "NONE",
+        "gemma": "CITES",
+        "luna": "NONE"
+      },
+      {
+        "id": "2064c4f84698",
+        "variant": "sibling",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "2294f34e136a",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "25bfbf30e279",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "264c85f19261",
+        "variant": "actual",
+        "gold": "AMENDS",
+        "gemma": "INVALID",
+        "luna": "AMENDS"
+      },
+      {
+        "id": "28b0b9feef9c",
+        "variant": "actual",
+        "gold": "CITES",
+        "gemma": "INVALID",
+        "luna": "CITES"
+      },
+      {
+        "id": "28ef5a150b11",
+        "variant": "actual",
+        "gold": "ADDS_TO",
+        "gemma": "INVALID",
+        "luna": "ADDS_TO"
+      },
+      {
+        "id": "2a850453ccaa",
+        "variant": "sibling",
+        "gold": "NONE",
+        "gemma": "REPLACES",
+        "luna": "NONE"
+      },
+      {
+        "id": "2b0331e448c1",
+        "variant": "sibling",
+        "gold": "NONE",
+        "gemma": "CITES",
+        "luna": "NONE"
+      },
+      {
+        "id": "2f2ed3daf531",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "31b36b304a84",
+        "variant": "actual",
+        "gold": "AMENDS",
+        "gemma": "INVALID",
+        "luna": "AMENDS"
+      },
+      {
+        "id": "3479f9dc1d88",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "38b63ea2e7a4",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "38ee64add24e",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "3ab9e74e9749",
+        "variant": "sibling",
+        "gold": "NONE",
+        "gemma": "REPEALS",
+        "luna": "NONE"
+      },
+      {
+        "id": "4173b501f0eb",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "417c08ec927b",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "419fc4f953ae",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "427176509615",
+        "variant": "sibling",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "4710c552abf1",
+        "variant": "actual",
+        "gold": "CITES",
+        "gemma": "INVALID",
+        "luna": "CITES"
+      },
+      {
+        "id": "47e361dc5ebd",
+        "variant": "sibling",
+        "gold": "NONE",
+        "gemma": "REPLACES",
+        "luna": "NONE"
+      },
+      {
+        "id": "4cd04cf66bea",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "4f3f3e211f85",
+        "variant": "sibling",
+        "gold": "NONE",
+        "gemma": "ADDS_TO",
+        "luna": "NONE"
+      },
+      {
+        "id": "50e185a84752",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "51c61defe865",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "564a132cc14b",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "57666e0c0829",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "57f8cdd442b5",
+        "variant": "sibling",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "5a50215056a7",
+        "variant": "sibling",
+        "gold": "NONE",
+        "gemma": "CITES",
+        "luna": "NONE"
+      },
+      {
+        "id": "5af3d1d3322a",
+        "variant": "sibling",
+        "gold": "NONE",
+        "gemma": "CITES",
+        "luna": "NONE"
+      },
+      {
+        "id": "5c067594a589",
+        "variant": "sibling",
+        "gold": "NONE",
+        "gemma": "CITES",
+        "luna": "NONE"
+      },
+      {
+        "id": "5caa8e8b6050",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "5ed3a136587d",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "REPEALS",
+        "luna": "NONE"
+      },
+      {
+        "id": "606cb63bca63",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "6b6cabbaca45",
+        "variant": "sibling",
+        "gold": "NONE",
+        "gemma": "ADDS_TO",
+        "luna": "NONE"
+      },
+      {
+        "id": "6d84cf65cefa",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "ADDS_TO",
+        "luna": "NONE"
+      },
+      {
+        "id": "6ee58d09cdcb",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "7002e9defa68",
+        "variant": "sibling",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "702e8f8a7284",
+        "variant": "sibling",
+        "gold": "NONE",
+        "gemma": "ADDS_TO",
+        "luna": "NONE"
+      },
+      {
+        "id": "70cfddc8d097",
+        "variant": "sibling",
+        "gold": "NONE",
+        "gemma": "CITES",
+        "luna": "NONE"
+      },
+      {
+        "id": "72ecfc63caf0",
+        "variant": "actual",
+        "gold": "AMENDS",
+        "gemma": "INVALID",
+        "luna": "AMENDS"
+      },
+      {
+        "id": "746caf2d8f00",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "7670ce9fb347",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "779bca394dda",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "77eab28bac20",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "79d9d61dabca",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "7acccc4e40ff",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "7d455337eb20",
+        "variant": "sibling",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "806cf8ac2d4d",
+        "variant": "actual",
+        "gold": "ADDS_TO",
+        "gemma": "INVALID",
+        "luna": "ADDS_TO"
+      },
+      {
+        "id": "80c9028c4541",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "81a9027b31ed",
+        "variant": "actual",
+        "gold": "AMENDS",
+        "gemma": "INVALID",
+        "luna": "AMENDS"
+      },
+      {
+        "id": "85757e098fab",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "880a4395cd56",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "897c25f6b779",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "8c1052621d0d",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "8c41c870875e",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "8cebb7435352",
+        "variant": "sibling",
+        "gold": "NONE",
+        "gemma": "REPEALS",
+        "luna": "NONE"
+      },
+      {
+        "id": "8db80a36de01",
+        "variant": "sibling",
+        "gold": "NONE",
+        "gemma": "CITES",
+        "luna": "NONE"
+      },
+      {
+        "id": "8ef9bd09190d",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "90d958db74ee",
+        "variant": "sibling",
+        "gold": "NONE",
+        "gemma": "CITES",
+        "luna": "NONE"
+      },
+      {
+        "id": "9301267a7579",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "94a6273f4973",
+        "variant": "sibling",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "98632c474625",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "9b933d152bd0",
+        "variant": "sibling",
+        "gold": "NONE",
+        "gemma": "CITES",
+        "luna": "NONE"
+      },
+      {
+        "id": "9d3c69d5d31b",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "9fe1958558a9",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "a27bffc89709",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "a5020eb31126",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "aba7762aafb9",
+        "variant": "sibling",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "ad41c5bdfba8",
+        "variant": "sibling",
+        "gold": "NONE",
+        "gemma": "REPEALS",
+        "luna": "NONE"
+      },
+      {
+        "id": "add192352191",
+        "variant": "actual",
+        "gold": "CITES",
+        "gemma": "DETAILS",
+        "luna": "CITES"
+      },
+      {
+        "id": "ae4a8c496909",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "af48462045d1",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "b293ad5de901",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "b5cc46718d8e",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "b623c20984da",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "b7356b929a03",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "bb9e10d681ea",
+        "variant": "sibling",
+        "gold": "NONE",
+        "gemma": "REPEALS",
+        "luna": "NONE"
+      },
+      {
+        "id": "bd0c0e652758",
+        "variant": "sibling",
+        "gold": "NONE",
+        "gemma": "DETAILS",
+        "luna": "NONE"
+      },
+      {
+        "id": "c0a53b993749",
+        "variant": "sibling",
+        "gold": "NONE",
+        "gemma": "REPEALS",
+        "luna": "NONE"
+      },
+      {
+        "id": "c198194b59ac",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "c4fb3f4b06e1",
+        "variant": "actual",
+        "gold": "ADDS_TO",
+        "gemma": "INVALID",
+        "luna": "ADDS_TO"
+      },
+      {
+        "id": "ca2ccdeb7808",
+        "variant": "sibling",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "cd5197b4483a",
+        "variant": "sibling",
+        "gold": "NONE",
+        "gemma": "CITES",
+        "luna": "NONE"
+      },
+      {
+        "id": "cd6c748d4796",
+        "variant": "sibling",
+        "gold": "NONE",
+        "gemma": "REPEALS",
+        "luna": "NONE"
+      },
+      {
+        "id": "cf2684129091",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "d249e024b225",
+        "variant": "actual",
+        "gold": "REPEALS",
+        "gemma": "REPLACES",
+        "luna": "REPEALS"
+      },
+      {
+        "id": "d7bf63718a08",
+        "variant": "actual",
+        "gold": "REPLACES",
+        "gemma": "AMENDS",
+        "luna": "REPLACES"
+      },
+      {
+        "id": "d83af9384e50",
+        "variant": "actual",
+        "gold": "REPEALS",
+        "gemma": "AMENDS",
+        "luna": "REPEALS"
+      },
+      {
+        "id": "d89f640053b2",
+        "variant": "actual",
+        "gold": "AMENDS",
+        "gemma": "INVALID",
+        "luna": "AMENDS"
+      },
+      {
+        "id": "d8cc76f6d8e4",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "AMENDS",
+        "luna": "NONE"
+      },
+      {
+        "id": "dc2f9101ecb3",
+        "variant": "actual",
+        "gold": "REPEALS",
+        "gemma": "INVALID",
+        "luna": "REPEALS"
+      },
+      {
+        "id": "e021f5fe907d",
+        "variant": "actual",
+        "gold": "REPLACES",
+        "gemma": "AMENDS",
+        "luna": "REPLACES"
+      },
+      {
+        "id": "e21b78103e2f",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "e2fc30e0630d",
+        "variant": "actual",
+        "gold": "CITES",
+        "gemma": "NONE",
+        "luna": "CITES"
+      },
+      {
+        "id": "e81849fe1c98",
+        "variant": "sibling",
+        "gold": "NONE",
+        "gemma": "REPEALS",
+        "luna": "NONE"
+      },
+      {
+        "id": "e8acf43c3ed3",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "eb45b9049f26",
+        "variant": "sibling",
+        "gold": "NONE",
+        "gemma": "CITES",
+        "luna": "NONE"
+      },
+      {
+        "id": "ee4de265d058",
+        "variant": "sibling",
+        "gold": "NONE",
+        "gemma": "CITES",
+        "luna": "NONE"
+      },
+      {
+        "id": "efb8f6b6eadb",
+        "variant": "swapped",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "f47eb06195a7",
+        "variant": "actual",
+        "gold": "CITES",
+        "gemma": "INVALID",
+        "luna": "CITES"
+      },
+      {
+        "id": "f78179939364",
+        "variant": "sibling",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "f85b88e0c1f2",
+        "variant": "sibling",
+        "gold": "NONE",
+        "gemma": "ADDS_TO",
+        "luna": "NONE"
+      },
+      {
+        "id": "f87fb3014f94",
+        "variant": "sibling",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "f96cf743c4cb",
+        "variant": "sibling",
+        "gold": "NONE",
+        "gemma": "INVALID",
+        "luna": "NONE"
+      },
+      {
+        "id": "fc4bb114d2f7",
+        "variant": "actual",
+        "gold": "CITES",
+        "gemma": "INVALID",
+        "luna": "CITES"
+      }
+    ],
+    "negative_false_positives_by_variant": {
+      "gemma": {
+        "sibling": 31,
+        "swapped": 3
+      },
+      "luna": {
+        "sibling": 1
+      }
+    },
+    "gain_loss_of_complete_retrieval_vs_rule": {
+      "gemma": {
+        "0": 27,
+        "1": 2
+      },
+      "luna": {
+        "0": 27,
+        "1": 2
+      }
+    },
+    "usage_preflight_attempt": {
+      "prompt_tokens": 73712,
+      "completion_tokens": 19509,
+      "cost": 0.018947375,
+      "cached_requests": 48,
+      "cost_reported_request_count": 48
+    },
+    "usage_final_run": {
+      "prompt_tokens": 139074,
+      "completion_tokens": 32482,
+      "cost": 0.0335757,
+      "cached_requests": 86,
+      "cost_reported_request_count": 86
+    }
+  }
+}

@@ -1,0 +1,6023 @@
+{
+  "status": "diagnostic_retrieval_complete; model_evaluation_failed; independent_validation_pending",
+  "conclusion": "The controlled diagnostic comparison does not establish a reliable graph advantage over both shared hybrid scoring and shuffled links.",
+  "run_directory": "reports/runs/linux_20261118",
+  "retrieval": {
+    "status": "complete_diagnostic_retrieval; independent_review_pending",
+    "records": 700,
+    "queries": 100,
+    "evaluation_sha256": "95e1cd63e65bb09c71ae5705f189f301746087522b571e5766ff8bb9ad6de9a2",
+    "snapshot_sha256": "3aee6d3d36c9f3e075b7e5a1ef3a1d0c394bf3720aac5ca1daa19aff1ec57113",
+    "coverage": {
+      "documents": 2051,
+      "articles": 55898,
+      "chunks": 91405,
+      "mapped_original_articles": 36107,
+      "resolved_citations": 19674,
+      "snapshot_fully_mapped_queries": 59,
+      "snapshot_mapped_gold_occurrences": 66,
+      "gold_occurrences": 113,
+      "graph_build_seconds": 26.501354533999802,
+      "build_seconds": 71.50057209200008
+    },
+    "mapping_recall_ceiling": 0.605,
+    "overall": {
+      "hybrid": {
+        "all": {
+          "queries": 100,
+          "recall": 0.52,
+          "candidate_recall": 0.575,
+          "complete_evidence": 0.49,
+          "latency_ms": 24.358859309986656,
+          "recovered_gold_occurrences": 0,
+          "lost_gold_occurrences": 0,
+          "new_candidate_gold_occurrences": 0,
+          "paired_recall": {
+            "difference": 0.0,
+            "lower_95": 0.0,
+            "upper_95": 0.0,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          },
+          "paired_complete_evidence": {
+            "difference": 0.0,
+            "lower_95": 0.0,
+            "upper_95": 0.0,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          }
+        },
+        "fully_covered": {
+          "queries": 59,
+          "recall": 0.864406779661017,
+          "candidate_recall": 0.9491525423728814,
+          "complete_evidence": 0.8305084745762712,
+          "latency_ms": 24.457695864369317,
+          "recovered_gold_occurrences": 0,
+          "lost_gold_occurrences": 0,
+          "new_candidate_gold_occurrences": 0,
+          "paired_recall": {
+            "difference": 0.0,
+            "lower_95": 0.0,
+            "upper_95": 0.0,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          },
+          "paired_complete_evidence": {
+            "difference": 0.0,
+            "lower_95": 0.0,
+            "upper_95": 0.0,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          }
+        }
+      },
+      "hybrid_larger": {
+        "all": {
+          "queries": 100,
+          "recall": 0.52,
+          "candidate_recall": 0.575,
+          "complete_evidence": 0.49,
+          "latency_ms": 30.810862830062433,
+          "recovered_gold_occurrences": 0,
+          "lost_gold_occurrences": 0,
+          "new_candidate_gold_occurrences": 0,
+          "paired_recall": {
+            "difference": 0.0,
+            "lower_95": 0.0,
+            "upper_95": 0.0,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          },
+          "paired_complete_evidence": {
+            "difference": 0.0,
+            "lower_95": 0.0,
+            "upper_95": 0.0,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          }
+        },
+        "fully_covered": {
+          "queries": 59,
+          "recall": 0.864406779661017,
+          "candidate_recall": 0.9491525423728814,
+          "complete_evidence": 0.8305084745762712,
+          "latency_ms": 30.97169620346996,
+          "recovered_gold_occurrences": 0,
+          "lost_gold_occurrences": 0,
+          "new_candidate_gold_occurrences": 0,
+          "paired_recall": {
+            "difference": 0.0,
+            "lower_95": 0.0,
+            "upper_95": 0.0,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          },
+          "paired_complete_evidence": {
+            "difference": 0.0,
+            "lower_95": 0.0,
+            "upper_95": 0.0,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          }
+        }
+      },
+      "hybrid_shared": {
+        "all": {
+          "queries": 100,
+          "recall": 0.505,
+          "candidate_recall": 0.575,
+          "complete_evidence": 0.48,
+          "latency_ms": 23.900592719955966,
+          "recovered_gold_occurrences": 2,
+          "lost_gold_occurrences": 3,
+          "new_candidate_gold_occurrences": 0,
+          "paired_recall": {
+            "difference": -0.015,
+            "lower_95": -0.06,
+            "upper_95": 0.025,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          },
+          "paired_complete_evidence": {
+            "difference": -0.01,
+            "lower_95": -0.05,
+            "upper_95": 0.03,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          }
+        },
+        "fully_covered": {
+          "queries": 59,
+          "recall": 0.8389830508474576,
+          "candidate_recall": 0.9491525423728814,
+          "complete_evidence": 0.8135593220338984,
+          "latency_ms": 23.955985288104507,
+          "recovered_gold_occurrences": 2,
+          "lost_gold_occurrences": 3,
+          "new_candidate_gold_occurrences": 0,
+          "paired_recall": {
+            "difference": -0.025423728813559324,
+            "lower_95": -0.09322033898305085,
+            "upper_95": 0.0423728813559322,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          },
+          "paired_complete_evidence": {
+            "difference": -0.01694915254237288,
+            "lower_95": -0.0847457627118644,
+            "upper_95": 0.05084745762711865,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          }
+        }
+      },
+      "graph_shared": {
+        "all": {
+          "queries": 100,
+          "recall": 0.505,
+          "candidate_recall": 0.57,
+          "complete_evidence": 0.48,
+          "latency_ms": 27.502472169981047,
+          "recovered_gold_occurrences": 2,
+          "lost_gold_occurrences": 3,
+          "new_candidate_gold_occurrences": 1,
+          "paired_recall": {
+            "difference": -0.015,
+            "lower_95": -0.06,
+            "upper_95": 0.025,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          },
+          "paired_complete_evidence": {
+            "difference": -0.01,
+            "lower_95": -0.05,
+            "upper_95": 0.03,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          }
+        },
+        "fully_covered": {
+          "queries": 59,
+          "recall": 0.8389830508474576,
+          "candidate_recall": 0.940677966101695,
+          "complete_evidence": 0.8135593220338984,
+          "latency_ms": 27.48038320337169,
+          "recovered_gold_occurrences": 2,
+          "lost_gold_occurrences": 3,
+          "new_candidate_gold_occurrences": 1,
+          "paired_recall": {
+            "difference": -0.025423728813559324,
+            "lower_95": -0.09322033898305085,
+            "upper_95": 0.0423728813559322,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          },
+          "paired_complete_evidence": {
+            "difference": -0.01694915254237288,
+            "lower_95": -0.0847457627118644,
+            "upper_95": 0.05084745762711865,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          }
+        }
+      },
+      "graph_shared_path": {
+        "all": {
+          "queries": 100,
+          "recall": 0.505,
+          "candidate_recall": 0.57,
+          "complete_evidence": 0.48,
+          "latency_ms": 27.130344360016352,
+          "recovered_gold_occurrences": 2,
+          "lost_gold_occurrences": 3,
+          "new_candidate_gold_occurrences": 1,
+          "paired_recall": {
+            "difference": -0.015,
+            "lower_95": -0.06,
+            "upper_95": 0.025,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          },
+          "paired_complete_evidence": {
+            "difference": -0.01,
+            "lower_95": -0.05,
+            "upper_95": 0.03,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          }
+        },
+        "fully_covered": {
+          "queries": 59,
+          "recall": 0.8389830508474576,
+          "candidate_recall": 0.940677966101695,
+          "complete_evidence": 0.8135593220338984,
+          "latency_ms": 27.09379945763122,
+          "recovered_gold_occurrences": 2,
+          "lost_gold_occurrences": 3,
+          "new_candidate_gold_occurrences": 1,
+          "paired_recall": {
+            "difference": -0.025423728813559324,
+            "lower_95": -0.09322033898305085,
+            "upper_95": 0.0423728813559322,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          },
+          "paired_complete_evidence": {
+            "difference": -0.01694915254237288,
+            "lower_95": -0.0847457627118644,
+            "upper_95": 0.05084745762711865,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          }
+        }
+      },
+      "graph_legacy": {
+        "all": {
+          "queries": 100,
+          "recall": 0.525,
+          "candidate_recall": 0.57,
+          "complete_evidence": 0.5,
+          "latency_ms": 27.564554050009065,
+          "recovered_gold_occurrences": 1,
+          "lost_gold_occurrences": 0,
+          "new_candidate_gold_occurrences": 1,
+          "paired_recall": {
+            "difference": 0.005,
+            "lower_95": 0.0,
+            "upper_95": 0.015,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          },
+          "paired_complete_evidence": {
+            "difference": 0.01,
+            "lower_95": 0.0,
+            "upper_95": 0.03,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          }
+        },
+        "fully_covered": {
+          "queries": 59,
+          "recall": 0.8728813559322034,
+          "candidate_recall": 0.940677966101695,
+          "complete_evidence": 0.847457627118644,
+          "latency_ms": 27.920737508500647,
+          "recovered_gold_occurrences": 1,
+          "lost_gold_occurrences": 0,
+          "new_candidate_gold_occurrences": 1,
+          "paired_recall": {
+            "difference": 0.00847457627118644,
+            "lower_95": 0.0,
+            "upper_95": 0.025423728813559324,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          },
+          "paired_complete_evidence": {
+            "difference": 0.01694915254237288,
+            "lower_95": 0.0,
+            "upper_95": 0.05084745762711865,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          }
+        }
+      },
+      "shuffled_shared": {
+        "all": {
+          "queries": 100,
+          "recall": 0.495,
+          "candidate_recall": 0.54,
+          "complete_evidence": 0.47,
+          "latency_ms": 32.31069500001013,
+          "recovered_gold_occurrences": 2,
+          "lost_gold_occurrences": 4,
+          "new_candidate_gold_occurrences": 0,
+          "paired_recall": {
+            "difference": -0.025,
+            "lower_95": -0.07,
+            "upper_95": 0.015,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          },
+          "paired_complete_evidence": {
+            "difference": -0.02,
+            "lower_95": -0.07,
+            "upper_95": 0.03,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          }
+        },
+        "fully_covered": {
+          "queries": 59,
+          "recall": 0.8220338983050848,
+          "candidate_recall": 0.8983050847457628,
+          "complete_evidence": 0.7966101694915254,
+          "latency_ms": 32.3162494576197,
+          "recovered_gold_occurrences": 2,
+          "lost_gold_occurrences": 4,
+          "new_candidate_gold_occurrences": 0,
+          "paired_recall": {
+            "difference": -0.0423728813559322,
+            "lower_95": -0.11864406779661017,
+            "upper_95": 0.03389830508474576,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          },
+          "paired_complete_evidence": {
+            "difference": -0.03389830508474576,
+            "lower_95": -0.11864406779661017,
+            "upper_95": 0.05084745762711865,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          }
+        }
+      }
+    },
+    "paired_controls": {
+      "hybrid_larger_minus_hybrid": {
+        "all": {
+          "queries": 100,
+          "recall": {
+            "difference": 0.0,
+            "lower_95": 0.0,
+            "upper_95": 0.0,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          },
+          "candidate_recall": {
+            "difference": 0.0,
+            "lower_95": 0.0,
+            "upper_95": 0.0,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          },
+          "complete_evidence": {
+            "difference": 0.0,
+            "lower_95": 0.0,
+            "upper_95": 0.0,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          }
+        },
+        "fully_covered": {
+          "queries": 59,
+          "recall": {
+            "difference": 0.0,
+            "lower_95": 0.0,
+            "upper_95": 0.0,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          },
+          "candidate_recall": {
+            "difference": 0.0,
+            "lower_95": 0.0,
+            "upper_95": 0.0,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          },
+          "complete_evidence": {
+            "difference": 0.0,
+            "lower_95": 0.0,
+            "upper_95": 0.0,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          }
+        }
+      },
+      "hybrid_shared_minus_hybrid": {
+        "all": {
+          "queries": 100,
+          "recall": {
+            "difference": -0.015,
+            "lower_95": -0.06,
+            "upper_95": 0.025,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          },
+          "candidate_recall": {
+            "difference": 0.0,
+            "lower_95": 0.0,
+            "upper_95": 0.0,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          },
+          "complete_evidence": {
+            "difference": -0.01,
+            "lower_95": -0.05,
+            "upper_95": 0.03,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          }
+        },
+        "fully_covered": {
+          "queries": 59,
+          "recall": {
+            "difference": -0.025423728813559324,
+            "lower_95": -0.09322033898305085,
+            "upper_95": 0.0423728813559322,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          },
+          "candidate_recall": {
+            "difference": 0.0,
+            "lower_95": 0.0,
+            "upper_95": 0.0,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          },
+          "complete_evidence": {
+            "difference": -0.01694915254237288,
+            "lower_95": -0.0847457627118644,
+            "upper_95": 0.05084745762711865,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          }
+        }
+      },
+      "graph_shared_minus_hybrid_shared": {
+        "all": {
+          "queries": 100,
+          "recall": {
+            "difference": 0.0,
+            "lower_95": 0.0,
+            "upper_95": 0.0,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          },
+          "candidate_recall": {
+            "difference": -0.005,
+            "lower_95": -0.03,
+            "upper_95": 0.015,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          },
+          "complete_evidence": {
+            "difference": 0.0,
+            "lower_95": 0.0,
+            "upper_95": 0.0,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          }
+        },
+        "fully_covered": {
+          "queries": 59,
+          "recall": {
+            "difference": 0.0,
+            "lower_95": 0.0,
+            "upper_95": 0.0,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          },
+          "candidate_recall": {
+            "difference": -0.00847457627118644,
+            "lower_95": -0.05084745762711865,
+            "upper_95": 0.025423728813559324,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          },
+          "complete_evidence": {
+            "difference": 0.0,
+            "lower_95": 0.0,
+            "upper_95": 0.0,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          }
+        }
+      },
+      "graph_shared_minus_shuffled_shared": {
+        "all": {
+          "queries": 100,
+          "recall": {
+            "difference": 0.01,
+            "lower_95": 0.0,
+            "upper_95": 0.03,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          },
+          "candidate_recall": {
+            "difference": 0.03,
+            "lower_95": 0.005,
+            "upper_95": 0.065,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          },
+          "complete_evidence": {
+            "difference": 0.01,
+            "lower_95": 0.0,
+            "upper_95": 0.03,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          }
+        },
+        "fully_covered": {
+          "queries": 59,
+          "recall": {
+            "difference": 0.01694915254237288,
+            "lower_95": 0.0,
+            "upper_95": 0.05084745762711865,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          },
+          "candidate_recall": {
+            "difference": 0.0423728813559322,
+            "lower_95": 0.0,
+            "upper_95": 0.09322033898305085,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          },
+          "complete_evidence": {
+            "difference": 0.01694915254237288,
+            "lower_95": 0.0,
+            "upper_95": 0.05084745762711865,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          }
+        }
+      },
+      "graph_shared_path_minus_graph_shared": {
+        "all": {
+          "queries": 100,
+          "recall": {
+            "difference": 0.0,
+            "lower_95": 0.0,
+            "upper_95": 0.0,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          },
+          "candidate_recall": {
+            "difference": 0.0,
+            "lower_95": 0.0,
+            "upper_95": 0.0,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          },
+          "complete_evidence": {
+            "difference": 0.0,
+            "lower_95": 0.0,
+            "upper_95": 0.0,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          }
+        },
+        "fully_covered": {
+          "queries": 59,
+          "recall": {
+            "difference": 0.0,
+            "lower_95": 0.0,
+            "upper_95": 0.0,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          },
+          "candidate_recall": {
+            "difference": 0.0,
+            "lower_95": 0.0,
+            "upper_95": 0.0,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          },
+          "complete_evidence": {
+            "difference": 0.0,
+            "lower_95": 0.0,
+            "upper_95": 0.0,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          }
+        }
+      },
+      "graph_shared_minus_graph_legacy": {
+        "all": {
+          "queries": 100,
+          "recall": {
+            "difference": -0.02,
+            "lower_95": -0.06,
+            "upper_95": 0.02,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          },
+          "candidate_recall": {
+            "difference": 0.0,
+            "lower_95": 0.0,
+            "upper_95": 0.0,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          },
+          "complete_evidence": {
+            "difference": -0.02,
+            "lower_95": -0.06,
+            "upper_95": 0.02,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          }
+        },
+        "fully_covered": {
+          "queries": 59,
+          "recall": {
+            "difference": -0.03389830508474576,
+            "lower_95": -0.1016949152542373,
+            "upper_95": 0.03389830508474576,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          },
+          "candidate_recall": {
+            "difference": 0.0,
+            "lower_95": 0.0,
+            "upper_95": 0.0,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          },
+          "complete_evidence": {
+            "difference": -0.03389830508474576,
+            "lower_95": -0.1016949152542373,
+            "upper_95": 0.03389830508474576,
+            "bootstrap_repetitions": 2000,
+            "seed": 20261113
+          }
+        }
+      }
+    },
+    "actual_budgets_and_latency": {
+      "hybrid": {
+        "retrieval_ms": {
+          "mean": 24.358859309986656,
+          "median": 24.13059250011429,
+          "p95_nearest_rank": 29.61329299978388,
+          "min": 17.300977999639144,
+          "max": 31.800769999790646
+        },
+        "embedding_ms": {
+          "mean": 79.4648083400034,
+          "median": 76.80083449986341,
+          "p95_nearest_rank": 87.18695800007481,
+          "min": 72.91931500003557,
+          "max": 235.49352999998518
+        },
+        "confirmed_articles": {
+          "mean": 47.72,
+          "median": 50.0,
+          "p95_nearest_rank": 57,
+          "min": 19,
+          "max": 58
+        },
+        "hybrid_pool_unique_articles": {
+          "mean": 47.72,
+          "median": 50.0,
+          "p95_nearest_rank": 57,
+          "min": 19,
+          "max": 58
+        },
+        "context_chars": {
+          "mean": 12526.32,
+          "median": 12854.5,
+          "p95_nearest_rank": 15668,
+          "min": 5082,
+          "max": 16060
+        }
+      },
+      "hybrid_larger": {
+        "retrieval_ms": {
+          "mean": 30.810862830062433,
+          "median": 30.847378500084233,
+          "p95_nearest_rank": 34.831459000088216,
+          "min": 24.423832000138646,
+          "max": 40.06626399996094
+        },
+        "embedding_ms": {
+          "mean": 79.4648083400034,
+          "median": 76.80083449986341,
+          "p95_nearest_rank": 87.18695800007481,
+          "min": 72.91931500003557,
+          "max": 235.49352999998518
+        },
+        "confirmed_articles": {
+          "mean": 93.52,
+          "median": 97.0,
+          "p95_nearest_rank": 110,
+          "min": 40,
+          "max": 115
+        },
+        "hybrid_pool_unique_articles": {
+          "mean": 93.52,
+          "median": 97.0,
+          "p95_nearest_rank": 110,
+          "min": 40,
+          "max": 115
+        },
+        "context_chars": {
+          "mean": 12558.24,
+          "median": 12876.5,
+          "p95_nearest_rank": 15752,
+          "min": 5082,
+          "max": 16386
+        }
+      },
+      "hybrid_shared": {
+        "retrieval_ms": {
+          "mean": 23.900592719955966,
+          "median": 23.87679299977208,
+          "p95_nearest_rank": 28.518580999843834,
+          "min": 16.85840799973448,
+          "max": 31.06166099951224
+        },
+        "embedding_ms": {
+          "mean": 79.4648083400034,
+          "median": 76.80083449986341,
+          "p95_nearest_rank": 87.18695800007481,
+          "min": 72.91931500003557,
+          "max": 235.49352999998518
+        },
+        "confirmed_articles": {
+          "mean": 47.72,
+          "median": 50.0,
+          "p95_nearest_rank": 57,
+          "min": 19,
+          "max": 58
+        },
+        "hybrid_pool_unique_articles": {
+          "mean": 47.72,
+          "median": 50.0,
+          "p95_nearest_rank": 57,
+          "min": 19,
+          "max": 58
+        },
+        "context_chars": {
+          "mean": 12930.33,
+          "median": 13370.5,
+          "p95_nearest_rank": 15935,
+          "min": 7194,
+          "max": 16826
+        }
+      },
+      "graph_shared": {
+        "retrieval_ms": {
+          "mean": 27.502472169981047,
+          "median": 27.148865999834015,
+          "p95_nearest_rank": 34.880959000020084,
+          "min": 16.714613999738503,
+          "max": 44.48884500015993
+        },
+        "embedding_ms": {
+          "mean": 79.4648083400034,
+          "median": 76.80083449986341,
+          "p95_nearest_rank": 87.18695800007481,
+          "min": 72.91931500003557,
+          "max": 235.49352999998518
+        },
+        "confirmed_articles": {
+          "mean": 50.93,
+          "median": 52.0,
+          "p95_nearest_rank": 60,
+          "min": 24,
+          "max": 60
+        },
+        "hybrid_pool_unique_articles": {
+          "mean": 47.72,
+          "median": 50.0,
+          "p95_nearest_rank": 57,
+          "min": 19,
+          "max": 58
+        },
+        "context_chars": {
+          "mean": 12929.16,
+          "median": 13370.5,
+          "p95_nearest_rank": 15935,
+          "min": 7194,
+          "max": 16826
+        }
+      },
+      "graph_shared_path": {
+        "retrieval_ms": {
+          "mean": 27.130344360016352,
+          "median": 27.017555999691467,
+          "p95_nearest_rank": 33.412807999866345,
+          "min": 17.43706800016298,
+          "max": 40.23551500040412
+        },
+        "embedding_ms": {
+          "mean": 79.4648083400034,
+          "median": 76.80083449986341,
+          "p95_nearest_rank": 87.18695800007481,
+          "min": 72.91931500003557,
+          "max": 235.49352999998518
+        },
+        "confirmed_articles": {
+          "mean": 50.93,
+          "median": 52.0,
+          "p95_nearest_rank": 60,
+          "min": 24,
+          "max": 60
+        },
+        "hybrid_pool_unique_articles": {
+          "mean": 47.72,
+          "median": 50.0,
+          "p95_nearest_rank": 57,
+          "min": 19,
+          "max": 58
+        },
+        "context_chars": {
+          "mean": 12873.34,
+          "median": 13159.5,
+          "p95_nearest_rank": 15878,
+          "min": 7602,
+          "max": 16737
+        }
+      },
+      "graph_legacy": {
+        "retrieval_ms": {
+          "mean": 27.564554050009065,
+          "median": 26.951470000085465,
+          "p95_nearest_rank": 34.79361900008371,
+          "min": 17.49912300010692,
+          "max": 85.99159499999587
+        },
+        "embedding_ms": {
+          "mean": 79.4648083400034,
+          "median": 76.80083449986341,
+          "p95_nearest_rank": 87.18695800007481,
+          "min": 72.91931500003557,
+          "max": 235.49352999998518
+        },
+        "confirmed_articles": {
+          "mean": 50.93,
+          "median": 52.0,
+          "p95_nearest_rank": 60,
+          "min": 24,
+          "max": 60
+        },
+        "hybrid_pool_unique_articles": {
+          "mean": 47.72,
+          "median": 50.0,
+          "p95_nearest_rank": 57,
+          "min": 19,
+          "max": 58
+        },
+        "context_chars": {
+          "mean": 12535.96,
+          "median": 12854.5,
+          "p95_nearest_rank": 15668,
+          "min": 5082,
+          "max": 16060
+        }
+      },
+      "shuffled_shared": {
+        "retrieval_ms": {
+          "mean": 32.31069500001013,
+          "median": 29.985088500097845,
+          "p95_nearest_rank": 45.97457799991389,
+          "min": 17.770242000096914,
+          "max": 59.014555000430846
+        },
+        "embedding_ms": {
+          "mean": 79.4648083400034,
+          "median": 76.80083449986341,
+          "p95_nearest_rank": 87.18695800007481,
+          "min": 72.91931500003557,
+          "max": 235.49352999998518
+        },
+        "confirmed_articles": {
+          "mean": 54.21,
+          "median": 57.5,
+          "p95_nearest_rank": 60,
+          "min": 30,
+          "max": 60
+        },
+        "hybrid_pool_unique_articles": {
+          "mean": 47.72,
+          "median": 50.0,
+          "p95_nearest_rank": 57,
+          "min": 19,
+          "max": 58
+        },
+        "context_chars": {
+          "mean": 12919.21,
+          "median": 13370.5,
+          "p95_nearest_rank": 15935,
+          "min": 7194,
+          "max": 16826
+        }
+      }
+    },
+    "reachability": {
+      "gold_occurrences_reachable_beyond_hybrid_candidates": 1,
+      "gold_occurrences_added_by_graph": 1
+    },
+    "stages": [
+      {
+        "qid": "4852",
+        "question": "Sử dụng bao bì đựng chất thải nguy hại không đáp ứng yêu cầu kỹ thuật có bị xử phạt không?",
+        "gold": [
+          "18207",
+          "18230"
+        ],
+        "mapped": [
+          "18207",
+          "18230"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "18230"
+        ],
+        "one_hop_gold": [
+          "18230"
+        ],
+        "two_hop_gold": [
+          "18230"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "18230"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "18230": 1,
+            "18207": null
+          },
+          "hybrid_larger": {
+            "18230": 1,
+            "18207": null
+          },
+          "hybrid_shared": {
+            "18230": 1,
+            "18207": null
+          },
+          "graph_shared": {
+            "18230": 1,
+            "18207": null
+          },
+          "graph_shared_path": {
+            "18230": 1,
+            "18207": null
+          },
+          "graph_legacy": {
+            "18230": 1,
+            "18207": null
+          },
+          "shuffled_shared": {
+            "18230": 1,
+            "18207": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "13873",
+        "question": "Quy hoạch chi tiết xây dựng cảng cạn được quy định thế nào?",
+        "gold": [
+          "18820"
+        ],
+        "mapped": [
+          "18820"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "18820"
+        ],
+        "one_hop_gold": [
+          "18820"
+        ],
+        "two_hop_gold": [
+          "18820"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "18820"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "18820": 1
+          },
+          "hybrid_larger": {
+            "18820": 1
+          },
+          "hybrid_shared": {
+            "18820": 1
+          },
+          "graph_shared": {
+            "18820": 1
+          },
+          "graph_shared_path": {
+            "18820": 1
+          },
+          "graph_legacy": {
+            "18820": 1
+          },
+          "shuffled_shared": {
+            "18820": 1
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "15823",
+        "question": "Vị trí và chức năng của Ban Quản lý Lăng Chủ tịch Hồ Chí Minh?",
+        "gold": [
+          "46226"
+        ],
+        "mapped": [
+          "46226"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "46226"
+        ],
+        "one_hop_gold": [
+          "46226"
+        ],
+        "two_hop_gold": [
+          "46226"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "46226"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "46226": 1
+          },
+          "hybrid_larger": {
+            "46226": 1
+          },
+          "hybrid_shared": {
+            "46226": 1
+          },
+          "graph_shared": {
+            "46226": 1
+          },
+          "graph_shared_path": {
+            "46226": 1
+          },
+          "graph_legacy": {
+            "46226": 1
+          },
+          "shuffled_shared": {
+            "46226": 1
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "13794",
+        "question": "Trách nhiệm của người đến thăm gặp và người bị tạm giữ, tạm giam gồm những gì?",
+        "gold": [
+          "39300"
+        ],
+        "mapped": [],
+        "unmapped": {
+          "39300": {
+            "law_id": "34/2017/TT-BCA",
+            "reason": "ambiguous",
+            "matches": [
+              "151642:article:8",
+              "vilegal:context_10759:article:8"
+            ]
+          }
+        },
+        "hybrid_candidate_gold": [],
+        "one_hop_gold": [],
+        "two_hop_gold": [],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "39300": null
+          },
+          "hybrid_larger": {
+            "39300": null
+          },
+          "hybrid_shared": {
+            "39300": null
+          },
+          "graph_shared": {
+            "39300": null
+          },
+          "graph_shared_path": {
+            "39300": null
+          },
+          "graph_legacy": {
+            "39300": null
+          },
+          "shuffled_shared": {
+            "39300": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "7105",
+        "question": "Danh sách hội đồng thẩm định báo cáo đánh giá tác động môi trường có cần phải công khai không?",
+        "gold": [
+          "31792"
+        ],
+        "mapped": [],
+        "unmapped": {
+          "31792": {
+            "law_id": "02/2022/TT-BTNMT",
+            "reason": "no_exact_article_match",
+            "matches": []
+          }
+        },
+        "hybrid_candidate_gold": [],
+        "one_hop_gold": [],
+        "two_hop_gold": [],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "31792": null
+          },
+          "hybrid_larger": {
+            "31792": null
+          },
+          "hybrid_shared": {
+            "31792": null
+          },
+          "graph_shared": {
+            "31792": null
+          },
+          "graph_shared_path": {
+            "31792": null
+          },
+          "graph_legacy": {
+            "31792": null
+          },
+          "shuffled_shared": {
+            "31792": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "737",
+        "question": "Bị tai nạn thì có được thôi thực hiện nghĩa vụ tham gia Dân quân tự vệ trước thời hạn không?",
+        "gold": [
+          "4956"
+        ],
+        "mapped": [],
+        "unmapped": {
+          "4956": {
+            "law_id": "48/2019/QH14",
+            "reason": "no_exact_article_match",
+            "matches": []
+          }
+        },
+        "hybrid_candidate_gold": [],
+        "one_hop_gold": [],
+        "two_hop_gold": [],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "4956": null
+          },
+          "hybrid_larger": {
+            "4956": null
+          },
+          "hybrid_shared": {
+            "4956": null
+          },
+          "graph_shared": {
+            "4956": null
+          },
+          "graph_shared_path": {
+            "4956": null
+          },
+          "graph_legacy": {
+            "4956": null
+          },
+          "shuffled_shared": {
+            "4956": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "6090",
+        "question": "Tự ý nửa chừng chấm dứt việc phạm tội được quy định như thế nào trong Bộ Luật Hình sự 2015?",
+        "gold": [
+          "56460"
+        ],
+        "mapped": [
+          "56460"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "56460"
+        ],
+        "one_hop_gold": [
+          "56460"
+        ],
+        "two_hop_gold": [
+          "56460"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "56460"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "56460": 1
+          },
+          "hybrid_larger": {
+            "56460": 1
+          },
+          "hybrid_shared": {
+            "56460": 1
+          },
+          "graph_shared": {
+            "56460": 1
+          },
+          "graph_shared_path": {
+            "56460": 1
+          },
+          "graph_legacy": {
+            "56460": 1
+          },
+          "shuffled_shared": {
+            "56460": 1
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "4190",
+        "question": "Mã số các ngạch công chức ngành nông nghiệp và phát triển nông thôn được quy định thế nào?",
+        "gold": [
+          "28492"
+        ],
+        "mapped": [],
+        "unmapped": {
+          "28492": {
+            "law_id": "08/2022/TT-BNNPTNT",
+            "reason": "no_exact_article_match",
+            "matches": []
+          }
+        },
+        "hybrid_candidate_gold": [],
+        "one_hop_gold": [],
+        "two_hop_gold": [],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "28492": null
+          },
+          "hybrid_larger": {
+            "28492": null
+          },
+          "hybrid_shared": {
+            "28492": null
+          },
+          "graph_shared": {
+            "28492": null
+          },
+          "graph_shared_path": {
+            "28492": null
+          },
+          "graph_legacy": {
+            "28492": null
+          },
+          "shuffled_shared": {
+            "28492": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "506",
+        "question": "Có thể dùng hợp đồng mua bán nhà để chứng minh chỗ ở khi đăng ký cư trú không?",
+        "gold": [
+          "3224"
+        ],
+        "mapped": [
+          "3224"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "3224"
+        ],
+        "one_hop_gold": [
+          "3224"
+        ],
+        "two_hop_gold": [
+          "3224"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "3224"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "3224": 1
+          },
+          "hybrid_larger": {
+            "3224": 1
+          },
+          "hybrid_shared": {
+            "3224": 1
+          },
+          "graph_shared": {
+            "3224": 1
+          },
+          "graph_shared_path": {
+            "3224": 1
+          },
+          "graph_legacy": {
+            "3224": 1
+          },
+          "shuffled_shared": {
+            "3224": 1
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "8653",
+        "question": "Để phòng, chống rửa tiền thì thông tin nhận biết khách hàng cần những gì?",
+        "gold": [
+          "57757"
+        ],
+        "mapped": [
+          "57757"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "57757"
+        ],
+        "one_hop_gold": [],
+        "two_hop_gold": [],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "57757"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "57757": 6
+          },
+          "hybrid_larger": {
+            "57757": 6
+          },
+          "hybrid_shared": {
+            "57757": null
+          },
+          "graph_shared": {
+            "57757": null
+          },
+          "graph_shared_path": {
+            "57757": null
+          },
+          "graph_legacy": {
+            "57757": 6
+          },
+          "shuffled_shared": {
+            "57757": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "5486",
+        "question": "Cơ quan có thẩm quyền kiểm tra chất lượng cơ sở lưu trú du lịch?",
+        "gold": [
+          "8208"
+        ],
+        "mapped": [
+          "8208"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "8208"
+        ],
+        "one_hop_gold": [
+          "8208"
+        ],
+        "two_hop_gold": [
+          "8208"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "8208"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "8208": 1
+          },
+          "hybrid_larger": {
+            "8208": 1
+          },
+          "hybrid_shared": {
+            "8208": 1
+          },
+          "graph_shared": {
+            "8208": 1
+          },
+          "graph_shared_path": {
+            "8208": 1
+          },
+          "graph_legacy": {
+            "8208": 1
+          },
+          "shuffled_shared": {
+            "8208": 1
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "8193",
+        "question": "Cha, mẹ của chiến sĩ công an có được Công an nhân dân mua bảo hiểm y tế?",
+        "gold": [
+          "52164"
+        ],
+        "mapped": [
+          "52164"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "52164"
+        ],
+        "one_hop_gold": [
+          "52164"
+        ],
+        "two_hop_gold": [
+          "52164"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "52164"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "52164": 1
+          },
+          "hybrid_larger": {
+            "52164": 1
+          },
+          "hybrid_shared": {
+            "52164": 1
+          },
+          "graph_shared": {
+            "52164": 1
+          },
+          "graph_shared_path": {
+            "52164": 1
+          },
+          "graph_legacy": {
+            "52164": 1
+          },
+          "shuffled_shared": {
+            "52164": 1
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "13056",
+        "question": "Những nguyên tắc cần phải tuân thủ khi tổ chức đám cưới là gì?",
+        "gold": [
+          "57799"
+        ],
+        "mapped": [],
+        "unmapped": {
+          "57799": {
+            "law_id": "04/2011/TT-BVHTTDL",
+            "reason": "no_exact_article_match",
+            "matches": []
+          }
+        },
+        "hybrid_candidate_gold": [],
+        "one_hop_gold": [],
+        "two_hop_gold": [],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "57799": null
+          },
+          "hybrid_larger": {
+            "57799": null
+          },
+          "hybrid_shared": {
+            "57799": null
+          },
+          "graph_shared": {
+            "57799": null
+          },
+          "graph_shared_path": {
+            "57799": null
+          },
+          "graph_legacy": {
+            "57799": null
+          },
+          "shuffled_shared": {
+            "57799": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "8015",
+        "question": "Thừa phát lại vẫn chưa đủ số năm kinh nghiệm nhưng vẫn hướng dẫn tập sự bị phạt bao nhiêu tiền?",
+        "gold": [
+          "3647"
+        ],
+        "mapped": [
+          "3647"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "3647"
+        ],
+        "one_hop_gold": [
+          "3647"
+        ],
+        "two_hop_gold": [
+          "3647"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "3647"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "3647": 2
+          },
+          "hybrid_larger": {
+            "3647": 2
+          },
+          "hybrid_shared": {
+            "3647": 2
+          },
+          "graph_shared": {
+            "3647": 2
+          },
+          "graph_shared_path": {
+            "3647": 3
+          },
+          "graph_legacy": {
+            "3647": 2
+          },
+          "shuffled_shared": {
+            "3647": 2
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "10419",
+        "question": "Các trường hợp nào phải có giấy phép nhập khẩu trang thiết bị y tế?",
+        "gold": [
+          "15562",
+          "57385",
+          "58781"
+        ],
+        "mapped": [],
+        "unmapped": {
+          "15562": {
+            "law_id": "07/2023/NĐ-CP",
+            "reason": "no_exact_article_match",
+            "matches": []
+          },
+          "57385": {
+            "law_id": "98/2021/NĐ-CP",
+            "reason": "no_exact_article_match",
+            "matches": []
+          },
+          "58781": {
+            "law_id": "96/2023/NĐ-CP",
+            "reason": "no_exact_article_match",
+            "matches": []
+          }
+        },
+        "hybrid_candidate_gold": [],
+        "one_hop_gold": [],
+        "two_hop_gold": [],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "15562": null,
+            "58781": null,
+            "57385": null
+          },
+          "hybrid_larger": {
+            "15562": null,
+            "58781": null,
+            "57385": null
+          },
+          "hybrid_shared": {
+            "15562": null,
+            "58781": null,
+            "57385": null
+          },
+          "graph_shared": {
+            "15562": null,
+            "58781": null,
+            "57385": null
+          },
+          "graph_shared_path": {
+            "15562": null,
+            "58781": null,
+            "57385": null
+          },
+          "graph_legacy": {
+            "15562": null,
+            "58781": null,
+            "57385": null
+          },
+          "shuffled_shared": {
+            "15562": null,
+            "58781": null,
+            "57385": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "16717",
+        "question": "Điều kiện bảo đảm cho công tác vận chuyển hàng đặc biệt được quy định như thế nào?",
+        "gold": [
+          "49695"
+        ],
+        "mapped": [
+          "49695"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "49695"
+        ],
+        "one_hop_gold": [
+          "49695"
+        ],
+        "two_hop_gold": [
+          "49695"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "49695"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "49695": 1
+          },
+          "hybrid_larger": {
+            "49695": 1
+          },
+          "hybrid_shared": {
+            "49695": 3
+          },
+          "graph_shared": {
+            "49695": 3
+          },
+          "graph_shared_path": {
+            "49695": 3
+          },
+          "graph_legacy": {
+            "49695": 1
+          },
+          "shuffled_shared": {
+            "49695": 3
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "2519",
+        "question": "Giấy chứng nhận kiểm định xe cơ giới hết hiệu lực trong trường hợp nào?",
+        "gold": [
+          "13032"
+        ],
+        "mapped": [],
+        "unmapped": {
+          "13032": {
+            "law_id": "16/2021/TT-BGTVT",
+            "reason": "no_exact_article_match",
+            "matches": []
+          }
+        },
+        "hybrid_candidate_gold": [],
+        "one_hop_gold": [],
+        "two_hop_gold": [],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "13032": null
+          },
+          "hybrid_larger": {
+            "13032": null
+          },
+          "hybrid_shared": {
+            "13032": null
+          },
+          "graph_shared": {
+            "13032": null
+          },
+          "graph_shared_path": {
+            "13032": null
+          },
+          "graph_legacy": {
+            "13032": null
+          },
+          "shuffled_shared": {
+            "13032": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "15874",
+        "question": "Nhiệm vụ và quyền hạn của Báo Văn hóa được quy định như thế nào?",
+        "gold": [
+          "46700"
+        ],
+        "mapped": [],
+        "unmapped": {
+          "46700": {
+            "law_id": "759/QĐ-BVHTTDL",
+            "reason": "no_exact_article_match",
+            "matches": []
+          }
+        },
+        "hybrid_candidate_gold": [],
+        "one_hop_gold": [],
+        "two_hop_gold": [],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "46700": null
+          },
+          "hybrid_larger": {
+            "46700": null
+          },
+          "hybrid_shared": {
+            "46700": null
+          },
+          "graph_shared": {
+            "46700": null
+          },
+          "graph_shared_path": {
+            "46700": null
+          },
+          "graph_legacy": {
+            "46700": null
+          },
+          "shuffled_shared": {
+            "46700": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "15872",
+        "question": "Vị trí và chức năng của Cục Hợp tác quốc tế thuộc Bộ Văn hóa - Thể thao và Du lịch là gì?",
+        "gold": [
+          "46694"
+        ],
+        "mapped": [],
+        "unmapped": {
+          "46694": {
+            "law_id": "763/QĐ-BVHTTDL",
+            "reason": "no_exact_article_match",
+            "matches": []
+          }
+        },
+        "hybrid_candidate_gold": [],
+        "one_hop_gold": [],
+        "two_hop_gold": [],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "46694": null
+          },
+          "hybrid_larger": {
+            "46694": null
+          },
+          "hybrid_shared": {
+            "46694": null
+          },
+          "graph_shared": {
+            "46694": null
+          },
+          "graph_shared_path": {
+            "46694": null
+          },
+          "graph_legacy": {
+            "46694": null
+          },
+          "shuffled_shared": {
+            "46694": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "6034",
+        "question": "Các bên tham gia hợp đồng ủy thác mua bán hàng hóa có bắt buộc phải là thương nhân không?",
+        "gold": [
+          "7304"
+        ],
+        "mapped": [
+          "7304"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "7304"
+        ],
+        "one_hop_gold": [],
+        "two_hop_gold": [],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "7304"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "7304": null
+          },
+          "hybrid_larger": {
+            "7304": null
+          },
+          "hybrid_shared": {
+            "7304": null
+          },
+          "graph_shared": {
+            "7304": null
+          },
+          "graph_shared_path": {
+            "7304": null
+          },
+          "graph_legacy": {
+            "7304": null
+          },
+          "shuffled_shared": {
+            "7304": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "6247",
+        "question": "Hình phạt áp dụng đối với tội huấn luyện lính đánh thuê được quy định như thế nào theo Bộ luật Hình sự 2015?",
+        "gold": [
+          "56868"
+        ],
+        "mapped": [
+          "56868"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "56868"
+        ],
+        "one_hop_gold": [
+          "56868"
+        ],
+        "two_hop_gold": [
+          "56868"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "56868"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "56868": 1
+          },
+          "hybrid_larger": {
+            "56868": 1
+          },
+          "hybrid_shared": {
+            "56868": 1
+          },
+          "graph_shared": {
+            "56868": 1
+          },
+          "graph_shared_path": {
+            "56868": 1
+          },
+          "graph_legacy": {
+            "56868": 1
+          },
+          "shuffled_shared": {
+            "56868": 1
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "12024",
+        "question": "Chính sách trợ cấp tham quan, học tập, bồi dưỡng chuyên môn, nghiệp vụ đối với nhà giáo, cán bộ quản lý giáo dục công tác ở trường chuyên biệt được quy định như thế nào?",
+        "gold": [
+          "28239"
+        ],
+        "mapped": [],
+        "unmapped": {
+          "28239": {
+            "law_id": "61/2006/NĐ-CP",
+            "reason": "no_exact_article_match",
+            "matches": []
+          }
+        },
+        "hybrid_candidate_gold": [],
+        "one_hop_gold": [],
+        "two_hop_gold": [],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "28239": null
+          },
+          "hybrid_larger": {
+            "28239": null
+          },
+          "hybrid_shared": {
+            "28239": null
+          },
+          "graph_shared": {
+            "28239": null
+          },
+          "graph_shared_path": {
+            "28239": null
+          },
+          "graph_legacy": {
+            "28239": null
+          },
+          "shuffled_shared": {
+            "28239": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "11307",
+        "question": "Ban tư vấn cho tôi hỏi mức phí đánh giá lần đầu để cấp giấy chứng nhận quốc tế về an ninh tàu biển là bao nhiêu?",
+        "gold": [
+          "22856"
+        ],
+        "mapped": [
+          "22856"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "22856"
+        ],
+        "one_hop_gold": [
+          "22856"
+        ],
+        "two_hop_gold": [
+          "22856"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "22856"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "22856": 1
+          },
+          "hybrid_larger": {
+            "22856": 1
+          },
+          "hybrid_shared": {
+            "22856": 1
+          },
+          "graph_shared": {
+            "22856": 1
+          },
+          "graph_shared_path": {
+            "22856": 1
+          },
+          "graph_legacy": {
+            "22856": 1
+          },
+          "shuffled_shared": {
+            "22856": 1
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "14363",
+        "question": "Hồ sơ giải thể trường trung học theo yêu cầu của tổ chức, cá nhân đề nghị thành lập trường được quy định như thế nào?",
+        "gold": [
+          "25299"
+        ],
+        "mapped": [],
+        "unmapped": {
+          "25299": {
+            "law_id": "46/2017/NĐ-CP",
+            "reason": "no_exact_article_match",
+            "matches": []
+          }
+        },
+        "hybrid_candidate_gold": [],
+        "one_hop_gold": [],
+        "two_hop_gold": [],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "25299": null
+          },
+          "hybrid_larger": {
+            "25299": null
+          },
+          "hybrid_shared": {
+            "25299": null
+          },
+          "graph_shared": {
+            "25299": null
+          },
+          "graph_shared_path": {
+            "25299": null
+          },
+          "graph_legacy": {
+            "25299": null
+          },
+          "shuffled_shared": {
+            "25299": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "6985",
+        "question": "Mua đất tại Bình Thuận, thường trú ở TP. Hồ Chí Minh thì công chứng hợp đồng mua bán tại đâu?",
+        "gold": [
+          "55724"
+        ],
+        "mapped": [
+          "55724"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "55724"
+        ],
+        "one_hop_gold": [
+          "55724"
+        ],
+        "two_hop_gold": [
+          "55724"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "55724"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "55724": 4
+          },
+          "hybrid_larger": {
+            "55724": 3
+          },
+          "hybrid_shared": {
+            "55724": null
+          },
+          "graph_shared": {
+            "55724": null
+          },
+          "graph_shared_path": {
+            "55724": null
+          },
+          "graph_legacy": {
+            "55724": 4
+          },
+          "shuffled_shared": {
+            "55724": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "5753",
+        "question": "Doanh nghiệp bán hàng đa cấp phải giao đầy đủ hàng cho người tham gia bán hàng đa cấp trong thời hạn bao nhiêu ngày?",
+        "gold": [
+          "36257"
+        ],
+        "mapped": [
+          "36257"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "36257"
+        ],
+        "one_hop_gold": [
+          "36257"
+        ],
+        "two_hop_gold": [
+          "36257"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "36257"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "36257": 1
+          },
+          "hybrid_larger": {
+            "36257": 1
+          },
+          "hybrid_shared": {
+            "36257": 1
+          },
+          "graph_shared": {
+            "36257": 1
+          },
+          "graph_shared_path": {
+            "36257": 1
+          },
+          "graph_legacy": {
+            "36257": 1
+          },
+          "shuffled_shared": {
+            "36257": 1
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "12615",
+        "question": "Việc xác định độ tuổi của đối tượng bị áp dụng biện pháp giáo dục tại xã được thực hiện như thế nào?",
+        "gold": [
+          "32030"
+        ],
+        "mapped": [
+          "32030"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "32030"
+        ],
+        "one_hop_gold": [
+          "32030"
+        ],
+        "two_hop_gold": [
+          "32030"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "32030"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "32030": 1
+          },
+          "hybrid_larger": {
+            "32030": 1
+          },
+          "hybrid_shared": {
+            "32030": 1
+          },
+          "graph_shared": {
+            "32030": 1
+          },
+          "graph_shared_path": {
+            "32030": 1
+          },
+          "graph_legacy": {
+            "32030": 1
+          },
+          "shuffled_shared": {
+            "32030": 1
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "378",
+        "question": "Cơ quan nào có thẩm quyền giải quyết việc đăng ký thay đổi họ cho con?",
+        "gold": [
+          "3474"
+        ],
+        "mapped": [
+          "3474"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "3474"
+        ],
+        "one_hop_gold": [],
+        "two_hop_gold": [],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "3474"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "3474": null
+          },
+          "hybrid_larger": {
+            "3474": null
+          },
+          "hybrid_shared": {
+            "3474": null
+          },
+          "graph_shared": {
+            "3474": null
+          },
+          "graph_shared_path": {
+            "3474": null
+          },
+          "graph_legacy": {
+            "3474": null
+          },
+          "shuffled_shared": {
+            "3474": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "6735",
+        "question": "Ai là người có trách nhiệm phải nộp thuế tiêu thụ đặc biệt?",
+        "gold": [
+          "40406"
+        ],
+        "mapped": [
+          "40406"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "40406"
+        ],
+        "one_hop_gold": [
+          "40406"
+        ],
+        "two_hop_gold": [
+          "40406"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "40406"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "40406": 1
+          },
+          "hybrid_larger": {
+            "40406": 1
+          },
+          "hybrid_shared": {
+            "40406": 1
+          },
+          "graph_shared": {
+            "40406": 1
+          },
+          "graph_shared_path": {
+            "40406": 1
+          },
+          "graph_legacy": {
+            "40406": 1
+          },
+          "shuffled_shared": {
+            "40406": 1
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "1517",
+        "question": "Người sử dụng lao động có được từ chối nhận lại người lao động sau khi hết thời hạn tạm hoãn thực hiện hợp đồng không?",
+        "gold": [
+          "54227"
+        ],
+        "mapped": [
+          "54227"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "54227"
+        ],
+        "one_hop_gold": [
+          "54227"
+        ],
+        "two_hop_gold": [
+          "54227"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "54227"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "54227": 1
+          },
+          "hybrid_larger": {
+            "54227": 1
+          },
+          "hybrid_shared": {
+            "54227": 1
+          },
+          "graph_shared": {
+            "54227": 1
+          },
+          "graph_shared_path": {
+            "54227": 1
+          },
+          "graph_legacy": {
+            "54227": 1
+          },
+          "shuffled_shared": {
+            "54227": 1
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "7335",
+        "question": "Những giấy tờ, tài liệu nào thuộc phạm vi thực hiện số hóa?",
+        "gold": [
+          "43743"
+        ],
+        "mapped": [],
+        "unmapped": {
+          "43743": {
+            "law_id": "01/2023/TT-VPCP",
+            "reason": "no_exact_article_match",
+            "matches": []
+          }
+        },
+        "hybrid_candidate_gold": [],
+        "one_hop_gold": [],
+        "two_hop_gold": [],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "43743": null
+          },
+          "hybrid_larger": {
+            "43743": null
+          },
+          "hybrid_shared": {
+            "43743": null
+          },
+          "graph_shared": {
+            "43743": null
+          },
+          "graph_shared_path": {
+            "43743": null
+          },
+          "graph_legacy": {
+            "43743": null
+          },
+          "shuffled_shared": {
+            "43743": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "13856",
+        "question": "Tội giả mạo chức vụ, cấp bậc, vị trí công tác được quy định như thế nào theo Bộ Luật hình sự 2015?",
+        "gold": [
+          "56783"
+        ],
+        "mapped": [
+          "56783"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "56783"
+        ],
+        "one_hop_gold": [
+          "56783"
+        ],
+        "two_hop_gold": [
+          "56783"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "56783"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "56783": 1
+          },
+          "hybrid_larger": {
+            "56783": 1
+          },
+          "hybrid_shared": {
+            "56783": 1
+          },
+          "graph_shared": {
+            "56783": 1
+          },
+          "graph_shared_path": {
+            "56783": 1
+          },
+          "graph_legacy": {
+            "56783": 1
+          },
+          "shuffled_shared": {
+            "56783": 1
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "5382",
+        "question": "Thông báo gửi đến địa phương nơi cư trú hoặc nơi người có hành vi chống người thi hành công vụ học tập, làm việc phải nêu rõ nội dung nào?",
+        "gold": [
+          "34086"
+        ],
+        "mapped": [
+          "34086"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "34086"
+        ],
+        "one_hop_gold": [
+          "34086"
+        ],
+        "two_hop_gold": [
+          "34086"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "34086"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "34086": 1
+          },
+          "hybrid_larger": {
+            "34086": 1
+          },
+          "hybrid_shared": {
+            "34086": 1
+          },
+          "graph_shared": {
+            "34086": 1
+          },
+          "graph_shared_path": {
+            "34086": 1
+          },
+          "graph_legacy": {
+            "34086": 1
+          },
+          "shuffled_shared": {
+            "34086": 1
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "567",
+        "question": "Hiến đất làm đường có được bồi thường không khi bên thi công gây lún nhà?",
+        "gold": [
+          "53375"
+        ],
+        "mapped": [
+          "53375"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "53375"
+        ],
+        "one_hop_gold": [],
+        "two_hop_gold": [],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "53375": null
+          },
+          "hybrid_larger": {
+            "53375": null
+          },
+          "hybrid_shared": {
+            "53375": null
+          },
+          "graph_shared": {
+            "53375": null
+          },
+          "graph_shared_path": {
+            "53375": null
+          },
+          "graph_legacy": {
+            "53375": null
+          },
+          "shuffled_shared": {
+            "53375": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "14771",
+        "question": "Mức lưu lượng xả nước thải để thực hiện quan trắc nước thải bảo vệ môi trường được quy định như thế nào?",
+        "gold": [
+          "42292"
+        ],
+        "mapped": [],
+        "unmapped": {
+          "42292": {
+            "law_id": "08/2022/NĐ-CP",
+            "reason": "no_exact_article_match",
+            "matches": []
+          }
+        },
+        "hybrid_candidate_gold": [],
+        "one_hop_gold": [],
+        "two_hop_gold": [],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "42292": null
+          },
+          "hybrid_larger": {
+            "42292": null
+          },
+          "hybrid_shared": {
+            "42292": null
+          },
+          "graph_shared": {
+            "42292": null
+          },
+          "graph_shared_path": {
+            "42292": null
+          },
+          "graph_legacy": {
+            "42292": null
+          },
+          "shuffled_shared": {
+            "42292": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "5950",
+        "question": "Cục Xúc tiến thương mại là cơ quan trực thuộc Bộ nào?",
+        "gold": [
+          "37339"
+        ],
+        "mapped": [],
+        "unmapped": {
+          "37339": {
+            "law_id": "963/QĐ-BCT",
+            "reason": "no_exact_article_match",
+            "matches": []
+          }
+        },
+        "hybrid_candidate_gold": [],
+        "one_hop_gold": [],
+        "two_hop_gold": [],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "37339": null
+          },
+          "hybrid_larger": {
+            "37339": null
+          },
+          "hybrid_shared": {
+            "37339": null
+          },
+          "graph_shared": {
+            "37339": null
+          },
+          "graph_shared_path": {
+            "37339": null
+          },
+          "graph_legacy": {
+            "37339": null
+          },
+          "shuffled_shared": {
+            "37339": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "9102",
+        "question": "2. Thời hạn cấp lại thẻ Căn cước công dân sau khi xăm lông mày là bao lâu?",
+        "gold": [
+          "3601"
+        ],
+        "mapped": [],
+        "unmapped": {
+          "3601": {
+            "law_id": "59/2014/QH13",
+            "reason": "no_exact_article_match",
+            "matches": []
+          }
+        },
+        "hybrid_candidate_gold": [],
+        "one_hop_gold": [],
+        "two_hop_gold": [],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "3601": null
+          },
+          "hybrid_larger": {
+            "3601": null
+          },
+          "hybrid_shared": {
+            "3601": null
+          },
+          "graph_shared": {
+            "3601": null
+          },
+          "graph_shared_path": {
+            "3601": null
+          },
+          "graph_legacy": {
+            "3601": null
+          },
+          "shuffled_shared": {
+            "3601": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "4148",
+        "question": "Ai có thẩm quyền cho doanh nghiệp thuê lại lao động rút tiền ký quỹ?",
+        "gold": [
+          "27272"
+        ],
+        "mapped": [],
+        "unmapped": {
+          "27272": {
+            "law_id": "145/2020/NĐ-CP",
+            "reason": "no_exact_article_match",
+            "matches": []
+          }
+        },
+        "hybrid_candidate_gold": [],
+        "one_hop_gold": [],
+        "two_hop_gold": [],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "27272": null
+          },
+          "hybrid_larger": {
+            "27272": null
+          },
+          "hybrid_shared": {
+            "27272": null
+          },
+          "graph_shared": {
+            "27272": null
+          },
+          "graph_shared_path": {
+            "27272": null
+          },
+          "graph_legacy": {
+            "27272": null
+          },
+          "shuffled_shared": {
+            "27272": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "451",
+        "question": "Người lao động nhận con nuôi có được hưởng trợ cấp một lần?",
+        "gold": [
+          "57535"
+        ],
+        "mapped": [
+          "57535"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "57535"
+        ],
+        "one_hop_gold": [
+          "57535"
+        ],
+        "two_hop_gold": [
+          "57535"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "57535"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "57535": 1
+          },
+          "hybrid_larger": {
+            "57535": 1
+          },
+          "hybrid_shared": {
+            "57535": 1
+          },
+          "graph_shared": {
+            "57535": 1
+          },
+          "graph_shared_path": {
+            "57535": 1
+          },
+          "graph_legacy": {
+            "57535": 1
+          },
+          "shuffled_shared": {
+            "57535": 1
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "4630",
+        "question": "Có được phá dỡ nhà ở nằm trong khu dân cư vào ban đêm không? Câu hỏi: Theo quy định hiện hành thì có được phá dỡ nhà ở nằm trong khu dân cư vào ban đêm hay không?",
+        "gold": [
+          "54510"
+        ],
+        "mapped": [
+          "54510"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "54510"
+        ],
+        "one_hop_gold": [
+          "54510"
+        ],
+        "two_hop_gold": [
+          "54510"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "54510"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "54510": 1
+          },
+          "hybrid_larger": {
+            "54510": 1
+          },
+          "hybrid_shared": {
+            "54510": 1
+          },
+          "graph_shared": {
+            "54510": 1
+          },
+          "graph_shared_path": {
+            "54510": 1
+          },
+          "graph_legacy": {
+            "54510": 1
+          },
+          "shuffled_shared": {
+            "54510": 1
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "539",
+        "question": "Người thân có quyền từ chối trả tiền cho người vay đã chết không?",
+        "gold": [
+          "53390"
+        ],
+        "mapped": [
+          "53390"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "53390"
+        ],
+        "one_hop_gold": [
+          "53390"
+        ],
+        "two_hop_gold": [
+          "53390"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "53390"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "53390": 1
+          },
+          "hybrid_larger": {
+            "53390": 2
+          },
+          "hybrid_shared": {
+            "53390": null
+          },
+          "graph_shared": {
+            "53390": null
+          },
+          "graph_shared_path": {
+            "53390": null
+          },
+          "graph_legacy": {
+            "53390": 1
+          },
+          "shuffled_shared": {
+            "53390": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "7656",
+        "question": "Chương trình kỳ họp Quốc hội phải được thông báo dự kiến trên các phương tiện truyền thông trước bao nhiêu ngày?",
+        "gold": [
+          "46019"
+        ],
+        "mapped": [
+          "46019"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "46019"
+        ],
+        "one_hop_gold": [
+          "46019"
+        ],
+        "two_hop_gold": [
+          "46019"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "46019"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "46019": 1
+          },
+          "hybrid_larger": {
+            "46019": 1
+          },
+          "hybrid_shared": {
+            "46019": 1
+          },
+          "graph_shared": {
+            "46019": 1
+          },
+          "graph_shared_path": {
+            "46019": 1
+          },
+          "graph_legacy": {
+            "46019": 1
+          },
+          "shuffled_shared": {
+            "46019": 1
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "12484",
+        "question": "Việc di chuyển các công trình cơ sở tôn giáo đang quản lý sử dụng khi Nhà nước thu hồi đất được quy định ra sao?",
+        "gold": [
+          "30385"
+        ],
+        "mapped": [
+          "30385"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "30385"
+        ],
+        "one_hop_gold": [
+          "30385"
+        ],
+        "two_hop_gold": [
+          "30385"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "30385"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "30385": 1
+          },
+          "hybrid_larger": {
+            "30385": 1
+          },
+          "hybrid_shared": {
+            "30385": 1
+          },
+          "graph_shared": {
+            "30385": 1
+          },
+          "graph_shared_path": {
+            "30385": 1
+          },
+          "graph_legacy": {
+            "30385": 1
+          },
+          "shuffled_shared": {
+            "30385": 1
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "15818",
+        "question": "Việc ký kết và thực hiện thỏa thuận quốc tế phải đáp ứng nguyên tắc gì?",
+        "gold": [
+          "46334"
+        ],
+        "mapped": [
+          "46334"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "46334"
+        ],
+        "one_hop_gold": [
+          "46334"
+        ],
+        "two_hop_gold": [
+          "46334"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "46334"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "46334": 1
+          },
+          "hybrid_larger": {
+            "46334": 1
+          },
+          "hybrid_shared": {
+            "46334": 1
+          },
+          "graph_shared": {
+            "46334": 1
+          },
+          "graph_shared_path": {
+            "46334": 1
+          },
+          "graph_legacy": {
+            "46334": 1
+          },
+          "shuffled_shared": {
+            "46334": 1
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "14253",
+        "question": "Công dân muốn đổi sang căn cước công dân gắn chip thì đến cơ quan nào?",
+        "gold": [
+          "3602"
+        ],
+        "mapped": [],
+        "unmapped": {
+          "3602": {
+            "law_id": "59/2014/QH13",
+            "reason": "no_exact_article_match",
+            "matches": []
+          }
+        },
+        "hybrid_candidate_gold": [],
+        "one_hop_gold": [],
+        "two_hop_gold": [],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "3602": null
+          },
+          "hybrid_larger": {
+            "3602": null
+          },
+          "hybrid_shared": {
+            "3602": null
+          },
+          "graph_shared": {
+            "3602": null
+          },
+          "graph_shared_path": {
+            "3602": null
+          },
+          "graph_legacy": {
+            "3602": null
+          },
+          "shuffled_shared": {
+            "3602": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "11799",
+        "question": "Bảo hiểm tạm thời trong bảo hiểm nhân thọ được quy định như thế nào?",
+        "gold": [
+          "53688"
+        ],
+        "mapped": [
+          "53688"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "53688"
+        ],
+        "one_hop_gold": [
+          "53688"
+        ],
+        "two_hop_gold": [
+          "53688"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "53688"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "53688": 1
+          },
+          "hybrid_larger": {
+            "53688": 1
+          },
+          "hybrid_shared": {
+            "53688": 1
+          },
+          "graph_shared": {
+            "53688": 1
+          },
+          "graph_shared_path": {
+            "53688": 1
+          },
+          "graph_legacy": {
+            "53688": 1
+          },
+          "shuffled_shared": {
+            "53688": 1
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "16203",
+        "question": "Vị trí và chức năng của Cục Công nghiệp công nghệ thông tin và Truyền thông được quy định như thế nào?",
+        "gold": [
+          "48179"
+        ],
+        "mapped": [],
+        "unmapped": {
+          "48179": {
+            "law_id": "1816/QĐ-BTTTT",
+            "reason": "no_exact_article_match",
+            "matches": []
+          }
+        },
+        "hybrid_candidate_gold": [],
+        "one_hop_gold": [],
+        "two_hop_gold": [],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "48179": null
+          },
+          "hybrid_larger": {
+            "48179": null
+          },
+          "hybrid_shared": {
+            "48179": null
+          },
+          "graph_shared": {
+            "48179": null
+          },
+          "graph_shared_path": {
+            "48179": null
+          },
+          "graph_legacy": {
+            "48179": null
+          },
+          "shuffled_shared": {
+            "48179": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "10036",
+        "question": "Tiếp nhận, quản lý, sử dụng kinh phí đối với lễ hội không phải do cơ quan nhà nước tổ chức ra sao?",
+        "gold": [
+          "13235"
+        ],
+        "mapped": [],
+        "unmapped": {
+          "13235": {
+            "law_id": "04/2023/TT-BTC",
+            "reason": "no_exact_article_match",
+            "matches": []
+          }
+        },
+        "hybrid_candidate_gold": [],
+        "one_hop_gold": [],
+        "two_hop_gold": [],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "13235": null
+          },
+          "hybrid_larger": {
+            "13235": null
+          },
+          "hybrid_shared": {
+            "13235": null
+          },
+          "graph_shared": {
+            "13235": null
+          },
+          "graph_shared_path": {
+            "13235": null
+          },
+          "graph_legacy": {
+            "13235": null
+          },
+          "shuffled_shared": {
+            "13235": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "10885",
+        "question": "Đối tượng, điều kiện, thủ tục cấp và quản lý thẻ, giấy phép kiểm soát an ninh nội bộ, thẻ nhận dạng tổ bay?",
+        "gold": [
+          "20011"
+        ],
+        "mapped": [
+          "20011"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "20011"
+        ],
+        "one_hop_gold": [
+          "20011"
+        ],
+        "two_hop_gold": [
+          "20011"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "20011"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "20011": 1
+          },
+          "hybrid_larger": {
+            "20011": 1
+          },
+          "hybrid_shared": {
+            "20011": 1
+          },
+          "graph_shared": {
+            "20011": 1
+          },
+          "graph_shared_path": {
+            "20011": 1
+          },
+          "graph_legacy": {
+            "20011": 1
+          },
+          "shuffled_shared": {
+            "20011": 1
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "5966",
+        "question": "Hợp đồng dịch vụ quảng cáo thương mại được quy định như thế nào?",
+        "gold": [
+          "7247",
+          "7255"
+        ],
+        "mapped": [
+          "7247",
+          "7255"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "7247",
+          "7255"
+        ],
+        "one_hop_gold": [
+          "7255"
+        ],
+        "two_hop_gold": [
+          "7255"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "7247",
+          "7255"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "7247": null,
+            "7255": 1
+          },
+          "hybrid_larger": {
+            "7247": null,
+            "7255": 1
+          },
+          "hybrid_shared": {
+            "7247": null,
+            "7255": 1
+          },
+          "graph_shared": {
+            "7247": null,
+            "7255": 1
+          },
+          "graph_shared_path": {
+            "7247": null,
+            "7255": 1
+          },
+          "graph_legacy": {
+            "7247": null,
+            "7255": 1
+          },
+          "shuffled_shared": {
+            "7247": null,
+            "7255": 1
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "6528",
+        "question": "Thi kết thúc học phần lớp bồi dưỡng kế toán trưởng trong thời gian bao lâu?",
+        "gold": [
+          "40105"
+        ],
+        "mapped": [],
+        "unmapped": {
+          "40105": {
+            "law_id": "199/2011/TT-BTC",
+            "reason": "no_exact_article_match",
+            "matches": []
+          }
+        },
+        "hybrid_candidate_gold": [],
+        "one_hop_gold": [],
+        "two_hop_gold": [],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "40105": null
+          },
+          "hybrid_larger": {
+            "40105": null
+          },
+          "hybrid_shared": {
+            "40105": null
+          },
+          "graph_shared": {
+            "40105": null
+          },
+          "graph_shared_path": {
+            "40105": null
+          },
+          "graph_legacy": {
+            "40105": null
+          },
+          "shuffled_shared": {
+            "40105": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "9882",
+        "question": "Việc cho thuê đất của Nhà nước đuợc quy định như thế nào?",
+        "gold": [
+          "56006",
+          "56079"
+        ],
+        "mapped": [
+          "56006",
+          "56079"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "56006"
+        ],
+        "one_hop_gold": [
+          "56006",
+          "56079"
+        ],
+        "two_hop_gold": [
+          "56006",
+          "56079"
+        ],
+        "reachable_beyond_hybrid": [
+          "56079"
+        ],
+        "graph_candidate_gold": [
+          "56006",
+          "56079"
+        ],
+        "new_graph_candidate_gold": [
+          "56079"
+        ],
+        "gold_ranks": {
+          "hybrid": {
+            "56079": null,
+            "56006": 3
+          },
+          "hybrid_larger": {
+            "56079": null,
+            "56006": 3
+          },
+          "hybrid_shared": {
+            "56079": null,
+            "56006": 1
+          },
+          "graph_shared": {
+            "56079": null,
+            "56006": 1
+          },
+          "graph_shared_path": {
+            "56079": null,
+            "56006": 3
+          },
+          "graph_legacy": {
+            "56079": null,
+            "56006": 3
+          },
+          "shuffled_shared": {
+            "56079": null,
+            "56006": 1
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "11900",
+        "question": "Mức thu phí tham gia đấu giá quyền khai thác khoáng sản được quy định như thế nào?",
+        "gold": [
+          "26902"
+        ],
+        "mapped": [
+          "26902"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "26902"
+        ],
+        "one_hop_gold": [
+          "26902"
+        ],
+        "two_hop_gold": [
+          "26902"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "26902"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "26902": 1
+          },
+          "hybrid_larger": {
+            "26902": 1
+          },
+          "hybrid_shared": {
+            "26902": 1
+          },
+          "graph_shared": {
+            "26902": 1
+          },
+          "graph_shared_path": {
+            "26902": 1
+          },
+          "graph_legacy": {
+            "26902": 1
+          },
+          "shuffled_shared": {
+            "26902": 1
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "10656",
+        "question": "Trách nhiệm thống kê, báo cáo nạn nhân bạo lực gia đình tại cơ sở khám, chữa bệnh được quy định như thế nào?",
+        "gold": [
+          "17505"
+        ],
+        "mapped": [
+          "17505"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "17505"
+        ],
+        "one_hop_gold": [
+          "17505"
+        ],
+        "two_hop_gold": [
+          "17505"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "17505"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "17505": 1
+          },
+          "hybrid_larger": {
+            "17505": 1
+          },
+          "hybrid_shared": {
+            "17505": 1
+          },
+          "graph_shared": {
+            "17505": 1
+          },
+          "graph_shared_path": {
+            "17505": 2
+          },
+          "graph_legacy": {
+            "17505": 1
+          },
+          "shuffled_shared": {
+            "17505": 1
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "1644",
+        "question": "Có được áp dụng hình thức khen thưởng bằng tiền đối với người đang thi hành án phạt tù?",
+        "gold": [
+          "57171"
+        ],
+        "mapped": [
+          "57171"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "57171"
+        ],
+        "one_hop_gold": [
+          "57171"
+        ],
+        "two_hop_gold": [
+          "57171"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "57171"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "57171": 1
+          },
+          "hybrid_larger": {
+            "57171": 1
+          },
+          "hybrid_shared": {
+            "57171": 1
+          },
+          "graph_shared": {
+            "57171": 1
+          },
+          "graph_shared_path": {
+            "57171": 1
+          },
+          "graph_legacy": {
+            "57171": 1
+          },
+          "shuffled_shared": {
+            "57171": 1
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "12968",
+        "question": "Quy trình xây dựng quy hoạch quảng cáo ngoài trời của Ủy ban nhân dân cấp tỉnh được quy định như thế nào?",
+        "gold": [
+          "8726"
+        ],
+        "mapped": [
+          "8726"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "8726"
+        ],
+        "one_hop_gold": [
+          "8726"
+        ],
+        "two_hop_gold": [
+          "8726"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "8726"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "8726": 1
+          },
+          "hybrid_larger": {
+            "8726": 1
+          },
+          "hybrid_shared": {
+            "8726": 1
+          },
+          "graph_shared": {
+            "8726": 1
+          },
+          "graph_shared_path": {
+            "8726": 1
+          },
+          "graph_legacy": {
+            "8726": 1
+          },
+          "shuffled_shared": {
+            "8726": 1
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "5130",
+        "question": "Những hành vi nào bị nghiêm cấm trong hoạt động sử dụng pháo hoa?",
+        "gold": [
+          "31570"
+        ],
+        "mapped": [],
+        "unmapped": {
+          "31570": {
+            "law_id": "137/2020/NĐ-CP",
+            "reason": "no_exact_article_match",
+            "matches": []
+          }
+        },
+        "hybrid_candidate_gold": [],
+        "one_hop_gold": [],
+        "two_hop_gold": [],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "31570": null
+          },
+          "hybrid_larger": {
+            "31570": null
+          },
+          "hybrid_shared": {
+            "31570": null
+          },
+          "graph_shared": {
+            "31570": null
+          },
+          "graph_shared_path": {
+            "31570": null
+          },
+          "graph_legacy": {
+            "31570": null
+          },
+          "shuffled_shared": {
+            "31570": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "12825",
+        "question": "Cơ sở nào là cơ sở đào tạo về bảo hiểm nước ngoài?",
+        "gold": [
+          "26114"
+        ],
+        "mapped": [],
+        "unmapped": {
+          "26114": {
+            "law_id": "69/2022/TT-BTC",
+            "reason": "no_exact_article_match",
+            "matches": []
+          }
+        },
+        "hybrid_candidate_gold": [],
+        "one_hop_gold": [],
+        "two_hop_gold": [],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "26114": null
+          },
+          "hybrid_larger": {
+            "26114": null
+          },
+          "hybrid_shared": {
+            "26114": null
+          },
+          "graph_shared": {
+            "26114": null
+          },
+          "graph_shared_path": {
+            "26114": null
+          },
+          "graph_legacy": {
+            "26114": null
+          },
+          "shuffled_shared": {
+            "26114": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "7651",
+        "question": "Thỏa thuận quốc tế có thể được gọi với cách gọi nào?",
+        "gold": [
+          "46337"
+        ],
+        "mapped": [
+          "46337"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "46337"
+        ],
+        "one_hop_gold": [
+          "46337"
+        ],
+        "two_hop_gold": [
+          "46337"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "46337"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "46337": 1
+          },
+          "hybrid_larger": {
+            "46337": 1
+          },
+          "hybrid_shared": {
+            "46337": 1
+          },
+          "graph_shared": {
+            "46337": 1
+          },
+          "graph_shared_path": {
+            "46337": 1
+          },
+          "graph_legacy": {
+            "46337": 1
+          },
+          "shuffled_shared": {
+            "46337": 1
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "10131",
+        "question": "Quy định về hoãn, tạm đình chỉ thi hành bản án, quyết định đã có hiệu lực pháp luật trong vụ án hành chính?",
+        "gold": [
+          "14566"
+        ],
+        "mapped": [
+          "14566"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "14566"
+        ],
+        "one_hop_gold": [
+          "14566"
+        ],
+        "two_hop_gold": [
+          "14566"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "14566"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "14566": 1
+          },
+          "hybrid_larger": {
+            "14566": 1
+          },
+          "hybrid_shared": {
+            "14566": 1
+          },
+          "graph_shared": {
+            "14566": 1
+          },
+          "graph_shared_path": {
+            "14566": 1
+          },
+          "graph_legacy": {
+            "14566": 1
+          },
+          "shuffled_shared": {
+            "14566": 1
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "13122",
+        "question": "Trách nhiệm của Bộ Kế hoạch và Đầu tư trong thực thi nhiệm vụ biên phòng như thế nào?",
+        "gold": [
+          "35177"
+        ],
+        "mapped": [],
+        "unmapped": {
+          "35177": {
+            "law_id": "106/2021/NĐ-CP",
+            "reason": "multiple_original_ids",
+            "matches": [
+              "152671:article:11"
+            ]
+          }
+        },
+        "hybrid_candidate_gold": [],
+        "one_hop_gold": [],
+        "two_hop_gold": [],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "35177": null
+          },
+          "hybrid_larger": {
+            "35177": null
+          },
+          "hybrid_shared": {
+            "35177": null
+          },
+          "graph_shared": {
+            "35177": null
+          },
+          "graph_shared_path": {
+            "35177": null
+          },
+          "graph_legacy": {
+            "35177": null
+          },
+          "shuffled_shared": {
+            "35177": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "8289",
+        "question": "1. Viên chức nghiện ma túy có bị buộc thôi việc hay không?",
+        "gold": [
+          "6611",
+          "6612",
+          "6613",
+          "6614"
+        ],
+        "mapped": [],
+        "unmapped": {
+          "6611": {
+            "law_id": "112/2020/NĐ-CP",
+            "reason": "no_exact_article_match",
+            "matches": []
+          },
+          "6612": {
+            "law_id": "112/2020/NĐ-CP",
+            "reason": "no_exact_article_match",
+            "matches": []
+          },
+          "6613": {
+            "law_id": "112/2020/NĐ-CP",
+            "reason": "no_exact_article_match",
+            "matches": []
+          },
+          "6614": {
+            "law_id": "112/2020/NĐ-CP",
+            "reason": "no_exact_article_match",
+            "matches": []
+          }
+        },
+        "hybrid_candidate_gold": [],
+        "one_hop_gold": [],
+        "two_hop_gold": [],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "6612": null,
+            "6613": null,
+            "6611": null,
+            "6614": null
+          },
+          "hybrid_larger": {
+            "6612": null,
+            "6613": null,
+            "6611": null,
+            "6614": null
+          },
+          "hybrid_shared": {
+            "6612": null,
+            "6613": null,
+            "6611": null,
+            "6614": null
+          },
+          "graph_shared": {
+            "6612": null,
+            "6613": null,
+            "6611": null,
+            "6614": null
+          },
+          "graph_shared_path": {
+            "6612": null,
+            "6613": null,
+            "6611": null,
+            "6614": null
+          },
+          "graph_legacy": {
+            "6612": null,
+            "6613": null,
+            "6611": null,
+            "6614": null
+          },
+          "shuffled_shared": {
+            "6612": null,
+            "6613": null,
+            "6611": null,
+            "6614": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "2127",
+        "question": "Người có bằng cử nhân y khoa do nước ngoài cấp phải đạt điểm kiểm tra bao nhiêu mới được xét tuyển đào tạo bổ sung?",
+        "gold": [
+          "17259"
+        ],
+        "mapped": [
+          "17259"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "17259"
+        ],
+        "one_hop_gold": [
+          "17259"
+        ],
+        "two_hop_gold": [
+          "17259"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "17259"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "17259": 1
+          },
+          "hybrid_larger": {
+            "17259": 1
+          },
+          "hybrid_shared": {
+            "17259": 1
+          },
+          "graph_shared": {
+            "17259": 1
+          },
+          "graph_shared_path": {
+            "17259": 1
+          },
+          "graph_legacy": {
+            "17259": 1
+          },
+          "shuffled_shared": {
+            "17259": 1
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "16576",
+        "question": "Tôi có biết Bộ Tư pháp vẫn thường có các buổi gặp mặt cũng như lắng nghe ý kiến từ người dân, nhưng không rõ trách nhiệm tiếp công dân của Bộ Tư pháp được quy định như thế nào?",
+        "gold": [
+          "49428"
+        ],
+        "mapped": [],
+        "unmapped": {
+          "49428": {
+            "law_id": "266/QĐ-BTP",
+            "reason": "no_exact_article_match",
+            "matches": []
+          }
+        },
+        "hybrid_candidate_gold": [],
+        "one_hop_gold": [],
+        "two_hop_gold": [],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "49428": null
+          },
+          "hybrid_larger": {
+            "49428": null
+          },
+          "hybrid_shared": {
+            "49428": null
+          },
+          "graph_shared": {
+            "49428": null
+          },
+          "graph_shared_path": {
+            "49428": null
+          },
+          "graph_legacy": {
+            "49428": null
+          },
+          "shuffled_shared": {
+            "49428": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "16254",
+        "question": "Công chức kế toán xã phải thực hiện các nhiệm vụ gì?",
+        "gold": [
+          "28028"
+        ],
+        "mapped": [],
+        "unmapped": {
+          "28028": {
+            "law_id": "13/2019/TT-BNV",
+            "reason": "no_exact_article_match",
+            "matches": []
+          }
+        },
+        "hybrid_candidate_gold": [],
+        "one_hop_gold": [],
+        "two_hop_gold": [],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "28028": null
+          },
+          "hybrid_larger": {
+            "28028": null
+          },
+          "hybrid_shared": {
+            "28028": null
+          },
+          "graph_shared": {
+            "28028": null
+          },
+          "graph_shared_path": {
+            "28028": null
+          },
+          "graph_legacy": {
+            "28028": null
+          },
+          "shuffled_shared": {
+            "28028": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "7722",
+        "question": "Nhiệm vụ của cán bộ kiểm tra Phòng Cảnh sát phòng cháy bao gồm gì?",
+        "gold": [
+          "46766"
+        ],
+        "mapped": [],
+        "unmapped": {
+          "46766": {
+            "law_id": "141/2020/TT-BCA",
+            "reason": "no_exact_article_match",
+            "matches": []
+          }
+        },
+        "hybrid_candidate_gold": [],
+        "one_hop_gold": [],
+        "two_hop_gold": [],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "46766": null
+          },
+          "hybrid_larger": {
+            "46766": null
+          },
+          "hybrid_shared": {
+            "46766": null
+          },
+          "graph_shared": {
+            "46766": null
+          },
+          "graph_shared_path": {
+            "46766": null
+          },
+          "graph_legacy": {
+            "46766": null
+          },
+          "shuffled_shared": {
+            "46766": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "4919",
+        "question": "Xây dựng và đặt màn hình quảng cáo ngoài trời có cần phải xin giấy phép xây dựng không?",
+        "gold": [
+          "4794"
+        ],
+        "mapped": [
+          "4794"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "4794"
+        ],
+        "one_hop_gold": [
+          "4794"
+        ],
+        "two_hop_gold": [
+          "4794"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "4794"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "4794": 1
+          },
+          "hybrid_larger": {
+            "4794": 1
+          },
+          "hybrid_shared": {
+            "4794": 1
+          },
+          "graph_shared": {
+            "4794": 1
+          },
+          "graph_shared_path": {
+            "4794": 1
+          },
+          "graph_legacy": {
+            "4794": 1
+          },
+          "shuffled_shared": {
+            "4794": 1
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "6920",
+        "question": "Có bắt buộc phải về quê xin Giấy xác nhận tình trạng hôn nhân sau khi nhập hộ khẩu ở địa chỉ mới không?",
+        "gold": [
+          "5469"
+        ],
+        "mapped": [
+          "5469"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [],
+        "one_hop_gold": [],
+        "two_hop_gold": [],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "5469": null
+          },
+          "hybrid_larger": {
+            "5469": null
+          },
+          "hybrid_shared": {
+            "5469": null
+          },
+          "graph_shared": {
+            "5469": null
+          },
+          "graph_shared_path": {
+            "5469": null
+          },
+          "graph_legacy": {
+            "5469": null
+          },
+          "shuffled_shared": {
+            "5469": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "1164",
+        "question": "Nguyên tắc áp dụng định mức kinh tế - kỹ thuật cho lập và điều chỉnh quy hoạch quảng cáo ngoài trời được quy định như thế nào?",
+        "gold": [
+          "8863"
+        ],
+        "mapped": [
+          "8863"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "8863"
+        ],
+        "one_hop_gold": [
+          "8863"
+        ],
+        "two_hop_gold": [
+          "8863"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "8863"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "8863": 3
+          },
+          "hybrid_larger": {
+            "8863": 2
+          },
+          "hybrid_shared": {
+            "8863": 1
+          },
+          "graph_shared": {
+            "8863": 1
+          },
+          "graph_shared_path": {
+            "8863": 1
+          },
+          "graph_legacy": {
+            "8863": 3
+          },
+          "shuffled_shared": {
+            "8863": 1
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "151",
+        "question": "Thời hạn hiệu lực của văn bản chấp thuận danh sách dự kiến nhân sự tổ chức tài chính vi mô được quy định như thế nào?",
+        "gold": [
+          "697"
+        ],
+        "mapped": [
+          "697"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "697"
+        ],
+        "one_hop_gold": [
+          "697"
+        ],
+        "two_hop_gold": [
+          "697"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "697"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "697": 1
+          },
+          "hybrid_larger": {
+            "697": 1
+          },
+          "hybrid_shared": {
+            "697": 1
+          },
+          "graph_shared": {
+            "697": 1
+          },
+          "graph_shared_path": {
+            "697": 1
+          },
+          "graph_legacy": {
+            "697": 1
+          },
+          "shuffled_shared": {
+            "697": 1
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "13849",
+        "question": "Hình phạt áp dụng đối với tội tuyển mộ lính đánh thuê được quy định như thế nào theo Bộ luật Hình sự 2015?",
+        "gold": [
+          "56868"
+        ],
+        "mapped": [
+          "56868"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "56868"
+        ],
+        "one_hop_gold": [
+          "56868"
+        ],
+        "two_hop_gold": [
+          "56868"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "56868"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "56868": 2
+          },
+          "hybrid_larger": {
+            "56868": 2
+          },
+          "hybrid_shared": {
+            "56868": 2
+          },
+          "graph_shared": {
+            "56868": 2
+          },
+          "graph_shared_path": {
+            "56868": 2
+          },
+          "graph_legacy": {
+            "56868": 2
+          },
+          "shuffled_shared": {
+            "56868": 2
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "8798",
+        "question": "Phạt vi phạm và bồi thường thiệt hại trong hoạt động cho vay của tổ chức tín dụng quy định thế nào?",
+        "gold": [
+          "51195",
+          "51207"
+        ],
+        "mapped": [
+          "51207"
+        ],
+        "unmapped": {
+          "51195": {
+            "law_id": "39/2016/TT-NHNN",
+            "reason": "no_exact_article_match",
+            "matches": []
+          }
+        },
+        "hybrid_candidate_gold": [
+          "51207"
+        ],
+        "one_hop_gold": [
+          "51207"
+        ],
+        "two_hop_gold": [
+          "51207"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "51207"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "51207": 1,
+            "51195": null
+          },
+          "hybrid_larger": {
+            "51207": 1,
+            "51195": null
+          },
+          "hybrid_shared": {
+            "51207": 1,
+            "51195": null
+          },
+          "graph_shared": {
+            "51207": 1,
+            "51195": null
+          },
+          "graph_shared_path": {
+            "51207": 1,
+            "51195": null
+          },
+          "graph_legacy": {
+            "51207": 1,
+            "51195": null
+          },
+          "shuffled_shared": {
+            "51207": 1,
+            "51195": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "6971",
+        "question": "Cho hỏi: Theo quy định của pháp luật hiện hành thì trường hợp thực hiện việc sửa đổi hợp đồng công chứng trước đó có bắt buộc các bên phải có mặt không?",
+        "gold": [
+          "55733"
+        ],
+        "mapped": [
+          "55733"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "55733"
+        ],
+        "one_hop_gold": [
+          "55733"
+        ],
+        "two_hop_gold": [
+          "55733"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "55733"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "55733": 2
+          },
+          "hybrid_larger": {
+            "55733": 2
+          },
+          "hybrid_shared": {
+            "55733": 2
+          },
+          "graph_shared": {
+            "55733": 2
+          },
+          "graph_shared_path": {
+            "55733": 2
+          },
+          "graph_legacy": {
+            "55733": 2
+          },
+          "shuffled_shared": {
+            "55733": 2
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "14907",
+        "question": "Thời hạn lấy ý kiến phê duyệt kết quả thẩm định báo cáo đánh giá tác động môi trường đối với dự án đầu tư có hoạt động xả nước thải vào công trình thủy lợi?",
+        "gold": [
+          "31794"
+        ],
+        "mapped": [],
+        "unmapped": {
+          "31794": {
+            "law_id": "02/2022/TT-BTNMT",
+            "reason": "no_exact_article_match",
+            "matches": []
+          }
+        },
+        "hybrid_candidate_gold": [],
+        "one_hop_gold": [],
+        "two_hop_gold": [],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "31794": null
+          },
+          "hybrid_larger": {
+            "31794": null
+          },
+          "hybrid_shared": {
+            "31794": null
+          },
+          "graph_shared": {
+            "31794": null
+          },
+          "graph_shared_path": {
+            "31794": null
+          },
+          "graph_legacy": {
+            "31794": null
+          },
+          "shuffled_shared": {
+            "31794": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "1571",
+        "question": "Mạo danh ảnh hưởng đến uy tín của tổ chức bồi thường như thế nào?",
+        "gold": [
+          "52802",
+          "53362"
+        ],
+        "mapped": [
+          "52802"
+        ],
+        "unmapped": {
+          "53362": {
+            "law_id": "91/2015/QH13",
+            "reason": "no_exact_article_match",
+            "matches": []
+          }
+        },
+        "hybrid_candidate_gold": [
+          "52802"
+        ],
+        "one_hop_gold": [],
+        "two_hop_gold": [],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "52802"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "53362": null,
+            "52802": null
+          },
+          "hybrid_larger": {
+            "53362": null,
+            "52802": null
+          },
+          "hybrid_shared": {
+            "53362": null,
+            "52802": null
+          },
+          "graph_shared": {
+            "53362": null,
+            "52802": null
+          },
+          "graph_shared_path": {
+            "53362": null,
+            "52802": null
+          },
+          "graph_legacy": {
+            "53362": null,
+            "52802": null
+          },
+          "shuffled_shared": {
+            "53362": null,
+            "52802": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "5124",
+        "question": "Cơ quan, đơn vị tiếp nhận động vật rừng do tổ chức, cá nhân tự nguyện giao nộp Nhà nước được quy định như thế nào?",
+        "gold": [
+          "59320"
+        ],
+        "mapped": [
+          "59320"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [],
+        "one_hop_gold": [],
+        "two_hop_gold": [],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "59320": null
+          },
+          "hybrid_larger": {
+            "59320": null
+          },
+          "hybrid_shared": {
+            "59320": null
+          },
+          "graph_shared": {
+            "59320": null
+          },
+          "graph_shared_path": {
+            "59320": null
+          },
+          "graph_legacy": {
+            "59320": null
+          },
+          "shuffled_shared": {
+            "59320": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "3430",
+        "question": "Doanh nghiệp có phải nộp kèm báo cáo tài chính khi làm đơn yêu cầu mở thủ tục phá sản không?",
+        "gold": [
+          "10294"
+        ],
+        "mapped": [
+          "10294"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "10294"
+        ],
+        "one_hop_gold": [
+          "10294"
+        ],
+        "two_hop_gold": [
+          "10294"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "10294"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "10294": 1
+          },
+          "hybrid_larger": {
+            "10294": 1
+          },
+          "hybrid_shared": {
+            "10294": 1
+          },
+          "graph_shared": {
+            "10294": 1
+          },
+          "graph_shared_path": {
+            "10294": 1
+          },
+          "graph_legacy": {
+            "10294": 1
+          },
+          "shuffled_shared": {
+            "10294": 1
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "13932",
+        "question": "Việc gia hạn giấy phép xây dựng được quy định như thế nào?",
+        "gold": [
+          "57061"
+        ],
+        "mapped": [
+          "57061"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "57061"
+        ],
+        "one_hop_gold": [
+          "57061"
+        ],
+        "two_hop_gold": [
+          "57061"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "57061"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "57061": 2
+          },
+          "hybrid_larger": {
+            "57061": 2
+          },
+          "hybrid_shared": {
+            "57061": 2
+          },
+          "graph_shared": {
+            "57061": 2
+          },
+          "graph_shared_path": {
+            "57061": 2
+          },
+          "graph_legacy": {
+            "57061": 2
+          },
+          "shuffled_shared": {
+            "57061": 2
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "16281",
+        "question": "Nhờ Ban tư vấn giải đáp giúp em vấn đề sau trong thời gian sớm nhất. Thắc mắc của em cụ thể như sau: Tiêu chuẩn đơn vị hành chính cấp xã được quy định như thế nào?",
+        "gold": [
+          "46664"
+        ],
+        "mapped": [
+          "46664"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "46664"
+        ],
+        "one_hop_gold": [],
+        "two_hop_gold": [],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "46664"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "46664": null
+          },
+          "hybrid_larger": {
+            "46664": null
+          },
+          "hybrid_shared": {
+            "46664": 8
+          },
+          "graph_shared": {
+            "46664": 8
+          },
+          "graph_shared_path": {
+            "46664": 8
+          },
+          "graph_legacy": {
+            "46664": null
+          },
+          "shuffled_shared": {
+            "46664": 8
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "3849",
+        "question": "Hệ thống tổ chức công đoàn bao gồm những đơn vị nào?",
+        "gold": [
+          "27815"
+        ],
+        "mapped": [
+          "27815"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "27815"
+        ],
+        "one_hop_gold": [
+          "27815"
+        ],
+        "two_hop_gold": [
+          "27815"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "27815"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "27815": 1
+          },
+          "hybrid_larger": {
+            "27815": 1
+          },
+          "hybrid_shared": {
+            "27815": 1
+          },
+          "graph_shared": {
+            "27815": 1
+          },
+          "graph_shared_path": {
+            "27815": 1
+          },
+          "graph_legacy": {
+            "27815": 1
+          },
+          "shuffled_shared": {
+            "27815": 1
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "2086",
+        "question": "Cơ cấu viên chức theo chức danh nghề nghiệp tại cơ sở giám định y khoa là bao nhiêu?",
+        "gold": [
+          "15526"
+        ],
+        "mapped": [],
+        "unmapped": {
+          "15526": {
+            "law_id": "03/2023/TT-BYT",
+            "reason": "no_exact_article_match",
+            "matches": []
+          }
+        },
+        "hybrid_candidate_gold": [],
+        "one_hop_gold": [],
+        "two_hop_gold": [],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "15526": null
+          },
+          "hybrid_larger": {
+            "15526": null
+          },
+          "hybrid_shared": {
+            "15526": null
+          },
+          "graph_shared": {
+            "15526": null
+          },
+          "graph_shared_path": {
+            "15526": null
+          },
+          "graph_legacy": {
+            "15526": null
+          },
+          "shuffled_shared": {
+            "15526": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "12733",
+        "question": "Hình thức xử phạt cảnh cáo trong xử phạt vi phạm hành chính được quy định như thế nào?",
+        "gold": [
+          "5673"
+        ],
+        "mapped": [
+          "5673"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "5673"
+        ],
+        "one_hop_gold": [],
+        "two_hop_gold": [],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "5673"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "5673": 9
+          },
+          "hybrid_larger": {
+            "5673": 9
+          },
+          "hybrid_shared": {
+            "5673": 4
+          },
+          "graph_shared": {
+            "5673": 4
+          },
+          "graph_shared_path": {
+            "5673": 6
+          },
+          "graph_legacy": {
+            "5673": 9
+          },
+          "shuffled_shared": {
+            "5673": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "2268",
+        "question": "2. Mắc bệnh truyền nhiễm mà lây lan cho người khác có truy cứu trách nhiệm hình sự không?",
+        "gold": [
+          "56684"
+        ],
+        "mapped": [],
+        "unmapped": {
+          "56684": {
+            "law_id": "100/2015/QH13",
+            "reason": "no_exact_article_match",
+            "matches": []
+          }
+        },
+        "hybrid_candidate_gold": [],
+        "one_hop_gold": [],
+        "two_hop_gold": [],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "56684": null
+          },
+          "hybrid_larger": {
+            "56684": null
+          },
+          "hybrid_shared": {
+            "56684": null
+          },
+          "graph_shared": {
+            "56684": null
+          },
+          "graph_shared_path": {
+            "56684": null
+          },
+          "graph_legacy": {
+            "56684": null
+          },
+          "shuffled_shared": {
+            "56684": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "249",
+        "question": "Chủ thể dữ liệu cá nhân có những và nghĩa vụ gì trong hoạt động bảo vệ dữ liệu cá nhân?",
+        "gold": [
+          "4277"
+        ],
+        "mapped": [],
+        "unmapped": {
+          "4277": {
+            "law_id": "13/2023/NĐ-CP",
+            "reason": "no_exact_article_match",
+            "matches": []
+          }
+        },
+        "hybrid_candidate_gold": [],
+        "one_hop_gold": [],
+        "two_hop_gold": [],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "4277": null
+          },
+          "hybrid_larger": {
+            "4277": null
+          },
+          "hybrid_shared": {
+            "4277": null
+          },
+          "graph_shared": {
+            "4277": null
+          },
+          "graph_shared_path": {
+            "4277": null
+          },
+          "graph_legacy": {
+            "4277": null
+          },
+          "shuffled_shared": {
+            "4277": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "11605",
+        "question": "2. Báo cáo tài chính năm doanh nghiệp cần trình bày những thông tin nào?",
+        "gold": [
+          "24738"
+        ],
+        "mapped": [],
+        "unmapped": {
+          "24738": {
+            "law_id": "200/2014/TT-BTC",
+            "reason": "no_exact_article_match",
+            "matches": []
+          }
+        },
+        "hybrid_candidate_gold": [],
+        "one_hop_gold": [],
+        "two_hop_gold": [],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "24738": null
+          },
+          "hybrid_larger": {
+            "24738": null
+          },
+          "hybrid_shared": {
+            "24738": null
+          },
+          "graph_shared": {
+            "24738": null
+          },
+          "graph_shared_path": {
+            "24738": null
+          },
+          "graph_legacy": {
+            "24738": null
+          },
+          "shuffled_shared": {
+            "24738": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "16433",
+        "question": "Nội dung xét tuyển tuyển dụng quân nhân chuyên nghiệp, công nhân và viên chức quốc phòng được quy định như thế nào?",
+        "gold": [
+          "48819"
+        ],
+        "mapped": [],
+        "unmapped": {
+          "48819": {
+            "law_id": "241/2017/TT-BQP",
+            "reason": "no_exact_article_match",
+            "matches": []
+          }
+        },
+        "hybrid_candidate_gold": [],
+        "one_hop_gold": [],
+        "two_hop_gold": [],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "48819": null
+          },
+          "hybrid_larger": {
+            "48819": null
+          },
+          "hybrid_shared": {
+            "48819": null
+          },
+          "graph_shared": {
+            "48819": null
+          },
+          "graph_shared_path": {
+            "48819": null
+          },
+          "graph_legacy": {
+            "48819": null
+          },
+          "shuffled_shared": {
+            "48819": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "12747",
+        "question": "Vi phạm quy định về bảo mật thông tin của từng cá nhân, tổ chức cung cấp thông tin thống kê bị xử phạt như thế nào?",
+        "gold": [
+          "33043"
+        ],
+        "mapped": [
+          "33043"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "33043"
+        ],
+        "one_hop_gold": [
+          "33043"
+        ],
+        "two_hop_gold": [
+          "33043"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "33043"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "33043": 1
+          },
+          "hybrid_larger": {
+            "33043": 1
+          },
+          "hybrid_shared": {
+            "33043": 1
+          },
+          "graph_shared": {
+            "33043": 1
+          },
+          "graph_shared_path": {
+            "33043": 1
+          },
+          "graph_legacy": {
+            "33043": 1
+          },
+          "shuffled_shared": {
+            "33043": 1
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "6666",
+        "question": "Ai là người nộp lệ phí đăng ký thường trú, đăng ký tạm trú, gia hạn tạm trú, tách hộ từ 05/02/2023?",
+        "gold": [
+          "40378"
+        ],
+        "mapped": [
+          "40378"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "40378"
+        ],
+        "one_hop_gold": [
+          "40378"
+        ],
+        "two_hop_gold": [
+          "40378"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "40378"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "40378": 1
+          },
+          "hybrid_larger": {
+            "40378": 1
+          },
+          "hybrid_shared": {
+            "40378": 3
+          },
+          "graph_shared": {
+            "40378": 3
+          },
+          "graph_shared_path": {
+            "40378": 3
+          },
+          "graph_legacy": {
+            "40378": 1
+          },
+          "shuffled_shared": {
+            "40378": 3
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "16492",
+        "question": "Tiêu chuẩn cộng tác viên thanh tra được quy định ra sao?",
+        "gold": [
+          "45867"
+        ],
+        "mapped": [
+          "45867"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "45867"
+        ],
+        "one_hop_gold": [
+          "45867"
+        ],
+        "two_hop_gold": [
+          "45867"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "45867"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "45867": 3
+          },
+          "hybrid_larger": {
+            "45867": 3
+          },
+          "hybrid_shared": {
+            "45867": 2
+          },
+          "graph_shared": {
+            "45867": 2
+          },
+          "graph_shared_path": {
+            "45867": 2
+          },
+          "graph_legacy": {
+            "45867": 3
+          },
+          "shuffled_shared": {
+            "45867": 2
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "15531",
+        "question": "Việc công nhận văn bằng do cơ sở giáo dục nước ngoài cấp để sử dụng tại Việt Nam được quy định như thế nào?",
+        "gold": [
+          "44603"
+        ],
+        "mapped": [
+          "44603"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "44603"
+        ],
+        "one_hop_gold": [
+          "44603"
+        ],
+        "two_hop_gold": [
+          "44603"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "44603"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "44603": 3
+          },
+          "hybrid_larger": {
+            "44603": 3
+          },
+          "hybrid_shared": {
+            "44603": 3
+          },
+          "graph_shared": {
+            "44603": 3
+          },
+          "graph_shared_path": {
+            "44603": 4
+          },
+          "graph_legacy": {
+            "44603": 3
+          },
+          "shuffled_shared": {
+            "44603": 3
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "7305",
+        "question": "Thải nước thải chăn nuôi 200 cm3 có phải xử lý trước khi thải ra môi trường không?",
+        "gold": [
+          "19932"
+        ],
+        "mapped": [
+          "19932"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "19932"
+        ],
+        "one_hop_gold": [
+          "19932"
+        ],
+        "two_hop_gold": [
+          "19932"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "19932"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "19932": 1
+          },
+          "hybrid_larger": {
+            "19932": 1
+          },
+          "hybrid_shared": {
+            "19932": 1
+          },
+          "graph_shared": {
+            "19932": 1
+          },
+          "graph_shared_path": {
+            "19932": 1
+          },
+          "graph_legacy": {
+            "19932": 1
+          },
+          "shuffled_shared": {
+            "19932": 1
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "7642",
+        "question": "Cơ cấu tổ chức của Vụ Truyền thông và Thi đua khen thưởng Bộ Y tế?",
+        "gold": [
+          "46089"
+        ],
+        "mapped": [],
+        "unmapped": {
+          "46089": {
+            "law_id": "468/QĐ-BYT",
+            "reason": "no_exact_article_match",
+            "matches": []
+          }
+        },
+        "hybrid_candidate_gold": [],
+        "one_hop_gold": [],
+        "two_hop_gold": [],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "46089": null
+          },
+          "hybrid_larger": {
+            "46089": null
+          },
+          "hybrid_shared": {
+            "46089": null
+          },
+          "graph_shared": {
+            "46089": null
+          },
+          "graph_shared_path": {
+            "46089": null
+          },
+          "graph_legacy": {
+            "46089": null
+          },
+          "shuffled_shared": {
+            "46089": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "4030",
+        "question": "Không nhận lao động nữ quay trở lại làm việc sau thời gian tạm hoãn hợp đồng có được không?",
+        "gold": [
+          "54227"
+        ],
+        "mapped": [
+          "54227"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "54227"
+        ],
+        "one_hop_gold": [
+          "54227"
+        ],
+        "two_hop_gold": [
+          "54227"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "54227"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "54227": 5
+          },
+          "hybrid_larger": {
+            "54227": 5
+          },
+          "hybrid_shared": {
+            "54227": 4
+          },
+          "graph_shared": {
+            "54227": 4
+          },
+          "graph_shared_path": {
+            "54227": 6
+          },
+          "graph_legacy": {
+            "54227": 6
+          },
+          "shuffled_shared": {
+            "54227": 4
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "4270",
+        "question": "Sinh con thứ 3, công chức có bị kéo dài thời hạn nâng lương?",
+        "gold": [
+          "28220"
+        ],
+        "mapped": [],
+        "unmapped": {
+          "28220": {
+            "law_id": "03/2021/TT-BNV",
+            "reason": "no_exact_article_match",
+            "matches": []
+          }
+        },
+        "hybrid_candidate_gold": [],
+        "one_hop_gold": [],
+        "two_hop_gold": [],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "28220": null
+          },
+          "hybrid_larger": {
+            "28220": null
+          },
+          "hybrid_shared": {
+            "28220": null
+          },
+          "graph_shared": {
+            "28220": null
+          },
+          "graph_shared_path": {
+            "28220": null
+          },
+          "graph_legacy": {
+            "28220": null
+          },
+          "shuffled_shared": {
+            "28220": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "3965",
+        "question": "Quân nhân chuyên nghiệp trong trường hợp nào không được hưởng trợ cấp một lần khi nghỉ hưu trước hạn tuổi?",
+        "gold": [
+          "28227"
+        ],
+        "mapped": [],
+        "unmapped": {
+          "28227": {
+            "law_id": "162/2017/TT-BQP",
+            "reason": "no_exact_article_match",
+            "matches": []
+          }
+        },
+        "hybrid_candidate_gold": [],
+        "one_hop_gold": [],
+        "two_hop_gold": [],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "28227": null
+          },
+          "hybrid_larger": {
+            "28227": null
+          },
+          "hybrid_shared": {
+            "28227": null
+          },
+          "graph_shared": {
+            "28227": null
+          },
+          "graph_shared_path": {
+            "28227": null
+          },
+          "graph_legacy": {
+            "28227": null
+          },
+          "shuffled_shared": {
+            "28227": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "15959",
+        "question": "Trách nhiệm của Bộ Xây dựng đối với chế độ báo cáo định kỳ thuộc phạm vi quản lý Nhà nước của Bộ Xây dựng là gì?",
+        "gold": [
+          "28431",
+          "54193"
+        ],
+        "mapped": [
+          "28431",
+          "54193"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "28431",
+          "54193"
+        ],
+        "one_hop_gold": [
+          "28431",
+          "54193"
+        ],
+        "two_hop_gold": [
+          "28431",
+          "54193"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "28431",
+          "54193"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "28431": 1,
+            "54193": null
+          },
+          "hybrid_larger": {
+            "28431": 1,
+            "54193": null
+          },
+          "hybrid_shared": {
+            "28431": 1,
+            "54193": 9
+          },
+          "graph_shared": {
+            "28431": 1,
+            "54193": 9
+          },
+          "graph_shared_path": {
+            "28431": 1,
+            "54193": 3
+          },
+          "graph_legacy": {
+            "28431": 1,
+            "54193": 10
+          },
+          "shuffled_shared": {
+            "28431": 1,
+            "54193": 9
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "7932",
+        "question": "Điều kiện đăng ký dự tuyển viên chức được quy định như thế nào?",
+        "gold": [
+          "26490",
+          "58633"
+        ],
+        "mapped": [
+          "26490"
+        ],
+        "unmapped": {
+          "58633": {
+            "law_id": "52/2019/QH14",
+            "reason": "no_exact_article_match",
+            "matches": []
+          }
+        },
+        "hybrid_candidate_gold": [
+          "26490"
+        ],
+        "one_hop_gold": [
+          "26490"
+        ],
+        "two_hop_gold": [
+          "26490"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "26490"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "58633": null,
+            "26490": 1
+          },
+          "hybrid_larger": {
+            "58633": null,
+            "26490": 1
+          },
+          "hybrid_shared": {
+            "58633": null,
+            "26490": 1
+          },
+          "graph_shared": {
+            "58633": null,
+            "26490": 1
+          },
+          "graph_shared_path": {
+            "58633": null,
+            "26490": 3
+          },
+          "graph_legacy": {
+            "58633": null,
+            "26490": 1
+          },
+          "shuffled_shared": {
+            "58633": null,
+            "26490": 1
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "10709",
+        "question": "Các trường hợp nào thu hồi thẻ kiểm dịch động vật?",
+        "gold": [
+          "18628"
+        ],
+        "mapped": [
+          "18628"
+        ],
+        "unmapped": {},
+        "hybrid_candidate_gold": [
+          "18628"
+        ],
+        "one_hop_gold": [
+          "18628"
+        ],
+        "two_hop_gold": [
+          "18628"
+        ],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [
+          "18628"
+        ],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "18628": 1
+          },
+          "hybrid_larger": {
+            "18628": 1
+          },
+          "hybrid_shared": {
+            "18628": 1
+          },
+          "graph_shared": {
+            "18628": 1
+          },
+          "graph_shared_path": {
+            "18628": 1
+          },
+          "graph_legacy": {
+            "18628": 1
+          },
+          "shuffled_shared": {
+            "18628": 1
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "200",
+        "question": "Chưa xóa án tích có được đăng ký nghĩa vụ quân sự không?",
+        "gold": [
+          "55047"
+        ],
+        "mapped": [],
+        "unmapped": {
+          "55047": {
+            "law_id": "78/2015/QH13",
+            "reason": "no_exact_article_match",
+            "matches": []
+          }
+        },
+        "hybrid_candidate_gold": [],
+        "one_hop_gold": [],
+        "two_hop_gold": [],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "55047": null
+          },
+          "hybrid_larger": {
+            "55047": null
+          },
+          "hybrid_shared": {
+            "55047": null
+          },
+          "graph_shared": {
+            "55047": null
+          },
+          "graph_shared_path": {
+            "55047": null
+          },
+          "graph_legacy": {
+            "55047": null
+          },
+          "shuffled_shared": {
+            "55047": null
+          }
+        },
+        "answer_used_correctly": null
+      },
+      {
+        "qid": "2217",
+        "question": "Mắc các bệnh nào được hưởng chế độ bảo hiểm xã hội một lần theo quy định hiện nay?",
+        "gold": [
+          "16978",
+          "17419"
+        ],
+        "mapped": [],
+        "unmapped": {
+          "16978": {
+            "law_id": "56/2017/TT-BYT",
+            "reason": "ambiguous",
+            "matches": [
+              "129005:article:4",
+              "142489:article:4"
+            ]
+          },
+          "17419": {
+            "law_id": "18/2022/TT-BYT",
+            "reason": "no_exact_article_match",
+            "matches": []
+          }
+        },
+        "hybrid_candidate_gold": [],
+        "one_hop_gold": [],
+        "two_hop_gold": [],
+        "reachable_beyond_hybrid": [],
+        "graph_candidate_gold": [],
+        "new_graph_candidate_gold": [],
+        "gold_ranks": {
+          "hybrid": {
+            "17419": null,
+            "16978": null
+          },
+          "hybrid_larger": {
+            "17419": null,
+            "16978": null
+          },
+          "hybrid_shared": {
+            "17419": null,
+            "16978": null
+          },
+          "graph_shared": {
+            "17419": null,
+            "16978": null
+          },
+          "graph_shared_path": {
+            "17419": null,
+            "16978": null
+          },
+          "graph_legacy": {
+            "17419": null,
+            "16978": null
+          },
+          "shuffled_shared": {
+            "17419": null,
+            "16978": null
+          }
+        },
+        "answer_used_correctly": null
+      }
+    ],
+    "index_seconds": 1183.429221673,
+    "embedding_digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab",
+    "collection": "legal_repair_linux_20261118_v2",
+    "limitations": [
+      "Existing 100 questions are diagnostic; no untouched-test performance claim.",
+      "Coverage and candidate caps are matched upper bounds; realized counts differ.",
+      "Gold article identity does not prove selected chunks contain the required clauses.",
+      "Shared scorer is cosine plus lexical overlap, not a trained cross-encoder.",
+      "Citations are automatically resolved; independent precision review is pending.",
+      "Retrieval latency includes shared hybrid lookup; query embedding is separate.",
+      "Bootstrap intervals are paired, exploratory and not multiplicity adjusted."
+    ]
+  },
+  "answers": {
+    "status": "failed_schema_validation; answer_quality_unavailable",
+    "config": {
+      "protocol_sha256": "a259a2a14a70a2357fd96c710769703daec272a91a976c7b49baa590b07b3d7c",
+      "predictions_sha256": "5fb1f5b03a98bf8ed1d7b22ecd79374904e07d403a76a66c7a3ac2f77d544491",
+      "corpus_sha256": "79bf936ef8de4208beaf13e932075b12e6b9d67043311d602bf386b66ffe2edc",
+      "script_sha256": "da665f61f8d25051706ccb96d86f458a3801404d242e0221fb29d67b5361d85a",
+      "model_digests": {
+        "gemma4:e4b": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb",
+        "qwen3.5:9b": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7"
+      },
+      "judge_options": {
+        "temperature": 0,
+        "seed": 20261118,
+        "num_predict": 512,
+        "num_ctx": 32768
+      },
+      "judge_max_input_chars": 65000
+    },
+    "summary": {
+      "hybrid": {
+        "questions": 20,
+        "judged": 0,
+        "reference_sufficient": 0,
+        "automated_correctness": null,
+        "automated_full_citation_support": null,
+        "invalid_citation_answers": 0,
+        "truncated_answers": 8
+      },
+      "hybrid_larger": {
+        "questions": 20,
+        "judged": 0,
+        "reference_sufficient": 0,
+        "automated_correctness": null,
+        "automated_full_citation_support": null,
+        "invalid_citation_answers": 0,
+        "truncated_answers": 7
+      },
+      "hybrid_shared": {
+        "questions": 20,
+        "judged": 0,
+        "reference_sufficient": 0,
+        "automated_correctness": null,
+        "automated_full_citation_support": null,
+        "invalid_citation_answers": 0,
+        "truncated_answers": 7
+      },
+      "graph_shared": {
+        "questions": 20,
+        "judged": 0,
+        "reference_sufficient": 0,
+        "automated_correctness": null,
+        "automated_full_citation_support": null,
+        "invalid_citation_answers": 0,
+        "truncated_answers": 7
+      },
+      "graph_shared_path": {
+        "questions": 20,
+        "judged": 0,
+        "reference_sufficient": 0,
+        "automated_correctness": null,
+        "automated_full_citation_support": null,
+        "invalid_citation_answers": 0,
+        "truncated_answers": 7
+      },
+      "graph_legacy": {
+        "questions": 20,
+        "judged": 0,
+        "reference_sufficient": 0,
+        "automated_correctness": null,
+        "automated_full_citation_support": null,
+        "invalid_citation_answers": 0,
+        "truncated_answers": 8
+      },
+      "shuffled_shared": {
+        "questions": 20,
+        "judged": 0,
+        "reference_sufficient": 0,
+        "automated_correctness": null,
+        "automated_full_citation_support": null,
+        "invalid_citation_answers": 0,
+        "truncated_answers": 7
+      }
+    },
+    "paired_automated_correctness": {},
+    "unique_generations": 69,
+    "unique_judgments": 69,
+    "unique_generation_seconds": 715.7373005349959,
+    "unique_judgment_seconds": 335.88772502799793,
+    "limitations": [
+      "Model judgments can be wrong; no human accuracy claim.",
+      "Only the preregistered 20 diagnostic questions were evaluated.",
+      "Identical ordered contexts reuse the exact cached answer and judgment.",
+      "Source text budget is 18000 characters; source labels add prompt overhead."
+    ],
+    "raw_status": "sampled_automated_evaluation; independent_human_review_pending"
+  },
+  "relation_precision": {
+    "status": "failed_invalid_model_output; independent_review_pending",
+    "strata": {
+      "within_document": {
+        "population": 17160,
+        "sample": 25,
+        "automated_supported": null
+      },
+      "cross_document": {
+        "population": 2514,
+        "sample": 25,
+        "automated_supported": null
+      }
+    },
+    "weighted_automated_support": null,
+    "human_precision": null,
+    "cached_attempts": 1
+  },
+  "identity_coverage_transitions": {
+    "old_True_new_True": 53,
+    "old_False_new_False": 26,
+    "old_True_new_False": 15,
+    "old_False_new_True": 6
+  },
+  "answer_protocol": {
+    "status": "frozen_before_retrieval_results",
+    "selection": "20 smallest SHA256(seed:qid)",
+    "seed": 20261118,
+    "qids": [
+      "4919",
+      "8193",
+      "5124",
+      "12825",
+      "10885",
+      "16433",
+      "6971",
+      "11799",
+      "7305",
+      "9882",
+      "6528",
+      "2086",
+      "7105",
+      "13849",
+      "4270",
+      "11307",
+      "9102",
+      "13932",
+      "14907",
+      "10709"
+    ],
+    "snapshot_sha256": "3aee6d3d36c9f3e075b7e5a1ef3a1d0c394bf3720aac5ca1daa19aff1ec57113",
+    "context_chars": 18000,
+    "modes": [
+      "hybrid",
+      "hybrid_larger",
+      "hybrid_shared",
+      "graph_shared",
+      "graph_shared_path",
+      "graph_legacy",
+      "shuffled_shared"
+    ],
+    "generator": "gemma4:e4b",
+    "judge": "qwen3.5:9b",
+    "generation": {
+      "temperature": 0,
+      "seed": 20261118,
+      "num_predict": 1024,
+      "num_ctx": 16384,
+      "think": false
+    },
+    "judgment": "Automated, blinded to retrieval mode; human correctness remains pending.",
+    "reference": "Full corpus gold provisions, unchanged gold IDs; no reference answer supplied."
+  },
+  "relational_candidates": {
+    "count": 60,
+    "eligible": 237,
+    "review_status": "pending"
+  },
+  "rejected_relation_population": {
+    "several_numbered_laws": 867,
+    "target_document_unavailable": 1709,
+    "duplicate_document_number": 296
+  },
+  "base_commit": "98b5ad3f88ed86c43e7668e737ba7a808efe12c1",
+  "artifact_hashes": {
+    "retrieval_summary.json": "08ce17f86b85d0d855fbdcf4471112186ded4a77f077c6ad3c19ede31ddeae1e",
+    "answers/evaluation.json": "04942ed0a2c3cca9ece76ed83491366459f747477b834562d8ca1e9c05c407b2",
+    "review/manifest.json": "676fbf6c3ea140c30ad9c28bd89099e117d10886f311f460f1464dd41d2cc5cb"
+  }
+}

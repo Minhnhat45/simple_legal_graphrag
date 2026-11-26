@@ -1,5 +1,6 @@
 .env
 .venv/
+.venv-linux/
 __pycache__/
 *.py[cod]
 .ruff_cache/
@@ -10,6 +11,7 @@ build/
 qdrant_storage/
 neo4j_data/
 data/*
+!data/README.md
 !data/sample_legal_documents.csv
 .vscode
 .cache/

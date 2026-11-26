@@ -8,10 +8,12 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import importlib.metadata
 import json
 import sqlite3
 import sys
 import time
+import uuid
 from collections import defaultdict
 from dataclasses import asdict, replace
 from pathlib import Path
@@ -23,13 +25,30 @@ from legal_graphrag.experiment import SnapshotGraph, summarize_comparisons
 from legal_graphrag.llm import OllamaClient
 from legal_graphrag.models import DocumentChunk, LegalDocument, ProvisionRelation, QueryFilters
 from legal_graphrag.ontology import ExpansionConfig
-from legal_graphrag.qdrant_store import QdrantStore
+from legal_graphrag.qdrant_store import BM25_MODEL, BM25_OPTIONS, POINT_NAMESPACE, QdrantStore
 from legal_graphrag.retrieval import HybridRetriever
 
 
-def run(snapshot, collection, output):
+def atomic_json(path, value):
+    temporary = path.with_suffix(path.suffix + ".tmp")
+    temporary.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n")
+    temporary.replace(path)
+
+
+def validate_resume(saved, expected):
+    if saved["identity"] != expected:
+        raise ValueError("Resume identity mismatch (snapshot, model, code or settings)")
+
+
+def run(snapshot, collection, output, *, resume=False):
     output = Path(output)
-    output.mkdir(parents=True, exist_ok=False)
+    if resume:
+        if not (output / "index_state.json").is_file():
+            raise ValueError("Resume requires an existing index_state.json")
+        if (output / "evaluation.json").exists():
+            raise ValueError("Completed experiments are immutable; use their saved results")
+    else:
+        output.mkdir(parents=True, exist_ok=False)
     snapshot = Path(snapshot)
     coverage = json.loads((snapshot / "coverage.json").read_text())
     if (
@@ -46,10 +65,42 @@ def run(snapshot, collection, output):
     )
     vectors, ollama = QdrantStore(settings), OllamaClient(settings)
     try:
-        if vectors.collection_exists():
+        if vectors.collection_exists() and not resume:
             raise ValueError("Use a NEW collection; existing indexes are never overwritten")
         tags = ollama._request("/api/tags")["models"]
         digest = next(m["digest"] for m in tags if m["name"] == "bge-m3:latest")
+        root = Path(__file__).resolve().parents[1]
+        identity = {
+            "snapshot_sha256": coverage["snapshot_sha256"],
+            "coverage_sha256": hashlib.sha256(
+                (snapshot / "coverage.json").read_bytes()
+            ).hexdigest(),
+            "embedding_digest": digest,
+            "embedding_model": settings.ollama_embed_model,
+            "embed_batch_size": settings.embed_batch_size,
+            "collection": collection,
+            "qdrant_url": settings.qdrant_url,
+            "bm25_model": BM25_MODEL,
+            "bm25_options": BM25_OPTIONS,
+            "packages": {
+                name: importlib.metadata.version(name)
+                for name in ("qdrant-client", "fastembed", "numpy")
+            },
+            "code_hashes": {
+                str(p.relative_to(root)): hashlib.sha256(p.read_bytes()).hexdigest()
+                for p in [
+                    Path(__file__).resolve(),
+                    *sorted((root / "src/legal_graphrag").glob("*.py")),
+                ]
+            },
+        }
+        state_path = output / "index_state.json"
+        if resume:
+            state = json.loads(state_path.read_text())
+            validate_resume(state, identity)
+        else:
+            state = {"identity": identity, "indexed": 0, "index_seconds": 0.0, "ready": False}
+            atomic_json(state_path, state)
         db = sqlite3.connect(f"file:{snapshot / 'snapshot.sqlite'}?mode=ro", uri=True)
         documents = {
             did: LegalDocument(**json.loads(payload))
@@ -66,19 +117,62 @@ def run(snapshot, collection, output):
             for (p,) in db.execute("SELECT payload FROM relations")
         ]
         db.close()
+        if resume:
+            # Verify every existing payload against the immutable source, including
+            # a batch committed by Qdrant just before a checkpoint interruption.
+            expected = {str(uuid.uuid5(POINT_NAMESPACE, c.id)): c for c in chunks}
+            seen, offset = set(), None
+            if not vectors.collection_exists() and state["indexed"]:
+                raise ValueError("Checkpoint collection is missing")
+            if vectors.collection_exists():
+                vectors.ensure_collection(1024)
+                while True:
+                    points, offset = vectors.client.scroll(
+                        collection,
+                        offset=offset,
+                        limit=256,
+                        with_payload=True,
+                        with_vectors=False,
+                    )
+                    for point in points:
+                        chunk = expected.get(str(point.id))
+                        if chunk is None or any(
+                            point.payload.get(key) != value
+                            for key, value in {
+                                "chunk_id": chunk.id,
+                                "text": chunk.text,
+                                "article_id": vectors.article_mapping[chunk.id],
+                                "document_id": chunk.document_id,
+                            }.items()
+                        ):
+                            raise ValueError("Resume collection payload mismatch")
+                        seen.add(chunk.id)
+                    if offset is None:
+                        break
+            lower = {c.id for c in chunks[: state["indexed"]]}
+            upper = {c.id for c in chunks[: state["indexed"] + settings.embed_batch_size]}
+            if not lower <= seen <= upper:
+                raise ValueError("Resume collection does not match checkpoint prefix")
         start = time.monotonic()
-        for i in range(0, len(chunks), settings.embed_batch_size):
+        previous_seconds = state["index_seconds"]
+        for i in range(state["indexed"], len(chunks), settings.embed_batch_size):
             batch = chunks[i : i + settings.embed_batch_size]
             embeddings = ollama.embed([c.text for c in batch])
             vectors.ensure_collection(len(embeddings[0]))
             vectors.upsert(
                 batch, embeddings, {c.document_id: documents[c.document_id] for c in batch}
             )
+            state.update(
+                indexed=i + len(batch), index_seconds=previous_seconds + time.monotonic() - start
+            )
+            atomic_json(state_path, state)
             if i % 1600 == 0:
                 print(f"indexed {i + len(batch)}/{len(chunks)}", flush=True)
         if vectors.count() != len(chunks):
             raise ValueError("Index chunk count does not match snapshot")
-        index_seconds = time.monotonic() - start
+        index_seconds = state["index_seconds"]
+        state["ready"] = True
+        atomic_json(state_path, state)
         graph = SnapshotGraph(relations, article_chunks)
         shuffled = SnapshotGraph(relations, article_chunks, shuffle_seed=20261113)
         retriever = HybridRetriever(settings, graph=graph, vectors=vectors, ollama=ollama)
@@ -94,9 +188,23 @@ def run(snapshot, collection, output):
         }
         originals = coverage["original_ids"]
         available = set(originals.values())
-        predictions = []
+        prediction_path = output / "predictions.jsonl"
+        predictions = (
+            [json.loads(line) for line in prediction_path.read_text().splitlines()]
+            if resume and prediction_path.exists()
+            else []
+        )
+        completed = {}
+        for record in predictions:
+            completed.setdefault(record["qid"], []).append(record["mode"])
+        if any(modes != list(configurations) for modes in completed.values()):
+            raise ValueError(
+                "Partial or duplicate query records; preserve and repair the log first"
+            )
         vectors._sparse_encoder()  # Warm initialization outside timed queries.
         for sample in coverage["diagnostics"]:
+            if sample["qid"] in completed:
+                continue
             query_start = time.monotonic()
             vector = ollama.embed([sample["question"]])[0]
             embedding_ms = (time.monotonic() - query_start) * 1000
@@ -141,6 +249,7 @@ def run(snapshot, collection, output):
                 predictions.append(
                     {
                         "qid": sample["qid"],
+                        "question": sample["question"],
                         "mode": mode,
                         "gold": sorted(gold),
                         "retrieved": ranked,
@@ -155,12 +264,18 @@ def run(snapshot, collection, output):
                         "embedding_ms": embedding_ms,
                         "reachability": reachability,
                         "trace": trace,
+                        "selected_evidence": [asdict(hit) for hit in result.hits],
                     }
                 )
             # Preserve partial predictions if a later service call fails.
             with (output / "predictions.jsonl").open("a") as handle:
                 for record in predictions[-len(configurations) :]:
                     handle.write(json.dumps(record, ensure_ascii=False) + "\n")
+            print(
+                f"evaluated {len(predictions) // len(configurations)}"
+                f"/{len(coverage['diagnostics'])} questions",
+                flush=True,
+            )
         save_report(
             {
                 "status": "diagnostic_retrieval_only",
@@ -171,6 +286,7 @@ def run(snapshot, collection, output):
                 "embedding_digest": digest,
                 "index_seconds": index_seconds,
                 "collection": collection,
+                "provenance": identity,
                 "configurations": {name: asdict(c) for name, c in configurations.items()},
                 "shuffled_control": (
                     "Target endpoints permuted with seed 20261113; not legal evidence; "
@@ -193,5 +309,6 @@ if __name__ == "__main__":
     parser.add_argument("--snapshot", required=True)
     parser.add_argument("--collection", required=True)
     parser.add_argument("--output", required=True)
+    parser.add_argument("--resume", action="store_true")
     args = parser.parse_args()
-    run(args.snapshot, args.collection, args.output)
+    run(args.snapshot, args.collection, args.output, resume=args.resume)

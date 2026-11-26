@@ -104,7 +104,7 @@ Build another snapshot into a fresh directory:
 
 ```bash
 .venv/bin/python scripts/repair_coverage.py \
-  --corpus ../data/corpus.csv \
+  --corpus data/vlsp/corpus.csv \
   --output reports/runs/20261113/coverage_NEW
 ```
 

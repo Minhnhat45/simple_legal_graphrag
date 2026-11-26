@@ -4,7 +4,7 @@
 
 **Existing work reused and extended.** The original chunker, stable Document/Chunk identifiers, ingestion, Ollama client, Neo4j/Qdrant stores, TF-IDF/n-gram candidate discovery, filters, answer grounding and citation validation remain in place. The standalone hybrid baseline's FastEmbed BM25 settings are shared with the new retrieval path. The legacy API remains the default. New `structure.py`, `ontology.py`, `semantic.py` and `evaluation.py` add provision structure, validation and evaluation without replacing document retrieval. `plan.md` retains its historical content with a current-status note.
 
-The existing VLSP evaluation file and metric conventions were located in the sibling `data_for_legal_rag/VLSP_legal_data` project and reused read-only. Its historical hybrid Hit@10 of 0.95 used a different indexed corpus and chunk-level metrics; it is not directly comparable with the current filtered, Article-level pilot. Original reports were preserved.
+The pilot reused the original VLSP evaluation file and metric conventions. A byte-identical copy of the file is available at [`data/vlsp/eval.csv`](../data/vlsp/eval.csv). The historical VLSP hybrid Hit@10 of 0.95 used a different indexed corpus and chunk-level metrics, which preclude a direct comparison with this filtered, Article-level pilot.
 
 **Authoritative data and experiment scope.** The current manifest lists 2,157 unique law IDs: 1,869 with local sources and 288 missing. The loader reads the existing 1,969 department records and 82 context files, retaining 2,051 source documents without repeating filtering. Source document IDs remain distinct where authorities reuse a law number; ambiguous references are not guessed.
 
@@ -47,7 +47,7 @@ The compact [machine-readable results](semantic_graphrag_20261107.json) include 
 ```bash
 PYTHONPATH=src python scripts/run_experiment.py \
   --manifest reports/runs/20261107/manifest.json \
-  --eval ../data_for_legal_rag/VLSP_legal_data/eval.csv \
+  --eval data/vlsp/eval.csv \
   --output-dir reports/runs/20261107/repeat_NEW --skip-build
 ```
 

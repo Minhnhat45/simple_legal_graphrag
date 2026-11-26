@@ -1,5 +1,9 @@
 # Linux handoff: resume the failure-fixing experiment
 
+**OpenRouter follow-up, 2026-11-19:** the rerun using `openai/gpt-6-luna` with medium reasoning completed in separate graph and vector stores. See [the OpenRouter report](openrouter_experiment_20261119.md) and [machine-readable results](openrouter_experiment_20261119.json). All 1,000 candidate relation pairs, 1,040 retrieval records, 1,040 answer judgments and 80 automated relation reviews are complete. Final artifact validation passed. Shared graph retrieval did not outperform shared hybrid retrieval; new semantic relations did not activate on the diagnostic questions. Independent review and retrieval/answer evaluation of the reserved 30-question test set remain pending. No experiment jobs remain running. Earlier handoff notes below are retained for provenance.
+
+**Linux follow-up, 2026-11-18:** the 91,405-chunk index and all 700 diagnostic retrieval records are complete. See [the result report](fixing_failure_linux_20261118.md) and [machine-readable results](fixing_failure_linux_20261118.json). Answer/relationship evaluation attempts failed model-output validation; their raw outputs are preserved. Independent review and the relational test benchmark remain pending. No experiment jobs remain running. The original handoff below is retained for provenance.
+
 Prepared 2026-11-13. Continue [plan_fixing_failure_11_11.md](../plan_fixing_failure_11_11.md) on Linux. The Mac work is wrapped up; the full embedding/retrieval experiment has **not** been run. See [the execution report](fixing_failure_20261113.md) for measured results and limitations.
 
 ## 1. Current state
@@ -53,7 +57,7 @@ reports/linux_experiment_handoff_20261113.md
 
 Also retain the existing source, tests, dependency files and both previous reports with their JSON companions. The new scripts depend on that existing code.
 
-**`data/*` and `reports/runs/` are Git-ignored. Copy the required research data separately.** To reuse the exact final snapshot, transfer its entire directory, including `snapshot.sqlite`, `coverage.json` and `mapping_gaps.json`. The database is approximately 699 MiB. Keep the other `reports/runs/20261113/` logs and intermediate snapshots for provenance if space permits.
+**The datasets under `data/` and the artifacts under `reports/runs/` are Git-ignored. Copy the required research data separately.** See the [data inventory](../data/README.md) for the local VLSP files and frozen evaluation inputs. To reuse the exact final snapshot, transfer its entire directory, including `snapshot.sqlite`, `coverage.json` and `mapping_gaps.json`. The database is approximately 699 MiB. Keep the other `reports/runs/20261113/` logs and intermediate snapshots for provenance if space permits.
 
 An optional archive command, run from the Mac repository root:
 
@@ -68,7 +72,7 @@ tar -czf /tmp/legal_graphrag_snapshot_20261113.tar.gz \
 
 This archive contains research artifacts only; it does not transfer the code. Extract it from the Linux repository root after copying it. Do not transfer the Mac `.venv`; create a Linux environment.
 
-If rebuilding instead, provide the filtered `data/` directory, the original corpus CSV, and `reports/failure_analysis_20261107.json`. The corpus was at `../data/corpus.csv` on the Mac; its recorded Linux location is `../data_for_legal_rag/VLSP_legal_data/corpus.csv`.
+If rebuilding instead, use the filtered `data/` directory, `data/vlsp/corpus.csv`, and `reports/failure_analysis_20261107.json`.
 
 ## 3. Recover and verify the original Linux experiment
 
@@ -87,8 +91,8 @@ reports/runs/20261107/embedding_repair.json
 reports/runs/20261107/graph_audit.json
 reports/runs/20261107/frozen_seeds/evaluation.json
 reports/runs/20261107/final/relations.json
-../data_for_legal_rag/VLSP_legal_data/eval.csv
-../data_for_legal_rag/VLSP_legal_data/corpus.csv
+data/vlsp/eval.csv
+data/vlsp/corpus.csv
 ```
 
 The original Qdrant collection was `legal_filtered_semantic_20261107_v1`. Preserve it and the original Neo4j graph. The Mac had a different collection; it did not contain this frozen experiment. Do not reset databases or recreate an existing collection.
@@ -105,7 +109,7 @@ Verify available files with `sha256sum` and these recorded hashes:
 
 A freshly rebuilt SQLite database need not have the same byte hash; record its new hash and compare the source/document hashes, counts and mappings. An exact copied snapshot must match. Absolute Mac paths in its metadata are provenance, not Linux paths to open: the new runner reads files relative to `--snapshot`.
 
-The new runner gets its 100 diagnostic questions and gold IDs from `coverage.json`, derived from the saved failure analysis. It does not require an `--eval` argument. Recovering `eval.csv` is still useful for verifying that derived input and reproducing the old experiment.
+The new runner gets its 100 diagnostic questions and gold IDs from `coverage.json`, derived from the saved failure analysis. Use `data/vlsp/eval.csv` to verify the derived input or reproduce the original experiment.
 
 ## 4. Prepare Linux and check services
 
@@ -151,22 +155,32 @@ Review:
 
 Inspect qids 6920, 5124, 16281, 2217, 1164, 4190 and 9882. In the final Mac snapshot, 16978 and 17419 for qid 2217, 28492 for qid 4190, and 56079 for qid 9882 remain unresolved. Account for duplicated source records, authority/version differences, article boundaries and text differences. Do not force identities from article ordinals or similarity, change gold labels to improve scores, or silently merge different legal documents.
 
-If an identity/parser fix is justified, implement and test it, then rebuild into a **new** directory. Do not edit the existing snapshot or its hash in place. For example, assuming the recorded Linux corpus path exists:
+If an identity/parser fix is justified, implement and test it, then rebuild into a **new** directory. Keep the existing snapshot and its hash for reproduction. Pass the in-project corpus explicitly to the coverage builder because the Luna run pins that script's hash.
 
 ```bash
 .venv-linux/bin/python scripts/repair_coverage.py \
   --dataset data \
-  --corpus ../data_for_legal_rag/VLSP_legal_data/corpus.csv \
+  --corpus data/vlsp/corpus.csv \
   --analysis reports/failure_analysis_20261107.json \
   --output reports/runs/linux_coverage_review_v1
 
 .venv-linux/bin/python scripts/audit_mapping_gaps.py \
   --snapshot reports/runs/linux_coverage_review_v1 \
-  --corpus ../data_for_legal_rag/VLSP_legal_data/corpus.csv \
+  --corpus data/vlsp/corpus.csv \
   --output reports/mapping_review_linux_v1.json
 ```
 
 Both outputs must be new. The coverage builder checks the corpus against the failure-analysis hash. Record unresolved gaps explicitly even if proceeding with a diagnostic run.
+
+To regenerate the Linux review inputs, including the relational split, use the
+frozen Linux snapshot and both local VLSP source files:
+
+```bash
+.venv-linux/bin/python scripts/prepare_linux_review.py \
+  --snapshot reports/runs/linux_20261118/coverage_v2 \
+  --corpus data/vlsp/corpus.csv --train data/vlsp/train.csv \
+  --output reports/runs/linux_review_rebuilt
+```
 
 ## 6. Run the full diagnostic comparison
 

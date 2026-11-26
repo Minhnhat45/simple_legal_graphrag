@@ -40,6 +40,14 @@ def body_text(text):
     text = unicodedata.normalize("NFC", text)
     text = text.translate(str.maketrans({"“": '"', "”": '"', "‘": "'", "’": "'"}))
     text = re.sub(r"\s*([\"'])\s*", r"\1", text)
+    # Flattened corpus exports sometimes omit a sentence separator space
+    # ("...định.Trường hợp..."). Preserve every letter, number and punctuation
+    # mark; canonicalize only spacing before an uppercase sentence start.
+    text = re.sub(
+        r"([.;:!?])\s*([^\W\d_])",
+        lambda match: match[1] + " " + match[2] if match[2].isupper() else match[0],
+        text,
+    )
     return normalize_text(text.replace(r"\n", " ").replace(r"\t", " ").replace(r"\r", " "))
 
 
@@ -179,7 +187,8 @@ def build(dataset, corpus_path, analysis_path, output):
         "mapping_rule": (
             "Full normalized corpus article body (>=30 chars) occurs in exactly one "
             "parsed source article of the identical law number; reject many-to-one "
-            "matches. NFC, whitespace and quote typography normalization only; "
+            "matches. NFC, whitespace, uppercase sentence-start spacing and quote "
+            "typography normalization only; "
             "source evidence remains unchanged. No ordinal inference."
         ),
         "source_hashes": {
